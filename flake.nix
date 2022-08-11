@@ -32,6 +32,8 @@
 
         (std.functions "library")
 
+        (std.data "cargoMakeJobs")
+
         (std.functions "packages")
 
         (std.functions "overlays")
