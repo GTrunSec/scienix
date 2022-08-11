@@ -1,0 +1,4 @@
+[deps]
+Arrow = "69666777-d1a9-59fb-9406-91d4454c9d45"
+Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
+URIs = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"

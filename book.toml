@@ -1,0 +1,11 @@
+[book]
+language = "en"
+multilingual = false
+src = "docs"
+title = "Data Science Threat Intelligence Book"
+
+[build]
+build-dir = "docs/book"
+
+[preprocessor.kroki-preprocessor]
+command = "mdbook-kroki-preprocessor"

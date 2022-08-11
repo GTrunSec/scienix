@@ -1,0 +1,44 @@
+vast:
+  aging-frequency: 24h
+  aging-query: ''
+  catalog-fp-rate: 0.01
+  console: automatic
+  console-format: '%^[%T.%e] %v%$'
+  console-verbosity: info
+  db-directory: vast.db
+  disable-log-rotation: false
+  enable-metrics: false
+  endpoint: 127.0.0.1:42000
+  file-format: '[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v'
+  file-verbosity: info
+  log-file: .cache/server.log
+  log-queue-size: 1000000
+  log-rotation-threshold: 10MiB
+  max-partition-size: 1048576
+  max-queries: 10
+  max-resident-partitions: 10
+  max-segment-size: 1024
+  max-taste-partitions: 5
+  metrics:
+    file-sink:
+      enable: false
+      path: .cache/vast-metrics.log
+      real-time: false
+    self-sink:
+      enable: true
+      slice-size: 128
+      slice-type: arrow
+    uds-sink:
+      enable: false
+      path: ./cache/vast-metrics.sock
+      real-time: false
+      type: datagram
+  node: false
+  node-id: node
+  plugin-dirs: []
+  plugins: []
+  schema-dirs: []
+  segments: 10
+  start:
+    print-endpoint: false
+  store-backend: segment-store
