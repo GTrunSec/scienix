@@ -16,14 +16,21 @@ in {
 
       std.adr.enable = false;
 
-      imports = [
-        inputs.std.std.devshellProfiles.default
-        inputs.cells.julia.devshellProfiles.default
-      ];
-      nixago = [
-        inputs.cells-lab.main.nixago.treefmt
-        cell.nixago.mdbook
-      ] ++ l.attrValues inputs.cells.vast.nixago;
+      imports =
+        [
+          inputs.std.std.devshellProfiles.default
+        ]
+        ++ [
+          inputs.cells.julia.devshellProfiles.default
+          inputs.cells.vast.devshellProfiles.default
+        ];
+
+      nixago =
+        [
+          inputs.cells-lab.main.nixago.treefmt
+          cell.nixago.mdbook
+        ]
+        ++ l.attrValues inputs.cells.vast.nixago;
     };
   };
 }

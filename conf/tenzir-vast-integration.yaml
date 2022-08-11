@@ -1,0 +1,10 @@
+config-file: /nix/store/9jvgr0pf792d7cgwp7wa4dwar534myxl-vast-integration.yaml
+tests:
+  Node Zeek conn log:
+    steps:
+      command: -N import zeek
+      input: data/zeek/conn.log.gz
+    tags:
+    - node
+    - import-export
+    - zeek
