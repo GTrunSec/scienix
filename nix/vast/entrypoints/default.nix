@@ -7,7 +7,7 @@
   inherit (inputs.cells-lab._flow.library) makeCargoMakeFlow;
 in {
   flow = makeCargoMakeFlow {
-    source = (writeConf cargoMakeJobs.vast-integration "toml");
+    source = cell.nixago.vast-cargo-make.configFile;
     # "all"
     args = ["smtp-url"];
   };

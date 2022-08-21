@@ -10,14 +10,9 @@ in {
     meta.mainProgram = "julia-bin";
     enable = {
       GR = true;
-      python =
-        nixpkgs.python3.buildEnv.override
-        {
-          extraLibs = with nixpkgs.python3Packages; [pandas];
-          ignoreCollisions = true;
-        };
+      python = inputs.cells.main.packages.pythonEnv;
     };
     makeWrapperArgs = ["--add-flags" "-L''${./startup.jl}"];
   };
-  jnumpy = cell.library.nixpkgs.callPackage ./jnumpy {inherit __inputs__;};
+  jnumpy = cell.library.nixpkgs.python3Packages.callPackage ./jnumpy {inherit __inputs__;};
 }

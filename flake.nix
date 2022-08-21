@@ -4,14 +4,12 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
 
     std.follows = "cells-lab/std";
-    yants.follows = "cells-lab/yants";
-    data-merge.follows = "cells-lab/data-merge";
   };
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    jupyterWith.url = "github:tweag/jupyterWith/next";
+    jupyterWith.url = "github:tweag/jupyterWith/main";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
 
     poetry2nix.url = "github:nix-community/poetry2nix";

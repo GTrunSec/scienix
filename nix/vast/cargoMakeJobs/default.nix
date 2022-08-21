@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: {
-  vast-integration.tasks = {
+  vast.tasks = {
     smtp-url = {
       description = "Check smtp log with vast";
       command = "vast-integration";

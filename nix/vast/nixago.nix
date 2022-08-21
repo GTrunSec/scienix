@@ -11,12 +11,18 @@ in
       configData = vast2nix.vast.config.default {};
       output = "conf/tenzir-vast.yaml";
       format = "yaml";
-      hook.mode = "copy"; # already useful before entering the devshell
+      hook.mode = "copy";
     };
     vast-integration = {
       configData = vast2nix.vast.config.integration {};
       output = "conf/tenzir-vast-integration.yaml";
       format = "yaml";
-      hook.mode = "copy"; # already useful before entering the devshell
+      hook.mode = "copy";
+    };
+    vast-cargo-make = {
+      configData = cell.cargoMakeJobs.vast;
+      output = "conf/vast-cargo-make.toml";
+      format = "toml";
+      hook.mode = "copy";
     };
   }

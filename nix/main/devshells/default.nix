@@ -8,7 +8,9 @@ in {
   default = inputs.cells-lab.main.library.mergeDevShell {
     mkShell = nixpkgs.mkShell {
       nativeBuildInputs = with nixpkgs; [openssl];
-      buildInputs = with nixpkgs; [inputs.cells.kernels.packages.jupyterEnvironment];
+      buildInputs = with nixpkgs; [
+        cell.packages.pythonEnv
+      ];
     };
 
     devshell = std.std.lib.mkShell {
@@ -16,21 +18,23 @@ in {
 
       std.adr.enable = false;
 
-      imports =
-        [
-          inputs.std.std.devshellProfiles.default
-        ]
-        ++ [
-          inputs.cells.julia.devshellProfiles.default
-          inputs.cells.vast.devshellProfiles.default
-        ];
+      imports = [
+        inputs.std.std.devshellProfiles.default
+        inputs.cells.julia.devshellProfiles.default
+        inputs.cells.kernels.devshellProfiles.default
+        inputs.julia2nix.julia2nix.devshellProfiles.dev
+      ];
 
-      nixago =
-        [
-          inputs.cells-lab.main.nixago.treefmt
-          cell.nixago.mdbook
-        ]
-        ++ l.attrValues inputs.cells.vast.nixago;
+      commands = [
+        {
+          name = "jupyter";
+          command = "${inputs.cells.kernels.packages.jupyterEnvironment}/bin/jupyter $@";
+        }
+      ];
+
+      nixago = [
+        inputs.cells-lab.main.nixago.treefmt
+      ];
     };
   };
 }
