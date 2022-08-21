@@ -34,7 +34,7 @@ in {
 
       nixago = [
         inputs.cells-lab.main.nixago.treefmt
-      ];
+      ] ++ l.attrValues inputs.cells.vast.nixago;
     };
   };
 }

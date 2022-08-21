@@ -8,7 +8,11 @@
 in
   builtins.mapAttrs (_: std.std.lib.mkNixago) {
     vast = {
-      configData = vast2nix.vast.config.default {};
+      configData = vast2nix.vast.config.mkConfig (std.dmerge.merge (vast2nix.vast.config.default {
+        dataDir = ".";
+      }) {
+        # settings
+      });
       output = "conf/tenzir-vast.yaml";
       format = "yaml";
       hook.mode = "copy";

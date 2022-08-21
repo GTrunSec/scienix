@@ -888,12 +888,12 @@
       },
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-sfKEIDYqxcW6Yh2sXWU87FxYc3/aufsHaakwnd/I2fg=",
-        "path": "/nix/store/3dq1j3vjdmbcm175q4lc292zbyay0aph-source",
+        "narHash": "sha256-rtyMH5We7u8MQPj772MNtEEtI5JMyPcRktvJGZ67AAU=",
+        "path": "/nix/store/k8lc2m4vhzhy3m33518kp6w9v76n02a2-source",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/3dq1j3vjdmbcm175q4lc292zbyay0aph-source",
+        "path": "/nix/store/k8lc2m4vhzhy3m33518kp6w9v76n02a2-source",
         "type": "path"
       }
     },
@@ -1841,11 +1841,11 @@
         "vast-overlay": "vast-overlay"
       },
       "locked": {
-        "lastModified": 1661066764,
-        "narHash": "sha256-F/1LJQUIoyhorr1flU8oDFkHEC+XWBsyyUHZgmGbY2M=",
+        "lastModified": 1661067697,
+        "narHash": "sha256-M2Eh0tPIF0y9uMda9V5FXaa2FVQTIy2FRElTRy9jU2E=",
         "owner": "gtrunsec",
         "repo": "vast2nix",
-        "rev": "56cd952442582e33d84aecc62ca36b5f77f8b18e",
+        "rev": "39fbfa8dc1c44addfb7f7ae74350aa74a077c4da",
         "type": "github"
       },
       "original": {

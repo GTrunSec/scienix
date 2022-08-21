@@ -18,29 +18,29 @@ caf:
     relaxed-steal-interval: 1
 vast:
   aging-frequency: 24h
-  aging-query: ""
-  catalog-dir: /var/lib/vast/index
+  aging-query: ''
+  catalog-dir: ./index
   catalog-fp-rate: 0.01
-  client-log-file: /var/lib/vast/client.log
+  client-log-file: ./client.log
   connection-timeout: 10s
   console: automatic
-  console-format: "%^[%T.%e] %v%$"
+  console-format: '%^[%T.%e] %v%$'
   console-sink: stderr/journald
   console-verbosity: info
   count:
     estimate: false
-  db-directory: /var/lib/vast/vast.db
+  db-directory: ./vast.db
   disable-log-rotation: false
   dump:
     yaml: false
   enable-metrics: false
   endpoint: 127.0.0.1:42000
   explore:
-    after: ""
-    before: ""
-    by: ""
+    after: ''
+    before: ''
+    by: ''
     format: json
-    max-events: ""
+    max-events: ''
     max-events-context: 100
     max-events-query: 100
   export:
@@ -54,33 +54,29 @@ vast:
     max-events: <infinity>
     pcap:
       flush-interval: 10000
-    read: "-"
+    read: '-'
     timeout: <infinite>
     uds: false
     unified: false
-    write: "-"
-  file-format: "[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v"
+    write: '-'
+  file-format: '[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v'
   file-verbosity: info
   import:
     batch-size: 65536
     batch-timeout: 10s
     blocking: false
     csv:
-      separator: ","
-    listen: ""
-    max-events: ""
+      separator: ','
+    listen: ''
+    max-events: ''
     pcap:
-      disable-community-id:
-        description: "Disable computation of community id for every packet.
-
-          "
-        valu: false
+      disable-community-id: false
       flow-expiry: 10
       max-flow-age: 60
       max-flows: 1048576
       pseudo-realtime-factor: 0
       snaplen: 65535
-    read: "-"
+    read: '-'
     read-timeout: 20ms
     test:
       seed: 0
@@ -91,8 +87,8 @@ vast:
     default-fp-rate: 0.01
   infer:
     buffer: 8192
-    read: "-"
-  log-file: /var/lib/vast/server.log
+    read: '-'
+  log-file: ./server.log
   log-queue-size: 1000000
   log-rotation-threshold: 10MiB
   max-partition-size: 1048576
@@ -102,12 +98,12 @@ vast:
   max-taste-partitions: 5
   metrics:
     file-sink:
-      - enable: false
-        path: /var/lib/vast/vast-metrics.log
-        real-time: false
+    - enable: false
+      path: ./vast-metrics.log
+      real-time: false
     self-sink:
-      - enable: true
-        slice-size: 128
+    - enable: true
+      slice-size: 128
   node: false
   node-id: node
   pivot:
@@ -119,7 +115,7 @@ vast:
   shutdown-grace-period: 3m
   start:
     commands: []
-    disk-budget-check-binary: ""
+    disk-budget-check-binary: ''
     disk-budget-check-interval: 90
     disk-budget-high: 0GiB
     disk-budget-low: 10GiB
@@ -130,7 +126,7 @@ vast:
     detailed: false
   store-backend: segment-store
   uds-sink:
-    - enable: false
-      path: /var/lib/vast/vast-metrics.sock
-      real-time: false
-      type: datagram
+  - enable: false
+    path: ./vast-metrics.sock
+    real-time: false
+    type: datagram
