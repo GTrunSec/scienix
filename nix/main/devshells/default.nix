@@ -4,6 +4,7 @@
 }: let
   l = nixpkgs.lib // builtins;
   inherit (inputs) nixpkgs std;
+  inherit (cell.library) __inputs__;
 in {
   default = inputs.cells-lab.main.library.mergeDevShell {
     mkShell = nixpkgs.mkShell {
@@ -29,6 +30,9 @@ in {
         {
           name = "jupyter";
           command = "${inputs.cells.kernels.packages.jupyterEnvironment}/bin/jupyter $@";
+        }
+        {
+          package = __inputs__.vast2nix.packages.${nixpkgs.system}.vast-bin;
         }
       ];
 
