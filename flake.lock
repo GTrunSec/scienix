@@ -704,11 +704,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1662200177,
-        "narHash": "sha256-XVyzj5KGCYodKh55VxiCG7dwGjDiOW1au+UnLTq7leU=",
+        "lastModified": 1662361451,
+        "narHash": "sha256-uV4c/m934Za82fDDE/it5lXsm+Bx/eWYYDaIXvsiN70=",
         "owner": "GTrunSec",
         "repo": "matrix-attack-data",
-        "rev": "8d714c21079fa56b30d6fd538c1b20e544fb57d5",
+        "rev": "21b2ef6bc7678e61b565f945c9dbda3209d64f11",
         "type": "github"
       },
       "original": {

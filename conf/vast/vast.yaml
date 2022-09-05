@@ -16,20 +16,26 @@ caf:
     moderate-steal-interval: 50
     relaxed-sleep-duration: 10ms
     relaxed-steal-interval: 1
+schema-dirs:
+- /nix/store/jqj3k8bvfdxwh7mb4ghkny030zsrp7ra-google-phishing-api.schema
+- /nix/store/kvb9b67v7imd37balaqcrhzm2l0wvs6f-google-search-api.schema
+- /nix/store/44rflvvcjmr17wawvy3qcf6nl46qxqk0-zeek-conn.schema
+- /nix/store/kxg7njyvqqcq669yrmiw91bdic8xivm2-zeek-imap.schema
+- /nix/store/19ckd5is7dai2jcvz1j27kh7vrcdkkvm-zeek-pop3.schema
+- /nix/store/2x35qwi60alj1xizbq2acxmraa5wkzzi-zeek-smtp.schema
 vast:
   aging-frequency: 24h
   aging-query: ''
-  catalog-dir: ./index
-  catalog-fp-rate: 0.01
-  client-log-file: ./client.log
+  catalog-dir: ./vast.db/index
+  client-log-file: ./vast.db/client.log
   connection-timeout: 10s
   console: automatic
   console-format: '%^[%T.%e] %v%$'
-  console-sink: stderr/journald
+  console-sink: stderr
   console-verbosity: info
   count:
     estimate: false
-  db-directory: ./vast.db
+  db-directory: ./vast.db/vast.db
   disable-log-rotation: false
   dump:
     yaml: false
@@ -88,7 +94,7 @@ vast:
   infer:
     buffer: 8192
     read: '-'
-  log-file: ./server.log
+  log-file: ./vast.db/server.log
   log-queue-size: 1000000
   log-rotation-threshold: 10MiB
   max-partition-size: 1048576
@@ -99,7 +105,7 @@ vast:
   metrics:
     file-sink:
     - enable: false
-      path: ./vast-metrics.log
+      path: ./vast.db/vast-metrics.log
       real-time: false
     self-sink:
     - enable: true
@@ -115,10 +121,7 @@ vast:
   shutdown-grace-period: 3m
   start:
     commands: []
-    disk-budget-check-binary: ''
     disk-budget-check-interval: 90
-    disk-budget-high: 0GiB
-    disk-budget-low: 10GiB
     disk-budget-step-size: 1
     print-endpoint: false
   status:
@@ -127,6 +130,6 @@ vast:
   store-backend: segment-store
   uds-sink:
   - enable: false
-    path: ./vast-metrics.sock
+    path: ./vast.db/vast-metrics.sock
     real-time: false
     type: datagram

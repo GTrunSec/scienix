@@ -9,7 +9,7 @@ in {
     mkShell = nixpkgs.mkShell {
       nativeBuildInputs = with nixpkgs; [openssl];
       buildInputs = with nixpkgs; [
-        cell.packages.pythonEnv
+        cell.packages.poetryPython
       ];
     };
 

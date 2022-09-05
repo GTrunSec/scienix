@@ -10,7 +10,7 @@ in {
     meta.mainProgram = "julia-bin";
     enable = {
       GR = true;
-      python = inputs.cells.main.packages.pythonEnv;
+      python = inputs.cells.main.packages.poetryPython;
     };
     makeWrapperArgs = ["--add-flags" "-L''${./startup.jl}"];
   };

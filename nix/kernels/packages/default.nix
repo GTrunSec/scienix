@@ -12,9 +12,10 @@ in {
 
   jupyterEnvironment = mkJupyterlabInstance {
     kernels = k: let
-      i = (__inputs__ // {inherit k;});
-      in [
-      (import ./kernels/ipython.nix (i // { name = "python";}))
+      i = __inputs__ // {kernels = k;};
+    in [
+      (import ./kernels/ipython.nix (i // {name = "python";}))
+      (import ./kernels/julia.nix (i // {name = "julia";}))
     ];
   };
 }
