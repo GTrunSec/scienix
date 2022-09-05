@@ -3,10 +3,13 @@
   cell,
 }: let
   inherit (inputs) nixpkgs std self;
-  __inputs__ =
-    (std.deSystemize nixpkgs.system
-      (import "${(std.incl self [(self + /lock)])}/lock").inputs)
-    // inputs;
+  inherit (inputs.cells-lab.main.library) callFlake;
+  l = nixpkgs.lib // builtins;
+
+  __inputs__ = callFlake "${(std.incl self [(self + /lock)])}/lock" {
+    nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
+  };
+
 in {
   inherit __inputs__;
 }

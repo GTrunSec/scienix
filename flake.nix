@@ -1,8 +1,9 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    cells-lab.url = "github:GTrunSec/cells-lab";
+    nixpkgs-lock.follows = "nixpkgs";
 
+    cells-lab.url = "github:GTrunSec/cells-lab";
     std.follows = "cells-lab/std";
   };
   inputs = {
@@ -14,6 +15,9 @@
 
     poetry2nix.url = "github:nix-community/poetry2nix";
     poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
+    matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {std, ...} @ inputs:

@@ -1,10 +1,9 @@
 {
-  mkKernel,
-  kernels,
+  k,
   name,
   ...
 } @ args: let
-  ipython = kernels.ipython.override {
+  ipython = k.ipython.override {
     pkgs = args.inputs.nixpkgs;
     python = args.inputs.nixpkgs.python39;
     extraPackages = args.cell.packages.pythonPackages;
@@ -12,6 +11,6 @@
     poetrylock = ./poetry.lock;
   };
 in
-  mkKernel ipython {
+  ipython {
     displayName = name;
   }
