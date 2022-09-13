@@ -4,11 +4,10 @@
     nixpkgs-lock.follows = "nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
-    std.follows = "cells-lab/std";
+    std.url = "github:divnix/std";
   };
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
-    julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
     jupyterWith.url = "github:tweag/jupyterWith/main";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
@@ -24,23 +23,23 @@
     std.growOn {
       inherit inputs;
       cellsFrom = ./nix;
-      organelles = [
-        (std.installables "packages")
+      cellBlocks = [
+        (std.blockTypes.installables "packages")
 
-        (std.functions "devshellProfiles")
-        (std.devshells "devshells")
+        (std.blockTypes.functions "devshellProfiles")
+        (std.blockTypes.devshells "devshells")
 
-        (std.runnables "entrypoints")
+        (std.blockTypes.runnables "entrypoints")
 
-        (std.functions "library")
+        (std.blockTypes.functions "library")
 
-        (std.data "cargoMakeJobs")
+        (std.blockTypes.data "cargoMakeJobs")
 
-        (std.functions "packages")
+        (std.blockTypes.functions "packages")
 
-        (std.functions "overlays")
+        (std.blockTypes.functions "overlays")
 
-        (std.nixago "nixago")
+        (std.blockTypes.nixago "nixago")
       ];
     } {
       devShells = inputs.std.harvest inputs.self ["main" "devshells"];

@@ -15,9 +15,7 @@ in {
   #     extraLibs = inputs.cells.kernels.packages.pythonPackages nixpkgs.python3Packages;
   #     ignoreCollisions = true;
   #   };
-  poetryPython = inputs.cells.julia.library.nixpkgs.poetry2nix.mkPoetryEnv {
-    python = nixpkgs.python39;
-    projectDir = ../kernels/packages;
-    extraPackages = inputs.cells.kernels.packages.pythonPackages;
-  };
+  poetryEnv =
+    inputs.cells.julia.library.nixpkgs.poetry2nix.mkPoetryEnv
+    (builtins.removeAttrs inputs.cells.kernels.packages.poetryPackages ["pkgs"]);
 }

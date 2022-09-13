@@ -6,9 +6,9 @@
   inherit (inputs.jupyterWith.lib) mkKernel mkJupyterlabInstance mkJupyterlabEnvironmentFromPath;
   __inputs__ = args // {inherit mkKernel nixpkgs;};
 
-  pythonPackages = p: import ./pythonPackages.nix p args;
+  poetryPackages = import ./poetryPackages.nix args;
 in {
-  inherit pythonPackages;
+  inherit poetryPackages;
 
   jupyterEnvironment = mkJupyterlabInstance {
     kernels = k: let

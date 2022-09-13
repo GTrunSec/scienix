@@ -10,7 +10,7 @@ in {
     mkShell = nixpkgs.mkShell {
       nativeBuildInputs = with nixpkgs; [openssl];
       buildInputs = with nixpkgs; [
-        cell.packages.poetryPython
+        cell.packages.poetryEnv
       ];
     };
 
@@ -36,9 +36,11 @@ in {
         }
       ];
 
-      nixago = [
-        inputs.cells-lab.main.nixago.treefmt
-      ] ++ l.attrValues inputs.cells.vast.nixago;
+      nixago =
+        [
+          inputs.cells-lab.main.nixago.treefmt
+        ]
+        ++ l.attrValues inputs.cells.vast.nixago;
     };
   };
 }

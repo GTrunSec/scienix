@@ -2,14 +2,12 @@
 
 ## Lauch the JupyterLab Env with Nix
 
-``` bash
+```bash
 nix develop --command jupyterlab <IP> <PORT>
 ```
 
-
 ## Lauch the Julia Pluto Notebook with Nix
 
-``` bash
+```bash
 nix develop --command pluto <IP> <PORT>
 ```
-
