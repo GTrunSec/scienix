@@ -11,6 +11,7 @@ in {
   inherit poetryPackages;
 
   jupyterEnvironment = mkJupyterlabInstance {
+    extraPackages = ps: [ps.jupytext];
     kernels = k: let
       i = __inputs__ // {kernels = k;};
     in [

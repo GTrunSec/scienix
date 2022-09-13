@@ -9,7 +9,7 @@
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
 
-    jupyterWith.url = "github:tweag/jupyterWith/main";
+    jupyterWith.url = "github:gtrunsec/jupyterWith/dev";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
 
     poetry2nix.url = "github:nix-community/poetry2nix";

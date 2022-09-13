@@ -38,7 +38,7 @@ in {
 
       nixago =
         [
-          inputs.cells-lab.main.nixago.treefmt
+          cell.nixago.treefmt
         ]
         ++ l.attrValues inputs.cells.vast.nixago;
     };
