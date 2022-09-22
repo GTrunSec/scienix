@@ -1,12 +1,12 @@
 # data-science-threat-intelligence
 
-## Lauch the JupyterLab Env with Nix
+## Launch the JupyterLab Env with Nix
 
 ```bash
 nix develop --command jupyterlab <IP> <PORT>
 ```
 
-## Lauch the Julia Pluto Notebook with Nix
+## Launch the Julia Pluto Notebook with Nix
 
 ```bash
 nix develop --command pluto <IP> <PORT>
