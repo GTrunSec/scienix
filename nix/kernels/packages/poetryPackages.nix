@@ -5,7 +5,7 @@
   inherit (inputs) nixpkgs cells;
 in {
   pkgs = nixpkgs;
-  python = nixpkgs.python39;
+  python = nixpkgs.python3;
   projectDir = ./.;
   extraPackages = ps:
     with ps; [

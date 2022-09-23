@@ -15,8 +15,9 @@ in {
     kernels = k: let
       i = __inputs__ // {kernels = k;};
     in [
-      (import ./kernels/ipython.nix (i // {name = "python";}))
+      (import ./kernels/python.nix (i // {name = "python";}))
       (import ./kernels/julia.nix (i // {name = "julia";}))
+      (import ./kernels/bash.nix (i // {name = "bash";}))
     ];
   };
 }
