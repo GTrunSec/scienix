@@ -1,3 +1,3 @@
 import Pkg
-Pkg.activate(".")
+Pkg.activate("./playground")
 Pkg.instantiate()

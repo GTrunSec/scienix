@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.11
+# v0.19.12
 
 using Markdown
 using InteractiveUtils
@@ -18,6 +18,9 @@ u1.host, u1.scheme, queryparams(u1), u1.port, u1.path
 # ╔═╡ 7e106678-b07a-4f8b-95c9-3601930105d1
 URIs.splitpath(u1)
 
+# ╔═╡ 272e14c8-fcba-4777-9794-784b9668d6de
+
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -31,7 +34,7 @@ URIs = "~1.4.0"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.8.0-rc4"
+julia_version = "1.8.1"
 manifest_format = "2.0"
 project_hash = "182a5df595147061cc741b91ef357e27d3ea34f4"
 
@@ -46,5 +49,6 @@ version = "1.4.0"
 # ╠═7e5ec412-ec11-408d-860c-c8013603ca4b
 # ╠═440b0bd5-170b-4ee6-a97b-2e1521460dce
 # ╠═7e106678-b07a-4f8b-95c9-3601930105d1
+# ╠═272e14c8-fcba-4777-9794-784b9668d6de
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
