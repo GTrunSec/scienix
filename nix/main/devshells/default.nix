@@ -23,6 +23,7 @@ in {
         inputs.std.std.devshellProfiles.default
         inputs.cells.julia.devshellProfiles.default
         inputs.cells.kernels.devshellProfiles.default
+        inputs.cells.vast.devshellProfiles.default
         inputs.julia2nix.julia2nix.devshellProfiles.dev
       ];
 
@@ -39,6 +40,7 @@ in {
       nixago =
         [
           cell.nixago.treefmt
+          cell.nixago.just
         ]
         ++ l.attrValues inputs.cells.vast.nixago;
     };

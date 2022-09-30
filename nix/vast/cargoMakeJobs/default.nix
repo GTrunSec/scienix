@@ -6,7 +6,7 @@
     smtp-url = {
       description = "Check smtp log with vast";
       command = "vast-integration";
-      args = ["-s" "./conf/tenzir-vast-integration.yaml" "-t" "SMTP log url"];
+      args = ["-s" "./conf/vast/vast-integration.yaml" "-t" "SMTP log url"];
     };
   };
 }

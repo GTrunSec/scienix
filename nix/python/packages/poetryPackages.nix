@@ -10,7 +10,7 @@ in {
   extraPackages = ps:
     with ps; [
       pandas
-      # ps.matplotlib
+      matplotlib
       # seaborn
       numpy
     ];
