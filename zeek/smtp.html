@@ -1,0 +1,526 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>smtp - Data Science Threat Intelligence</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../zeek/zeek.html"><strong aria-hidden="true">1.</strong> zeek</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../zeek/smtp.html" class="active"><strong aria-hidden="true">1.1.</strong> smtp</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Data Science Threat Intelligence</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="smtp"><a class="header" href="#smtp">smtp</a></h1>
+<p><img src="./zeek-smtp.png" alt="zeek-smtp" /></p>
+<ul>
+<li>graphql2graphviz </li>
+</ul>
+<pre><svg width="4230pt" height="309pt"
+ viewBox="0.00 0.00 4229.85 309.10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 305.1)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-305.1 4225.85,-305.1 4225.85,4 -4,4"/>
+<!-- 0 -->
+<g id="node1" class="node">
+<title>0</title>
+<ellipse fill="none" stroke="black" cx="106.07" cy="-150.55" rx="106.13" ry="38.37"/>
+<text text-anchor="start" x="39.07" y="-162.35" font-family="Times,serif" font-size="14.00">XOriginatingIp (Object)</text>
+<text text-anchor="middle" x="106.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 26 -->
+<g id="node27" class="node">
+<title>26</title>
+<ellipse fill="none" stroke="black" cx="2127.07" cy="-38.18" rx="871.31" ry="38.37"/>
+<text text-anchor="start" x="1519.07" y="-49.98" font-family="Times,serif" font-size="14.00">AutogeneratedMainType (Object)</text>
+<text text-anchor="middle" x="2127.07" y="-18.98" font-family="Times,serif" font-size="14.00">[Cc, Date, FirstReceived, From, Fuids, Helo, Id, InReplyTo, IsWebmail, LastReply, Mailfrom, MsgId, Path, Rcptto, ReplyTo, SecondReceived, Subject, Tls, To, TransDepth, Ts, Uid, UserAgent, WriteTs, XOriginatingIp]</text>
+</g>
+<!-- 0&#45;&gt;26 -->
+<g id="edge25" class="edge">
+<title>0&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M178.92,-122.69C192.75,-118.54 207.22,-114.82 221.07,-112.37 421.59,-76.8 869.43,-58.51 1280.64,-49.12"/>
+<polygon fill="black" stroke="black" points="1280.73,-52.62 1290.65,-48.89 1280.57,-45.62 1280.73,-52.62"/>
+</g>
+<!-- 1 -->
+<g id="node2" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="318.07" cy="-150.55" rx="88.28" ry="38.37"/>
+<text text-anchor="start" x="263.57" y="-162.35" font-family="Times,serif" font-size="14.00">UserAgent (Object)</text>
+<text text-anchor="middle" x="318.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 1&#45;&gt;26 -->
+<g id="edge23" class="edge">
+<title>1&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M379,-122.78C390.77,-118.59 403.15,-114.84 415.07,-112.37 581.33,-77.9 939.74,-59.62 1285.86,-49.95"/>
+<polygon fill="black" stroke="black" points="1286.2,-53.44 1296.1,-49.66 1286.01,-46.44 1286.2,-53.44"/>
+</g>
+<!-- 2 -->
+<g id="node3" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="black" cx="485.07" cy="-150.55" rx="60.62" ry="38.37"/>
+<text text-anchor="start" x="450.07" y="-162.35" font-family="Times,serif" font-size="14.00">Uid (Object)</text>
+<text text-anchor="middle" x="485.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 2&#45;&gt;26 -->
+<g id="edge22" class="edge">
+<title>2&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M527.25,-123.03C535.83,-118.73 545.02,-114.88 554.07,-112.37 636.67,-89.47 1015.89,-71.44 1381.26,-59.01"/>
+<polygon fill="black" stroke="black" points="1381.65,-62.5 1391.52,-58.66 1381.41,-55.5 1381.65,-62.5"/>
+</g>
+<!-- 3 -->
+<g id="node4" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="620.07" cy="-150.55" rx="56.64" ry="38.37"/>
+<text text-anchor="start" x="588.07" y="-162.35" font-family="Times,serif" font-size="14.00">Ts (Object)</text>
+<text text-anchor="middle" x="620.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 3&#45;&gt;26 -->
+<g id="edge21" class="edge">
+<title>3&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M659.67,-123.05C667.77,-118.76 676.46,-114.89 685.07,-112.37 758,-90.99 1085.44,-73.44 1409.89,-60.89"/>
+<polygon fill="black" stroke="black" points="1410.12,-64.39 1419.98,-60.5 1409.85,-57.39 1410.12,-64.39"/>
+</g>
+<!-- 4 -->
+<g id="node5" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="786.07" cy="-150.55" rx="91.85" ry="38.37"/>
+<text text-anchor="start" x="729.07" y="-162.35" font-family="Times,serif" font-size="14.00">TransDepth (Object)</text>
+<text text-anchor="middle" x="786.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 4&#45;&gt;26 -->
+<g id="edge20" class="edge">
+<title>4&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M849.62,-122.95C861.86,-118.75 874.72,-114.95 887.07,-112.37 994.33,-89.97 1211.84,-73.82 1435.17,-62.49"/>
+<polygon fill="black" stroke="black" points="1435.66,-65.97 1445.47,-61.97 1435.31,-58.98 1435.66,-65.97"/>
+</g>
+<!-- 5 -->
+<g id="node6" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="black" cx="953.07" cy="-150.55" rx="57.05" ry="38.37"/>
+<text text-anchor="start" x="920.57" y="-162.35" font-family="Times,serif" font-size="14.00">To (Object)</text>
+<text text-anchor="middle" x="953.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 5&#45;&gt;26 -->
+<g id="edge19" class="edge">
+<title>5&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M993.34,-123.16C1001.57,-118.85 1010.37,-114.96 1019.07,-112.37 1099,-88.56 1251.47,-72.48 1418.33,-61.63"/>
+<polygon fill="black" stroke="black" points="1418.56,-65.13 1428.31,-60.99 1418.11,-58.14 1418.56,-65.13"/>
+</g>
+<!-- 6 -->
+<g id="node7" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="black" cx="1087.07" cy="-150.55" rx="58.88" ry="38.37"/>
+<text text-anchor="start" x="1053.57" y="-162.35" font-family="Times,serif" font-size="14.00">Tls (Object)</text>
+<text text-anchor="middle" x="1087.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 6&#45;&gt;26 -->
+<g id="edge18" class="edge">
+<title>6&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M1128.37,-123.04C1136.61,-118.8 1145.4,-114.96 1154.07,-112.37 1223.15,-91.69 1353.92,-76.67 1497.69,-65.83"/>
+<polygon fill="black" stroke="black" points="1498.35,-69.29 1508.06,-65.06 1497.83,-62.31 1498.35,-69.29"/>
+</g>
+<!-- 7 -->
+<g id="node8" class="node">
+<title>7</title>
+<ellipse fill="none" stroke="black" cx="1239.07" cy="-150.55" rx="75.82" ry="38.37"/>
+<text text-anchor="start" x="1193.57" y="-162.35" font-family="Times,serif" font-size="14.00">Subject (Object)</text>
+<text text-anchor="middle" x="1239.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 7&#45;&gt;26 -->
+<g id="edge17" class="edge">
+<title>7&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M1291.9,-123.06C1302.04,-118.88 1312.72,-115.05 1323.07,-112.37 1385.38,-96.21 1506.49,-82.22 1636.18,-70.93"/>
+<polygon fill="black" stroke="black" points="1636.67,-74.4 1646.33,-70.05 1636.06,-67.43 1636.67,-74.4"/>
+</g>
+<!-- 8 -->
+<g id="node9" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="black" cx="1442.07" cy="-150.55" rx="109.7" ry="38.37"/>
+<text text-anchor="start" x="1372.57" y="-162.35" font-family="Times,serif" font-size="14.00">SecondReceived (Object)</text>
+<text text-anchor="middle" x="1442.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 8&#45;&gt;26 -->
+<g id="edge16" class="edge">
+<title>8&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M1519.32,-123.28C1533.11,-119.2 1547.43,-115.36 1561.07,-112.37 1630.39,-97.18 1705.24,-84.76 1777.08,-74.75"/>
+<polygon fill="black" stroke="black" points="1777.77,-78.18 1787.2,-73.35 1776.82,-71.25 1777.77,-78.18"/>
+</g>
+<!-- 9 -->
+<g id="node10" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="black" cx="1650.07" cy="-150.55" rx="79.81" ry="38.37"/>
+<text text-anchor="start" x="1601.57" y="-162.35" font-family="Times,serif" font-size="14.00">ReplyTo (Object)</text>
+<text text-anchor="middle" x="1650.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 9&#45;&gt;26 -->
+<g id="edge15" class="edge">
+<title>9&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M1707.35,-123.56C1717.77,-119.43 1728.64,-115.49 1739.07,-112.37 1785.29,-98.52 1835.44,-86.75 1883.85,-76.97"/>
+<polygon fill="black" stroke="black" points="1884.71,-80.37 1893.83,-74.97 1883.34,-73.5 1884.71,-80.37"/>
+</g>
+<!-- 10 -->
+<g id="node11" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="black" cx="1820.07" cy="-150.55" rx="72.25" ry="38.37"/>
+<text text-anchor="start" x="1777.07" y="-162.35" font-family="Times,serif" font-size="14.00">Rcptto (Object)</text>
+<text text-anchor="middle" x="1820.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 10&#45;&gt;26 -->
+<g id="edge14" class="edge">
+<title>10&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M1872.84,-124.25C1882.16,-120.09 1891.84,-115.96 1901.07,-112.37 1931.1,-100.66 1963.86,-89.28 1994.89,-79.11"/>
+<polygon fill="black" stroke="black" points="1996.03,-82.42 2004.46,-76 1993.86,-75.77 1996.03,-82.42"/>
+</g>
+<!-- 11 -->
+<g id="node12" class="node">
+<title>11</title>
+<ellipse fill="none" stroke="black" cx="1974.07" cy="-150.55" rx="63.78" ry="38.37"/>
+<text text-anchor="start" x="1937.07" y="-162.35" font-family="Times,serif" font-size="14.00">Path (Object)</text>
+<text text-anchor="middle" x="1974.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 11&#45;&gt;26 -->
+<g id="edge13" class="edge">
+<title>11&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M2014.26,-120.55C2030.4,-108.92 2049.33,-95.26 2067.03,-82.49"/>
+<polygon fill="black" stroke="black" points="2069.54,-85 2075.6,-76.31 2065.44,-79.32 2069.54,-85"/>
+</g>
+<!-- 12 -->
+<g id="node13" class="node">
+<title>12</title>
+<ellipse fill="none" stroke="black" cx="2127.07" cy="-150.55" rx="71.34" ry="38.37"/>
+<text text-anchor="start" x="2084.57" y="-162.35" font-family="Times,serif" font-size="14.00">MsgId (Object)</text>
+<text text-anchor="middle" x="2127.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 12&#45;&gt;26 -->
+<g id="edge12" class="edge">
+<title>12&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M2127.07,-112.19C2127.07,-104.01 2127.07,-95.24 2127.07,-86.72"/>
+<polygon fill="black" stroke="black" points="2130.57,-86.51 2127.07,-76.51 2123.57,-86.51 2130.57,-86.51"/>
+</g>
+<!-- 13 -->
+<g id="node14" class="node">
+<title>13</title>
+<ellipse fill="none" stroke="black" cx="2301.07" cy="-150.55" rx="84.29" ry="38.37"/>
+<text text-anchor="start" x="2249.57" y="-162.35" font-family="Times,serif" font-size="14.00">Mailfrom (Object)</text>
+<text text-anchor="middle" x="2301.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 13&#45;&gt;26 -->
+<g id="edge11" class="edge">
+<title>13&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M2253.06,-119.1C2234.92,-107.6 2213.93,-94.28 2194.35,-81.86"/>
+<polygon fill="black" stroke="black" points="2196.08,-78.81 2185.76,-76.41 2192.33,-84.73 2196.08,-78.81"/>
+</g>
+<!-- 14 -->
+<g id="node15" class="node">
+<title>14</title>
+<ellipse fill="none" stroke="black" cx="2489.07" cy="-150.55" rx="85.62" ry="38.37"/>
+<text text-anchor="start" x="2436.57" y="-162.35" font-family="Times,serif" font-size="14.00">LastReply (Object)</text>
+<text text-anchor="middle" x="2489.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 14&#45;&gt;26 -->
+<g id="edge10" class="edge">
+<title>14&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M2427.07,-124.2C2416.14,-120.04 2404.82,-115.94 2394.07,-112.37 2358.05,-100.42 2318.86,-88.88 2281.87,-78.64"/>
+<polygon fill="black" stroke="black" points="2282.58,-75.2 2272.01,-75.92 2280.72,-81.95 2282.58,-75.2"/>
+</g>
+<!-- 15 -->
+<g id="node16" class="node">
+<title>15</title>
+<ellipse fill="none" stroke="black" cx="2681.07" cy="-150.55" rx="88.28" ry="38.37"/>
+<text text-anchor="start" x="2626.57" y="-162.35" font-family="Times,serif" font-size="14.00">IsWebmail (Object)</text>
+<text text-anchor="middle" x="2681.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 15&#45;&gt;26 -->
+<g id="edge9" class="edge">
+<title>15&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M2618.56,-123.42C2607.21,-119.3 2595.39,-115.41 2584.07,-112.37 2530.26,-97.91 2472.08,-85.92 2415.83,-76.12"/>
+<polygon fill="black" stroke="black" points="2416.17,-72.62 2405.72,-74.37 2414.98,-79.52 2416.17,-72.62"/>
+</g>
+<!-- 16 -->
+<g id="node17" class="node">
+<title>16</title>
+<ellipse fill="none" stroke="black" cx="2875.07" cy="-150.55" rx="87.86" ry="38.37"/>
+<text text-anchor="start" x="2821.07" y="-162.35" font-family="Times,serif" font-size="14.00">InReplyTo (Object)</text>
+<text text-anchor="middle" x="2875.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 16&#45;&gt;26 -->
+<g id="edge8" class="edge">
+<title>16&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M2813.46,-123.26C2801.86,-119.08 2789.72,-115.21 2778.07,-112.37 2709.73,-95.72 2636.42,-82.84 2564.53,-72.89"/>
+<polygon fill="black" stroke="black" points="2564.78,-69.39 2554.4,-71.5 2563.83,-76.32 2564.78,-69.39"/>
+</g>
+<!-- 17 -->
+<g id="node18" class="node">
+<title>17</title>
+<ellipse fill="none" stroke="black" cx="3035.07" cy="-262.92" rx="69.09" ry="38.37"/>
+<text text-anchor="start" x="2994.07" y="-274.72" font-family="Times,serif" font-size="14.00">Value (Object)</text>
+<text text-anchor="middle" x="3035.07" y="-243.72" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 18 -->
+<g id="node19" class="node">
+<title>18</title>
+<ellipse fill="none" stroke="black" cx="3035.07" cy="-150.55" rx="54.39" ry="38.37"/>
+<text text-anchor="start" x="3004.57" y="-162.35" font-family="Times,serif" font-size="14.00">Id (Object)</text>
+<text text-anchor="middle" x="3035.07" y="-131.35" font-family="Times,serif" font-size="14.00">[Value]</text>
+</g>
+<!-- 17&#45;&gt;18 -->
+<g id="edge26" class="edge">
+<title>17&#45;&gt;18</title>
+<path fill="none" stroke="black" d="M3035.07,-224.55C3035.07,-216.37 3035.07,-207.61 3035.07,-199.09"/>
+<polygon fill="black" stroke="black" points="3038.57,-198.88 3035.07,-188.88 3031.57,-198.88 3038.57,-198.88"/>
+</g>
+<!-- 18&#45;&gt;26 -->
+<g id="edge7" class="edge">
+<title>18&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M2996.69,-123.29C2988.84,-118.97 2980.41,-115.04 2972.07,-112.37 2913.97,-93.77 2804.95,-79.54 2684.07,-68.81"/>
+<polygon fill="black" stroke="black" points="2684.12,-65.3 2673.85,-67.91 2683.51,-72.27 2684.12,-65.3"/>
+</g>
+<!-- 19 -->
+<g id="node20" class="node">
+<title>19</title>
+<ellipse fill="none" stroke="black" cx="3173.07" cy="-150.55" rx="65.11" ry="38.37"/>
+<text text-anchor="start" x="3135.07" y="-162.35" font-family="Times,serif" font-size="14.00">Helo (Object)</text>
+<text text-anchor="middle" x="3173.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 19&#45;&gt;26 -->
+<g id="edge6" class="edge">
+<title>19&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M3126.95,-123.26C3117.64,-118.94 3107.74,-115.02 3098.07,-112.37 3025.75,-92.53 2886.96,-77.65 2736.44,-66.68"/>
+<polygon fill="black" stroke="black" points="2736.27,-63.16 2726.04,-65.93 2735.77,-70.14 2736.27,-63.16"/>
+</g>
+<!-- 20 -->
+<g id="node21" class="node">
+<title>20</title>
+<ellipse fill="none" stroke="black" cx="3325.07" cy="-150.55" rx="68.68" ry="38.37"/>
+<text text-anchor="start" x="3284.57" y="-162.35" font-family="Times,serif" font-size="14.00">Fuids (Object)</text>
+<text text-anchor="middle" x="3325.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 20&#45;&gt;26 -->
+<g id="edge5" class="edge">
+<title>20&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M3277.04,-123.2C3267.37,-118.88 3257.08,-114.98 3247.07,-112.37 3160.45,-89.78 2991.76,-73.99 2811.05,-63.01"/>
+<polygon fill="black" stroke="black" points="2811.26,-59.52 2801.07,-62.41 2810.84,-66.5 2811.26,-59.52"/>
+</g>
+<!-- 21 -->
+<g id="node22" class="node">
+<title>21</title>
+<ellipse fill="none" stroke="black" cx="3480.07" cy="-150.55" rx="68.68" ry="38.37"/>
+<text text-anchor="start" x="3439.57" y="-162.35" font-family="Times,serif" font-size="14.00">From (Object)</text>
+<text text-anchor="middle" x="3480.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 21&#45;&gt;26 -->
+<g id="edge4" class="edge">
+<title>21&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M3432.29,-122.94C3422.85,-118.71 3412.84,-114.9 3403.07,-112.37 3301.11,-85.94 3099.31,-69.05 2885.73,-58.26"/>
+<polygon fill="black" stroke="black" points="2885.71,-54.76 2875.55,-57.75 2885.36,-61.75 2885.71,-54.76"/>
+</g>
+<!-- 22 -->
+<g id="node23" class="node">
+<title>22</title>
+<ellipse fill="none" stroke="black" cx="3666.07" cy="-150.55" rx="99.9" ry="38.37"/>
+<text text-anchor="start" x="3603.57" y="-162.35" font-family="Times,serif" font-size="14.00">FirstReceived (Object)</text>
+<text text-anchor="middle" x="3666.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 22&#45;&gt;26 -->
+<g id="edge3" class="edge">
+<title>22&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M3597.42,-122.71C3584.52,-118.59 3571.01,-114.88 3558.07,-112.37 3426.36,-86.86 3151.63,-69.85 2877.77,-58.71"/>
+<polygon fill="black" stroke="black" points="2877.75,-55.21 2867.62,-58.3 2877.47,-62.2 2877.75,-55.21"/>
+</g>
+<!-- 23 -->
+<g id="node24" class="node">
+<title>23</title>
+<ellipse fill="none" stroke="black" cx="3849.07" cy="-150.55" rx="65.11" ry="38.37"/>
+<text text-anchor="start" x="3811.07" y="-162.35" font-family="Times,serif" font-size="14.00">Date (Object)</text>
+<text text-anchor="middle" x="3849.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 23&#45;&gt;26 -->
+<g id="edge2" class="edge">
+<title>23&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M3803.66,-123.02C3794.47,-118.72 3784.67,-114.87 3775.07,-112.37 3686.18,-89.2 3272.45,-70.87 2881.81,-58.35"/>
+<polygon fill="black" stroke="black" points="2881.82,-54.85 2871.71,-58.03 2881.6,-61.84 2881.82,-54.85"/>
+</g>
+<!-- 24 -->
+<g id="node25" class="node">
+<title>24</title>
+<ellipse fill="none" stroke="black" cx="3990.07" cy="-150.55" rx="57.97" ry="38.37"/>
+<text text-anchor="start" x="3957.07" y="-162.35" font-family="Times,serif" font-size="14.00">Cc (Object)</text>
+<text text-anchor="middle" x="3990.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 24&#45;&gt;26 -->
+<g id="edge1" class="edge">
+<title>24&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M3949.55,-123.17C3941.1,-118.81 3932.03,-114.88 3923.07,-112.37 3824.81,-84.78 3358.01,-66.28 2924.97,-54.78"/>
+<polygon fill="black" stroke="black" points="2924.84,-51.28 2914.75,-54.51 2924.65,-58.27 2924.84,-51.28"/>
+</g>
+<!-- 25 -->
+<g id="node26" class="node">
+<title>25</title>
+<ellipse fill="none" stroke="black" cx="4144.07" cy="-150.55" rx="77.56" ry="38.37"/>
+<text text-anchor="start" x="4097.07" y="-162.35" font-family="Times,serif" font-size="14.00">WriteTs (Object)</text>
+<text text-anchor="middle" x="4144.07" y="-131.35" font-family="Times,serif" font-size="14.00">[String]</text>
+</g>
+<!-- 25&#45;&gt;26 -->
+<g id="edge24" class="edge">
+<title>25&#45;&gt;26</title>
+<path fill="none" stroke="black" d="M4089.85,-122.8C4079.21,-118.59 4067.96,-114.81 4057.07,-112.37 3944.89,-87.18 3398.98,-67.97 2916.27,-55.57"/>
+<polygon fill="black" stroke="black" points="2916.04,-52.06 2905.95,-55.31 2915.86,-59.06 2916.04,-52.06"/>
+</g>
+</g>
+</svg>
+</pre>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../zeek/zeek.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../zeek/zeek.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

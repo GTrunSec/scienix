@@ -1,0 +1,19 @@
+#+title: Julia Eval
+
+#+begin_src julia :async :exports both :results output
+using Dates
+format = DateFormat("yyyymmdd")
+Date("19870913", format)
+#+end_src
+
+#+RESULTS:
+: dateformat"yyyymmdd"
+: 1987-09-13
+
+
+#+begin_src julia :async :exports both :results output
+1 + 1
+#+end_src
+
+#+RESULTS:
+: 2
