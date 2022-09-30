@@ -41,8 +41,14 @@ in {
         [
           cell.nixago.treefmt
           cell.nixago.just
+          cell.nixago.mdbook
         ]
         ++ l.attrValues inputs.cells.vast.nixago;
     };
+  };
+  doc = std.std.lib.mkShell {
+    nixago = [
+      cell.nixago.mdbook
+    ];
   };
 }

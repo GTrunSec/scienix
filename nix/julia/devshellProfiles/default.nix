@@ -15,7 +15,7 @@ in {
         category = "Julia Package";
         command = ''
           cd $PRJ_ROOT/playground
-          julia-bin -E "using Pluto; Pluto.run(host=\"$1\", port=$2)"
+          julia -E "using Pluto; Pluto.run(host=\"$1\", port=$2)"
         '';
         help = "launch pluto server: pluto <ip> <port>";
       }

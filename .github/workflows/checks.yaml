@@ -1,0 +1,33 @@
+name: "CI"
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 0 * * SUN" # every sunday
+jobs:
+  nix-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
+      - uses: cachix/install-nix-action@v17
+        with:
+          install_url: https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.10.0pre20220728_86fcd4f/install
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            system-features = nixos-test benchmark big-parallel kvm recursive-nix
+
+      - uses: cachix/cachix-action@v10
+        with:
+          name: zeek
+
+      - name: Build Doc
+        run: nix develop .#doc --command mdbook build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          branch: gh-pages
+          folder: ./docs/book

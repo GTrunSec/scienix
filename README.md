@@ -25,7 +25,7 @@ nix develop --command pluto <IP> <PORT>
 - [x] julia
   - add julia packages
   ```sh
-  julia-bin
+  julia
   (data-science-threat-intelligence) pkg> add Arrow
   ```
 - [x] rust
@@ -37,27 +37,26 @@ nix develop --command pluto <IP> <PORT>
   ```
 - [x] bash
 
-
 ## CLI workflow or commands runner
 
 - [x] std TUI
-``` sh
+
+```sh
 std
 # show all commands with fzf
 std list | fzf
 ```
 
-
 - [x] just
 
-``` sh
+```sh
 just <command>
 ```
 
 - [x] cargo-make
 
-``` sh
-td //vast/entrypoints/flow:run                        
+```sh
+td //vast/entrypoints/flow:run
 
 [cargo-make] INFO - cargo make 0.36.0
 [cargo-make] INFO - Build File: /nix/store/54h21jx7xazbikzafm7xqz7m6dvhm9if-cargo-make.toml

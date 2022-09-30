@@ -39,6 +39,8 @@
 
         (std.blockTypes.functions "overlays")
 
+        (std.blockTypes.data "config")
+
         (std.blockTypes.nixago "nixago")
       ];
     } {

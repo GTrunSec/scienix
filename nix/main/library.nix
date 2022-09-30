@@ -10,5 +10,5 @@
     nixpkgs.locked = inputs.nixpkgs-lock.sourceInfo;
   };
 in {
-  inherit __inputs__;
+  inherit __inputs__ l;
 }

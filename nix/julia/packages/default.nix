@@ -7,7 +7,7 @@
 in {
   julia-wrapped = nixpkgs.lib.julia-wrapped {
     package = nixpkgs.julia_18-bin;
-    meta.mainProgram = "julia-bin";
+    meta.mainProgram = "julia";
     enable = {
       GR = true;
       # python = inputs.cells.main.packages.poetryPython;

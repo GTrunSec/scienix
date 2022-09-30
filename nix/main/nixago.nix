@@ -6,7 +6,7 @@
 in {
   mdbook = std.presets.nixago.mdbook {
     configData = {
-      book.title = "Phishing Detection Doc";
+      book.title = "Data Science Threat Intelligence";
     };
   };
   treefmt = std.presets.nixago.treefmt {

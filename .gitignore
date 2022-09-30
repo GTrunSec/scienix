@@ -9,3 +9,6 @@ tmp/
 # nixago: ignore-linked-files
 treefmt.toml
 .jupyter
+
+# nixago-auto-created: mdbook-build-folder
+docs/book/**
