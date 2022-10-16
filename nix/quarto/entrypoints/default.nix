@@ -7,7 +7,7 @@
 in {
   tenzir-web = let
     rEnv = nixpkgs.rWrapper.override {
-      packages = with nixpkgs.rPackages;[
+      packages = with nixpkgs.rPackages; [
         dplyr
         ggplot2
         lubridate
@@ -16,17 +16,17 @@ in {
         ggrepel
         tidyr
       ];
-  };
+    };
   in
     writeShellApplication {
       name = "tenzir-web";
       runtimeInputs = [rEnv nixpkgs.quarto cell.packages.tenzir];
-      runtimeEnv ={
+      runtimeEnv = {
         QUARTO_R = "${rEnv}/bin/R";
       };
       text = ''
-      # ${rEnv}/bin/R
-      quarto render "$@"
+        # ${rEnv}/bin/R
+        quarto render "$@"
       '';
     };
 }

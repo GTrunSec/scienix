@@ -11,7 +11,8 @@
     # inputs.cells.lib.__inputs__.poe
   ];
 in {
-  tenzir = nixpkgs.python3.buildEnv.override
+  tenzir =
+    nixpkgs.python3.buildEnv.override
     {
       extraLibs = with nixpkgs.python3Packages; [
         nbconvert

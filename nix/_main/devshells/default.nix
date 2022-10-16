@@ -11,7 +11,7 @@ in {
 
     std.adr.enable = false;
 
-    packages = [ nixpkgs.quarto];
+    packages = [nixpkgs.quarto];
 
     imports = [
       inputs.std.std.devshellProfiles.default
