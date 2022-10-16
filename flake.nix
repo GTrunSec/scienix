@@ -45,6 +45,8 @@
         (std.blockTypes.data "config")
 
         (std.blockTypes.nixago "nixago")
+
+        (std.blockTypes.containers "containers")
       ];
     } {
       devShells = inputs.std.harvest inputs.self ["_main" "devshells"];
