@@ -13,7 +13,7 @@ in {
     in [
       (import ./kernels/python.nix (i // {name = "python";}))
       (import ./kernels/julia.nix (i // {name = "julia";}))
-      # (import ./kernels/bash.nix (i // {name = "bash";}))
+      (import ./kernels/bash.nix (i // {name = "bash";}))
       # (import ./kernels/rust.nix (i // {name = "rust";}))
     ];
   };

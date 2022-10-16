@@ -11,6 +11,8 @@ in {
 
     std.adr.enable = false;
 
+    packages = [ nixpkgs.quarto];
+
     imports = [
       inputs.std.std.devshellProfiles.default
       inputs.cells.julia.devshellProfiles.default

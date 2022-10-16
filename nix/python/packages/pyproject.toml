@@ -5,9 +5,9 @@ description = ""
 authors = []
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 ipykernel = "^6.15.0"
-matplotlib = "^3.5.3"
+
 
 [tool.poetry.dev-dependencies]
 # build systems for dependencies
