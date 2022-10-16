@@ -40,6 +40,7 @@ in {
       runtimeInputs = [rEnv nixpkgs.quarto pythonEnv];
       runtimeEnv = {
         QUARTO_R = "${rEnv}/bin/R";
+        QUARTO_PYTHON = "${pythonEnv}/bin/python";
       };
       inherit text;
     };
