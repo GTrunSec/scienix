@@ -2,8 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     dc = {
-      # url = "github:gtrunsec/data-science-threat-intelligence";
-      url = "/home/gtrun/ghq/github.com/GTrunSec/data-science-threat-intelligence";
+      url = "github:gtrunsec/data-science-threat-intelligence";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -184,14 +184,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1665950967,
-        "narHash": "sha256-OwVw3rJWurXmh6VpmYbi//M1Zq7imuWJ65rDbstTcqc=",
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/data-science-threat-intelligence"
+        "lastModified": 1665952899,
+        "narHash": "sha256-wiTeT4GnhGRc53YbV7xYvFIhVjTDCFUTz7HMmAhVPrw=",
+        "owner": "gtrunsec",
+        "repo": "data-science-threat-intelligence",
+        "rev": "d438812c2f7677f493e1f052167b3fcb1cd8f03a",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/GTrunSec/data-science-threat-intelligence"
+        "owner": "gtrunsec",
+        "repo": "data-science-threat-intelligence",
+        "type": "github"
       }
     },
     "devshell": {
