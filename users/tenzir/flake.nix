@@ -28,6 +28,7 @@
           pandas
         ];
       text = ''
+        # write your custom bash script here
         quarto render "$@"
       '';
     };

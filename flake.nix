@@ -47,7 +47,7 @@
         (std.blockTypes.nixago "nixago")
       ];
     } {
-      devShells = inputs.std.harvest inputs.self ["main" "devshells"];
-      packages = inputs.std.harvest inputs.self ["main" "packages"];
+      devShells = inputs.std.harvest inputs.self ["_main" "devshells"];
+      packages = inputs.std.harvest inputs.self ["_main" "packages"];
     };
 }
