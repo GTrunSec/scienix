@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    latest.url = "github:NixOS/nixpkgs";
     nixpkgs-lock.follows = "nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
@@ -10,6 +11,7 @@
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
 
     jupyterWith.url = "github:gtrunsec/jupyterWith/dev";
+    # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
 
     poetry2nix.url = "github:nix-community/poetry2nix";
@@ -17,6 +19,8 @@
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
     matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
+
+    users.follows = "std/blank";
   };
 
   outputs = {std, ...} @ inputs:
@@ -31,7 +35,7 @@
 
         (std.blockTypes.runnables "entrypoints")
 
-        (std.blockTypes.functions "library")
+        (std.blockTypes.functions "lib")
 
         (std.blockTypes.data "cargoMakeJobs")
 

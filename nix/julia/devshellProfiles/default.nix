@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (cell.library) nixpkgs;
+  inherit (cell.lib) nixpkgs;
 in {
   default = {...}: {
     commands = [

@@ -8,7 +8,7 @@ in {
   inherit poetryPackages;
 
   poetryEnv =
-    inputs.cells.julia.library.nixpkgs.poetry2nix.mkPoetryEnv
+    inputs.cells.julia.lib.nixpkgs.poetry2nix.mkPoetryEnv
     (builtins.removeAttrs cell.packages.poetryPackages ["pkgs"]);
 
   pythonEnv =

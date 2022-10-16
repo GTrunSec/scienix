@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells.main.library) __inputs__;
+  inherit (inputs.cells._main.lib) __inputs__;
   inherit (__inputs__) vast2nix nixpkgs;
 in {
   default = {

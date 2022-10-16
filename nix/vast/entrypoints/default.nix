@@ -2,9 +2,9 @@
   inputs,
   cell,
 }: let
-  inherit (cell) library cargoMakeJobs;
-  inherit (inputs.cells.main.library) writeConf;
-  inherit (inputs.cells-lab._flow.library) makeCargoMakeFlow;
+  inherit (cell) lib cargoMakeJobs;
+  inherit (inputs.cells._main.lib) writeConf;
+  inherit (inputs.cells-lab._flow.lib) makeCargoMakeFlow;
 in {
   flow = makeCargoMakeFlow {
     source = cell.nixago.vast-cargo-make.configFile;

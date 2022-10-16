@@ -10,9 +10,9 @@ in {
   extraPackages = ps:
     with ps; [
       pandas
-      matplotlib
+      # matplotlib
       # seaborn
       numpy
     ];
-  overrides = cells.julia.library.nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);
+  overrides = cells.julia.lib.nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);
 }

@@ -4,11 +4,11 @@
 }: let
   inherit (inputs) std nixpkgs;
   inherit (std) dmerge;
-  inherit (inputs.cells.main.library) __inputs__;
+  inherit (inputs.cells._main.lib) __inputs__;
   inherit (__inputs__) vast2nix;
   inherit (nixpkgs) lib;
 in
-  builtins.mapAttrs (_: std.std.lib.mkNixago) {
+  builtins.mapAttrs (_: std.lib.dev.mkNixago) {
     vast = {
       configData = vast2nix.vast.config.mkConfig (std.dmerge.merge (vast2nix.vast.config.default {
           dataDir = "./vast.db";

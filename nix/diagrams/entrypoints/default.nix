@@ -2,10 +2,10 @@
   inputs,
   cell,
 }: let
-  inherit (cell) library cargoMakeJobs;
+  inherit (cell) lib cargoMakeJobs;
   inherit (inputs) nixpkgs matrix-attack-data;
-  inherit (inputs.cells.main.library) __inputs__;
-  inherit (inputs.cells-lab._writers.library) writeShellApplication;
+  inherit (inputs.cells._main.lib) __inputs__;
+  inherit (inputs.cells-lab._writers.lib) writeShellApplication;
 in {
   zeek-smtp-dot = writeShellApplication {
     name = "zeek-smtp-dot";

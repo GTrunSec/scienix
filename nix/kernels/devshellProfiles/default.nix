@@ -15,6 +15,10 @@
         '';
         help = "jupyterlab <IP> <PORT> <juliaPackageDir> | Example: jupyterlab 10.220.170.112 8888";
       }
+      {
+        name = "jupyter";
+        command = "${inputs.cells.kernels.packages.jupyterEnvironment}/bin/jupyter $@";
+      }
     ];
   };
 }
