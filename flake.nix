@@ -50,6 +50,8 @@
       ];
     } {
       devShells = inputs.std.harvest inputs.self ["_main" "devshells"];
-      packages = inputs.std.harvest inputs.self ["_main" "packages"];
+      packages = inputs.std.harvest inputs.self [
+        ["julia" "packages"]
+      ];
     };
 }

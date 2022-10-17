@@ -3,7 +3,7 @@
   cell,
 } @ args: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.jupyterWith.lib) mkKernel mkJupyterlabInstance mkJupyterlabEnvironmentFromPath;
+  inherit (inputs.jupyterWith.lib) mkKernel mkJupyterlabInstance;
   __inputs__ = args // {inherit mkKernel nixpkgs;};
 in {
   jupyterEnvironment = mkJupyterlabInstance {
