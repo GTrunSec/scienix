@@ -5,7 +5,7 @@
   inherit (inputs) std nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
 in
-  l.mapAttrs (_: std.lib.dev.mkShell) rec {
+  l.mapAttrs (_: std.lib.dev.mkShell) {
     default = {...}: let
       pythonEnv =
         nixpkgs.python3.buildEnv.override

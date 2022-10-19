@@ -1,11 +1,13 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
     latest.url = "github:NixOS/nixpkgs";
     nixpkgs-lock.follows = "nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
-    std.url = "github:divnix/std";
+    # std.url = "github:divnix/std";
+    std.url = "github:gtrunsec/std/OCI";
   };
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
@@ -53,5 +55,12 @@
       packages = inputs.std.harvest inputs.self [
         ["julia" "packages"]
       ];
+    } {
+      templates = {
+        tenzir = {
+          description = "Tenzir's nix template for new projects";
+          path = ./users/tenzir;
+        };
+      };
     };
 }

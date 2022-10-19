@@ -7,7 +7,6 @@
   inherit (cell.lib) __inputs__;
 in {
   default = std.lib.dev.mkShell {
-
     name = "Data Science Threat Intelligence";
 
     imports = [

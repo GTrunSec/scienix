@@ -18,6 +18,7 @@
       {
         name = "jupyter";
         command = "${inputs.cells.kernels.packages.jupyterEnvironment}/bin/jupyter $@";
+        help = "exec jupyter in the jupyterLab environment";
       }
     ];
   };
