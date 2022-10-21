@@ -5,28 +5,27 @@
   inherit (inputs) nixpkgs;
   inherit (inputs.cells-lab._writers.lib) writeShellApplication;
 in {
-  tenzir-web = let
-    rEnv = nixpkgs.rWrapper.override {
-      packages = with nixpkgs.rPackages; [
+  example = cell.lib.mkEnv {
+    r = ps:
+      with ps; [
+        # add your custom R packages here
+        ggplot2
         dplyr
         ggplot2
         lubridate
         readr
-        rmarkdown
         ggrepel
         tidyr
       ];
-    };
-  in
-    writeShellApplication {
-      name = "tenzir-web";
-      runtimeInputs = [rEnv nixpkgs.quarto cell.packages.tenzir];
-      runtimeEnv = {
-        QUARTO_R = "${rEnv}/bin/R";
-      };
-      text = ''
-        # ${rEnv}/bin/R
-        quarto render "$@"
-      '';
-    };
+    python = ps:
+      with ps; [
+        # add your custom Python packages here
+        pandas
+        bash_kernel
+      ];
+    text = ''
+      # write your custom bash script here
+      # quarto render "$@"
+    '';
+  };
 }

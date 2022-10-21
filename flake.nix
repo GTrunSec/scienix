@@ -1,27 +1,27 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
     latest.url = "github:NixOS/nixpkgs";
-    nixpkgs-lock.follows = "nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
-    # std.url = "github:divnix/std";
-    std.url = "github:gtrunsec/std/OCI";
+    std.follows = "cells-lab/std";
   };
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
+    julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
     jupyterWith.url = "github:gtrunsec/jupyterWith/dev";
     # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
 
-    poetry2nix.url = "github:nix-community/poetry2nix";
-    poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
-
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
     matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
 
-    users.follows = "std/blank";
+    dataflow2nix.url = "github:GTrunSec/dataflow2nix";
+    dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    tullia.follows = "dataflow2nix/tullia";
+
+    users.follows = "cells-lab/std/blank";
   };
 
   outputs = {std, ...} @ inputs:
@@ -49,13 +49,19 @@
         (std.blockTypes.nixago "nixago")
 
         (std.blockTypes.containers "containers")
+
+        (std.blockTypes.functions "task")
+        (std.blockTypes.functions "action")
       ];
     } {
-      devShells = inputs.std.harvest inputs.self ["_main" "devshells"];
+      devShells = inputs.std.harvest inputs.self ["_automation" "devshells"];
       packages = inputs.std.harvest inputs.self [
         ["julia" "packages"]
       ];
-    } {
+    } (inputs.tullia.fromStd {
+      tasks = inputs.std.harvest inputs.self [["julia" "task"]];
+      actions = inputs.std.harvest inputs.self [["julia" "action"]];
+    }) {
       templates = {
         tenzir = {
           description = "Tenzir's nix template for new projects";

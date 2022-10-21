@@ -4,12 +4,11 @@
 }: let
   inherit (inputs) nixpkgs;
   inherit (inputs.cells-lab._writers.lib) writeShellApplication;
+  l = inputs.nixpkgs.lib // builtins;
 in
   {
     r ? (_: []),
     python ? (_: []),
-    runtimeInputs ? (_: []),
-    runtimeEnv ? (_: {}),
     text ? "",
   }: let
     pythonEnv =
@@ -31,10 +30,10 @@ in
   in
     writeShellApplication {
       name = "mkQuarto";
-      runtimeInputs = [rEnv nixpkgs.quarto pythonEnv] ++ (runtimeInputs nixpkgs);
+      runtimeInputs = [rEnv nixpkgs.quarto pythonEnv];
       runtimeEnv = {
         QUARTO_R = "${rEnv}/bin/R";
         QUARTO_PYTHON = "${pythonEnv}/bin/python";
-      } // runtimeEnv (runtimeInputs nixpkgs);
+      };
       inherit text;
     }

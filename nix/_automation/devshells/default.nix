@@ -15,6 +15,8 @@ in {
       inputs.cells.kernels.devshellProfiles.default
       inputs.cells.vast.devshellProfiles.default
       inputs.julia2nix.julia2nix.devshellProfiles.dev
+
+      inputs.dataflow2nix.tullia.devshellProfiles.default
     ];
 
     commands = [
