@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (cell.lib) nixpkgs;
-  inherit (inputs.cells._automation.lib) __inputs__;
+  inherit (inputs.cells._common.lib) __inputs__;
 in {
   julia-wrapped = nixpkgs.lib.julia-wrapped {
     package = nixpkgs.julia_18-bin;

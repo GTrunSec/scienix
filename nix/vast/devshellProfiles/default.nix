@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells._automation.lib) __inputs__;
+  inherit (inputs.cells._common.lib) __inputs__;
   inherit (__inputs__) vast2nix;
   inherit (inputs) nixpkgs;
 in {

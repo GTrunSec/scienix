@@ -3,10 +3,10 @@
   cell,
 } @ args: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.jupyterWith.lib) mkKernel mkJupyterlabInstance;
+  inherit (inputs.jupyterWith.lib) mkKernel mkJupyterlab;
   __inputs__ = args // {inherit mkKernel nixpkgs;};
 in {
-  jupyterEnvironment = mkJupyterlabInstance {
+  jupyterEnvironment = mkJupyterlab {
     extraPackages = ps: [ps.jupytext];
     kernels = k: let
       i = __inputs__ // {kernels = k;};

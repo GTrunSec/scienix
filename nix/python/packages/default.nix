@@ -3,29 +3,31 @@
   cell,
 } @ args: let
   inherit (inputs) nixpkgs;
-  poetryPackages = import ./poetryPackages.nix args;
 in {
-  inherit poetryPackages;
+  mkPoetryEnv =
+    inputs.cells._common.lib.nixpkgs.poetry2nix.mkPoetryEnv
+    (builtins.removeAttrs cell.lib.poetryPackages ["pkgs"]);
 
-  poetryEnv =
-    inputs.cells._automation.lib.nixpkgs.poetry2nix.mkPoetryEnv
-    (builtins.removeAttrs cell.packages.poetryPackages ["pkgs"]);
-
-  pythonEnv =
+  mkPythonEnv =
     nixpkgs.python3.buildEnv.override
     {
       extraLibs = inputs.cells.kernels.packages.pythonPackages nixpkgs.python3Packages;
-      ignoreCollisions = true;
+      # not recommended
+      # ignoreCollisions = true;
     };
 
-  mkPython = cell.lib.nixpkgs.machlib.mkPython {
+  mkMachEnv = cell.lib.nixpkgs.machlib.mkPython {
     requirements = ''
       numpy
+      pandas
     '';
     overridesPre = [
       (
         self: super: {
-          polars = cell.lib.nixpkgs.polars;
+          inherit
+            (cell.lib.nixpkgs)
+            polars
+            ;
         }
       )
     ];

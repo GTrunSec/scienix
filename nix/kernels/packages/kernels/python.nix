@@ -5,7 +5,7 @@
 } @ args: let
   inherit (args.inputs) cells;
 in
-  kernels.python.override (cells.python.packages.poetryPackages
+  kernels.python (cells.python.lib.poetryPackages
     // {
       name = "python-with-threat-intelligence";
       displayName = "python with threat intelligence";

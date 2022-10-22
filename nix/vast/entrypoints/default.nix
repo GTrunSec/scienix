@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (cell) lib cargoMakeJobs;
-  inherit (inputs.cells._automation.lib) writeConf;
+  inherit (inputs.cells._common.lib) writeConf;
   inherit (inputs.cells-lab._flow.lib) makeCargoMakeFlow;
 in {
   flow = makeCargoMakeFlow {

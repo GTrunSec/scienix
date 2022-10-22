@@ -57,6 +57,7 @@
       devShells = inputs.std.harvest inputs.self ["_automation" "devshells"];
       packages = inputs.std.harvest inputs.self [
         ["julia" "packages"]
+        ["python" "packages"]
       ];
     } (inputs.tullia.fromStd {
       tasks = inputs.std.harvest inputs.self [["julia" "task"]];

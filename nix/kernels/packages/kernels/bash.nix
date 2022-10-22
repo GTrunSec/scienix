@@ -4,6 +4,6 @@
   ...
 } @ args: let
 in
-  kernels.bash.override {
+  kernels.bash {
     displayName = name;
   }

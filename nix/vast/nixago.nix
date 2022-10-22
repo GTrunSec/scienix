@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) std nixpkgs;
   inherit (std) dmerge;
-  inherit (inputs.cells._automation.lib) __inputs__;
+  inherit (inputs.cells._common.lib) __inputs__;
   inherit (__inputs__) vast2nix;
   inherit (nixpkgs) lib;
 in
