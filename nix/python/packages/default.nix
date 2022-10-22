@@ -17,4 +17,20 @@ in {
       extraLibs = inputs.cells.kernels.packages.pythonPackages nixpkgs.python3Packages;
       ignoreCollisions = true;
     };
+
+  mkPython = cell.lib.nixpkgs.machlib.mkPython {
+    requirements = ''
+      numpy
+    '';
+    overridesPre = [
+      (
+        self: super: {
+          polars = cell.lib.nixpkgs.polars;
+        }
+      )
+    ];
+    packagesExtra = [];
+    python = "python3";
+    providers = {};
+  };
 }
