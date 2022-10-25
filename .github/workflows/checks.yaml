@@ -26,6 +26,9 @@ jobs:
       - name: Run julia with podman/docker
         run: nix -Lv run .\#x86_64-linux.julia.entrypoints.podman
 
+      - name: Build jnumpy with podman/docker
+        run: nix -Lv run .\#x86_64-linux.julia.entrypoints.jnumpy-podman
+
       - name: Build Doc
         run: nix develop .#doc --command mdbook build
 

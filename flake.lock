@@ -2743,11 +2743,11 @@
         "std": "std_6"
       },
       "locked": {
-        "lastModified": 1666666481,
-        "narHash": "sha256-OPa/rVsr5u4orpl0ybHWA3huR0EsMgEHv34yzSHZwHE=",
+        "lastModified": 1666722972,
+        "narHash": "sha256-Voeiqq0IlAs9w75aojnAm3BecbsI+yN9d1ZL7QCx2lE=",
         "owner": "input-output-hk",
         "repo": "tullia",
-        "rev": "42e9bff7304fd6f773eab785d084d0f36292adc4",
+        "rev": "24c0c73aae432959e04e22c6aa62de017627fd32",
         "type": "github"
       },
       "original": {

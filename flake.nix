@@ -29,30 +29,30 @@
     std.growOn {
       inherit inputs;
       cellsFrom = ./nix;
-      cellBlocks = [
-        (std.blockTypes.installables "packages")
+      cellBlocks = with std.blockTypes; [
+        (installables "packages")
 
-        (std.blockTypes.functions "devshellProfiles")
-        (std.blockTypes.devshells "devshells")
+        (functions "devshellProfiles")
+        (devshells "devshells")
 
-        (std.blockTypes.runnables "entrypoints")
+        (runnables "entrypoints")
 
-        (std.blockTypes.functions "lib")
+        (functions "lib")
 
-        (std.blockTypes.data "cargoMakeJobs")
+        (data "cargoMakeJobs")
 
-        (std.blockTypes.functions "packages")
+        (functions "packages")
 
-        (std.blockTypes.functions "overlays")
+        (functions "overlays")
 
-        (std.blockTypes.data "config")
+        (data "config")
 
-        (std.blockTypes.nixago "nixago")
+        (nixago "nixago")
 
-        (std.blockTypes.containers "containers")
+        (containers "containers")
 
-        (std.blockTypes.functions "task")
-        (std.blockTypes.functions "action")
+        (functions "pipelines")
+        (functions "actions")
       ];
     } {
       devShells = inputs.std.harvest inputs.self ["_automation" "devshells"];
@@ -61,8 +61,8 @@
         ["python" "packages"]
       ];
     } (inputs.tullia.fromStd {
-      tasks = inputs.std.harvest inputs.self [["julia" "task"]];
-      actions = inputs.std.harvest inputs.self [["julia" "action"]];
+      tasks = inputs.std.harvest inputs.self [["julia" "pipelines"]];
+      actions = inputs.std.harvest inputs.self [["julia" "actions"]];
     }) {
       templates = {
         tenzir = {

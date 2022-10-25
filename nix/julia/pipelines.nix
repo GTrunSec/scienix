@@ -2,8 +2,6 @@
   cell,
   inputs,
 }: let
-  inherit (cell.library) dependencies;
-
   cmd = type: text: {
     command = {inherit type text;};
   };
@@ -12,10 +10,12 @@ in {
     cmd "shell" "julia --version"
     // {dependencies = [cell.packages.julia-wrapped];};
 
-  doc = {pkgs, ...}:
+  jnumpy = {pkgs, ...}:
     cmd "shell" ''
       echo "$PATH" | tr : "\n"
-      nix eval --raw .\#x86_64-linux.julia.packages.jnumpy
+      git clone https://github.com/GTrunSec/data-science-threat-intelligence
+      cd data-science-threat-intelligence
+      nix build -Lv .#packages.x86_64-linux.jnumpy
     ''
     // {
       preset.nix.enable = true;
@@ -25,6 +25,7 @@ in {
   nix-build = {config, ...}: {
     command.text = "nix build";
     memory = 4 * 1024;
+    nsjail.mount."/tmp".options.size = 8096;
     preset.nix.enable = true;
     preset.github-ci = {
       enable = config.actionRun.facts != {};
