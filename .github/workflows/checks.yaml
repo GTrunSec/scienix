@@ -23,7 +23,7 @@ jobs:
         with:
           name: zeek
 
-      - name: Build Doc
+      - name: Run julia with podman/docker
         run: nix -Lv run .\#x86_64-linux.julia.entrypoints.podman
 
       - name: Build Doc
