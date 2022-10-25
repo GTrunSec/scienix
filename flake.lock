@@ -2743,14 +2743,18 @@
         "std": "std_6"
       },
       "locked": {
-        "lastModified": 1666662320,
+        "lastModified": 1666666481,
         "narHash": "sha256-OPa/rVsr5u4orpl0ybHWA3huR0EsMgEHv34yzSHZwHE=",
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/input-output-hk/tullia"
+        "owner": "input-output-hk",
+        "repo": "tullia",
+        "rev": "42e9bff7304fd6f773eab785d084d0f36292adc4",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/gtrun/ghq/github.com/input-output-hk/tullia"
+        "owner": "input-output-hk",
+        "ref": "refs/pull/9/head",
+        "repo": "tullia",
+        "type": "github"
       }
     },
     "utils": {

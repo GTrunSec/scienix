@@ -19,8 +19,8 @@
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # tullia.url = "github:input-output-hk/tullia?ref=refs/pull/9/head";
-    tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
+    tullia.url = "github:input-output-hk/tullia?ref=refs/pull/9/head";
+    # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
 
     users.follows = "cells-lab/std/blank";
   };
