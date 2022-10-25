@@ -21,4 +21,15 @@ in {
       preset.nix.enable = true;
       memory = 2000;
     };
+
+  nix-build = {config, ...}: {
+    command.text = "nix build";
+    memory = 4 * 1024;
+    preset.nix.enable = true;
+    preset.github-ci = {
+      enable = config.actionRun.facts != {};
+      repo = "gtrunsec/data-science-threat-intelligence";
+      sha = config.preset.github-ci.lib.getRevision "Github" null;
+    };
+  };
 }
