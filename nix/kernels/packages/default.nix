@@ -7,7 +7,7 @@
   __inputs__ = args // {inherit mkKernel nixpkgs;};
 in {
   jupyterEnvironment = mkJupyterlab {
-    extraPackages = ps: [ps.jupytext];
+    jupyterlabEnvArgs.extraPackages = ps: [ps.jupytext];
     kernels = k: let
       i = __inputs__ // {kernels = k;};
     in [

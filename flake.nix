@@ -10,7 +10,7 @@
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    jupyterWith.url = "github:gtrunsec/jupyterWith/dev";
+    jupyterWith.url = "github:tweag/jupyterWith/?ref=refs/pull/331/head";
     # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
