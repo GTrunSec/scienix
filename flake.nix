@@ -5,6 +5,10 @@
 
     cells-lab.url = "github:GTrunSec/cells-lab";
     std.follows = "cells-lab/std";
+    std.inputs.n2c.follows = "cells-lab/std";
+
+    n2c.url = "github:nlewo/nix2container";
+    n2c.inputs.nixpkgs.follows = "cells-lab/std/nixpkgs";
   };
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
