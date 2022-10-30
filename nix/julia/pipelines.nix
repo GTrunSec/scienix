@@ -8,7 +8,7 @@
 in {
   julia = {pkgs, ...}:
     cmd "shell" "julia --version"
-    // {dependencies = [cell.packages.julia-wrapped pkgs.shadow];};
+    // {dependencies = [cell.packages.julia-wrapped];};
 
   ci = {
     config ? {},
@@ -49,24 +49,6 @@ in {
     // {
       preset.nix.enable = true;
       memory = 20000;
-    };
-
-  nested = {
-    pkgs,
-    lib,
-    ...
-  }:
-    cmd "shell" ''
-      echo "$PATH" | tr : "\n"
-      tullia run julia --runtime podman --mode verbose
-    ''
-    // {
-      preset.nix.enable = true;
-      memory = 20000;
-      dependencies = [
-        pkgs.podman
-        inputs.tullia.packages.${pkgs.system}.tullia
-      ];
     };
 
   nix-build = {config, ...}: {

@@ -26,7 +26,7 @@ jobs:
       - name: Run podman/docker Dag workflow
         run: |
           touch $HOME/.netrc
-          nix -Lv develop .\#tullia --command faketty tullia run ci --runtime podman
+          nix -Lv develop .\#tullia --command faketty tullia run jnumpy --runtime podman
 
       - name: Run julia with podman/docker
         run: nix -Lv run .\#x86_64-linux.julia.entrypoints.podman
