@@ -6,7 +6,7 @@
     command = {inherit type text;};
   };
 in {
-  julia = {pkgs,...}:
+  julia = {pkgs, ...}:
     cmd "shell" "julia --version"
     // {dependencies = [cell.packages.julia-wrapped pkgs.shadow];};
 
@@ -27,13 +27,21 @@ in {
       ];
     };
 
-  update = {pkgs, config, ...}:
+  update = {
+    pkgs,
+    config,
+    ...
+  }:
     cmd "shell" "nix flake lock --update-input std"
     // {
       preset.nix.enable = true;
     };
 
-  jnumpy = {pkgs, lib, ...}:
+  jnumpy = {
+    pkgs,
+    lib,
+    ...
+  }:
     cmd "shell" ''
       echo "$PATH" | tr : "\n"
       nix build -Lv .#packages.x86_64-linux.jnumpy
@@ -43,7 +51,11 @@ in {
       memory = 20000;
     };
 
-  nested = {pkgs, lib, ...}:
+  nested = {
+    pkgs,
+    lib,
+    ...
+  }:
     cmd "shell" ''
       echo "$PATH" | tr : "\n"
       tullia run julia --runtime podman --mode verbose

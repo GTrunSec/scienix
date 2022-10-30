@@ -24,7 +24,9 @@ jobs:
           name: zeek
 
       - name: Run podman/docker Dag workflow
-        run: nix -Lv develop .\#tullia --command faketty tullia run ci --runtime podman
+        run: |
+          touch $HOME/.netrc
+          nix -Lv develop .\#tullia --command faketty tullia run ci --runtime podman
 
       - name: Run julia with podman/docker
         run: nix -Lv run .\#x86_64-linux.julia.entrypoints.podman

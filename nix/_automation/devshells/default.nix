@@ -47,6 +47,9 @@ in {
       {
         package = inputs.nixpkgs.faketty;
       }
+      {
+        package = inputs.nixpkgs.podman;
+      }
     ];
   };
 }
