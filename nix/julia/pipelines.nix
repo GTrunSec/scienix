@@ -6,20 +6,55 @@
     command = {inherit type text;};
   };
 in {
-  julia = {...}:
+  julia = {pkgs,...}:
     cmd "shell" "julia --version"
-    // {dependencies = [cell.packages.julia-wrapped];};
+    // {dependencies = [cell.packages.julia-wrapped pkgs.shadow];};
 
-  jnumpy = {pkgs, ...}:
+  ci = {
+    config ? {},
+    pkgs,
+    ...
+  }:
+    cmd "shell" ''
+      echo Fact:
+      cat ${pkgs.writeText "fact.json" (builtins.toJSON (config.facts.push or ""))}
+      echo CI passed
+    ''
+    // {
+      after = [
+        "update"
+        "julia"
+      ];
+    };
+
+  update = {pkgs, config, ...}:
+    cmd "shell" "nix flake lock --update-input std"
+    // {
+      preset.nix.enable = true;
+    };
+
+  jnumpy = {pkgs, lib, ...}:
     cmd "shell" ''
       echo "$PATH" | tr : "\n"
-      git clone https://github.com/GTrunSec/data-science-threat-intelligence
-      cd data-science-threat-intelligence
       nix build -Lv .#packages.x86_64-linux.jnumpy
     ''
     // {
       preset.nix.enable = true;
-      memory = 2000;
+      memory = 20000;
+    };
+
+  nested = {pkgs, lib, ...}:
+    cmd "shell" ''
+      echo "$PATH" | tr : "\n"
+      tullia run julia --runtime podman --mode verbose
+    ''
+    // {
+      preset.nix.enable = true;
+      memory = 20000;
+      dependencies = [
+        pkgs.podman
+        inputs.tullia.packages.${pkgs.system}.tullia
+      ];
     };
 
   nix-build = {config, ...}: {

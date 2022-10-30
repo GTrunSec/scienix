@@ -39,4 +39,14 @@ in {
       cell.nixago.mdbook
     ];
   };
+  tullia = std.lib.dev.mkShell {
+    imports = [
+      inputs.dataflow2nix.tullia.devshellProfiles.default
+    ];
+    commands = [
+      {
+        package = inputs.nixpkgs.faketty;
+      }
+    ];
+  };
 }
