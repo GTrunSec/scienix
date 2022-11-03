@@ -7,14 +7,15 @@
     std.follows = "cells-lab/std";
     std.inputs.n2c.follows = "cells-lab/std";
 
-    n2c.url = "github:nlewo/nix2container";
+    # n2c.url = "github:nlewo/nix2container";
+    n2c.url = "github:nlewo/nix2container?ref=refs/pull/55/head";
     n2c.inputs.nixpkgs.follows = "cells-lab/std/nixpkgs";
   };
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    jupyterWith.url = "github:tweag/jupyterWith/?ref=refs/pull/331/head";
+    jupyterWith.url = "github:tweag/jupyterWith";
     # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
@@ -22,8 +23,13 @@
 
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
+    dataflow2nix.inputs.std.follows = "cells-lab/std";
 
-    tullia.url = "github:input-output-hk/tullia?ref=refs/pull/9/head";
+    tullia.url = "github:input-output-hk/tullia";
+    # nix2container.follows = "n2c";
+    tullia.inputs.nix2container.follows = "n2c";
+    tullia.inputs.nix2container.inputs.flake-utils.follows = "n2c/flake-utils";
+    tullia.inputs.nix-nomad.follows = "tullia/nix-nomad";
     # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
 
     users.follows = "cells-lab/std/blank";
@@ -32,7 +38,9 @@
   outputs = {std, ...} @ inputs:
     std.growOn {
       inherit inputs;
+
       cellsFrom = ./nix;
+
       cellBlocks = with std.blockTypes; [
         (installables "packages")
 
