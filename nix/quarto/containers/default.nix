@@ -5,7 +5,7 @@
   inherit (inputs) std;
 in {
   dev = std.lib.ops.mkDevOCI {
-    name = "docker.io/quarto-dev";
+    name = "ghcr.io/gtrunsec/quarto-dev";
     tag = "latest";
     devshell = cell.devshells.default;
     labels = {
