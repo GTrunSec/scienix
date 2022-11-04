@@ -29,7 +29,11 @@
     users.follows = "cells-lab/std/blank";
   };
 
-  outputs = {std, ...} @ inputs:
+  outputs = {
+    std,
+    tullia,
+    ...
+  } @ inputs:
     std.growOn {
       inherit inputs;
       cellsFrom = ./nix;
@@ -55,7 +59,7 @@
 
         (containers "containers")
 
-        (functions "pipelines")
+        (tullia.tasks "pipelines")
         (functions "actions")
       ];
     } {
@@ -64,9 +68,9 @@
         ["julia" "packages"]
         ["python" "packages"]
       ];
-    } (inputs.tullia.fromStd {
-      tasks = inputs.std.harvest inputs.self [["julia" "pipelines"]];
-      actions = inputs.std.harvest inputs.self [["julia" "actions"]];
+    } (tullia.fromStd {
+      tasks = std.harvest inputs.self [["julia" "pipelines"]];
+      actions = std.harvest inputs.self [["julia" "actions"]];
     }) {
       templates = {
         tenzir = {

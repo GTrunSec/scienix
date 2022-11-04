@@ -50,6 +50,9 @@ in {
       {
         package = inputs.nixpkgs.podman;
       }
+      {
+        package = inputs.nixpkgs.nsjail;
+      }
     ];
   };
 }

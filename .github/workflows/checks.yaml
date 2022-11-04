@@ -23,6 +23,10 @@ jobs:
         with:
           name: zeek
 
+      - name: Run nsjail Job
+        run: |
+          nix -Lv develop .\#tullia --command faketty tullia run julia --runtime nsjail
+
       - name: Run podman/docker Dag workflow
         run: |
           touch $HOME/.netrc
