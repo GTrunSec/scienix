@@ -20,6 +20,7 @@ in {
     requirements = ''
       numpy
       pandas
+      polars
     '';
     overridesPre = [
       (

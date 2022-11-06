@@ -14,7 +14,7 @@
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    jupyterWith.url = "github:tweag/jupyterWith/?ref=refs/pull/331/head";
+    jupyterWith.url = "github:tweag/jupyterWith";
     # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
@@ -37,31 +37,33 @@
     std.growOn {
       inherit inputs;
       cellsFrom = ./nix;
-      cellBlocks = with std.blockTypes; [
-        (installables "packages")
+      cellBlocks = with std.blockTypes;
+        [
+          (installables "packages")
 
-        (functions "devshellProfiles")
-        (devshells "devshells")
+          (functions "devshellProfiles")
+          (devshells "devshells")
 
-        (runnables "entrypoints")
+          (runnables "entrypoints")
 
-        (functions "lib")
+          (functions "lib")
 
-        (data "cargoMakeJobs")
+          (data "cargoMakeJobs")
 
-        (functions "packages")
+          (functions "packages")
 
-        (functions "overlays")
+          (functions "overlays")
 
-        (data "config")
+          (data "config")
 
-        (nixago "nixago")
+          (nixago "nixago")
 
-        (containers "containers")
-
-        (tullia.tasks "pipelines")
-        (functions "actions")
-      ];
+          (tullia.tasks "pipelines")
+          (functions "actions")
+        ]
+        ++ [
+          (containers "containers")
+        ];
     } {
       devShells = inputs.std.harvest inputs.self ["_automation" "devshells"];
       packages = inputs.std.harvest inputs.self [

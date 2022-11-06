@@ -26,7 +26,7 @@ in {
   };
   just = std.std.nixago.just {
     configData = {
-      tasks = import ./tasks.nix;
+      tasks = import ./just.nix;
     };
   };
 }

@@ -4,7 +4,6 @@
 }: let
   l = nixpkgs.lib // builtins;
   inherit (inputs) nixpkgs std;
-  inherit (cell.lib) __inputs__;
 in {
   default = std.lib.dev.mkShell {
     name = "Data Science Threat Intelligence";
@@ -25,13 +24,15 @@ in {
       }
     ];
 
-    nixago =
-      [
-        cell.nixago.treefmt
-        cell.nixago.just
-        cell.nixago.mdbook
-      ]
-      ++ l.attrValues inputs.cells.vast.nixago;
+    nixago = [
+      cell.nixago.treefmt
+      cell.nixago.just
+      cell.nixago.mdbook
+    ];
+  };
+
+  generator = std.lib.dev.mkShell {
+    nixago = [] ++ l.attrValues inputs.cells.vast.nixago;
   };
 
   doc = std.lib.dev.mkShell {
@@ -39,6 +40,7 @@ in {
       cell.nixago.mdbook
     ];
   };
+
   tullia = std.lib.dev.mkShell {
     imports = [
       inputs.dataflow2nix.tullia.devshellProfiles.default
