@@ -22,6 +22,9 @@ in {
       {
         package = inputs.latest.legacyPackages.${nixpkgs.system}.poetry;
       }
+      {
+        package = nixpkgs.nushell;
+      }
     ];
 
     nixago = [

@@ -13,6 +13,7 @@ in {
     configData.formatter.nix = {
       excludes = [
         "generated.nix"
+        "./modules/*"
       ];
     };
     configData.formatter.prettier = {

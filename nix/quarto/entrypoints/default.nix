@@ -25,7 +25,7 @@ in {
       ];
     text = ''
       # write your custom bash script here
-      # quarto render "$@"
+      quarto render "$@"
     '';
   };
 }
