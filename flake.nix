@@ -4,6 +4,7 @@
     latest.url = "github:NixOS/nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
+    cells-lab.inputs.nixpkgs.follows = "nixpkgs";
     std.follows = "cells-lab/std";
     std.inputs.n2c.follows = "cells-lab/std";
 
@@ -22,6 +23,7 @@
 
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
+    dataflow2nix.inputs.cells-lab.follows = "cells-lab";
 
     tullia.url = "github:input-output-hk/tullia?ref=refs/pull/9/head";
     # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
