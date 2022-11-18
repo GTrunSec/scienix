@@ -5,7 +5,7 @@
   inherit (cell) lib cargoMakeJobs;
   inherit (inputs) nixpkgs matrix-attack-data;
   inherit (inputs.cells._common.lib) __inputs__;
-  inherit (inputs.cells-lab._writers.lib) writeShellApplication;
+  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
 in {
   zeek-smtp-dot = writeShellApplication {
     name = "zeek-smtp-dot";

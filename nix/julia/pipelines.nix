@@ -44,11 +44,12 @@ in {
   }:
     cmd "shell" ''
       echo "$PATH" | tr : "\n"
-      nix build -Lv .#packages.x86_64-linux.jnumpy
+      nix build -Lv .#packages.x86_64-linux.jnumpy --extra-experimental-features 'flakes nix-command'
     ''
     // {
       preset.nix.enable = true;
-      memory = 20000;
+      memory = 4 * 1024;
+      nsjail.mount."/tmp".options.size = 8096;
     };
 
   nix-build = {config, ...}: {

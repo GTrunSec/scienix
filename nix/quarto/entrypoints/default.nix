@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.cells-lab._writers.lib) writeShellApplication;
+  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
 in {
   example = cell.lib.mkEnv {
     r = ps:

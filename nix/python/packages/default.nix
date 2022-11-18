@@ -11,7 +11,10 @@ in {
   mkPythonEnv =
     nixpkgs.python3.buildEnv.override
     {
-      extraLibs = inputs.cells.kernels.packages.pythonPackages nixpkgs.python3Packages;
+      extraLibs = inputs.cells.python.lib.poetryPackages.extraPackages nixpkgs.python3Packages;
+      # extraLibs = with nixpkgs.python3Packages; [
+      #   six
+      # ];
       # not recommended
       # ignoreCollisions = true;
     };
