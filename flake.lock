@@ -2661,15 +2661,16 @@
         "std": "std_6"
       },
       "locked": {
-        "lastModified": 1668711738,
-        "narHash": "sha256-CBjky16o9pqsGE1bWu6nRlRajgSXMEk+yaFQLibqXcE=",
+        "lastModified": 1666956151,
+        "narHash": "sha256-h7M9rCv97Xe4CAhkzUnlUq1596fw7vJQyo1FCpLmgao=",
         "owner": "input-output-hk",
         "repo": "tullia",
-        "rev": "ead1f515c251f0e060060ef0e2356a51d3dfe4b0",
+        "rev": "d2c3a9735a352227cde365159f62a0af4756b2d1",
         "type": "github"
       },
       "original": {
         "owner": "input-output-hk",
+        "ref": "refs/pull/9/head",
         "repo": "tullia",
         "type": "github"
       }

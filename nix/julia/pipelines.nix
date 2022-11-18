@@ -44,12 +44,11 @@ in {
   }:
     cmd "shell" ''
       echo "$PATH" | tr : "\n"
-      nix build -Lv .#packages.x86_64-linux.jnumpy --extra-experimental-features 'flakes nix-command'
+      nix build -Lv .#jnumpy
     ''
     // {
       preset.nix.enable = true;
       memory = 4 * 1024;
-      nsjail.mount."/tmp".options.size = 8096;
     };
 
   nix-build = {config, ...}: {
@@ -57,12 +56,12 @@ in {
     memory = 4 * 1024;
     nsjail.mount."/tmp".options.size = 8096;
     preset.nix.enable = true;
-    preset.github = {
-      ci.enable = config.actionRun.facts != {};
-      status = {
-        repository = "gtrunsec/data-science-threat-intelligence";
-        revision = "main";
-      };
-    };
+    # preset.github = {
+    #   ci.enable = config.actionRun.facts != {};
+    #   status = {
+    #     repository = "gtrunsec/data-science-threat-intelligence";
+    #     revision = "main";
+    #   };
+    # };
   };
 }
