@@ -52,14 +52,16 @@ in {
     };
 
   nix-build = {config, ...}: {
-    command.text = "nix build";
+    command.text = "nix build --extra-experimental-features 'flakes nix-command' .#jnumpy";
     memory = 4 * 1024;
     nsjail.mount."/tmp".options.size = 8096;
     preset.nix.enable = true;
-    preset.github-ci = {
-      enable = config.actionRun.facts != {};
-      repo = "gtrunsec/data-science-threat-intelligence";
-      sha = config.preset.github-ci.lib.getRevision "Github" null;
+    preset.github = {
+      ci.enable = config.actionRun.facts != {};
+      status = {
+        repository = "gtrunsec/data-science-threat-intelligence";
+        revision = "main";
+      };
     };
   };
 }
