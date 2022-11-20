@@ -12,7 +12,7 @@ in {
       pandas
       # matplotlib
       # seaborn
-      cell.lib.nixpkgs.polars
+      polars
       numpy
     ];
   overrides = cells.julia.lib.nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);

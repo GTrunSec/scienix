@@ -1,20 +1,25 @@
 {
   inputs,
   cell,
-} @ args: let
+}: let
   inherit (inputs) nixpkgs;
 in {
+  inherit (cell.lib.nixpkgs.python3Packages) polars;
   mkPoetryEnv =
-    inputs.cells._common.lib.nixpkgs.poetry2nix.mkPoetryEnv
+    inputs.cells.common.lib.nixpkgs.poetry2nix.mkPoetryEnv
     (builtins.removeAttrs cell.lib.poetryPackages ["pkgs"]);
 
+  a = nixpkgs.python3.withPackages (ps: [
+    (inputs.cells.common.lib.__inputs__.nixpkgs-hardenedlinux.python.overlays.packages ps ps).polars
+  ]);
+
   mkPythonEnv =
-    nixpkgs.python3.buildEnv.override
+    cell.lib.nixpkgs.python3.buildEnv.override
     {
-      extraLibs = inputs.cells.python.lib.poetryPackages.extraPackages nixpkgs.python3Packages;
-      # extraLibs = with nixpkgs.python3Packages; [
-      #   six
-      # ];
+      # extraLibs = inputs.cells.python.lib.poetryPackages.extraPackages nixpkgs.python3Packages;
+      extraLibs = with cell.lib.nixpkgs.python3Packages; [
+        polars
+      ];
       # not recommended
       # ignoreCollisions = true;
     };
