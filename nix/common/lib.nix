@@ -13,5 +13,6 @@ in {
   inherit __inputs__ l;
   nixpkgs = inputs.nixpkgs.appendOverlays [
     __inputs__.poetry2nix.overlay
+    __inputs__.nixpkgs-hardenedlinux.python.overlays.default
   ];
 }

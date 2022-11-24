@@ -25,6 +25,9 @@ in {
       {
         package = nixpkgs.nushell;
       }
+      {
+        package = inputs.cells.python.packages.mkPoetryEnv;
+      }
     ];
 
     nixago = [

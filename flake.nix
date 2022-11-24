@@ -70,7 +70,7 @@
           (containers "containers")
         ];
     } {
-      devShells = inputs.std.harvest inputs.self ["_automation" "devshells"];
+      devShells = inputs.std.harvest inputs.self ["automation" "devshells"];
       packages = inputs.std.harvest inputs.self [
         ["julia" "packages"]
         ["python" "packages"]

@@ -10,7 +10,7 @@ in {
     meta.mainProgram = "julia";
     enable = {
       GR = true;
-      # python = inputs.cells._automation.packages.poetryPython;
+      # python = inputs.cells.automation.packages.poetryPython;
     };
     makeWrapperArgs = ["--add-flags" "-L''${./startup.jl}"];
   };

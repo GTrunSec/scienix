@@ -2,7 +2,8 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs cells;
+  inherit (inputs) cells;
+  inherit (cell.lib) nixpkgs;
 in {
   pkgs = nixpkgs;
   python = nixpkgs.python3;
@@ -12,8 +13,8 @@ in {
       pandas
       # matplotlib
       # seaborn
-      polars
+      cell.lib.nixpkgs.python3Packages.polars
       numpy
     ];
-  overrides = cells.julia.lib.nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);
+  overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);
 }

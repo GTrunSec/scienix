@@ -5,13 +5,10 @@
   inherit (inputs) nixpkgs;
 in {
   inherit (cell.lib.nixpkgs.python3Packages) polars;
-  mkPoetryEnv =
-    inputs.cells.common.lib.nixpkgs.poetry2nix.mkPoetryEnv
-    (builtins.removeAttrs cell.lib.poetryPackages ["pkgs"]);
 
-  a = nixpkgs.python3.withPackages (ps: [
-    (inputs.cells.common.lib.__inputs__.nixpkgs-hardenedlinux.python.overlays.packages ps ps).polars
-  ]);
+  mkPoetryEnv =
+    cell.lib.nixpkgs.poetry2nix.mkPoetryEnv
+    (builtins.removeAttrs cell.lib.poetryPackages ["pkgs"]);
 
   mkPythonEnv =
     cell.lib.nixpkgs.python3.buildEnv.override
