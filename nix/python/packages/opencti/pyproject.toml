@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "opencti"
+version = "0.1.0"
+description = ""
+authors = ["GTrunSec <gtrunsec@hardenedlinux.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pycti = "^5.4.1"
+parsuricata = "^0.3.3"
+plyara = "^2.1.1"
+sigmatools = "^0.22.1"
+jsonpatch = "^1.32"
+eql = "^0.9.15"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -63,4 +63,9 @@ in {
       }
     ];
   };
+  opencti = std.lib.dev.mkShell {
+    commands = [
+      {package = inputs.cells.python.packages.mkPoetryOpenCTI;}
+    ];
+  };
 }
