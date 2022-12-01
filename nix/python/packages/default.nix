@@ -30,7 +30,7 @@ in {
     requirements = ''
       numpy
       pandas
-      # polars
+      polars
       scanpy
       anndata
       matplotlib

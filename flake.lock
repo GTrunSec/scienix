@@ -254,11 +254,11 @@
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1668666085,
-        "narHash": "sha256-RBIRzwrinRXW4iLhSZgdFUDQgrBRMPHHOTCiDRWo3Ag=",
+        "lastModified": 1669906053,
+        "narHash": "sha256-c5tZ2FqeEjeANjUPxWrlengAqw6hyId7x/zSy1nq7Dg=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "faeb4c1b71f8f8395bde30b828a03765380a4357",
+        "rev": "f33fb66f4da5e68a6769cd36ef0bd59e4e58c1db",
         "type": "github"
       },
       "original": {
@@ -1297,11 +1297,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1667701840,
-        "narHash": "sha256-Nib6hrSFvZWO+20A/8vHtbSEi8YHdnOFXg/52Ff3R8w=",
+        "lastModified": 1669263024,
+        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
         "owner": "divnix",
         "repo": "incl",
-        "rev": "bb3a06f5dd32738fa02999bd1e1c0b41cc4a234e",
+        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
         "type": "github"
       },
       "original": {
@@ -2962,11 +2962,11 @@
         "yants": "yants_2"
       },
       "locked": {
-        "lastModified": 1668278249,
-        "narHash": "sha256-pSKDTifYbyEMrs8nklVWoZUu/Jpo6Zq95vxm63Ln31A=",
+        "lastModified": 1669595171,
+        "narHash": "sha256-YCqzwIU0vFziwAUI6gz5WhYa4fFJGBKVxKX9V16fcVw=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "28deea8766bc3749d51b7c6864a36edcc7447571",
+        "rev": "18fc2ed09072baf480801fc99b10429f81c181f3",
         "type": "github"
       },
       "original": {
@@ -3196,15 +3196,16 @@
         "std": "std_3"
       },
       "locked": {
-        "lastModified": 1668628968,
-        "narHash": "sha256-M/dPMi9XvQmLkeZQx8jFo5D3ked/kHMdtHx315ZTLu4=",
+        "lastModified": 1666956151,
+        "narHash": "sha256-h7M9rCv97Xe4CAhkzUnlUq1596fw7vJQyo1FCpLmgao=",
         "owner": "input-output-hk",
         "repo": "tullia",
-        "rev": "183681fe7bc909fdfcc512633f8e9e4eeadd0cdf",
+        "rev": "d2c3a9735a352227cde365159f62a0af4756b2d1",
         "type": "github"
       },
       "original": {
         "owner": "input-output-hk",
+        "ref": "refs/pull/9/head",
         "repo": "tullia",
         "type": "github"
       }
