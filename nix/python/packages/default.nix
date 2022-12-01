@@ -30,13 +30,17 @@ in {
     requirements = ''
       numpy
       pandas
-      polars
+      # polars
+      scanpy
+      anndata
+      matplotlib
+      seaborn
     '';
     overridesPre = [
       (
         self: super: {
           inherit
-            (cell.lib.nixpkgs)
+            (cell.lib.nixpkgs.python3Packages)
             polars
             ;
         }
