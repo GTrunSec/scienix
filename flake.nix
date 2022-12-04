@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/14ccaaedd95a488dd7ae142757884d8e125b3363";
     latest.url = "github:NixOS/nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
