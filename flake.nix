@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/14ccaaedd95a488dd7ae142757884d8e125b3363";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     latest.url = "github:NixOS/nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
@@ -27,8 +27,11 @@
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
     dataflow2nix.inputs.cells-lab.follows = "cells-lab";
 
-    tullia.url = "github:input-output-hk/tullia?ref=refs/pull/9/head";
+    tullia.url = "github:gtrunsec/tullia/dev";
     tullia.inputs.nixpkgs.follows = "nixpkgs";
+    tullia.inputs.nix2container.follows = "n2c";
+    tullia.inputs.nix-nomad.follows = "nix-nomad";
+    nix-nomad.url = "github:tristanpemble/nix-nomad";
     # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
 
     users.follows = "cells-lab/std/blank";

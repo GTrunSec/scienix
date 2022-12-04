@@ -27,10 +27,14 @@ jobs:
         run: |
           nix -Lv develop .\#tullia --command faketty tullia run julia --runtime nsjail
 
-      - name: Run podman/docker Dag workflow
+      - name: Run podman Job
         run: |
-          touch $HOME/.netrc
-          nix -Lv develop .\#tullia --command faketty tullia run jnumpy --runtime podman
+          nix -Lv develop .\#tullia --command faketty tullia run julia --runtime podman
+
+      # - name: Run podman/docker Dag workflow
+      #   run: |
+      #     touch $HOME/.netrc
+      #     nix -Lv develop .\#tullia --command faketty tullia run jnumpy --runtime podman
 
       - name: Run julia with podman/docker
         run: nix -Lv run .\#x86_64-linux.julia.entrypoints.podman
