@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) cells;
+
   inherit (cell.lib) nixpkgs;
 in {
   pkgs = nixpkgs;
@@ -11,10 +11,12 @@ in {
   extraPackages = ps:
     with ps; [
       pandas
-      # matplotlib
       # seaborn
+      tensorflow
+      matplotlib
       cell.lib.nixpkgs.python3Packages.polars
       numpy
     ];
-  overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);
+  ignoreCollisions = true;
+  overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix nixpkgs);
 }
