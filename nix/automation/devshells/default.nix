@@ -30,6 +30,18 @@ in {
       }
     ];
 
+    # env = let
+    #   pythonPath = with inputs.cells.python.lib.nixpkgs; inputs.cells.python.lib.nixpkgs.python3.pkgs.makePythonPath [
+    #     python3.pkgs.fastai
+    #     python3.pkgs.torch
+    #   ];
+    #   in [
+    #   {
+    #     name = "PYTHONPATH";
+    #     value = "${pythonPath}";
+    #   }
+    # ];
+
     nixago = [
       cell.nixago.treefmt
       cell.nixago.just
