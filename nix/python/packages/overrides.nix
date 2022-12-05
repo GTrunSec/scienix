@@ -6,7 +6,13 @@ nixpkgs: final: prev: let
   };
 in
   {
-    inherit (nixpkgs.python3Packages) tensorflow matplotlib;
+    inherit (nixpkgs.python3Packages) tensorflow;
+
+    pandas = prev.pandas.overridePythonAttrs (attrs: {
+      format = "setuptools";
+      enableParallelBuilding = true;
+      setupPyBuildFlags = attrs.setupPyBuildFlags or [] ++ ["--parallel" "$NIX_BUILD_CORES"];
+    });
   }
   // addNativeBuildInputs "traitlets" [final.hatchling]
   // addNativeBuildInputs "jupyter-client" [final.hatchling]

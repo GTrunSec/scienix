@@ -2,7 +2,6 @@
   inputs,
   cell,
 }: let
-
   inherit (cell.lib) nixpkgs;
 in {
   pkgs = nixpkgs;
@@ -14,7 +13,7 @@ in {
       # seaborn
       tensorflow
       matplotlib
-      cell.lib.nixpkgs.python3Packages.polars
+      nixpkgs.python3Packages.polars
       numpy
     ];
   ignoreCollisions = true;
