@@ -174,7 +174,7 @@
     "cells-lab_3": {
       "inputs": {
         "nixos": "nixos_3",
-        "nixpkgs": "nixpkgs_9",
+        "nixpkgs": "nixpkgs_8",
         "org-roam-book-template": "org-roam-book-template_3",
         "std": "std_5"
       },
@@ -694,7 +694,7 @@
     "emacs-overlay_3": {
       "inputs": {
         "flake-utils": "flake-utils_13",
-        "nixpkgs": "nixpkgs_10"
+        "nixpkgs": "nixpkgs_9"
       },
       "locked": {
         "lastModified": 1665313755,
@@ -1197,7 +1197,7 @@
     },
     "gomod2nix_2": {
       "inputs": {
-        "nixpkgs": "nixpkgs_11",
+        "nixpkgs": "nixpkgs_10",
         "utils": "utils_2"
       },
       "locked": {
@@ -1382,7 +1382,9 @@
         "flake-compat": "flake-compat_4",
         "flake-utils": "flake-utils_11",
         "ihaskell": "ihaskell",
-        "nixpkgs": "nixpkgs_8",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "nixpkgs-stable": "nixpkgs-stable",
         "npmlock2nix": "npmlock2nix",
         "opam-nix": "opam-nix",
@@ -1860,7 +1862,7 @@
         "flake-compat": "flake-compat_8",
         "flake-utils": "flake-utils_17",
         "gomod2nix": "gomod2nix_2",
-        "nixpkgs": "nixpkgs_12",
+        "nixpkgs": "nixpkgs_11",
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
@@ -2268,20 +2270,6 @@
     },
     "nixpkgs_10": {
       "locked": {
-        "lastModified": 1665266435,
-        "narHash": "sha256-vLhkXxNzAIvJNLyjm6fGe9Rwy/lsE9dc5MgV7w1EtCs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "8e8b0bd1fd99ac2bdca112f9e2431d7c80b1d655",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_11": {
-      "locked": {
         "lastModified": 1653581809,
         "narHash": "sha256-Uvka0V5MTGbeOfWte25+tfRL3moECDh1VwokWSZUdoY=",
         "owner": "NixOS",
@@ -2296,7 +2284,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_12": {
+    "nixpkgs_11": {
       "locked": {
         "lastModified": 1655373272,
         "narHash": "sha256-ktyY7ME9PLsDhfuMCgJBuYNylDFbmoG21sMv28ZRuXQ=",
@@ -2312,7 +2300,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_13": {
+    "nixpkgs_12": {
       "locked": {
         "lastModified": 1670086663,
         "narHash": "sha256-hT8C8AQB74tdoCPwz4nlJypLMD7GI2F5q+vn+VE/qQk=",
@@ -2328,7 +2316,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_14": {
+    "nixpkgs_13": {
       "locked": {
         "lastModified": 1665087388,
         "narHash": "sha256-FZFPuW9NWHJteATOf79rZfwfRn5fE0wi9kRzvGfDHPA=",
@@ -2439,22 +2427,6 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1669542132,
-        "narHash": "sha256-DRlg++NJAwPh8io3ExBJdNW7Djs3plVI5jgYQ+iXAZQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a115bb9bd56831941be3776c8a94005867f316a7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_9": {
-      "locked": {
         "lastModified": 1665296151,
         "narHash": "sha256-uOB0oxqxN9K7XGF1hcnY+PQnlQJ+3bP2vCn/+Ru/bbc=",
         "owner": "NixOS",
@@ -2467,6 +2439,20 @@
         "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "nixpkgs_9": {
+      "locked": {
+        "lastModified": 1665266435,
+        "narHash": "sha256-vLhkXxNzAIvJNLyjm6fGe9Rwy/lsE9dc5MgV7w1EtCs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "8e8b0bd1fd99ac2bdca112f9e2431d7c80b1d655",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "nosys": {
@@ -2871,7 +2857,7 @@
         "matrix-attack-data": "matrix-attack-data",
         "n2c": "n2c_6",
         "nix-nomad": "nix-nomad_2",
-        "nixpkgs": "nixpkgs_13",
+        "nixpkgs": "nixpkgs_12",
         "std": "std_6",
         "tullia": "tullia_2",
         "users": [
@@ -3202,7 +3188,7 @@
         ],
         "n2c": "n2c_7",
         "nixago": "nixago_7",
-        "nixpkgs": "nixpkgs_14",
+        "nixpkgs": "nixpkgs_13",
         "yants": "yants_7"
       },
       "locked": {

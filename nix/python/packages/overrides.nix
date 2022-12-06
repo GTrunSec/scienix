@@ -8,6 +8,8 @@ in
   {
     inherit (nixpkgs.python3Packages) tensorflow;
 
+    psutil = nixpkgs.python3Packages.psutil;
+
     pandas = prev.pandas.overridePythonAttrs (attrs: {
       format = "setuptools";
       enableParallelBuilding = true;

@@ -8,6 +8,7 @@ authors = []
 python = ">=3.10,<3.11"
 ipykernel = "^6.15.0"
 matplotlib = "^3.6.2"
+ipywidgets = "^8.0.2"
 
 [tool.poetry.dev-dependencies]
 # build systems for dependencies

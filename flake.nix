@@ -19,6 +19,7 @@
 
     # jupyterWith.url = "github:tweag/jupyterWith";
     jupyterWith.url = "github:gtrunsec/jupyterWith/dev";
+    jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
     # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";

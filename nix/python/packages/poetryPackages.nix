@@ -15,6 +15,7 @@ in {
       matplotlib
       nixpkgs.python3Packages.polars
       numpy
+      nixpkgs.python3Packages.fastai
     ];
   ignoreCollisions = true;
   overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix nixpkgs);
