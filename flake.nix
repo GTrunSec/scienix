@@ -49,9 +49,8 @@
       cellsFrom = ./nix;
       cellBlocks = with std.blockTypes;
         [
-          (installables "packages")
-
           (functions "devshellProfiles")
+
           (devshells "devshells")
 
           (runnables "entrypoints")
@@ -60,7 +59,7 @@
 
           (data "cargoMakeJobs")
 
-          (functions "packages")
+          (installables "packages" {ci.build = true;})
 
           (functions "overlays")
 
@@ -72,7 +71,7 @@
           (functions "actions")
         ]
         ++ [
-          (containers "containers")
+          #(containers "containers" {ci.publish = true;})
         ];
     } {
       devShells = inputs.std.harvest inputs.self ["automation" "devshells"];
