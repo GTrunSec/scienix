@@ -254,11 +254,11 @@
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1670536328,
-        "narHash": "sha256-Nk9jaxk8enRzWQHVAiFVapYyy/tEeCJap2/Hz/jl+cg=",
+        "lastModified": 1670540922,
+        "narHash": "sha256-C1XNVJpmoXC6rnQ7IRjJhMail8N3maesHfKRCyqppyE=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "2a188057d5f8062cc5ad345d214ee35adf51a221",
+        "rev": "db20b6493b71b43141912f22318e8ae9171defa6",
         "type": "github"
       },
       "original": {
@@ -1393,11 +1393,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1670263541,
-        "narHash": "sha256-WAdI+n14b55/NC0XF4wScfPfhuJvNvktLszoEJYi/xY=",
+        "lastModified": 1670367462,
+        "narHash": "sha256-0jRwQuALKTJHKjCzyz6axghCoLJ1e/lAsjh3OjwnB7M=",
         "owner": "gtrunsec",
         "repo": "jupyterWith",
-        "rev": "a95ad2fe6e28324f8b96e5b4e94e6e3eb9207fdb",
+        "rev": "35ad78af1d0a951a52168b48f3df09ff7b5a5886",
         "type": "github"
       },
       "original": {
