@@ -71,7 +71,7 @@
           (functions "actions")
         ]
         ++ [
-          #(containers "containers" {ci.publish = true;})
+          (containers "containers" {ci.publish = true;})
         ];
     } {
       devShells = inputs.std.harvest inputs.self ["automation" "devshells"];
