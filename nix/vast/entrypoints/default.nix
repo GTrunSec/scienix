@@ -4,9 +4,9 @@
 }: let
   inherit (cell) lib cargoMakeJobs;
   inherit (inputs.cells.common.lib) writeConf;
-  inherit (inputs.cells-lab._flow.lib) makeCargoMakeFlow;
+  inherit (inputs.cells-lab.workflows.lib) mkCargoMake;
 in {
-  flow = makeCargoMakeFlow {
+  flow = mkCargoMake {
     source = cell.nixago.vast-cargo-make.configFile;
     # "all"
     args = ["smtp-url"];
