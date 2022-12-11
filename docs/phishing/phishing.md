@@ -1,6 +1,4 @@
 # Phishing
 
-
 - [ ] BPMN
-- [X] PlantUML
-
+- [x] PlantUML
