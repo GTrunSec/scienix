@@ -15,22 +15,27 @@ ContainerDb(v, "Vast", "Query URL", "Query Engine")
 Container(c1, "Go Spider Application", "extracting relevant info", "phishing-features.json -> indicates.field")
 
 Container_Boundary(c, "Python") {
-  Component(c5, "Phishing.url.data", "parser data", "receive the data from the go.spider")
+  Component(c5, "Phishing.url.data", "parser data", "merge the phishing.url.data from zeek")
   Component(c6, "Phishing.url.result", "match indicates", "get phishing-url-result.json by python script")
   Component(c7, "done.phishing.result", "vast export json 'done.phishing.url.result.result == 0'", "get the result by the machine-learning model")
+Component(c8, "true/false.phishing.result", "vast export json true/false.phishing.url.result.result == 0'", "After analyzing done.result, pick the result to true/false type")
 }
 
 Container_Boundary(m, "Training DataSet") {
-  Component(m1, "Phishing-url-result", "merge dataset", true.phishing.url.result.json")
-  Component(m2, "Training model", "get model", "Through machine learning algorithms, we can generate relevant phishing indicates models through true.phishing.result dataset")
+  Component(m1, "Training model", "get model", "Through machine learning algorithms, we can generate relevant phishing indicates models through true.phishing.result dataset")
+  Component(m2, "New Phishing model", "extended result.dataSet", "identify suspicious, anomalous or misjudgment data")
 }
-Rel_R(m2, c7, "generate model", "pick algorithm")
+Rel_R(c8, m2, "generate model", "pick algorithm")
 Rel_U(c1, v, "vast import -t phishing.url.data json", "import phishing.url.data")
+
 Rel(c5, c6, "Phishing rules -> [0 1 -1]")
 Rel(c6, c7, "result -> np.array")
-Rel_U(ml, c7, "message model", "optimize algorithm")
-Rel_D(m, v, "vast import -t phishing.url.result", "Vast Import")
-Rel_R(v, ml, "vast export -n 1 arrow 'phishing.url.data.url == url", "Vast Export")
+Rel_L(m1, m2, "Schdule a new training job")
+Rel(c7, c8, "Phishing Forensics by the engineers")
+Rel_D(ml, m, "message model", "optimize algorithm")
+Rel_D(m, v, "vast import -t phishing.url.result", "Feed training DataSet")
+Rel_R(v, ml, "vast export -n 1 arrow 'true.phishing.url.result", "Get training dataSet")
+Rel_R(v, c5, "vast export phishing.url.result", "spider/zeek")
 @enduml
 ```
 
