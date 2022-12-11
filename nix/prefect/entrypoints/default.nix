@@ -7,7 +7,11 @@
   inherit (inputs.cells.python.lib) nixpkgs;
 in {
   d = mkPrefectJob {
-    extraPackages = with nixpkgs.python3Packages; [];
+    providers = {
+      jupyter = true;
+      aws = false;
+    };
+    extraLibs = with nixpkgs.python3Packages; [];
     text = ''
       python ${./d.py}
     '';

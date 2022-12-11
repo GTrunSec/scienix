@@ -249,16 +249,15 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-prefect": "nixpkgs-prefect",
         "std": "std_2",
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1670540922,
-        "narHash": "sha256-C1XNVJpmoXC6rnQ7IRjJhMail8N3maesHfKRCyqppyE=",
+        "lastModified": 1670735221,
+        "narHash": "sha256-+XSh11YQPPBCauTGvyE89YRioqHjFmGuX6FME7ufDWQ=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "db20b6493b71b43141912f22318e8ae9171defa6",
+        "rev": "f133b235eff5aab62aeb01fd7f24504a369b6935",
         "type": "github"
       },
       "original": {
@@ -2217,22 +2216,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nixpkgs-prefect": {
-      "locked": {
-        "lastModified": 1665087388,
-        "narHash": "sha256-FZFPuW9NWHJteATOf79rZfwfRn5fE0wi9kRzvGfDHPA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "95fda953f6db2e9496d2682c4fc7b82f959878f7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "95fda953f6db2e9496d2682c4fc7b82f959878f7",
         "type": "github"
       }
     },
