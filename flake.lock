@@ -253,11 +253,11 @@
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1670740515,
-        "narHash": "sha256-tTf1lHeOTnYMEsD0osuq3p38ShP1XpP131az5NqSQgI=",
+        "lastModified": 1670744564,
+        "narHash": "sha256-vDxc4TAZwz87yXDVflir7rbjOS8ZMmY0Opn9rDJd6Z8=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "3d4993851a902f79f5cb2c958cd90343776e3c00",
+        "rev": "dd1f41abf5282049428bf0e902bdc849a44ea156",
         "type": "github"
       },
       "original": {
@@ -2842,6 +2842,7 @@
         "nix-nomad": "nix-nomad_2",
         "nixpkgs": "nixpkgs_12",
         "std": "std_6",
+        "std-utils": "std-utils",
         "tullia": "tullia_2",
         "users": [
           "cells-lab",
@@ -2918,6 +2919,29 @@
       "original": {
         "owner": "divnix",
         "repo": "std",
+        "type": "github"
+      }
+    },
+    "std-utils": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "std": [
+          "std"
+        ]
+      },
+      "locked": {
+        "lastModified": 1668458715,
+        "narHash": "sha256-N9+TH64NveOsn7sU+lQVbuao3woTv/l6sA409IIj4Ow=",
+        "owner": "jmgilman",
+        "repo": "nix-utils",
+        "rev": "d83211db8345b71368a0f99c4997bfcc049a8ae1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jmgilman",
+        "repo": "nix-utils",
         "type": "github"
       }
     },
