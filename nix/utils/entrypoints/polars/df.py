@@ -15,6 +15,11 @@ def df(a: list):
 
 @cli
 def add(a: int, b: int):
+    """Sums a and b
+
+    :param a_number: int
+    :param b_number: int
+    """
     print(a + b)
 
 

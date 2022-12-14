@@ -20,6 +20,7 @@ in {
       excludes = [
         "conf/*"
         "data/*"
+        "julia2nix.toml"
         "Manifest.toml"
         "Project.toml"
       ];
