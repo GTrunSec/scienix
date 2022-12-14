@@ -136,11 +136,11 @@
         "std": "std"
       },
       "locked": {
-        "lastModified": 1670994058,
-        "narHash": "sha256-j3c/8Tv4rS6Mz5OPsizBgjTzMZWwxvocYQm9GdISg+E=",
+        "lastModified": 1671009925,
+        "narHash": "sha256-DU1Jyvuh3uTNV0rxBaUvEY/1OSM+LZNwFq570Ai2uiU=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "fd2ea91aeae1a0e1cbf6834ec0e664dc31e3e81b",
+        "rev": "a4ed417e1fcde374e7b721a922a17dc2d356916f",
         "type": "github"
       },
       "original": {
@@ -151,18 +151,17 @@
     },
     "cells-lab_2": {
       "inputs": {
-        "incl": "incl_3",
         "nixos": "nixos_2",
         "nixpkgs": "nixpkgs_5",
         "org-roam-book-template": "org-roam-book-template_2",
         "std": "std_4"
       },
       "locked": {
-        "lastModified": 1669086490,
-        "narHash": "sha256-oB8lA/87ZMnqDijB+1PIOsTQLejuKu+BN/4DGCeRgpI=",
+        "lastModified": 1669263588,
+        "narHash": "sha256-Q7q9a7TmdbU+pmaztl0LcUtS8LIZ7VxIrxTqEhIsCDE=",
         "owner": "gtrunsec",
         "repo": "cells-lab",
-        "rev": "156f7fe91e1cc869f5a1a1fe91f59cced0098e05",
+        "rev": "78485d76fb0914ed9be141c200e6030e63a2194d",
         "type": "github"
       },
       "original": {
@@ -1311,20 +1310,24 @@
     },
     "incl_3": {
       "inputs": {
-        "nixlib": "nixlib"
+        "nixlib": [
+          "julia2nix",
+          "cells-lab",
+          "std",
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1667701840,
-        "narHash": "sha256-Nib6hrSFvZWO+20A/8vHtbSEi8YHdnOFXg/52Ff3R8w=",
+        "lastModified": 1669263024,
+        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
         "owner": "divnix",
         "repo": "incl",
-        "rev": "bb3a06f5dd32738fa02999bd1e1c0b41cc4a234e",
+        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
         "type": "github"
       },
       "original": {
         "owner": "divnix",
         "repo": "incl",
-        "rev": "bb3a06f5dd32738fa02999bd1e1c0b41cc4a234e",
         "type": "github"
       }
     },
@@ -1363,11 +1366,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1669088233,
-        "narHash": "sha256-DSJ/WOzEulwvy6PTQ1Cbs3wu+G3VMtSsHL+ZH1MSGNg=",
+        "lastModified": 1670721278,
+        "narHash": "sha256-0nMYpdvYueXf4xO6GIAwOkAqYGo6AxQjScIHjXQmcIE=",
         "owner": "JuliaCN",
         "repo": "Julia2Nix.jl",
-        "rev": "5b24fccbe2b72c987569b80fbed3176de552dd1f",
+        "rev": "846ff3a44a6a2b9457baf847215c6fa23f080242",
         "type": "github"
       },
       "original": {
@@ -2124,21 +2127,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixago",
-        "type": "github"
-      }
-    },
-    "nixlib": {
-      "locked": {
-        "lastModified": 1667696192,
-        "narHash": "sha256-hOdbIhnpWvtmVynKcsj10nxz9WROjZja+1wRAJ/C9+s=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "babd9cd2ca6e413372ed59fbb1ecc3c3a5fd3e5b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
         "type": "github"
       }
     },
@@ -3040,11 +3028,7 @@
         "devshell": "devshell_4",
         "dmerge": "dmerge_4",
         "flake-utils": "flake-utils_10",
-        "incl": [
-          "julia2nix",
-          "cells-lab",
-          "incl"
-        ],
+        "incl": "incl_3",
         "makes": [
           "julia2nix",
           "cells-lab",
@@ -3069,11 +3053,11 @@
         "yants": "yants_4"
       },
       "locked": {
-        "lastModified": 1669064207,
-        "narHash": "sha256-9wdHm7AInbl4CU5hEqC4ekvWBOpj9kqR229V+tAI7B4=",
+        "lastModified": 1669263222,
+        "narHash": "sha256-Adg/36FHAC3j8HBie997YmUGDf4gdvO9IuDCRXMEkyc=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "b1d379f97ace2e92d214f71941920beb67afed1c",
+        "rev": "5990c894cff6a05617fb254c82251907e5a60dab",
         "type": "github"
       },
       "original": {

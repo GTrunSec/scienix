@@ -28,11 +28,5 @@ in {
         help = "A wrapped CLI for the julia data commands";
       }
     ];
-    # env = [
-    #   {
-    #     name = "SSL_CERT_FILE";
-    #     value = "${nixpkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
-    #   }
-    # ];
   };
 }

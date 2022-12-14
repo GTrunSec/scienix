@@ -10,6 +10,10 @@ in {
     cmd "shell" "julia --version"
     // {dependencies = [cell.packages.julia-wrapped];};
 
+  julia-cli = {pkgs, ...}:
+    cmd "shell" "cli df x"
+    // {dependencies = [inputs.cells.julia.entrypoints.cli];};
+
   ci = {
     config ? {},
     pkgs,
