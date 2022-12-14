@@ -22,16 +22,18 @@ in {
     '';
   };
   cli = let
-    # mkJulia = inputs.julia2nix.julia2nix.lib.buildEnv {
-    #   name = "mkJulia";
-    #   src = ./cli;
-    #   package = inputs.julia2nix.julia2nix.lib.julia-wrapped {
-    #     package = inputs.cells-lab.comonicon.packages.julia-wrapped;
-    #   };
-    # };
+    mkJulia = inputs.julia2nix.julia2nix.lib.buildEnv {
+      name = "mkJulia";
+      src = ./cli;
+      package = inputs.cells-lab.comonicon.packages.julia-wrapped;
+    };
   in
     writeComoniconApplication {
       name = "cli";
+      julia = {
+        package = mkJulia;
+        pure = true;
+      };
       runtimeEnv = {
         b = "1";
       };
