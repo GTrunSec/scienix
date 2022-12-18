@@ -12,6 +12,10 @@
 
     n2c.url = "github:nlewo/nix2container";
     n2c.inputs.nixpkgs.follows = "cells-lab/std/nixpkgs";
+
+    std-utils.url = "github:jmgilman/nix-utils";
+    std-utils.inputs.nixpkgs.follows = "nixpkgs";
+    std-utils.inputs.std.follows = "std";
   };
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
@@ -68,7 +72,11 @@
           (nixago "nixago")
 
           (tullia.tasks "pipelines")
+
           (functions "actions")
+
+          # nushell scripts
+          (installables "nu")
         ]
         ++ [
           (containers "containers" {ci.publish = true;})

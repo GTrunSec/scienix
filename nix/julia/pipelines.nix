@@ -50,18 +50,4 @@ in {
       preset.nix.enable = true;
       memory = 4 * 1024;
     };
-
-  nix-build = {config, ...}: {
-    command.text = "nix build --extra-experimental-features 'flakes nix-command' .#jnumpy";
-    memory = 4 * 1024;
-    nsjail.mount."/tmp".options.size = 8096;
-    preset.nix.enable = true;
-    # preset.github = {
-    #   ci.enable = config.actionRun.facts != {};
-    #   status = {
-    #     repository = "gtrunsec/data-science-threat-intelligence";
-    #     revision = "main";
-    #   };
-    # };
-  };
 }

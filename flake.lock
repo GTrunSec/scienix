@@ -249,16 +249,15 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-prefect": "nixpkgs-prefect",
         "std": "std_2",
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1670540922,
-        "narHash": "sha256-C1XNVJpmoXC6rnQ7IRjJhMail8N3maesHfKRCyqppyE=",
+        "lastModified": 1670744564,
+        "narHash": "sha256-vDxc4TAZwz87yXDVflir7rbjOS8ZMmY0Opn9rDJd6Z8=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "db20b6493b71b43141912f22318e8ae9171defa6",
+        "rev": "dd1f41abf5282049428bf0e902bdc849a44ea156",
         "type": "github"
       },
       "original": {
@@ -2220,22 +2219,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-prefect": {
-      "locked": {
-        "lastModified": 1665087388,
-        "narHash": "sha256-FZFPuW9NWHJteATOf79rZfwfRn5fE0wi9kRzvGfDHPA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "95fda953f6db2e9496d2682c4fc7b82f959878f7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "95fda953f6db2e9496d2682c4fc7b82f959878f7",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1669546925,
@@ -2859,6 +2842,7 @@
         "nix-nomad": "nix-nomad_2",
         "nixpkgs": "nixpkgs_12",
         "std": "std_6",
+        "std-utils": "std-utils",
         "tullia": "tullia_2",
         "users": [
           "cells-lab",
@@ -2935,6 +2919,29 @@
       "original": {
         "owner": "divnix",
         "repo": "std",
+        "type": "github"
+      }
+    },
+    "std-utils": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "std": [
+          "std"
+        ]
+      },
+      "locked": {
+        "lastModified": 1668458715,
+        "narHash": "sha256-N9+TH64NveOsn7sU+lQVbuao3woTv/l6sA409IIj4Ow=",
+        "owner": "jmgilman",
+        "repo": "nix-utils",
+        "rev": "d83211db8345b71368a0f99c4997bfcc049a8ae1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jmgilman",
+        "repo": "nix-utils",
         "type": "github"
       }
     },
