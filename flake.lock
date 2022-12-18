@@ -3235,16 +3235,15 @@
         "std": "std_7"
       },
       "locked": {
-        "lastModified": 1670130868,
-        "narHash": "sha256-+u3OBuHhv5udoFZ/9PbgjdAVG0q9qq/3K6J+onAKuWg=",
-        "owner": "gtrunsec",
+        "lastModified": 1671222591,
+        "narHash": "sha256-Ysmf9N/fp8DB0N/S1bBtUWXYOUPgjD3WZvbs2k2tpJo=",
+        "owner": "input-output-hk",
         "repo": "tullia",
-        "rev": "ab5ecafb070c705229ae454b466832be25955561",
+        "rev": "1cb7cffbba1ce1a7146d1e310b167f2309db08d5",
         "type": "github"
       },
       "original": {
-        "owner": "gtrunsec",
-        "ref": "dev",
+        "owner": "input-output-hk",
         "repo": "tullia",
         "type": "github"
       }

@@ -33,12 +33,12 @@
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
     dataflow2nix.inputs.cells-lab.follows = "cells-lab";
 
-    tullia.url = "github:gtrunsec/tullia/dev";
+    tullia.url = "github:input-output-hk/tullia";
+    # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
     tullia.inputs.nixpkgs.follows = "nixpkgs";
     tullia.inputs.nix2container.follows = "n2c";
     tullia.inputs.nix-nomad.follows = "nix-nomad";
     nix-nomad.url = "github:tristanpemble/nix-nomad";
-    # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
 
     users.follows = "cells-lab/std/blank";
   };
