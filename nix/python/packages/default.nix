@@ -26,28 +26,28 @@ in {
       # ignoreCollisions = true;
     };
 
-  mkMachEnv = cell.lib.nixpkgs.machlib.mkPython {
-    requirements = ''
-      numpy
-      pandas
-      polars
-      scanpy
-      anndata
-      matplotlib
-      seaborn
-    '';
-    overridesPre = [
-      (
-        self: super: {
-          inherit
-            (cell.lib.nixpkgs.python3Packages)
-            polars
-            ;
-        }
-      )
-    ];
-    packagesExtra = [];
-    python = "python3";
-    providers = {};
-  };
+  # mkMachEnv = cell.lib.nixpkgs.machlib.mkPython {
+  #   requirements = ''
+  #     numpy
+  #     pandas
+  #     polars
+  #     scanpy
+  #     anndata
+  #     matplotlib
+  #     seaborn
+  #   '';
+  #   overridesPre = [
+  #     (
+  #       self: super: {
+  #         inherit
+  #           (cell.lib.nixpkgs.python3Packages)
+  #           polars
+  #           ;
+  #       }
+  #     )
+  #   ];
+  #   packagesExtra = [];
+  #   python = "python3";
+  #   providers = {};
+  # };
 }
