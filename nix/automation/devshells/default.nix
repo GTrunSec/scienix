@@ -36,7 +36,6 @@ in
       nixago = [
         cell.nixago.treefmt
         cell.nixago.just
-        cell.nixago.mdbook
       ];
     };
 

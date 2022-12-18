@@ -4,11 +4,6 @@
 }: let
   inherit (inputs) std;
 in {
-  mdbook = std.presets.nixago.mdbook {
-    configData = {
-      book.title = "Decentralized Data Science";
-    };
-  };
   treefmt = std.presets.nixago.treefmt {
     configData.formatter.nix = {
       excludes = [

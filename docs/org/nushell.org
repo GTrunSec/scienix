@@ -1,0 +1,60 @@
+:PROPERTIES:
+:ID:       8009637a-a5f0-4ada-84d2-552d135294d7
+:END:
+#+title: Nushell
+
+
+* DataFram Commands
+
+** vast export
+
+#+begin_src sh :async :exports both :results output
+nu -c 'vast export -n 1 json | from json'
+#+end_src
+
+#+RESULTS:
+#+begin_example
+╭────────────────────────────┬────────────────────────────╮
+│ ts                         │ 2022-09-08T05:16:18.864804 │
+│ id.orig_h                  │ 192.168.99.129             │
+│ id.orig_p                  │ 49835                      │
+│ id.resp_h                  │ 192.168.2.254              │
+│ id.resp_p                  │ 110                        │
+│ uid                        │ CdveCb2nALNTFcT2U5         │
+│ start_time                 │ 2022-09-08T05:16:18.757662 │
+│ end_time                   │                            │
+│ duration                   │ 107.14ms                   │
+│ service                    │ [list 0 items]             │
+│ trans_depth                │ 1                          │
+│ helo                       │                            │
+│ mailfrom                   │                            │
+│ rcptto                     │                            │
+│ date                       │                            │
+│ from                       │                            │
+│ to                         │                            │
+│ cc                         │                            │
+│ reply_to                   │                            │
+│ msg_id                     │                            │
+│ in_reply_to                │                            │
+│ subject                    │                            │
+│ x_originating_ip           │                            │
+│ first_received             │                            │
+│ second_received            │                            │
+│ last_reply                 │ OK Dovecot ready.          │
+│ user_agent                 │                            │
+│ path                       │ [list 2 items]             │
+│ tls                        │ false                      │
+│ process_pop3_headers       │ true                       │
+│ entity_count               │ 0                          │
+│ location_orig.country_code │                            │
+│ location_orig.region       │                            │
+│ location_orig.city         │                            │
+│ location_orig.latitude     │                            │
+│ location_orig.longitude    │                            │
+│ location_resp.country_code │                            │
+│ location_resp.region       │                            │
+│ location_resp.city         │                            │
+│ location_resp.latitude     │                            │
+│ location_resp.longitude    │                            │
+╰────────────────────────────┴────────────────────────────╯
+#+end_example

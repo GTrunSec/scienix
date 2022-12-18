@@ -1791,11 +1791,11 @@
         "vast-overlay": "vast-overlay"
       },
       "locked": {
-        "lastModified": 1671398604,
-        "narHash": "sha256-c0Myi5RroozCTSRCoW4y58mrFphjqiOfcc+HxFsIIiA=",
+        "lastModified": 1671405067,
+        "narHash": "sha256-ekOYoqAS+tfuQ6mgQn/L2xnm9CkSpkN2FrNUUCud/FQ=",
         "owner": "gtrunsec",
         "repo": "vast2nix",
-        "rev": "14069f61ff2a089e6ed5b602ad9ba9c20bf68326",
+        "rev": "61703d0abe04eba9e7de5bfb9d7481cc82f9cd10",
         "type": "github"
       },
       "original": {
