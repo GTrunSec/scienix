@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><title>Search</title>
+<html><title>Nushell</title>
 
 
 <meta charset="utf-8">
@@ -23,117 +23,89 @@
 </header>
 
 <div class="grid-container">
-    <div class="grid">
-        <div class="page wide">
-            <ul id="results">
-                <li>
-                    Enter a keyword above to search this site.
-                </li>
-            </ul>
-        </div>
-    </div>
-</div><script>
-window.store = {
-    
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/categories\/": {
-        
-        "title": "Categories",
-        "tags": [],
-        "content": "", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/categories\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/": {
-        
-        "title": "Decentralized Data Science",
-        "tags": [],
-        "content": "", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-eval\/": {
-        
-        "title": "Julia Eval",
-        "tags": [],
-        "content": "using Dates format = DateFormat(\u0026#34;yyyymmdd\u0026#34;) Date(\u0026#34;19870913\u0026#34;, format) dateformat\u0026#34;yyyymmdd\u0026#34; 1987-09-13 1 + 1 2 ", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-eval\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/nushell\/": {
-        
-        "title": "Nushell",
-        "tags": [],
-        "content": "DataFram Commands vast export nu -c \u0026#39;vast export -n 1 json | from json\u0026#39; ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.864804 │ │ id.orig_h │ 192.168.99.129 │ │ id.orig_p │ 49835 │ │ id.resp_h │ 192.168.2.254 │ │ id.resp_p │ 110 │ │ uid │ CdveCb2nALNTFcT2U5 │ │ start_time │ 2022-09-08T05:16:18.757662 │ │ end_time │ │ │ duration │ 107.14ms │ │ service │ [list 0 items] │ │ trans_depth │ 1 │ │ helo │ │ │ mailfrom │ │ │ rcptto │ │ │ date │ │ │ from │ │ │ to │ │ │ cc │ │ │ reply_to │ │ │ msg_id │ │ │ in_reply_to │ │ │ subject │ │ │ x_originating_ip │ │ │ first_received │ │ │ second_received │ │ │ last_reply │ OK Dovecot ready. │ │ user_agent │ │ │ path │ [list 2 items] │ │ tls │ false │ │ process_pop3_headers │ true │ │ entity_count │ 0 │ │ location_orig.country_code │ │ │ location_orig.region │ │ │ location_orig.city │ │ │ location_orig.latitude │ │ │ location_orig.longitude │ │ │ location_resp.country_code │ │ │ location_resp.region │ │ │ location_resp.city │ │ │ location_resp.latitude │ │ │ location_resp.longitude │ │ ╰────────────────────────────┴────────────────────────────╯ ", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/nushell\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/phishing\/": {
-        
-        "title": "Phishing",
-        "tags": [],
-        "content": "C4 Diagram \u003c?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?\u003ePython[Container]Training DataSet[Container]Phishing.url.data[parser data] merge the phishing.url.datafrom zeekPhishing.url.result[match indicates] get phishing-url-result.jsonby python scriptdone.phishing.result[vast export json'done.phishing.url.result.result== 0'] get the result by themachine-learning modeltrue/false.phishing.result[vast export jsontrue/false.phishing.url.result.result== 0'] After analyzing done.result,pick the result to true/falsetypeTraining model[get model] Through machine learningalgorithms, we can generaterelevant phishing indicatesmodels throughtrue.phishing.result datasetNew Phishing model[extended result.dataSet] identify suspicious,anomalous or misjudgmentdataMachine Learning[Traning Phishing Model] phishing-url-resutl.json -\u0026gt;probe，true/false.phishing-url-result.json-\u0026gt; new phishing-modelVast[Query URL] Query EngineGo Spider Application[extracting relevant info] phishing-features.json -\u0026gt;indicates.field1: generate model[pick algorithm]2: vast import -tphishing.url.datajson[importphishing.url.data]3: Phishing rules -\u0026gt;[0 1 -1]4: result -\u0026gt; np.array5: Schdule a newtraining job6: Phishing Forensicsby the engineers7: message model[optimize algorithm]8: vast import -tphishing.url.result[Feed training DataSet]9: vast export -n 1arrow'true.phishing.url.result[Get training dataSet]10: vast exportphishing.url.result[spider/zeek]Legend personsystemcontainercomponentexternal personexternal systemexternal containerexternal component ", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/phishing\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/": {
-        
-        "title": "Posts",
-        "tags": [],
-        "content": "", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/search\/": {
-        
-        "title": "Search",
-        "tags": [],
-        "content": "", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/search\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/tags\/": {
-        
-        "title": "Tags",
-        "tags": [],
-        "content": "", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/tags\/"
-    },
-    
-    
-    
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/usage\/": {
-        
-        "title": "Usage",
-        "tags": [],
-        "content": "devshell With nix develop nix develop \u0026amp;\u0026amp; menu With direnv direnv allow Docs address: http://localhost:1313/LambdaHunt/posts run hugo server nix develop .#doc --command mkdoc server sync your docs nix develop .#doc --command mkdoc ", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/usage\/"
-    },
-    
-}
-</script>
+  <div class="grid">
+    <div class="page" data-level="1">
+      <div class="content">
+        <h1>Nushell</h1>
+        <h2 id="datafram-commands">DataFram Commands</h2>
+<h3 id="vast-export">vast export</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nu -c <span style="color:#4070a0">&#39;vast export -n 1 json | from json&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>╭────────────────────────────┬────────────────────────────╮
+</span></span><span style="display:flex;"><span>│ ts                         │ 2022-09-08T05:16:18.864804 │
+</span></span><span style="display:flex;"><span>│ id.orig_h                  │ 192.168.99.129             │
+</span></span><span style="display:flex;"><span>│ id.orig_p                  │ 49835                      │
+</span></span><span style="display:flex;"><span>│ id.resp_h                  │ 192.168.2.254              │
+</span></span><span style="display:flex;"><span>│ id.resp_p                  │ 110                        │
+</span></span><span style="display:flex;"><span>│ uid                        │ CdveCb2nALNTFcT2U5         │
+</span></span><span style="display:flex;"><span>│ start_time                 │ 2022-09-08T05:16:18.757662 │
+</span></span><span style="display:flex;"><span>│ end_time                   │                            │
+</span></span><span style="display:flex;"><span>│ duration                   │ 107.14ms                   │
+</span></span><span style="display:flex;"><span>│ service                    │ [list 0 items]             │
+</span></span><span style="display:flex;"><span>│ trans_depth                │ 1                          │
+</span></span><span style="display:flex;"><span>│ helo                       │                            │
+</span></span><span style="display:flex;"><span>│ mailfrom                   │                            │
+</span></span><span style="display:flex;"><span>│ rcptto                     │                            │
+</span></span><span style="display:flex;"><span>│ date                       │                            │
+</span></span><span style="display:flex;"><span>│ from                       │                            │
+</span></span><span style="display:flex;"><span>│ to                         │                            │
+</span></span><span style="display:flex;"><span>│ cc                         │                            │
+</span></span><span style="display:flex;"><span>│ reply_to                   │                            │
+</span></span><span style="display:flex;"><span>│ msg_id                     │                            │
+</span></span><span style="display:flex;"><span>│ in_reply_to                │                            │
+</span></span><span style="display:flex;"><span>│ subject                    │                            │
+</span></span><span style="display:flex;"><span>│ x_originating_ip           │                            │
+</span></span><span style="display:flex;"><span>│ first_received             │                            │
+</span></span><span style="display:flex;"><span>│ second_received            │                            │
+</span></span><span style="display:flex;"><span>│ last_reply                 │ OK Dovecot ready.          │
+</span></span><span style="display:flex;"><span>│ user_agent                 │                            │
+</span></span><span style="display:flex;"><span>│ path                       │ [list 2 items]             │
+</span></span><span style="display:flex;"><span>│ tls                        │ false                      │
+</span></span><span style="display:flex;"><span>│ process_pop3_headers       │ true                       │
+</span></span><span style="display:flex;"><span>│ entity_count               │ 0                          │
+</span></span><span style="display:flex;"><span>│ location_orig.country_code │                            │
+</span></span><span style="display:flex;"><span>│ location_orig.region       │                            │
+</span></span><span style="display:flex;"><span>│ location_orig.city         │                            │
+</span></span><span style="display:flex;"><span>│ location_orig.latitude     │                            │
+</span></span><span style="display:flex;"><span>│ location_orig.longitude    │                            │
+</span></span><span style="display:flex;"><span>│ location_resp.country_code │                            │
+</span></span><span style="display:flex;"><span>│ location_resp.region       │                            │
+</span></span><span style="display:flex;"><span>│ location_resp.city         │                            │
+</span></span><span style="display:flex;"><span>│ location_resp.latitude     │                            │
+</span></span><span style="display:flex;"><span>│ location_resp.longitude    │                            │
+</span></span><span style="display:flex;"><span>╰────────────────────────────┴────────────────────────────╯
+</span></span></code></pre></div>
+      </div>
+      
 
 
-<script src="https://exquisite-meringue-7af06d.netlify.app/js/lunr.min.js" type="text/javascript"></script>
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
 
-<script src="https://exquisite-meringue-7af06d.netlify.app/js/search.js" type="text/javascript"></script>
+
+
+      </div>
+   </div>
+</div>
+
+<script src="https://exquisite-meringue-7af06d.netlify.app/js/URI.js" type="text/javascript"></script>
+
+<script src="https://exquisite-meringue-7af06d.netlify.app/js/page.js" type="text/javascript"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

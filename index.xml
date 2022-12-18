@@ -16,6 +16,15 @@
     </item>
     
     <item>
+      <title>Nushell</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</guid>
+      <description>DataFram Commands vast export nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.864804 │ │ id.orig_h │ 192.168.99.129 │ │ id.orig_p │ 49835 │ │ id.resp_h │ 192.168.2.254 │ │ id.resp_p │ 110 │ │ uid │ CdveCb2nALNTFcT2U5 │ │ start_time │ 2022-09-08T05:16:18.757662 │ │ end_time │ │ │ duration │ 107.14ms │ │ service │ [list 0 items] │ │ trans_depth │ 1 │ │ helo │ │ │ mailfrom │ │ │ rcptto │ │ │ date │ │ │ from │ │ │ to │ │ │ cc │ │ │ reply_to │ │ │ msg_id │ │ │ in_reply_to │ │ │ subject │ │ │ x_originating_ip │ │ │ first_received │ │ │ second_received │ │ │ last_reply │ OK Dovecot ready.</description>
+    </item>
+    
+    <item>
       <title>Phishing</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/phishing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
