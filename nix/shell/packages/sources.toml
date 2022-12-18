@@ -1,0 +1,9 @@
+[nu-plugin-from-parquet]
+src.git = "https://github.com/fdncred/nu_plugin_from_parquet"
+fetch.github = "fdncred/nu_plugin_from_parquet"
+cargo_locks = ["Cargo.lock"]
+
+[nu-plugin-regex]
+src.git = "https://github.com/fdncred/nu_plugin_regex"
+fetch.github = "fdncred/nu_plugin_regex"
+cargo_locks = ["Cargo.lock"]

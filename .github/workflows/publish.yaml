@@ -38,7 +38,7 @@ jobs:
 
       - name: Build Data Image
         run: |
-          nix -Lv run .\#x86_64-linux.data.containers.default.copyToDockerDaemon
+          nix -Lv run .\#x86_64-linux.shell.containers.default.copyToDockerDaemon
 
       - name: Build/Push the Quarto Docker image
         run: |
