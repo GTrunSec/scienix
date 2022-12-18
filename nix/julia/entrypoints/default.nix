@@ -21,13 +21,24 @@ in {
       podman run -v "$(pwd):/repo" -it "$(nix eval --raw .\#tullia.x86_64-linux.task.jnumpy.oci.image.imageName):$(nix eval --raw .\#tullia.x86_64-linux.task.jnumpy.oci.image.imageTag)"
     '';
   };
-  cli = writeComoniconApplication {
-    name = "cli";
-    runtimeEnv = {
-      b = "1";
+  cli = let
+    mkJulia = inputs.julia2nix.julia2nix.lib.buildEnv {
+      name = "mkJulia";
+      src = ./cli;
+      package = inputs.cells-lab.comonicon.packages.julia-wrapped;
     };
-    runtimeInputs = [];
-    path = ./cli;
-    args = ["mycli.jl"];
-  };
+  in
+    writeComoniconApplication {
+      name = "cli";
+      julia = {
+        package = mkJulia;
+        pure = true;
+      };
+      runtimeEnv = {
+        b = "1";
+      };
+      runtimeInputs = [];
+      path = ./cli;
+      args = ["mycli.jl"];
+    };
 }

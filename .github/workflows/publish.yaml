@@ -35,3 +35,12 @@ jobs:
         run: |
           # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/quarto-dev:latest -c echo hello
           docker push ghcr.io/gtrunsec/quarto-dev:latest
+
+      - name: Build Data Image
+        run: |
+          nix -Lv run .\#x86_64-linux.shell.containers.default.copyToDockerDaemon
+
+      - name: Build/Push the Quarto Docker image
+        run: |
+          # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/quarto-dev:latest -c echo hello
+          docker push ghcr.io/gtrunsec/data-science-threat-intelligence:latest

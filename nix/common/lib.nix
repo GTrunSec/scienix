@@ -14,5 +14,6 @@ in {
   nixpkgs = inputs.nixpkgs.appendOverlays [
     __inputs__.poetry2nix.overlay
     __inputs__.nixpkgs-hardenedlinux.python.overlays.default
+    __inputs__.nixpkgs-hardenedlinux.pkgs.overlays.default
   ];
 }

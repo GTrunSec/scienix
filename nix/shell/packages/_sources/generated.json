@@ -1,0 +1,52 @@
+{
+  "nu-plugin-from-parquet": {
+    "cargoLocks": {
+      "Cargo.lock": [
+        "./nu-plugin-from-parquet-eb32b24527ec171f07385511271e937f314ee1f5/Cargo.lock",
+        {}
+      ]
+    },
+    "date": "2022-11-30",
+    "extract": null,
+    "name": "nu-plugin-from-parquet",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "fdncred",
+      "repo": "nu_plugin_from_parquet",
+      "rev": "eb32b24527ec171f07385511271e937f314ee1f5",
+      "sha256": "sha256-L6s8ye2lpxHTLVOmddg4Q4/zQ1x1wwtnL1CvaBpW244=",
+      "type": "github"
+    },
+    "version": "eb32b24527ec171f07385511271e937f314ee1f5"
+  },
+  "nu-plugin-regex": {
+    "cargoLocks": {
+      "Cargo.lock": [
+        "./nu-plugin-regex-ae215fae3690e187703384ce3d99d27d257a5baf/Cargo.lock",
+        {}
+      ]
+    },
+    "date": "2022-12-15",
+    "extract": null,
+    "name": "nu-plugin-regex",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "fdncred",
+      "repo": "nu_plugin_regex",
+      "rev": "ae215fae3690e187703384ce3d99d27d257a5baf",
+      "sha256": "sha256-4IrsdHeIA2ZO2bqyu0r+acFTG2nuZUFVRjNplPGkYKc=",
+      "type": "github"
+    },
+    "version": "ae215fae3690e187703384ce3d99d27d257a5baf"
+  }
+}
