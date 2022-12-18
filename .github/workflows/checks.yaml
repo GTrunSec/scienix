@@ -43,10 +43,10 @@ jobs:
       #   run: nix -Lv run .\#x86_64-linux.julia.entrypoints.jnumpy-podman
 
       - name: Build Doc
-        run: nix develop .#doc --command mdbook build
+        run: nix develop .#doc --show-trace --command -- mkdoc
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
-          folder: ./docs/book
+          folder: ./docs/publish/public

@@ -6,7 +6,7 @@
   inherit (inputs) nixpkgs std;
 in {
   default = std.lib.dev.mkShell {
-    name = "Data Science Threat Intelligence";
+    name = "Decentralized Data Science";
 
     imports = [
       inputs.std.std.devshellProfiles.default
@@ -53,9 +53,10 @@ in {
     nixago = [] ++ l.attrValues inputs.cells.vast.nixago;
   };
 
-  doc = std.lib.dev.mkShell {
-    nixago = [
-      cell.nixago.mdbook
+  doc = {...}: {
+    name = "Org Roam Documentation";
+    imports = [
+      inputs.cells-lab.automation.devshellProfiles.docs
     ];
   };
 

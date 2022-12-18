@@ -1,6 +1,9 @@
-# Phishing Diagrams
+#+title: Phishing
 
-```kroki-PlantUML
+
+* C4 Diagram
+#+begin_src markdown :async :exports both :results output
+{{< kroki type="plantuml" >}}
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
 
@@ -37,6 +40,5 @@ Rel_D(m, v, "vast import -t phishing.url.result", "Feed training DataSet")
 Rel_R(v, ml, "vast export -n 1 arrow 'true.phishing.url.result", "Get training dataSet")
 Rel_R(v, c5, "vast export phishing.url.result", "spider/zeek")
 @enduml
-```
-
-- notebook [julia]: https://github.com/GTrunSec/data-science-threat-intelligence/blob/main/notebooks/Phishing.ipynb
+{{< /kroki >}}
+#+end_src
