@@ -17,6 +17,8 @@ in
         inputs.julia2nix.julia2nix.devshellProfiles.dev
 
         inputs.dataflow2nix.tullia.devshellProfiles.default
+
+        inputs.cells-lab.automation.devshellProfiles.docs
       ];
 
       commands = [
@@ -31,18 +33,6 @@ in
         }
       ];
 
-      # env = let
-      #   pythonPath = with inputs.cells.python.lib.nixpkgs; inputs.cells.python.lib.nixpkgs.python3.pkgs.makePythonPath [
-      #     python3.pkgs.fastai
-      #     python3.pkgs.torch
-      #   ];
-      #   in [
-      #   {
-      #     name = "PYTHONPATH";
-      #     value = "${pythonPath}";
-      #   }
-      # ];
-
       nixago = [
         cell.nixago.treefmt
         cell.nixago.just
@@ -55,7 +45,7 @@ in
     };
 
     doc = {
-      name = "Org Roam Documentation";
+      name = "Documentation";
       imports = [
         inputs.cells-lab.automation.devshellProfiles.docs
       ];
