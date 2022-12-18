@@ -7,17 +7,17 @@
 
   l = inputs.nixpkgs.lib // builtins;
 in {
-  default = mkDevOCI {
-    name = "ghcr.io/gtrunsec/data-science-threat-intelligence";
+  dev = mkDevOCI {
+    name = "ghcr.io/gtrunsec/desci.devshell";
     tag = "latest";
     devshell = cell.devshells.default;
     labels = {
-      title = "data-science-threat-intelligence";
+      title = "Decentralized Data Science";
       version = "latest";
-      url = "https://github.com/GTrunSec/data-science-threat-intelligence/nix/data";
-      source = "https://github.com/GTrunSec/data-science-threat-intelligence/nix/data/devshells";
+      url = "https://github.com/GTrunSec/DeSci/nix/data";
+      source = "https://github.com/GTrunSec/DeSci/nix/data/devshells";
       description = ''
-        A preconfiged devshell for analyzing threat-intelligence
+        A preconfiged devshell for analyzing dataset
       '';
     };
     setup = [
@@ -28,7 +28,6 @@ in {
           }
         ] ''
           mkdir -p $out/home/user/.config/nushell
-          ${l.getExe cell.entrypoints.nu} -c 'echo hello'
         '')
     ];
   };

@@ -33,14 +33,14 @@ jobs:
 
       - name: Build/Push the Quarto Docker image
         run: |
-          # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/quarto-dev:latest -c echo hello
-          docker push ghcr.io/gtrunsec/quarto-dev:latest
+          # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/DeSci.quarto:latest -c echo hello
+          docker push ghcr.io/gtrunsec/desci.quarto:latest
 
       - name: Build Data Image
         run: |
-          nix -Lv run .\#x86_64-linux.shell.containers.default.copyToDockerDaemon
+          nix -Lv run .\#x86_64-linux.shell.containers.dev.copyToDockerDaemon
 
       - name: Build/Push the Quarto Docker image
         run: |
           # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/quarto-dev:latest -c echo hello
-          docker push ghcr.io/gtrunsec/data-science-threat-intelligence:latest
+          docker push ghcr.io/gtrunsec/desci.devshell:latest
