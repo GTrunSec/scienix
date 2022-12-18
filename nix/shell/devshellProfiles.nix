@@ -14,9 +14,6 @@ in {
         package = cell.packages.zed;
       }
       {
-        package = nixpkgs.nushell;
-      }
-      {
         package = nixpkgs.jq;
       }
       {

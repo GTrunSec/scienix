@@ -14,7 +14,8 @@ in {
 
     commands = [
       {
-        package = nixpkgs.nushell;
+        package = cell.entrypoints.nu;
+        help = cell.packages.nushell.meta.description;
       }
     ];
   };

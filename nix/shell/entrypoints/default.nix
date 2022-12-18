@@ -6,6 +6,9 @@
   inherit (cell) packages;
   inherit (inputs.cells-lab.writers.lib) writeShellApplication;
 in {
+  inherit (inputs.cells.utils.entrypoints) polars;
+  inherit (inputs.cells.julia.entrypoints) cli;
+
   nu = writeShellApplication {
     name = "nu";
     runtimeInputs = [packages.nushell];
