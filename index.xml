@@ -34,6 +34,15 @@
     </item>
     
     <item>
+      <title>Tullia</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/tullia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/tullia/</guid>
+      <description>runtimes unwrapped tullia run julia-cli --runtime unwrapped --log-level debug [90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&amp;#34;DagFlake&amp;#34;:&amp;#34;.#tullia.x86_64-linux.dag&amp;#34;,&amp;#34;Mode&amp;#34;:&amp;#34;cli&amp;#34;,&amp;#34;Runtime&amp;#34;:&amp;#34;unwrapped&amp;#34;,&amp;#34;Task&amp;#34;:&amp;#34;julia-cli&amp;#34;,&amp;#34;TaskFlake&amp;#34;:&amp;#34;.#tullia.x86_64-linux.task&amp;#34;} path &amp;#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&amp;#39; does not contain a &amp;#39;flake.nix&amp;#39;, searching up warning: Git tree &amp;#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci&amp;#39; is dirty [90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&amp;#34;open /dev/tty: no such device or address&amp;#34;[0m Podman tullia run julia-cli --runtime podman --log-level debug [90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&amp;ldquo;DagFlake&amp;rdquo;:&amp;quot;.#tullia.x86_64-linux.dag&amp;quot;,&amp;ldquo;Mode&amp;rdquo;:&amp;ldquo;cli&amp;rdquo;,&amp;ldquo;Runtime&amp;rdquo;:&amp;ldquo;podman&amp;rdquo;,&amp;ldquo;Task&amp;rdquo;:&amp;ldquo;julia-cli&amp;rdquo;,&amp;ldquo;TaskFlake&amp;rdquo;:&amp;quot;.#tullia.x86_64-linux.task&amp;quot;} path &amp;lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&amp;rsquo; does not contain a &amp;lsquo;flake.nix&amp;rsquo;, searching up warning: Git tree &amp;lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci&amp;rsquo; is dirty [90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&amp;quot;open /dev/tty: no such device or address&amp;quot;[0m</description>
+    </item>
+    
+    <item>
       <title>Usage</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/usage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

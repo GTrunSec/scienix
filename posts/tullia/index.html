@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><title>Usage</title>
+<html><title>Tullia</title>
 
 
 <meta charset="utf-8">
@@ -26,30 +26,33 @@
   <div class="grid">
     <div class="page" data-level="1">
       <div class="content">
-        <h1>Usage</h1>
-        <h2 id="devshell">devshell</h2>
-<ul>
-<li>With <code>nix develop</code></li>
-</ul>
-<!--listend-->
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nix develop <span style="color:#666">&amp;&amp;</span> menu
-</span></span></code></pre></div><ul>
-<li>With direnv</li>
-</ul>
-<!--listend-->
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>direnv allow
-</span></span></code></pre></div><h2 id="docs">Docs</h2>
-<ul>
-<li>address:  <a href="http://localhost:1313/LambdaHunt/posts">http://localhost:1313/LambdaHunt/posts</a></li>
-<li>run <strong>hugo server</strong></li>
-</ul>
-<!--listend-->
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nix develop .#doc --command mkdoc server
-</span></span></code></pre></div><ul>
-<li><strong>sync</strong> your docs</li>
-</ul>
-<!--listend-->
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nix develop .#doc --command mkdoc
+        <h1>Tullia</h1>
+        <h2 id="runtimes">runtimes</h2>
+<h3 id="unwrapped">unwrapped</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> tullia run julia-cli --runtime unwrapped --log-level debug
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&#34;DagFlake&#34;:&#34;.#tullia.x86_64-linux.dag&#34;,&#34;Mode&#34;:&#34;cli&#34;,&#34;Runtime&#34;:&#34;unwrapped&#34;,&#34;Task&#34;:&#34;julia-cli&#34;,&#34;TaskFlake&#34;:&#34;.#tullia.x86_64-linux.task&#34;}
+</span></span><span style="display:flex;"><span>path &#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&#39; does not contain a &#39;flake.nix&#39;, searching up
+</span></span><span style="display:flex;"><span>warning: Git tree &#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci&#39; is dirty
+</span></span><span style="display:flex;"><span>[90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&#34;open /dev/tty: no such device or address&#34;[0m
+</span></span></code></pre></div><h3 id="podman">Podman</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> tullia run julia-cli --runtime podman --log-level debug
+</span></span></code></pre></div><p>[90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&ldquo;DagFlake&rdquo;:&quot;.#tullia.x86_64-linux.dag&quot;,&ldquo;Mode&rdquo;:&ldquo;cli&rdquo;,&ldquo;Runtime&rdquo;:&ldquo;podman&rdquo;,&ldquo;Task&rdquo;:&ldquo;julia-cli&rdquo;,&ldquo;TaskFlake&rdquo;:&quot;.#tullia.x86_64-linux.task&quot;}
+path &lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&rsquo; does not contain a &lsquo;flake.nix&rsquo;, searching up
+warning: Git tree &lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci&rsquo; is dirty
+[90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&quot;open /dev/tty: no such device or address&quot;[0m</p>
+<h3 id="nsjail">nsjail</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo chown <span style="color:#bb60d5">$USER</span>:users /sys/fs/cgroup/user.slice/user-1000.slice/cgroup.procs
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>tullia run julia-cli --runtime nsjail --log-level debug
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[90m11:04PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&#34;DagFlake&#34;:&#34;.#tullia.x86_64-linux.dag&#34;,&#34;Mode&#34;:&#34;cli&#34;,&#34;Runtime&#34;:&#34;nsjail&#34;,&#34;Task&#34;:&#34;julia-cli&#34;,&#34;TaskFlake&#34;:&#34;.#tullia.x86_64-linux.task&#34;}
+</span></span><span style="display:flex;"><span>path &#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&#39; does not contain a &#39;flake.nix&#39;, searching up
+</span></span><span style="display:flex;"><span>warning: Git tree &#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci&#39; is dirty
+</span></span><span style="display:flex;"><span>[90m11:04PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&#34;open /dev/tty: no such device or address&#34;[0m
+</span></span></code></pre></div><h2 id="dag-jobs">Dag Jobs</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>tullia run ci --runtime nsjail --log-level debug
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[90m11:05PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&#34;DagFlake&#34;:&#34;.#tullia.x86_64-linux.dag&#34;,&#34;Mode&#34;:&#34;cli&#34;,&#34;Runtime&#34;:&#34;nsjail&#34;,&#34;Task&#34;:&#34;ci&#34;,&#34;TaskFlake&#34;:&#34;.#tullia.x86_64-linux.task&#34;}
+</span></span><span style="display:flex;"><span>path &#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&#39; does not contain a &#39;flake.nix&#39;, searching up
+</span></span><span style="display:flex;"><span>warning: Git tree &#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci&#39; is dirty
+</span></span><span style="display:flex;"><span>[90m11:05PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&#34;open /dev/tty: no such device or address&#34;[0m
 </span></span></code></pre></div>
       </div>
       
