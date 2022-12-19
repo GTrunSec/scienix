@@ -56,9 +56,6 @@ in
       ];
       commands = [
         {
-          package = inputs.nixpkgs.faketty;
-        }
-        {
           package = inputs.nixpkgs.podman;
         }
         {
