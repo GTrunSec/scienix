@@ -1366,11 +1366,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1670721278,
-        "narHash": "sha256-0nMYpdvYueXf4xO6GIAwOkAqYGo6AxQjScIHjXQmcIE=",
+        "lastModified": 1671325515,
+        "narHash": "sha256-KFEPfX8grfUYgggr8gSbGMDvP60eASJ6/UhKYHGW8qw=",
         "owner": "JuliaCN",
         "repo": "Julia2Nix.jl",
-        "rev": "846ff3a44a6a2b9457baf847215c6fa23f080242",
+        "rev": "b68152013aacc141be4536de0bf78ebf7d3935ca",
         "type": "github"
       },
       "original": {

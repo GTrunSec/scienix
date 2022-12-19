@@ -1,0 +1,11 @@
+[
+  {
+    "threatType": "SOCIAL_ENGINEERING",
+    "platformType": "ANY_PLATFORM",
+    "threat": {
+      "url": "https://cicerosoares.com.br/wp-admin/lknd.htm"
+    },
+    "cacheDuration": "300s",
+    "threatEntryType": "URL"
+  }
+]

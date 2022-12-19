@@ -1,0 +1,60 @@
+:PROPERTIES:
+:ID:       8e388c1a-5f24-49f1-a121-d533d1a50d11
+:header-args:sh: :prologue "exec 2>&1" :epilogue ":"
+:END:
+#+title: Tullia
+
+
+* runtimes
+** unwrapped
+
+#+begin_src sh :async :exports both :results output
+ tullia run julia-cli --runtime unwrapped --log-level debug
+#+end_src
+
+#+RESULTS:
+: [90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{"DagFlake":".#tullia.x86_64-linux.dag","Mode":"cli","Runtime":"unwrapped","Task":"julia-cli","TaskFlake":".#tullia.x86_64-linux.task"}
+: path '/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org' does not contain a 'flake.nix', searching up
+: warning: Git tree '/home/gtrun/ghq/github.com/GTrunSec/DeSci' is dirty
+: [90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m"open /dev/tty: no such device or address"[0m
+
+** Podman
+
+#+begin_src sh :async :exports both :results raw
+ tullia run julia-cli --runtime podman --log-level debug
+#+end_src
+
+#+RESULTS:
+[90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{"DagFlake":".#tullia.x86_64-linux.dag","Mode":"cli","Runtime":"podman","Task":"julia-cli","TaskFlake":".#tullia.x86_64-linux.task"}
+path '/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org' does not contain a 'flake.nix', searching up
+warning: Git tree '/home/gtrun/ghq/github.com/GTrunSec/DeSci' is dirty
+[90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m"open /dev/tty: no such device or address"[0m
+
+** nsjail
+
+#+begin_src sh :async :exports both :results output
+sudo chown $USER:users /sys/fs/cgroup/user.slice/user-1000.slice/cgroup.procs
+#+end_src
+
+
+#+begin_src sh :async :exports both :results output
+tullia run julia-cli --runtime nsjail --log-level debug
+#+end_src
+
+#+RESULTS:
+: [90m11:04PM[0m [33mDBG[0m parsed args [36mconfig=[0m{"DagFlake":".#tullia.x86_64-linux.dag","Mode":"cli","Runtime":"nsjail","Task":"julia-cli","TaskFlake":".#tullia.x86_64-linux.task"}
+: path '/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org' does not contain a 'flake.nix', searching up
+: warning: Git tree '/home/gtrun/ghq/github.com/GTrunSec/DeSci' is dirty
+: [90m11:04PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m"open /dev/tty: no such device or address"[0m
+
+* Dag Jobs
+
+#+begin_src sh :async :exports both :results output
+tullia run ci --runtime nsjail --log-level debug
+#+end_src
+
+#+RESULTS:
+: [90m11:05PM[0m [33mDBG[0m parsed args [36mconfig=[0m{"DagFlake":".#tullia.x86_64-linux.dag","Mode":"cli","Runtime":"nsjail","Task":"ci","TaskFlake":".#tullia.x86_64-linux.task"}
+: path '/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org' does not contain a 'flake.nix', searching up
+: warning: Git tree '/home/gtrun/ghq/github.com/GTrunSec/DeSci' is dirty
+: [90m11:05PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m"open /dev/tty: no such device or address"[0m
