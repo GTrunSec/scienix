@@ -7,3 +7,6 @@
 [submodule "modules/grafonnix-guard"]
 	path = modules/grafonnix-guard
 	url = git@github.com:GTrunSec/grafonnix-guard.git
+[submodule "playrground"]
+	path = playrground
+	url = https://github.com/GTrunSec/playrground.git
