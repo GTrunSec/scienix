@@ -1395,11 +1395,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1670367462,
-        "narHash": "sha256-0jRwQuALKTJHKjCzyz6axghCoLJ1e/lAsjh3OjwnB7M=",
+        "lastModified": 1671504297,
+        "narHash": "sha256-iwmHCoOdNYmtikNWRnfAe/SFsi4Fvy70ejR07SCrcxc=",
         "owner": "gtrunsec",
         "repo": "jupyterWith",
-        "rev": "35ad78af1d0a951a52168b48f3df09ff7b5a5886",
+        "rev": "369a16f17e5d037d8ebd3c545f532531005345ad",
         "type": "github"
       },
       "original": {

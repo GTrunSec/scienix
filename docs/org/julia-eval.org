@@ -1,19 +1,38 @@
+:PROPERTIES:
+:ID:       b1c97a0f-f48e-4050-a5e2-59914337e813
+:END:
+
 #+title: Julia Eval
 
-#+begin_src julia :async :exports both :results output
+
+* Ein
+:PROPERTIES:
+:ID:       bee93e75-9d42-421e-8562-c2bb29d8abb4
+:header-args:ein-julia: :session http://127.0.0.1:8888/julia.ipynb
+:END:
+
+#+begin_src ein
+
+#+end_src
+
+#+NAME: c0278b0c-ed87-4209-b564-e03a4fa210ef
+#+begin_src ein-julia :results raw drawer
 using Dates
 format = DateFormat("yyyymmdd")
+#+end_src
+
+#+RESULTS: c0278b0c-ed87-4209-b564-e03a4fa210ef
+:results:
+dateformat"yyyymmdd"
+:end:
+
+
+#+NAME: f290df64-2617-4368-941f-f953b7080217
+#+BEGIN_SRC ein-julia :exports both :results raw drawer
 Date("19870913", format)
 #+end_src
 
-#+RESULTS:
-: dateformat"yyyymmdd"
-: 1987-09-13
-
-
-#+begin_src julia :async :exports both :results output
-1 + 1
-#+end_src
-
-#+RESULTS:
-: 2
+#+RESULTS: f290df64-2617-4368-941f-f953b7080217
+:results:
+1987-09-13
+:end:
