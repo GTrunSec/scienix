@@ -30,19 +30,16 @@
         <h2 id="datafram-commands">DataFram Commands</h2>
 <h3 id="vast-export">vast export</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nu -c <span style="color:#4070a0">&#39;vast export -n 1 json | from json&#39;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>╭────────────────────────────┬────────────────────────────╮
+</span></span></code></pre></div><p><a id="code-snippet--40aae1d0-7835-4317-843d-b773740deb18"></a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nu -c <span style="color:#4070a0">&#39;vast export -n 1 json | from json&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp
+</span></span><span style="display:flex;"><span>[21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us
+</span></span><span style="display:flex;"><span>[21:19:48.076] json-writer received first result with a latency of 3.7ms
+</span></span><span style="display:flex;"><span>[21:19:48.076] json-writer-6 reached limit of 1 events
+</span></span><span style="display:flex;"><span>╭────────────────────────────┬────────────────────────────╮
 </span></span><span style="display:flex;"><span>│ ts                         │ 2022-09-08T05:16:18.864804 │
 </span></span><span style="display:flex;"><span>│ id.orig_h                  │ 192.168.99.129             │
 </span></span><span style="display:flex;"><span>│ id.orig_p                  │ 49835                      │
-</span></span><span style="display:flex;"><span>│ id.resp_h                  │ 192.168.2.254              │
-</span></span><span style="display:flex;"><span>│ id.resp_p                  │ 110                        │
-</span></span><span style="display:flex;"><span>│ uid                        │ CdveCb2nALNTFcT2U5         │
-</span></span><span style="display:flex;"><span>│ start_time                 │ 2022-09-08T05:16:18.757662 │
-</span></span><span style="display:flex;"><span>│ end_time                   │                            │
-</span></span><span style="display:flex;"><span>│ duration                   │ 107.14ms                   │
-</span></span><span style="display:flex;"><span>│ service                    │ [list 0 items]             │
-</span></span><span style="display:flex;"><span>│ trans_depth                │ 1                          │
-</span></span><span style="display:flex;"><span>│ helo                       │                            │
 </span></span><span style="display:flex;"><span>│ mailfrom                   │                            │
 </span></span><span style="display:flex;"><span>│ rcptto                     │                            │
 </span></span><span style="display:flex;"><span>│ date                       │                            │
@@ -73,6 +70,41 @@
 </span></span><span style="display:flex;"><span>│ location_resp.latitude     │                            │
 </span></span><span style="display:flex;"><span>│ location_resp.longitude    │                            │
 </span></span><span style="display:flex;"><span>╰────────────────────────────┴────────────────────────────╯
+</span></span><span style="display:flex;"><span>│ id.resp_h                  │ 192.168.2.254              │
+</span></span><span style="display:flex;"><span>│ id.resp_p                  │ 110                        │
+</span></span><span style="display:flex;"><span>│ uid                        │ CdveCb2nALNTFcT2U5         │
+</span></span><span style="display:flex;"><span>│ start_time                 │ 2022-09-08T05:16:18.757662 │
+</span></span><span style="display:flex;"><span>│ end_time                   │                            │
+</span></span><span style="display:flex;"><span>│ duration                   │ 107.14ms                   │
+</span></span><span style="display:flex;"><span>│ service                    │ [list 0 items]             │
+</span></span><span style="display:flex;"><span>│ trans_depth                │ 1                          │
+</span></span><span style="display:flex;"><span>│ helo                       │                            │
+</span></span></code></pre></div><p><a id="code-snippet--46cc59d8-2f26-4eab-9790-f412af9e6de9"></a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nu -c <span style="color:#4070a0">&#39;from&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Usage:
+</span></span><span style="display:flex;"><span>  &gt; from
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Subcommands:
+</span></span><span style="display:flex;"><span>  from csv - Parse text as .csv and create table.
+</span></span><span style="display:flex;"><span>  from eml - Parse text as .eml and create record.
+</span></span><span style="display:flex;"><span>  from ics - Parse text as .ics and create table.
+</span></span><span style="display:flex;"><span>  from ini - Parse text as .ini and create record
+</span></span><span style="display:flex;"><span>  from json - Convert from json to structured data
+</span></span><span style="display:flex;"><span>  from nuon - Convert from nuon to structured data
+</span></span><span style="display:flex;"><span>  from ods - Parse OpenDocument Spreadsheet(.ods) data and create table.
+</span></span><span style="display:flex;"><span>  from parquet - Convert from .parquet binary into table
+</span></span><span style="display:flex;"><span>  from ssv - Parse text as space-separated values and create a table. The default minimum number of spaces counted as a separator is 2.
+</span></span><span style="display:flex;"><span>  from toml - Parse text as .toml and create record.
+</span></span><span style="display:flex;"><span>  from tsv - Parse text as .tsv and create table.
+</span></span><span style="display:flex;"><span>  from url - Parse url-encoded string as a record.
+</span></span><span style="display:flex;"><span>  from vcf - Parse text as .vcf and create table.
+</span></span><span style="display:flex;"><span>  from xlsx - Parse binary Excel(.xlsx) data and create table.
+</span></span><span style="display:flex;"><span>  from xml - Parse text as .xml and create record.
+</span></span><span style="display:flex;"><span>  from yaml - Parse text as .yaml/.yml and create table.
+</span></span><span style="display:flex;"><span>  from yml - Parse text as .yaml/.yml and create table.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Flags:
+</span></span><span style="display:flex;"><span>  -h, --help - Display the help message for this command
 </span></span></code></pre></div>
       </div>
       

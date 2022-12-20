@@ -21,7 +21,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</guid>
-      <description>Ein using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13</description>
+      <description>
+using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13 </description>
     </item>
     
     <item>
@@ -30,7 +31,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</guid>
-      <description>DataFram Commands vast export nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.864804 │ │ id.orig_h │ 192.168.99.129 │ │ id.orig_p │ 49835 │ │ id.resp_h │ 192.168.2.254 │ │ id.resp_p │ 110 │ │ uid │ CdveCb2nALNTFcT2U5 │ │ start_time │ 2022-09-08T05:16:18.757662 │ │ end_time │ │ │ duration │ 107.14ms │ │ service │ [list 0 items] │ │ trans_depth │ 1 │ │ helo │ │ │ mailfrom │ │ │ rcptto │ │ │ date │ │ │ from │ │ │ to │ │ │ cc │ │ │ reply_to │ │ │ msg_id │ │ │ in_reply_to │ │ │ subject │ │ │ x_originating_ip │ │ │ first_received │ │ │ second_received │ │ │ last_reply │ OK Dovecot ready.</description>
+      <description>DataFram Commands vast export nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; [21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp [21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us [21:19:48.076] json-writer received first result with a latency of 3.7ms [21:19:48.076] json-writer-6 reached limit of 1 events ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.</description>
     </item>
     
     <item>
