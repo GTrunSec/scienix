@@ -10,5 +10,7 @@ in
     extraRuntimePackages = with nixpkgs; [
       nix
       git
+      args.inputs.cells.shell.entrypoints.nu
+      args.inputs.cells.vast.packages.vast-bin
     ];
   }
