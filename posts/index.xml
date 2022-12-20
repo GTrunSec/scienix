@@ -7,12 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://exquisite-meringue-7af06d.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Attack Model</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/attack-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/attack-model/</guid>
+      <description>Thesis </description>
+    </item>
+    
+    <item>
       <title>Julia Eval</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</guid>
-      <description>using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) Date(&amp;#34;19870913&amp;#34;, format) dateformat&amp;#34;yyyymmdd&amp;#34; 1987-09-13 1 + 1 2 </description>
+      <description>Ein using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13</description>
     </item>
     
     <item>
