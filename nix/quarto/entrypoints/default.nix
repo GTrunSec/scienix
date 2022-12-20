@@ -21,7 +21,7 @@ in {
       with ps; [
         # add your custom Python packages here
         pandas
-        bash_kernel
+        matplotlib
       ];
     text = ''
       # write your custom bash script here

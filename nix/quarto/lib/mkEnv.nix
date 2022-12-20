@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs;
+  nixpkgs = inputs.nixpkgs.appendOverlays [cell.overlays.default];
   inherit (inputs.cells-lab.writers.lib) writeShellApplication;
   l = inputs.nixpkgs.lib // builtins;
 in
@@ -11,17 +11,14 @@ in
     python ? (_: []),
     text ? "",
   }: let
-    pythonEnv =
-      nixpkgs.python3.buildEnv.override
-      {
-        extraLibs = with nixpkgs.python3Packages;
-          [
-            nbconvert
-            ipykernel
-            jupyter
-          ]
-          ++ (python nixpkgs.python3Packages);
-      };
+    pythonEnv = nixpkgs.python3.withPackages (ps:
+      with ps;
+        [
+          jupyter
+          ipython
+        ]
+        ++ (python ps));
+
     rEnv = nixpkgs.rWrapper.override {
       packages = with nixpkgs.rPackages;
         [rmarkdown]
@@ -30,10 +27,11 @@ in
   in
     writeShellApplication {
       name = "mkQuarto";
-      runtimeInputs = [rEnv nixpkgs.quarto pythonEnv];
+      runtimeInputs = [nixpkgs.quarto];
       runtimeEnv = {
         QUARTO_R = "${rEnv}/bin/R";
-        QUARTO_PYTHON = "${pythonEnv}/bin/python";
+        QUARTO_PYTHON = "${pythonEnv}/bin/python3";
+        QUARTO_BASH = "${nixpkgs.bash}/bin/bash";
       };
       inherit text;
     }

@@ -17,6 +17,7 @@ nu -c 'vast export -n 1 json | from json'
 #+end_src
 
 
+
 #+NAME: 40aae1d0-7835-4317-843d-b773740deb18
 #+begin_src ein-bash :exports both :results output
 nu -c 'vast export -n 1 json | from json'
@@ -79,6 +80,8 @@ nu -c 'vast export -n 1 json | from json'
 nu -c 'from'
 #+end_src
 
+
+* Plugin Check
 #+RESULTS: 46cc59d8-2f26-4eab-9790-f412af9e6de9
 #+begin_example
 Usage:

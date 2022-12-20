@@ -33,7 +33,7 @@ in
 
       commands = [
         {
-          package = nixpkgs.quarto;
+          package = (nixpkgs.extend cell.overlays.default).quarto;
         }
       ];
 
