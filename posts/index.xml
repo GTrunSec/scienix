@@ -16,13 +16,30 @@
     </item>
     
     <item>
+      <title>Bash</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/bash/</guid>
+      <description>pwd </description>
+    </item>
+    
+    <item>
       <title>Julia Eval</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</guid>
-      <description>
-using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13 </description>
+      <description> (shell-command-to-string (format &amp;#34;2&amp;gt;/dev/null jupyterEnv kernelspec list --json&amp;#34;)) using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13 </description>
+    </item>
+    
+    <item>
+      <title>Julia Graph</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</guid>
+      <description>a = 3 3 a 2 import Pkg; Pkg.add(&amp;#34;Graphs&amp;#34;) using GraphPlot nothing using Graphs: smallgraph g = smallgraph(:karate) {34, 78} undirected simple Int64 graph Pkg.add([&amp;#34;Cairo&amp;#34;,&amp;#34;Compose&amp;#34;]) using Compose, Cairo g = smallgraph(:karate) draw(PNG(&amp;#34;./attach/gplot.png&amp;#34;, 16cm, 16cm), gplot(g)) using Plots scatter(rand(100), rand(100)) savefig(&amp;#34;./attach/plot.png&amp;#34;) Unicode using UnicodePlots lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title=&amp;#34;Example&amp;#34;, name=&amp;#34;my line&amp;#34;, xlabel=&amp;#34;x&amp;#34;, ylabel=&amp;#34;y&amp;#34;) ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Example⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ┌────────────────────────────────────────┐ 9 │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠉⠢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ my line │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠑⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⠀⠀⠀⠀⠈⠒⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠤⡀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠒⢄⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠢⣀⠀│ y │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⢀⡠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⣀⠤⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠀⠀⠀⠀⠀⡇⠀⡠⠔⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ │⠤⠤⠤⢤⡤⡷⠭⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤│ -1 │⣀⠤⠊⠁⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ └────────────────────────────────────────┘ ⠀-1⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀7⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ </description>
     </item>
     
     <item>
@@ -31,7 +48,7 @@ using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</guid>
-      <description>DataFram Commands vast export nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; [21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp [21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us [21:19:48.076] json-writer received first result with a latency of 3.7ms [21:19:48.076] json-writer-6 reached limit of 1 events ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.</description>
+      <description>DataFrame Commands vast export nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; [21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp [21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us [21:19:48.076] json-writer received first result with a latency of 3.7ms [21:19:48.076] json-writer-6 reached limit of 1 events ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.</description>
     </item>
     
     <item>
@@ -41,6 +58,15 @@ using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/phishing/</guid>
       <description>C4 Diagram &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;Python[Container]Training DataSet[Container]Phishing.url.data[parser data] merge the phishing.url.datafrom zeekPhishing.url.result[match indicates] get phishing-url-result.jsonby python scriptdone.phishing.result[vast export json&#39;done.phishing.url.result.result== 0&#39;] get the result by themachine-learning modeltrue/false.phishing.result[vast export jsontrue/false.phishing.url.result.result== 0&#39;] After analyzing done.result,pick the result to true/falsetypeTraining model[get model] Through machine learningalgorithms, we can generaterelevant phishing indicatesmodels throughtrue.phishing.result datasetNew Phishing model[extended result.dataSet] identify suspicious,anomalous or misjudgmentdataMachine Learning[Traning Phishing Model] phishing-url-resutl.json -&amp;gt;probe，true/false.phishing-url-result.json-&amp;gt; new phishing-modelVast[Query URL] Query EngineGo Spider Application[extracting relevant info] phishing-features.json -&amp;gt;indicates.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/python/</guid>
+      <description> a </description>
     </item>
     
     <item>
