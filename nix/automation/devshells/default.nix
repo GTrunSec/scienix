@@ -29,13 +29,21 @@ in
           package = nixpkgs.nushell;
         }
         {
-          package = inputs.cells.python.packages.mkPoetryEnv;
+          command = ''
+            ${inputs.cells.kernels.packages.jupyterEnvironment}/bin/jupyter "$@"
+          '';
+          name = "jupyter";
         }
+        # {
+        #   package =inputs.cells.python.packages.mkPoetryEnv;
+        # }
       ];
 
       nixago = [
         cell.nixago.treefmt
         cell.nixago.just
+      ];
+      packages = [
       ];
     };
 

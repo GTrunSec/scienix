@@ -1,13 +1,12 @@
 :PROPERTIES:
 :ID:       8009637a-a5f0-4ada-84d2-552d135294d7
+:header-args:ein-bash: :session http://127.0.0.1:8888/bash.ipynb
 :END:
 #+title: Nushell
 
-
-* DataFram Commands
+* DataFrame Commands
 :PROPERTIES:
 :ID:       6f922d94-8ecc-4748-afdd-09aaa30e7763
-:header-args:ein-bash: :session http://127.0.0.1:8888/bash.ipynb
 :END:
 
 ** vast export

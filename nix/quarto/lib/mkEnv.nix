@@ -10,6 +10,7 @@ in
     r ? (_: []),
     python ? (_: []),
     text ? "",
+    runtimeInputs ? [],
   }: let
     pythonEnv = nixpkgs.python3.withPackages (ps:
       with ps;
@@ -27,11 +28,14 @@ in
   in
     writeShellApplication {
       name = "mkQuarto";
-      runtimeInputs = [nixpkgs.quarto];
+      runtimeInputs =
+        [
+          nixpkgs.quarto
+        ]
+        ++ runtimeInputs;
       runtimeEnv = {
         QUARTO_R = "${rEnv}/bin/R";
         QUARTO_PYTHON = "${pythonEnv}/bin/python3";
-        QUARTO_BASH = "${nixpkgs.bash}/bin/bash";
       };
       inherit text;
     }

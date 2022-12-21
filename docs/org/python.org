@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       16d684ed-0136-4e5f-a1c0-67dadad1a11a
+:header-args:jupyter-python: :session python :async yes :kernel python
+:END:
+#+title: Python
+
+#+BEGIN_SRC jupyter-python
+ a
+#+end_src
