@@ -50,6 +50,7 @@ jobs:
 
       - name: Build quarto
         run: |
+          nix run .\#x86_64-linux.julia.packages.julia-wrapped -- -e '1 + 1'
           nix run .\#x86_64-linux.kernels.entrypoints.linkKernels
 
           nix develop .#doc --show-trace --command \
