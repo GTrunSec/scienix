@@ -23,9 +23,15 @@ in {
         pandas
         matplotlib
       ];
+    runtimeInputs = with nixpkgs; [sd];
     text = ''
       # write your custom bash script here
-      quarto render "$@"
+      file=("$@")
+      cp "$@" "''${file%.md}".qmd
+      sd './attach' '../../static/ox-hugo' "''${file%.md}".qmd
+      sd '```julia\n\#\|' '```{julia}\n#|' "''${file%.md}".qmd
+
+      quarto render "''${file%.md}".qmd --to html --no-clean
     '';
   };
 }

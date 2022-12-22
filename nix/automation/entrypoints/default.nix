@@ -6,16 +6,16 @@
   inherit (inputs) self nixpkgs std;
 
   org =
-    nixpkgs.runCommand "graphite_local_settings" {
+    nixpkgs.runCommand "patchOrg" {
       org = "${(std.incl self ["docs"])}/docs/org";
       buildInputs = [nixpkgs.ripgrep];
       preferLocalBuild = true;
     } ''
       cp -rf --no-preserve=mode,ownership $org $out
-      for file in $(rg -l -- "ein-" $out); do
-        substituteInPlace $file \
-        --replace "#+begin_src ein-" "#+begin_src "
-        done
+      # for file in $(rg -l -- "ein-" $out); do
+      #   substituteInPlace $file \
+      #   --replace "#+begin_src ein-" "#+begin_src "
+      #   done
     '';
 in {
   mkdoc = let
@@ -27,10 +27,10 @@ in {
       name = "mkdoc";
       runtimeInputs = [nixpkgs.hugo];
       text = ''
-        rsync -avzh ${org-roam-book}/* docs/publish
+        rsync --chmod +rw -avzh ${org-roam-book}/* docs/publish
         cd docs/publish && cp ../config.toml .
         hugo "$@"
-        cp -rf --no-preserve=mode,ownership public/posts/index.html ./public/
+        cp -rfp --no-preserve=mode,ownership public/posts/index.html ./public/
       '';
     };
 }

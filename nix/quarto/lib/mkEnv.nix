@@ -26,7 +26,7 @@ in
         ++ (r nixpkgs.rPackages);
     };
   in
-    writeShellApplication {
+    (writeShellApplication {
       name = "mkQuarto";
       runtimeInputs =
         [
@@ -38,4 +38,9 @@ in
         QUARTO_PYTHON = "${pythonEnv}/bin/python3";
       };
       inherit text;
-    }
+    })
+    .overrideAttrs (old: {
+      passthru = {
+        quarto = nixpkgs.quarto;
+      };
+    })

@@ -35,7 +35,10 @@ in
           name = "jupyter";
         }
         {
-          package =inputs.cells.python.packages.mkPoetryEnv;
+          package = inputs.cells.python.packages.mkPoetryEnv;
+        }
+        {
+          package = inputs.cells.quarto.entrypoints.example.passthru.quarto;
         }
       ];
 
@@ -43,7 +46,9 @@ in
         cell.nixago.treefmt
         cell.nixago.just
       ];
-      packages = [
+
+      packages = with nixpkgs; [
+        sd
       ];
     };
 

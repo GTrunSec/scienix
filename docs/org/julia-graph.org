@@ -5,14 +5,6 @@
 #+title: Julia Graph
 
 #+begin_src julia
-import Pkg; Pkg.add("Graphs")
-using GraphPlot
-#+end_src
-
-#+RESULTS:
-: nothing
-
-#+begin_src julia
 using Graphs: smallgraph
 g = smallgraph(:karate)
 #+end_src
@@ -21,19 +13,28 @@ g = smallgraph(:karate)
 : {34, 78} undirected simple Int64 graph
 
 #+begin_src julia :results file graphics :file gplot.png :output-dir ./attach
- Pkg.add(["Cairo","Compose"])
- using Compose, Cairo
- g = smallgraph(:karate)
+#| label: fig-parametric
+#| fig-cap: "Parametric Plots"
+
+using Compose, Cairo, GraphPlot
+using Graphs: smallgraph
+
+g = smallgraph(:karate)
 draw(PNG("./attach/gplot.png", 16cm, 16cm), gplot(g))
+gplot(g)
 #+end_src
 
 #+RESULTS:
 [[file:./attach/gplot.png]]
 
 #+begin_src julia :results file graphics :file plot.png :output-dir ./attach
+#| echo: true
+
+
 using Plots
 scatter(rand(100), rand(100))
 savefig("./attach/plot.png")
+plot(rand(100), rand(100))
 #+end_src
 
 #+RESULTS:
@@ -41,12 +42,12 @@ savefig("./attach/plot.png")
 
 * Unicode
 
-#+begin_src julia :results output
+#+begin_src julia
 using UnicodePlots
 lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title="Example", name="my line", xlabel="x", ylabel="y")
 #+end_src
 
-#+RESULTS: ffda3369-3302-4dd4-9993-98b011b82b1d
+#+RESULTS:
 #+begin_example
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Example⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         ┌────────────────────────────────────────┐
