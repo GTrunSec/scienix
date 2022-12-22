@@ -26,12 +26,15 @@ in {
     runtimeInputs = with nixpkgs; [sd];
     text = ''
       # write your custom bash script here
-      file=("$@")
-      cp "$@" "''${file%.md}".qmd
-      sd './attach' '../../static/ox-hugo' "''${file%.md}".qmd
-      sd '```julia\n\#\|' '```{julia}\n#|' "''${file%.md}".qmd
+      tmp="$PRJ_ROOT/.cache/"
+      path=("$@")
+      # shellcheck disable=SC2128
+      file="$(basename "$path")"
+      cp "$@" "$tmp"/"''${file%.md}".qmd
+      sd './attach' "$PRJ_ROOT/docs/publish/static/ox-hugo" "$tmp""''${file%.md}".qmd
+      sd '```julia\n\#\|' '```{julia}\n#|' "$tmp""''${file%.md}".qmd
 
-      quarto render "''${file%.md}".qmd --to html --no-clean
+      quarto render  "$tmp""''${file%.md}".qmd --to html
     '';
   };
 }
