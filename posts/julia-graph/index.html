@@ -27,22 +27,28 @@
     <div class="page" data-level="1">
       <div class="content">
         <h1>Julia Graph</h1>
-        <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> Pkg; Pkg<span style="color:#666">.</span>add(<span style="color:#4070a0">&#34;Graphs&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> GraphPlot
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>nothing
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Graphs<span style="color:#666">:</span> smallgraph
+        <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Graphs<span style="color:#666">:</span> smallgraph
 </span></span><span style="display:flex;"><span>g <span style="color:#666">=</span> smallgraph(<span style="color:#517918">:karate</span>)
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{34, 78} undirected simple Int64 graph
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span> Pkg<span style="color:#666">.</span>add([<span style="color:#4070a0">&#34;Cairo&#34;</span>,<span style="color:#4070a0">&#34;Compose&#34;</span>])
-</span></span><span style="display:flex;"><span> <span style="color:#007020;font-weight:bold">using</span> Compose, Cairo
-</span></span><span style="display:flex;"><span> g <span style="color:#666">=</span> smallgraph(<span style="color:#517918">:karate</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#| label: fig-parametric</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#| fig-cap: &#34;Parametric Plots&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Compose, Cairo, GraphPlot
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Graphs<span style="color:#666">:</span> smallgraph
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>g <span style="color:#666">=</span> smallgraph(<span style="color:#517918">:karate</span>)
 </span></span><span style="display:flex;"><span>draw(PNG(<span style="color:#4070a0">&#34;./attach/gplot.png&#34;</span>, <span style="color:#40a070">16</span>cm, <span style="color:#40a070">16</span>cm), gplot(g))
+</span></span><span style="display:flex;"><span>gplot(g)
 </span></span></code></pre></div><figure><img src="/ox-hugo/gplot.png"/>
 </figure>
 
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Plots
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#| echo: true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Plots
 </span></span><span style="display:flex;"><span>scatter(rand(<span style="color:#40a070">100</span>), rand(<span style="color:#40a070">100</span>))
 </span></span><span style="display:flex;"><span>savefig(<span style="color:#4070a0">&#34;./attach/plot.png&#34;</span>)
+</span></span><span style="display:flex;"><span>plot(rand(<span style="color:#40a070">100</span>), rand(<span style="color:#40a070">100</span>))
 </span></span></code></pre></div><figure><img src="/ox-hugo/plot.png"/>
 </figure>
 
