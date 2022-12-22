@@ -61,6 +61,7 @@ in
       imports = [
         inputs.cells-lab.automation.devshellProfiles.docs
       ];
+      packages = [inputs.cells.kernels.packages.jupyterEnvironment];
     };
 
     tullia = {
