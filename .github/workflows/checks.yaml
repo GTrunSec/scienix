@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3.1.0
         with:
+          submodules: true
           fetch-depth: 0
+
       - uses: cachix/install-nix-action@v18
         with:
           install_url: https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.10.0pre20220728_86fcd4f/install
