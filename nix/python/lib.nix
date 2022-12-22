@@ -2,7 +2,7 @@
   inputs,
   cell,
 } @ args: {
-  poetryPackages = import ./packages/poetryPackages.nix args;
+  poetryAttrs = import ./packages/poetryAttrs.nix args;
 
   nixpkgs = inputs.cells.common.lib.nixpkgs.appendOverlays [
     inputs.cells.common.lib.__inputs__.nixpkgs-hardenedlinux.python.overlays.default

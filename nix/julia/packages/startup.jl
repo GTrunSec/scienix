@@ -1,3 +1,4 @@
 import Pkg
-Pkg.activate("./playground")
+prj = joinpath(ENV["PRJ_ROOT"], "playground")
+Pkg.activate(prj)
 Pkg.instantiate()

@@ -22,7 +22,7 @@
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # jupyterWith.url = "github:tweag/jupyterWith";
-    jupyterWith.url = "github:gtrunsec/jupyterWith/dev";
+    jupyterWith.url = "github:gtrunsec/jupyterWith/maintainer";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
     # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
 

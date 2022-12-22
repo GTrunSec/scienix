@@ -4,21 +4,6 @@
 :END:
 #+title: Julia Graph
 
-#+BEGIN_src julia
-a = 3
-#+end_src
-
-#+RESULTS:
-: 3
-
-#+begin_src julia
-a
-#+end_src
-
-#+RESULTS:
-: 2
-
-
 #+begin_src julia
 import Pkg; Pkg.add("Graphs")
 using GraphPlot
@@ -56,8 +41,7 @@ savefig("./attach/plot.png")
 
 * Unicode
 
-#+NAME: ffda3369-3302-4dd4-9993-98b011b82b1d
-#+begin_src ein-julia :exports both :results output
+#+begin_src julia :results output
 using UnicodePlots
 lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title="Example", name="my line", xlabel="x", ylabel="y")
 #+end_src

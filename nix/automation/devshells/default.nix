@@ -34,9 +34,9 @@ in
           '';
           name = "jupyter";
         }
-        # {
-        #   package =inputs.cells.python.packages.mkPoetryEnv;
-        # }
+        {
+          package =inputs.cells.python.packages.mkPoetryEnv;
+        }
       ];
 
       nixago = [
