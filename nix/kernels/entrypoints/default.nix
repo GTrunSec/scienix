@@ -13,11 +13,15 @@ in {
     '';
   in
     writeShellApplication {
-      name = "nu";
+      name = "link-kernels";
       runtimeInputs = [];
       text = ''
+        if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
+          mkdir -p "$HOME"/.local/share/jupyter/kernels
+        fi
         ${cpKernel "julia"}
         ${cpKernel "python"}
+        ${cpKernel "bash"}
       '';
     };
 }
