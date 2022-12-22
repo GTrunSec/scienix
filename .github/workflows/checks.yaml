@@ -48,6 +48,8 @@ jobs:
 
       - name: Build quarto
         run: |
+          nix run .\#x86_64-linux.kernels.entrypoints.linkKernels
+
           nix develop .#doc --show-trace --command \
           nix run .\#x86_64-linux.quarto.entrypoints.example \
           -- ./docs/publish/content/posts/julia-graph.md

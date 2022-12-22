@@ -9,6 +9,5 @@ in
       jupyterWith = true;
     })
     // {
-      inherit name;
       displayName = name;
     })
