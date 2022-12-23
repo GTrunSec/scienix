@@ -17,12 +17,12 @@ caf:
     relaxed-sleep-duration: 10ms
     relaxed-steal-interval: 1
 schema-dirs:
-- /nix/store/jqj3k8bvfdxwh7mb4ghkny030zsrp7ra-google-phishing-api.schema
-- /nix/store/kvb9b67v7imd37balaqcrhzm2l0wvs6f-google-search-api.schema
-- /nix/store/44rflvvcjmr17wawvy3qcf6nl46qxqk0-zeek-conn.schema
-- /nix/store/kxg7njyvqqcq669yrmiw91bdic8xivm2-zeek-imap.schema
-- /nix/store/19ckd5is7dai2jcvz1j27kh7vrcdkkvm-zeek-pop3.schema
-- /nix/store/2x35qwi60alj1xizbq2acxmraa5wkzzi-zeek-smtp.schema
+- /nix/store/49dndlm377p5vhdgwsqijj1x1cgx45q1-google-phishing-api.schema
+- /nix/store/chnpic8fbckjppl6rxf1g2vhmdk3h6i6-google-search-api.schema
+- /nix/store/07d4h0q37kvxi8vhn8dxam5bhk95dyq6-zeek-conn.schema
+- /nix/store/pr0a3yyq4dxl7mp31csh3akghhf7s98g-zeek-imap.schema
+- /nix/store/5bq6hwg3nib46xz0gxg9wnv40hy4gxd0-zeek-pop3.schema
+- /nix/store/ii1xh05byf4c5cz70y6nlzvnn7lfdvf6-zeek-smtp.schema
 vast:
   aging-frequency: 24h
   aging-query: ''

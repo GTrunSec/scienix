@@ -50,14 +50,7 @@ jobs:
 
       - name: Build quarto
         run: |
-          nix develop .#doc --show-trace --command \
-          nix run .\#x86_64-linux.julia.packages.julia-wrapped -- -e '1 + 1'
-
-          nix run .\#x86_64-linux.kernels.entrypoints.linkKernels
-
-          nix develop .#doc --show-trace --command \
-          nix run .\#x86_64-linux.quarto.entrypoints.example \
-          -- ./docs/publish/content/posts/julia-graph.md
+          nix develop .#doc --show-trace --command mkquarto
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1

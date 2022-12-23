@@ -8,13 +8,13 @@
 in {
   linkKernels = let
     cpKernel = n: ''
-      cp -r ${jupyterEnvironment.passthru.kernels."${n}-jupyter-kernel"}/kernels/${n} \
-      "$HOME"/.local/share/jupyter/kernels/${n}
+       rsync --chmod +rw -avzh ${jupyterEnvironment.passthru.kernels."${n}-jupyter-kernel"}/kernels/${n} \
+      "$HOME"/.local/share/jupyter/kernels
     '';
   in
     writeShellApplication {
       name = "link-kernels";
-      runtimeInputs = [];
+      runtimeInputs = [nixpkgs.rsync];
       text = ''
         if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
           mkdir -p "$HOME"/.local/share/jupyter/kernels

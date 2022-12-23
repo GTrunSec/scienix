@@ -4,8 +4,10 @@
 }: let
   inherit (inputs) nixpkgs;
   inherit (inputs.cells-lab.writers.lib) writeShellApplication;
+
+  l = inputs.nixpkgs.lib // builtins;
 in {
-  example = cell.lib.mkEnv {
+  orgToQuarto = cell.lib.mkEnv {
     python = ps:
       with ps; [
         # add your custom Python packages here
@@ -25,6 +27,16 @@ in {
       sd '```julia\n\#\|' '```{julia}\n#|' "$dir""''${file%.md}".qmd
 
       quarto render  "$dir""''${file%.md}".qmd --to html
+    '';
+  };
+
+  mkquarto = writeShellApplication {
+    name = "mkquarto";
+    runtimeInputs = [inputs.cells.julia.packages.julia-wrapped];
+    text = ''
+      julia -e 'println("initializing")'
+      ${l.getExe inputs.cells.kernels.entrypoints.linkKernels}
+      ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/julia-graph.md
     '';
   };
 }

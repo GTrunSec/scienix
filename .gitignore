@@ -14,3 +14,4 @@ treefmt.toml
 docs/book/**
 index_files
 docs/publish
+docs/*.qmd

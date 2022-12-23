@@ -54,10 +54,19 @@ in
 
     generator = {
       nixago = [] ++ l.attrValues inputs.cells.vast.nixago;
+      devshell.startup.cpSchemas = l.stringsWithDeps.noDepEntry ''
+        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/julia/packages/*.toml playground/
+        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/python/packages/*.{toml,lock} playground/
+      '';
     };
 
     doc = {
       name = "Documentation";
+      commands = [
+        {
+          package = inputs.cells.quarto.entrypoints.mkquarto;
+        }
+      ];
       imports = [
         inputs.cells-lab.automation.devshellProfiles.docs
       ];

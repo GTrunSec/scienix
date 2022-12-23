@@ -10,5 +10,5 @@ in
     pkgs = inputs.nixpkgs;
     ijuliaRev = "6TIq1";
     julia-bin = inputs.cells.julia.packages.julia-wrapped;
-    activate = "Pkg.activate(joinpath(ENV[\"PRJ_ROOT\"], \"playground\"))";
+    activate = "Pkg.activate(joinpath(ENV[\"PRJ_ROOT\"], \"nix/julia/packages\"))";
   }
