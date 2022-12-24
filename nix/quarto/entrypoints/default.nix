@@ -30,8 +30,8 @@ in {
     '';
   };
 
-  mkquarto = writeShellApplication {
-    name = "mkquarto";
+  mkQuarto = writeShellApplication {
+    name = "mkQuarto";
     runtimeInputs = [inputs.cells.julia.packages.julia-wrapped];
     text = ''
       julia -e 'println("initializing")'

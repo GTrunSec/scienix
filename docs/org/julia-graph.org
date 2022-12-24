@@ -43,9 +43,11 @@ plot(rand(100), rand(100))
 * Unicode
 
 #+begin_src julia
+#| output: true
 #| echo: true
+#| code-fold: true
 
 using UnicodePlots
-lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title="Example", name="my line", xlabel="x", ylabel="y")
+lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title="Example", name="Line", xlabel="x", ylabel="y")
 #+end_src
 

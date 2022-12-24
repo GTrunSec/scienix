@@ -50,7 +50,7 @@ jobs:
 
       - name: Build quarto
         run: |
-          nix develop .#doc --show-trace --command mkquarto
+          nix develop .#doc --show-trace --command mkQuarto
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1

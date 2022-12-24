@@ -38,7 +38,7 @@ in
           package = inputs.cells.python.packages.mkPoetryEnv;
         }
         {
-          package = inputs.cells.quarto.entrypoints.example.passthru.quarto;
+          package = inputs.cells.quarto.entrypoints.orgToQuarto.passthru.quarto;
         }
       ];
 
@@ -64,7 +64,7 @@ in
       name = "Documentation";
       commands = [
         {
-          package = inputs.cells.quarto.entrypoints.mkquarto;
+          package = inputs.cells.quarto.entrypoints.mkQuarto;
         }
       ];
       imports = [

@@ -12,10 +12,10 @@
       preferLocalBuild = true;
     } ''
       cp -rf --no-preserve=mode,ownership $org $out
-      # for file in $(rg -l -- "ein-" $out); do
-      #   substituteInPlace $file \
-      #   --replace "#+begin_src ein-" "#+begin_src "
-      #   done
+      for file in $(rg -l -- "begin_src jupyter-" $out); do
+        substituteInPlace $file \
+        --replace "#+begin_src jupyter-" "#+begin_src "
+        done
     '';
 in {
   mkdoc = let
