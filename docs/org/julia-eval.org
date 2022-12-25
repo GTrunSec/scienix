@@ -4,12 +4,8 @@
 :END:
 #+title: Julia Eval
 
-#+begin_src ein
-
-#+end_src
-
 #+NAME: c0278b0c-ed87-4209-b564-e03a4fa210ef
-#+begin_src ein-julia :exports both :results ouput
+#+begin_src julia :exports both :results ouput
 using Dates
 format = DateFormat("yyyymmdd")
 #+end_src

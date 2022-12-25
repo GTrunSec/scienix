@@ -38,7 +38,8 @@ in
           package = inputs.cells.python.packages.mkPoetryEnv;
         }
         {
-          package = inputs.cells.quarto.entrypoints.orgToQuarto.passthru.quarto;
+          name = "quarto";
+          command = l.getExe inputs.cells.quarto.entrypoints.default;
         }
       ];
 
