@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><title>Python</title>
+<html><title>observablehq</title>
 
 
 <meta charset="utf-8">
@@ -26,8 +26,26 @@
   <div class="grid">
     <div class="page" data-level="1">
       <div class="content">
-        <h1>Python</h1>
-        <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> a
+        <h1>observablehq</h1>
+        <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>//| echo: true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Plot.rectY(filtered,
+</span></span><span style="display:flex;"><span>  Plot.binX(
+</span></span><span style="display:flex;"><span>    {y: &#34;count&#34;},
+</span></span><span style="display:flex;"><span>    {x: &#34;body_mass&#34;, fill: &#34;species&#34;, thresholds: 20}
+</span></span><span style="display:flex;"><span>  ))
+</span></span><span style="display:flex;"><span>  .plot({
+</span></span><span style="display:flex;"><span>    facet: {
+</span></span><span style="display:flex;"><span>      data: filtered,
+</span></span><span style="display:flex;"><span>      x: &#34;sex&#34;,
+</span></span><span style="display:flex;"><span>      y: &#34;species&#34;,
+</span></span><span style="display:flex;"><span>      marginRight: 80
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    marks: [
+</span></span><span style="display:flex;"><span>      Plot.frame(),
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>)
 </span></span></code></pre></div>
       </div>
       
@@ -50,8 +68,6 @@
    
 
    
-      
-   
 
    
 
@@ -66,17 +82,6 @@
    
 
 
-
-  <div class="bl-section">
-    <h4>Links to this note</h4>
-    <div class="backlinks">
-      <ul>
-       
-          <li><a href="/posts/phishing/">Phishing</a></li>
-       
-     </ul>
-    </div>
-  </div>
 
 
       </div>

@@ -53,6 +53,15 @@ using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#
     </item>
     
     <item>
+      <title>observablehq</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/observablehq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/observablehq/</guid>
+      <description>//| echo: true Plot.rectY(filtered, Plot.binX( {y: &amp;#34;count&amp;#34;}, {x: &amp;#34;body_mass&amp;#34;, fill: &amp;#34;species&amp;#34;, thresholds: 20} )) .plot({ facet: { data: filtered, x: &amp;#34;sex&amp;#34;, y: &amp;#34;species&amp;#34;, marginRight: 80 }, marks: [ Plot.frame(), ] } ) </description>
+    </item>
+    
+    <item>
       <title>Phishing</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/phishing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
