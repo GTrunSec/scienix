@@ -7,3 +7,6 @@
 [submodule "playground"]
 	path = playground
 	url = https://github.com/GTrunSec/playground
+[submodule "modules/infra"]
+	path = modules/infra
+	url = https://github.com/GTrunSec/infra.git
