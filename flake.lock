@@ -293,11 +293,11 @@
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1672027556,
-        "narHash": "sha256-KJzu/jwRqVuFdjp19iD0M3W6gR6tKBDqZVlqAnhYf2E=",
+        "lastModified": 1672040943,
+        "narHash": "sha256-aA6qXlDfN0o76ohj+5zePuBpWUOnJZoN3CDgDMz4kq0=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "3e199d17151f856cab0ad6a0d3aeb5356d354b3d",
+        "rev": "3db131499b1dc07895b7e8ed82e46640087060f0",
         "type": "github"
       },
       "original": {

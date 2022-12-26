@@ -21,9 +21,11 @@ in {
     '';
   };
 
-  orgToQuarto = writeShellApplication  {
+  orgToQuarto = writeShellApplication {
     name = "orgToQuarto";
-    runtimeInputs = with nixpkgs;[cell.entrypoints.default sd];
+    runtimeInputs = with nixpkgs; [
+      sd
+    ];
     text = ''
       # write your custom bash script here
       dir="$PRJ_ROOT/docs/"
@@ -36,8 +38,8 @@ in {
       sd '```julia\n\#\|' '```{julia}\n#|' "$dir""''${file%.md}".qmd
       sd '```ojs\n//\|' '```{ojs}\n//|' "$dir""''${file%.md}".qmd
 
-      quarto render "$dir""''${file%.md}".qmd --to html
-      '';
+      ${l.getExe cell.entrypoints.default} render "$dir""''${file%.md}".qmd --to html
+    '';
   };
   mkQuarto = writeShellApplication {
     name = "mkQuarto";
@@ -46,6 +48,7 @@ in {
       julia -e 'println("initializing")'
 
       ${l.getExe inputs.cells.kernels.entrypoints.linkKernels}
+
       ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/julia-graph.md
       # ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/observablehq.md
     '';
