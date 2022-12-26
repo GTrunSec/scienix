@@ -201,11 +201,11 @@
         "std": "std_5"
       },
       "locked": {
-        "lastModified": 1667947745,
-        "narHash": "sha256-bTUmTOnYgvph0Hrkn0dALaa0G8Zmc0tyie690oFg7ZU=",
+        "lastModified": 1670568556,
+        "narHash": "sha256-rd3CBILR8ip+33oyl+IwqbG9rCgNtVc8GqcrubfslnY=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "7f550faf8a76dcdee4f54eb9d4f007b3fe2577ef",
+        "rev": "d8da6ba0181fdd7fc1452200c3e36534d02d4ca4",
         "type": "github"
       },
       "original": {
@@ -293,11 +293,11 @@
         "tullia": "tullia"
       },
       "locked": {
-        "lastModified": 1671931934,
-        "narHash": "sha256-amWDyuh3PvKjKnHvnXUXYiJYgF2/7IM8dCpraqKJHs4=",
+        "lastModified": 1672027556,
+        "narHash": "sha256-KJzu/jwRqVuFdjp19iD0M3W6gR6tKBDqZVlqAnhYf2E=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "b6d8272a9c5914312d38e6dc0dd671565ac510f1",
+        "rev": "3e199d17151f856cab0ad6a0d3aeb5356d354b3d",
         "type": "github"
       },
       "original": {
@@ -1483,6 +1483,29 @@
     "incl_4": {
       "inputs": {
         "nixlib": [
+          "matrix-attack-data",
+          "cells-lab",
+          "std",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1669263024,
+        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
+        "owner": "divnix",
+        "repo": "incl",
+        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "incl",
+        "type": "github"
+      }
+    },
+    "incl_5": {
+      "inputs": {
+        "nixlib": [
           "std",
           "nixpkgs"
         ]
@@ -1579,10 +1602,6 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-lock": [
-          "matrix-attack-data",
-          "nixpkgs"
-        ],
         "std": [
           "matrix-attack-data",
           "cells-lab",
@@ -1590,11 +1609,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1668125959,
-        "narHash": "sha256-Fukoa7ODKS3K1pNRGr2g39m9n2ZhKGcGeYpjAgFyIMY=",
+        "lastModified": 1670978933,
+        "narHash": "sha256-byDKF6/Q85Y3h/qH3p6nAKGKlU+vHdj4BV3yObyIvDY=",
         "owner": "GTrunSec",
         "repo": "matrix-attack-data",
-        "rev": "f63cf358f3cd2162bfa85b773ff431f2a4dcb2c1",
+        "rev": "f258f3a466d1b813e9046245c7cdaefbabd48668",
         "type": "github"
       },
       "original": {
@@ -2301,16 +2320,16 @@
     },
     "nixos_4": {
       "locked": {
-        "lastModified": 1667821506,
-        "narHash": "sha256-u4HKBBfTOPpFsGnM7sjS0+F67Hmf2or3uHKNVxXZtiM=",
+        "lastModified": 1670461440,
+        "narHash": "sha256-jy1LB8HOMKGJEGXgzFRLDU1CBGL0/LlkolgnqIsF0D8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ebf65554b18ee053311f43e5faa5a3f36626c52e",
+        "rev": "04a75b2eecc0acf6239acf9dd04485ff8d14f425",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-22.05",
+        "ref": "nixos-22.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -2378,11 +2397,11 @@
     },
     "nixpkgs_10": {
       "locked": {
-        "lastModified": 1665296151,
-        "narHash": "sha256-uOB0oxqxN9K7XGF1hcnY+PQnlQJ+3bP2vCn/+Ru/bbc=",
+        "lastModified": 1670525689,
+        "narHash": "sha256-YIjGzxrRQa5LYO0zlnH/ardcwXsRgsnHe3TkGkvCxbc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "14ccaaedd95a488dd7ae142757884d8e125b3363",
+        "rev": "f21f11aa2a02cb78651c6d57546c7d7541f9240c",
         "type": "github"
       },
       "original": {
@@ -3292,6 +3311,7 @@
         "devshell": "devshell_5",
         "dmerge": "dmerge_5",
         "flake-utils": "flake-utils_17",
+        "incl": "incl_4",
         "makes": [
           "matrix-attack-data",
           "cells-lab",
@@ -3316,11 +3336,11 @@
         "yants": "yants_5"
       },
       "locked": {
-        "lastModified": 1667882600,
-        "narHash": "sha256-dxITQi5siKxrnAlW8A5iJV3Kpu9vgReg23WUD84RW1Y=",
+        "lastModified": 1670364577,
+        "narHash": "sha256-dMIUIOv5WDQY/bHBEoQH/Z2v7qU01CxNB1Uswq8QSnk=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "ea1b908c06276510d18ab3e53b52fff0a0a9c745",
+        "rev": "28ab21483243cb32203bc675bebab8306c466e90",
         "type": "github"
       },
       "original": {
@@ -3339,7 +3359,7 @@
         "devshell": "devshell_6",
         "dmerge": "dmerge_6",
         "flake-utils": "flake-utils_20",
-        "incl": "incl_4",
+        "incl": "incl_5",
         "makes": [
           "std",
           "blank"

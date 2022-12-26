@@ -14,7 +14,7 @@ in {
         pandas
         matplotlib
       ];
-    runtimeInputs = with nixpkgs; [sd];
+    runtimeInputs = with nixpkgs; [];
     text = ''
       # write your custom bash script here
       quarto render "$@"
@@ -23,7 +23,7 @@ in {
 
   orgToQuarto = writeShellApplication  {
     name = "orgToQuarto";
-    runtimeInputs = [cell.entrypoints.default];
+    runtimeInputs = with nixpkgs;[cell.entrypoints.default sd];
     text = ''
       # write your custom bash script here
       dir="$PRJ_ROOT/docs/"
@@ -46,8 +46,8 @@ in {
       julia -e 'println("initializing")'
 
       ${l.getExe inputs.cells.kernels.entrypoints.linkKernels}
-      # ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/julia-graph.md
-      ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/observablehq.md
+      ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/julia-graph.md
+      # ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/observablehq.md
     '';
   };
 }
