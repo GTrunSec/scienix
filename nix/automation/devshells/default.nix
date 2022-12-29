@@ -56,8 +56,8 @@ in
     generator = {
       nixago = [] ++ l.attrValues inputs.cells.vast.nixago;
       devshell.startup.cpSchemas = l.stringsWithDeps.noDepEntry ''
-        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/julia/packages/*.toml playground/
-        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/python/packages/*.{toml,lock} playground/
+        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/julia/packages/*.toml modules/playground/
+        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/python/packages/*.{toml,lock} modules/playground/
       '';
     };
 
