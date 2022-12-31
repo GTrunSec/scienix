@@ -97,11 +97,11 @@
         "xnlib": "xnlib_3"
       },
       "locked": {
-        "lastModified": 1672466950,
-        "narHash": "sha256-DZMvqSvb0PgKW0c9DwdAXtnrhfzalBaE/fSczgJlniE=",
+        "lastModified": 1672470383,
+        "narHash": "sha256-UMuKTHozpRK457wBD37co5KSyxWSLLBbkvYgraYUG6k=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "27559cf749999cb6b6db06d9413bcec457ac7909",
+        "rev": "f7bf6a691279abbfef07afee637a599d6722e9c7",
         "type": "github"
       },
       "original": {
@@ -291,6 +291,22 @@
       "original": {
         "owner": "gtrunsec",
         "repo": "diagram2nix",
+        "type": "github"
+      }
+    },
+    "digga": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668250948,
+        "narHash": "sha256-qqyzJQHgb/Bgq3Zxwa0gmaDEpkuyVhvynnq6a0akMWw=",
+        "owner": "divnix",
+        "repo": "digga",
+        "rev": "54ede8e591d288c176a09d6fcf4b123896c0bf0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "digga",
         "type": "github"
       }
     },
@@ -1268,11 +1284,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1672467086,
-        "narHash": "sha256-oL3ZjJfKsRPv5T+riHc3BNg7RTfO7sWmYF25103DSV0=",
+        "lastModified": 1672481203,
+        "narHash": "sha256-Ca1m5GyZLZn1tCSsR0JC4N1n1YGx+5eY/02JUhA7K2Q=",
         "owner": "hardenedlinux",
         "repo": "nixpkgs-hardenedlinux",
-        "rev": "9bc350a0a4febce093d14ab6afa17bdf5bd20d85",
+        "rev": "ab05bf8aae8ca37df262698dd33250d3560dcc7c",
         "type": "github"
       },
       "original": {
@@ -1897,6 +1913,7 @@
     },
     "xnlib_3": {
       "inputs": {
+        "digga": "digga",
         "nix-std": "nix-std_2",
         "nixlib": "nixlib_3",
         "nixpkgs": [
@@ -1912,11 +1929,11 @@
         "xnlib": "xnlib_4"
       },
       "locked": {
-        "lastModified": 1672290610,
-        "narHash": "sha256-Y2aIW9emSgFqFE4zUjdMq0iAug78lw5d8qZe52/dnbQ=",
+        "lastModified": 1672470364,
+        "narHash": "sha256-NkFBSiTRIpDn9LSMl+P1psZLVnyDKQAVaNEM3DIYph4=",
         "owner": "gtrunsec",
         "repo": "xnlib",
-        "rev": "904b1da3efa005881f05247bdf14d7b7243f7abe",
+        "rev": "a7e2c2259af96ce472bb74202fdbd7818b5abed6",
         "type": "github"
       },
       "original": {

@@ -4,6 +4,7 @@
 }: let
   l = nixpkgs.lib // builtins;
   inherit (inputs) nixpkgs std;
+  inherit (inputs.cells.common.lib) __inputs__;
 in
   l.mapAttrs (_: std.lib.dev.mkShell) {
     default = {
@@ -19,6 +20,8 @@ in
         inputs.dataflow2nix.tullia.devshellProfiles.default
 
         inputs.cells-lab.automation.devshellProfiles.docs
+
+        inputs.cells.ml.devshellProfiles.default
       ];
 
       commands = [
