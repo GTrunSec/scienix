@@ -10,7 +10,7 @@
     diagram2nix.url = "github:gtrunsec/diagram2nix";
     diagram2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    poetry2nix.url = "github:nix-community/poetry2nix";
+    poetry2nix.url = "github:nix-community/poetry2nix/d81965357a81073d212a831799d51a92cdd5e672";
     poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
 
     nixpkgs-hardenedlinux.url = "github:hardenedlinux/nixpkgs-hardenedlinux";

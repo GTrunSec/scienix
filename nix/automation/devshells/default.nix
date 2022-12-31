@@ -66,6 +66,7 @@ in
       commands = [
         {
           package = inputs.cells.quarto.entrypoints.mkQuarto;
+          help = "Build the documentation with quarto";
         }
       ];
       imports = [
