@@ -46,11 +46,11 @@ jobs:
       #   run: nix -Lv run .\#x86_64-linux.julia.entrypoints.jnumpy-podman
 
       - name: Build Doc
-        run: nix develop .#doc --show-trace --command -- mkdoc
+        run: nix develop .#doc --show-trace --refresh --command -- mkdoc
 
       - name: Build quarto
         run: |
-          nix develop .#doc --show-trace --command mkQuarto
+          nix develop .#doc --show-trace --refresh  --command mkQuarto
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
