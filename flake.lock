@@ -205,11 +205,11 @@
         "xnlib": "xnlib_7"
       },
       "locked": {
-        "lastModified": 1672359453,
-        "narHash": "sha256-OmD3RBWM4ZAruIYdOWsl3VX04ZAn+dFuyd3ZolljAao=",
+        "lastModified": 1672470383,
+        "narHash": "sha256-UMuKTHozpRK457wBD37co5KSyxWSLLBbkvYgraYUG6k=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "1ec219d0325bf364be007493e114b4c97d882858",
+        "rev": "f7bf6a691279abbfef07afee637a599d6722e9c7",
         "type": "github"
       },
       "original": {
@@ -506,6 +506,22 @@
       }
     },
     "digga": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668250948,
+        "narHash": "sha256-qqyzJQHgb/Bgq3Zxwa0gmaDEpkuyVhvynnq6a0akMWw=",
+        "owner": "divnix",
+        "repo": "digga",
+        "rev": "54ede8e591d288c176a09d6fcf4b123896c0bf0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "digga",
+        "type": "github"
+      }
+    },
+    "digga_2": {
       "flake": false,
       "locked": {
         "lastModified": 1668250948,
@@ -1629,11 +1645,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1672390650,
-        "narHash": "sha256-T85Wd9VBITfTYLYxBB9SH5NXBanIxIE8uPf3NI4zchQ=",
+        "lastModified": 1672835272,
+        "narHash": "sha256-zS5DddSambQOI5nEUyzqq1ZBWvguszbvqHvgwTc1Xxs=",
         "owner": "GTrunSec",
         "repo": "matrix-attack-data",
-        "rev": "d38ee3fb0ba94576f0dd96a3f07c04fcacf039f6",
+        "rev": "85c7f720d4aac414015f577992291369a92b2bdd",
         "type": "github"
       },
       "original": {
@@ -3775,6 +3791,7 @@
     },
     "xnlib_7": {
       "inputs": {
+        "digga": "digga_2",
         "nix-std": "nix-std_4",
         "nixlib": "nixlib_4",
         "nixpkgs": [
@@ -3790,11 +3807,11 @@
         "xnlib": "xnlib_8"
       },
       "locked": {
-        "lastModified": 1672290610,
-        "narHash": "sha256-Y2aIW9emSgFqFE4zUjdMq0iAug78lw5d8qZe52/dnbQ=",
+        "lastModified": 1672470364,
+        "narHash": "sha256-NkFBSiTRIpDn9LSMl+P1psZLVnyDKQAVaNEM3DIYph4=",
         "owner": "gtrunsec",
         "repo": "xnlib",
-        "rev": "904b1da3efa005881f05247bdf14d7b7243f7abe",
+        "rev": "a7e2c2259af96ce472bb74202fdbd7818b5abed6",
         "type": "github"
       },
       "original": {
