@@ -97,4 +97,12 @@
         };
       };
     };
+  nixConfig = {
+    extra-substituters = [
+      "https://gtrunsec.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "gtrunsec.cachix.org-1:hqyEeSuO8HAm6xuChKrTJpLPpHUKtdjh4o/MRmcMQIo="
+    ];
+  };
 }

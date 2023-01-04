@@ -23,7 +23,7 @@ jobs:
 
       - uses: cachix/cachix-action@v11
         with:
-          name: zeek
+          name: gtrunsec
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
       # - name: Run nsjail Job
