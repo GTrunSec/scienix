@@ -6,6 +6,6 @@
 in {
   vast-query = writeNuInclude {
     name = "logging";
-    # script = "./vast-nu.nu";
+    script = ./json.nu;
   };
 }
