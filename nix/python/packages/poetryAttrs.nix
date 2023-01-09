@@ -14,14 +14,14 @@ in
       with ps; [
         pandas
         # seaborn
-        tensorflow
+        # tensorflow
         matplotlib
-        nixpkgs.python3Packages.polars
         numpy
         nixpkgs.python3Packages.fastai
       ];
     overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix nixpkgs);
     inherit groups;
+    preferWheels = true;
   }
   // (l.optionalAttrs jupyterWith {
     ignoreCollisions = true;
