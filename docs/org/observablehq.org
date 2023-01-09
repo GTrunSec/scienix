@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       fccd96d2-75d4-47d2-bfef-7cd41484980f
+:END:
 #+title: observablehq
 
 #+begin_src ojs :exports both :results output

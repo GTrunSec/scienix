@@ -1,4 +1,0 @@
-#+title: Attack Model
-
-
-* Thesis
