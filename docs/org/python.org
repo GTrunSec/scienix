@@ -4,9 +4,38 @@
 :END:
 #+title: Python
 
-#+BEGIN_SRC jupyter-python
- a
-#+end_src
-
 
 * Pcakges
+
+** Pytorch
+
+#+BEGIN_SRC jupyter-python
+import torch
+print(torch.__version__)
+#+end_src
+
+#+RESULTS:** [[https://github.com/ibis-project/ibis][ibis]]
+
+** polars
+
+#+BEGIN_SRC jupyter-python
+import polars as pl
+df = pl.DataFrame({"A": [1, 2, 3, 4, 5]})
+df
+#+end_src
+
+#+RESULTS:
+#+begin_example
+shape: (5, 1)
+┌─────┐
+│ A   │
+│ --- │
+│ i64 │
+╞═════╡
+│ 1   │
+│ 2   │
+│ 3   │
+│ 4   │
+│ 5   │
+└─────┘
+#+end_example

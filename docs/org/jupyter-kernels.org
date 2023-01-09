@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       8b1a2ce2-73e9-4725-8468-e72f3e880daa
+:END:
+#+title: Jupyter Kernels
+
+
+
+
+* linkKernels
+#+begin_src sh :async :exports both :results output
+nix run .\#x86_64-linux.kernels.entrypoints.linkKernels
+#+end_src
