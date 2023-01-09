@@ -6,6 +6,8 @@ nixpkgs: final: prev: let
   };
 in
   {
+    inherit (nixpkgs.python3Packages) tensorflow pytorch;
+
     psutil = nixpkgs.python3Packages.psutil;
 
     pandas = prev.pandas.overridePythonAttrs (attrs: {

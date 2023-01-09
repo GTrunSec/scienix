@@ -14,7 +14,8 @@ in
       with ps; [
         pandas
         # seaborn
-        # tensorflow
+        pytorch
+        tensorflow
         matplotlib
         numpy
         nixpkgs.python3Packages.fastai
