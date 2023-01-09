@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://exquisite-meringue-7af06d.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Attack Model</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/attack-model/</link>
+      <title>Attack Models</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/attack-models/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/attack-model/</guid>
-      <description>Thesis </description>
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/attack-models/</guid>
+      <description>Queries cat $(2&amp;gt;/dev/null nix build .#x86_64-linux.models.lib.mitre-attack-queries --print-out-paths --no-link) { &amp;#34;T0000&amp;#34;: { &amp;#34;Azure Sentinel&amp;#34;: { &amp;#34;name&amp;#34;: &amp;#34;Suspicious Filename Used&amp;#34;, &amp;#34;product&amp;#34;: &amp;#34;Azure Sentinel&amp;#34;, &amp;#34;query&amp;#34;: &amp;#34;Sysmon| where EventID == 1 and (process_path == \&amp;#34;a.exe\&amp;#34;or process_path == \&amp;#34;b.exe\&amp;#34;or process_path == \&amp;#34;c.exe\&amp;#34;or process_path == \&amp;#34;d.exe\&amp;#34;or process_path == \&amp;#34;e.exe\&amp;#34;or process_path == \&amp;#34;f.exe\&amp;#34;or process_path == \&amp;#34;g.exe\&amp;#34;or process_path == \&amp;#34;h.exe\&amp;#34;or process_path == \&amp;#34;i.exe\&amp;#34;or process_path == \&amp;#34;j.exe\&amp;#34;or process_path == \&amp;#34;k.exe\&amp;#34;or process_path == \&amp;#34;l.exe\&amp;#34;or process_path == \&amp;#34;m.exe\&amp;#34;or process_path == \&amp;#34;n.exe\&amp;#34;or process_path == \&amp;#34;o.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/python/</guid>
-      <description>Pcakges Pytorch import torch print(torch.__version__) polars import polars as pl df = pl.DataFrame({&amp;#34;A&amp;#34;: [1, 2, 3, 4, 5]}) df </description>
+      <description>Pcakges Pytorch import torch print(torch.__version__) polars import polars as pl df = pl.DataFrame({&amp;#34;A&amp;#34;: [1, 2, 3, 4, 5]}) df shape: (5, 1) ┌─────┐ │ A │ │ --- │ │ i64 │ ╞═════╡ │ 1 │ │ 2 │ │ 3 │ │ 4 │ │ 5 │ └─────┘ </description>
     </item>
     
     <item>
