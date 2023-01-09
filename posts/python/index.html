@@ -27,11 +27,19 @@
     <div class="page" data-level="1">
       <div class="content">
         <h1>Python</h1>
-        <h2 id="pcakges">Pcakges</h2>
-<h3 id="pytorch">Pytorch</h3>
+        <h2 id="packages">Packages</h2>
+<h3 id="pytorch">Pytorch <span class="tag"><span class="nixpkgs">nixpkgs</span></span></h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">torch</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(torch<span style="color:#666">.</span>__version__)
-</span></span></code></pre></div><h3 id="polars">polars</h3>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1.13.1
+</span></span></code></pre></div><h3 id="ibis"><a href="https://github.com/ibis-project/ibis">ibis</a></h3>
+<h3 id="tensorflow">tensorflow <span class="tag"><span class="nixpkgs">nixpkgs</span></span></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">tensorflow</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">tf</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(tf<span style="color:#666">.</span>__version__)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>2023-01-09 11:34:03.507478: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+</span></span><span style="display:flex;"><span>To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+</span></span><span style="display:flex;"><span>2.10.1
+</span></span></code></pre></div><h3 id="polars">polars <span class="tag"><span class="poetry">poetry</span></span></h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">polars</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pl</span>
 </span></span><span style="display:flex;"><span>df <span style="color:#666">=</span> pl<span style="color:#666">.</span>DataFrame({<span style="color:#4070a0">&#34;A&#34;</span>: [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]})
 </span></span><span style="display:flex;"><span>df

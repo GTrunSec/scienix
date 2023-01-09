@@ -85,7 +85,7 @@ using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/python/</guid>
-      <description>Pcakges Pytorch import torch print(torch.__version__) polars import polars as pl df = pl.DataFrame({&amp;#34;A&amp;#34;: [1, 2, 3, 4, 5]}) df shape: (5, 1) ┌─────┐ │ A │ │ --- │ │ i64 │ ╞═════╡ │ 1 │ │ 2 │ │ 3 │ │ 4 │ │ 5 │ └─────┘ </description>
+      <description>Packages Pytorch nixpkgs import torch print(torch.__version__) 1.13.1 ibis tensorflow nixpkgs import tensorflow as tf print(tf.__version__) 2023-01-09 11:34:03.507478: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations: SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags. 2.10.1 polars poetry import polars as pl df = pl.DataFrame({&amp;#34;A&amp;#34;: [1, 2, 3, 4, 5]}) df shape: (5, 1) ┌─────┐ │ A │ │ --- │ │ i64 │ ╞═════╡ │ 1 │ │ 2 │ │ 3 │ │ 4 │ │ 5 │ └─────┘ </description>
     </item>
     
     <item>
