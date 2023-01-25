@@ -15,4 +15,10 @@ in {
     makeWrapperArgs = ["--add-flags" "-L''${./startup.jl}"];
   };
   jnumpy = cell.lib.nixpkgs.python3Packages.callPackage ./jnumpy {inherit __inputs__;};
+
+  juliaEnv = nixpkgs.lib.buildEnv {
+    src = ./.;
+    name = "juliaEnv";
+    package = cell.packages.julia-wrapped;
+  };
 }
