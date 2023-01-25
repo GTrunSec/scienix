@@ -21,10 +21,10 @@
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # jupyterWith.url = "github:tweag/jupyterWith";
-    jupyterWith.url = "github:gtrunsec/jupyterWith/maintainer";
+    jupyterWith.url = "github:tweag/jupyterWith?ref=refs/pull/419/head";
+    # jupyterWith.url = "github:gtrunsec/jupyterWith/maintainer";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
-    # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
+    # jupyterWith.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
     matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +32,7 @@
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    tullia.url = "github:input-output-hk/tullia/?ref=refs/pull/15/head";
+    tullia.url = "github:input-output-hk/tullia";
     # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
     tullia.inputs.nixpkgs.follows = "nixpkgs";
     tullia.inputs.nix2container.follows = "n2c";
@@ -44,6 +44,7 @@
 
   outputs = {
     std,
+    self,
     tullia,
     ...
   } @ inputs:
@@ -71,8 +72,9 @@
           (nixago "nixago")
 
           (tullia.tasks "pipelines")
-
           (functions "actions")
+
+          (containers "composeJobs")
 
           # nushell scripts
           (installables "nu")
@@ -86,6 +88,12 @@
         ["julia" "packages"]
         ["python" "packages"]
       ];
+    } {
+      process-compose =
+        inputs.cells-lab.lib.mkProcessCompose ["composeJobs"]
+        self {
+          log_location = "$HOME/.cache/process-compose.log";
+        };
     } (tullia.fromStd {
       tasks = std.harvest inputs.self [["julia" "pipelines"]];
       actions = std.harvest inputs.self [["julia" "actions"]];

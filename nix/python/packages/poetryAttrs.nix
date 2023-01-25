@@ -14,11 +14,11 @@ in
       with ps; [
         pandas
         # seaborn
-        pytorch
-        tensorflow
+        # pytorch
+        # tensorflow
         matplotlib
         numpy
-        nixpkgs.python3Packages.fastai
+        # nixpkgs.python3Packages.fastai
       ];
     overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix nixpkgs);
     inherit groups;

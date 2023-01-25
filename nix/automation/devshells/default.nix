@@ -41,8 +41,7 @@ in
           package = inputs.cells.python.packages.mkPoetryEnv;
         }
         {
-          name = "quarto";
-          command = l.getExe inputs.cells.quarto.entrypoints.default;
+          package = inputs.cells.quarto.entrypoints.default;
         }
       ];
 

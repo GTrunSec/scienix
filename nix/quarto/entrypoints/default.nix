@@ -29,7 +29,7 @@ in {
     runtimeInputs = with nixpkgs; [];
     text = ''
       # write your custom bash script here
-      quarto render "$@"
+      quarto "$@"
     '';
   };
 
