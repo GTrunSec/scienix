@@ -16,12 +16,16 @@ in {
       name = "link-kernels";
       runtimeInputs = [nixpkgs.rsync];
       text = ''
-        if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
-          mkdir -p "$HOME"/.local/share/jupyter/kernels
+         if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
+           mkdir -p "$HOME"/.local/share/jupyter/kernels
+         fi
+         ${cpKernel "julia"}
+         ${cpKernel "python"}
+         ${cpKernel "bash"}
+        if [ -d "$HOME"/.local/share/jupyter/kernels/julia-1.8 ]; then
+           rm -rf "$HOME"/.local/share/jupyter/kernels/julia-1.8
+           cp -r "$HOME"/.local/share/jupyter/kernels/julia "$HOME"/.local/share/jupyter/kernels/julia-1.8
         fi
-        ${cpKernel "julia"}
-        ${cpKernel "python"}
-        ${cpKernel "bash"}
       '';
     };
 }
