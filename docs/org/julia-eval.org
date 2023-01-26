@@ -7,18 +7,14 @@
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_custom_front_matter: :jupyter julia
 
-NAME: c0278b0c-ed87-4209-b564-e03a4fa210ef
-#+begin_src julia :exports both :results ouput
+
+#+begin_src jupyter-julia :exports both :results ouput
 using Dates
 format = DateFormat("yyyymmdd")
 #+end_src
 
-#+RESULTS: c0278b0c-ed87-4209-b564-e03a4fa210ef
-: yyyymmdd
 
-
-#+NAME: f290df64-2617-4368-941f-f953b7080217
- #+begin_src ein-julia :exports both :results ouput
+ #+begin_src jupyter-julia :exports both :results ouput
  Date("19870913", format)
  #+end_src
 
