@@ -3,8 +3,11 @@
 :header-args:ein-julia: :session http://127.0.0.1:8888/julia.ipynb
 :END:
 #+title: Julia Eval
+#+EMAIL: gtrunsec@hardenedlinux.org
+#+HUGO_AUTO_SET_LASTMOD: t
+#+hugo_custom_front_matter: :jupyter julia
 
-#+NAME: c0278b0c-ed87-4209-b564-e03a4fa210ef
+NAME: c0278b0c-ed87-4209-b564-e03a4fa210ef
 #+begin_src julia :exports both :results ouput
 using Dates
 format = DateFormat("yyyymmdd")
