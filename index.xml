@@ -5,7 +5,27 @@
     <link>https://exquisite-meringue-7af06d.netlify.app/</link>
     <description>Recent content on Decentralized Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://exquisite-meringue-7af06d.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Jan 2023 20:30:14 +0000</lastBuildDate><atom:link href="https://exquisite-meringue-7af06d.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Julia Graph</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</link>
+      <pubDate>Thu, 26 Jan 2023 20:30:14 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</guid>
+      <description>using Graphs: smallgraph g = smallgraph(:karate) {34, 78} undirected simple Int64 graph #| label: fig-parametric #| fig-cap: &amp;#34;Parametric Plots&amp;#34; using Compose, Cairo, GraphPlot using Graphs: smallgraph g = smallgraph(:karate) draw(PNG(&amp;#34;./attach/gplot.png&amp;#34;, 16cm, 16cm), gplot(g)) gplot(g) #| echo: true using Plots scatter(rand(100), rand(100)) savefig(&amp;#34;./attach/plot.png&amp;#34;) plot(rand(100), rand(100)) Unicode #| output: true #| echo: true #| code-fold: true using UnicodePlots lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title=&amp;#34;Example&amp;#34;, name=&amp;#34;Line&amp;#34;, xlabel=&amp;#34;x&amp;#34;, ylabel=&amp;#34;y&amp;#34;) </description>
+    </item>
+    
+    <item>
+      <title>Julia Eval</title>
+      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</link>
+      <pubDate>Thu, 26 Jan 2023 20:30:12 +0000</pubDate>
+      
+      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</guid>
+      <description>NAME: c0278b0c-ed87-4209-b564-e03a4fa210ef
+using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13 </description>
+    </item>
+    
     <item>
       <title>Attack Models</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/attack-models/</link>
@@ -22,25 +42,6 @@
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/bash/</guid>
       <description>NuShell pwd </description>
-    </item>
-    
-    <item>
-      <title>Julia Eval</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</guid>
-      <description>
-using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) yyyymmdd Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13 </description>
-    </item>
-    
-    <item>
-      <title>Julia Graph</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</guid>
-      <description>using Graphs: smallgraph g = smallgraph(:karate) {34, 78} undirected simple Int64 graph #| label: fig-parametric #| fig-cap: &amp;#34;Parametric Plots&amp;#34; using Compose, Cairo, GraphPlot using Graphs: smallgraph g = smallgraph(:karate) draw(PNG(&amp;#34;./attach/gplot.png&amp;#34;, 16cm, 16cm), gplot(g)) gplot(g) #| echo: true using Plots scatter(rand(100), rand(100)) savefig(&amp;#34;./attach/plot.png&amp;#34;) plot(rand(100), rand(100)) Unicode #| output: true #| echo: true #| code-fold: true using UnicodePlots lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title=&amp;#34;Example&amp;#34;, name=&amp;#34;Line&amp;#34;, xlabel=&amp;#34;x&amp;#34;, ylabel=&amp;#34;y&amp;#34;) </description>
     </item>
     
     <item>
