@@ -33,7 +33,7 @@
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
     dataflow2nix.inputs.tullia.follows = "tullia";
 
-    tullia.url = "github:input-output-hk/tullia?ref=refs/pull/17/head";
+    tullia.url = "github:input-output-hk/tullia";
     # tullia.url = "/home/guangtao/ghq/github.com/input-output-hk/tullia";
     tullia.inputs.nixpkgs.follows = "nixpkgs";
     tullia.inputs.nix2container.follows = "n2c";
