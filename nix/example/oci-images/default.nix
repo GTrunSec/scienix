@@ -23,10 +23,9 @@ in {
         };
       };
     })
-    .copyToPodman
     // {
       process-compose = {
-        disabled = false;
+        extraAttrPath = [ "copyToPodman" ];
       };
     };
 }

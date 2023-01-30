@@ -4,6 +4,7 @@
 }: let
   inherit (inputs.cells-lab.writers.lib) writeConfig writeShellApplication;
   inherit (inputs) nixpkgs;
+  l = inputs.nixpkgs.lib // builtins;
 in {
   hello =
     (let
@@ -29,7 +30,6 @@ in {
       })
     // {
       process-compose = {
-        disabled = false;
         depends_on = {
           "//example/oci-images/hello" = {
             condition = "process_completed";
