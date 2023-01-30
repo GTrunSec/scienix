@@ -75,7 +75,9 @@
           (tullia.tasks "pipelines")
           (functions "actions")
 
-          (containers "composeJobs")
+          (data "composeJobs")
+          (containers "oci-images")
+          (runnables "operators")
 
           # nushell scripts
           (installables "nu")
@@ -91,7 +93,7 @@
       ];
     } {
       process-compose =
-        inputs.cells-lab.lib.mkProcessCompose ["composeJobs"]
+        inputs.cells-lab.lib.mkProcessCompose ["composeJobs" "oci-images"]
         self {
           log_location = "$HOME/.cache/process-compose.log";
         };

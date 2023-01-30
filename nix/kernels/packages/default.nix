@@ -3,8 +3,8 @@
   cell,
 } @ args: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.jupyterWith.lib) mkKernel mkJupyterlab;
-  __inputs__ = args // {inherit mkKernel nixpkgs;};
+  inherit (inputs.jupyterWith.lib.x86_64-linux) mkJupyterlab;
+  __inputs__ = args // {inherit nixpkgs;};
 in {
   jupyterEnvironment = mkJupyterlab {
     jupyterlabEnvArgs.extraPackages = ps: [ps.jupytext];
