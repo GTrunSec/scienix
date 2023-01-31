@@ -6,7 +6,8 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
     cells-lab.inputs.nixpkgs.follows = "nixpkgs";
 
-    std.url = "github:divnix/std";
+    # std.url = "github:divnix/std";
+    std.url = "github:gtrunsec/std/writeScript";
     std.inputs.nixpkgs.follows = "cells-lab/nixpkgs";
     std.inputs.n2c.follows = "n2c";
 

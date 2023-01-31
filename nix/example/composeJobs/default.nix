@@ -17,15 +17,16 @@ in {
             environment = {
               FLASK_DEBUG = "true";
             };
+            stop_signal = "SIGINT";
           };
         };
       };
     in
-      writeShellApplication {
+      inputs.std.lib.ops.writeShellApplication {
         name = "hello-deploy";
         runtimeInputs = [nixpkgs.docker-compose];
         text = ''
-          docker-compose -f ${dockerCompose} up
+          exec ${l.getExe nixpkgs.docker-compose} -f ${dockerCompose} up
         '';
       })
     // {

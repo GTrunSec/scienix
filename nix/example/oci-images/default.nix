@@ -25,7 +25,7 @@ in {
     })
     // {
       process-compose = {
-        extraAttrPath = [ "copyToPodman" ];
+        extraAttrPath = ["copyToPodman"];
       };
     };
 }

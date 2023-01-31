@@ -124,11 +124,11 @@
         "xnlib": "xnlib"
       },
       "locked": {
-        "lastModified": 1675062898,
-        "narHash": "sha256-6OskUId7XT0pbxabPsZ12b7OJo/IlhlpilRHyh9hQSM=",
+        "lastModified": 1675203248,
+        "narHash": "sha256-h/DujcMceos3yZ7YrWbGxBk79qVLmtj+7Xx28f1eIC4=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "5a2d1a83c4f4d54d0c6da0d4d0e09bf25117a4a5",
+        "rev": "5db2ff7077ed3cb2b4a297dce7046b5a181201de",
         "type": "github"
       },
       "original": {
@@ -3152,15 +3152,16 @@
         "yants": "yants_5"
       },
       "locked": {
-        "lastModified": 1674526466,
-        "narHash": "sha256-tMTaS0bqLx6VJ+K+ZT6xqsXNpzvSXJTmogkraBGzymg=",
-        "owner": "divnix",
+        "lastModified": 1675192689,
+        "narHash": "sha256-NXpYzzafo4QmoZMMA7khm35/LA2TAsr82MZf+BLYl5Y=",
+        "owner": "gtrunsec",
         "repo": "std",
-        "rev": "516387e3d8d059b50e742a2ff1909ed3c8f82826",
+        "rev": "9c782e0b1abe6f437ec1bb3b9cdb765d8a9ce36b",
         "type": "github"
       },
       "original": {
-        "owner": "divnix",
+        "owner": "gtrunsec",
+        "ref": "writeScript",
         "repo": "std",
         "type": "github"
       }
