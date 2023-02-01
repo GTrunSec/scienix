@@ -1,0 +1,12 @@
+project:
+  type: hugo
+  output-dir: ../docs/publish/public
+
+format:
+  hugo-md:
+    code-fold: true
+
+execute:
+  warning: false
+
+biliography: references.lib

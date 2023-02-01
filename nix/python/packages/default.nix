@@ -6,9 +6,11 @@
 in {
   inherit (cell.lib.nixpkgs.python3Packages) polars;
 
-  mkPoetryEnv = (cell.lib.nixpkgs.poetry2nix.mkPoetryEnv
-    (builtins.removeAttrs cell.lib.poetryPackages ["pkgs" "ignoreCollisions"]))
-  .override (old: {ignoreCollisions = true;});
+  mkPoetryEnv =
+    (
+      cell.lib.nixpkgs.poetry2nix.mkPoetryEnv (cell.lib.poetryAttrs {})
+    )
+    .override (old: {ignoreCollisions = true;});
 
   mkPoetryOpenCTI = cell.lib.nixpkgs.poetry2nix.mkPoetryEnv {
     projectDir = ./opencti;
@@ -26,28 +28,28 @@ in {
       # ignoreCollisions = true;
     };
 
-  mkMachEnv = cell.lib.nixpkgs.machlib.mkPython {
-    requirements = ''
-      numpy
-      pandas
-      polars
-      scanpy
-      anndata
-      matplotlib
-      seaborn
-    '';
-    overridesPre = [
-      (
-        self: super: {
-          inherit
-            (cell.lib.nixpkgs.python3Packages)
-            polars
-            ;
-        }
-      )
-    ];
-    packagesExtra = [];
-    python = "python3";
-    providers = {};
-  };
+  # mkMachEnv = cell.lib.nixpkgs.machlib.mkPython {
+  #   requirements = ''
+  #     numpy
+  #     pandas
+  #     polars
+  #     scanpy
+  #     anndata
+  #     matplotlib
+  #     seaborn
+  #   '';
+  #   overridesPre = [
+  #     (
+  #       self: super: {
+  #         inherit
+  #           (cell.lib.nixpkgs.python3Packages)
+  #           polars
+  #           ;
+  #       }
+  #     )
+  #   ];
+  #   packagesExtra = [];
+  #   python = "python3";
+  #   providers = {};
+  # };
 }

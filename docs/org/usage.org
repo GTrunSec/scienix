@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       b6a54d2a-e00b-47c6-90db-66bbd31e394e
+:END:
+#+title: Usage
+
+* devshell
+
+- With ~nix develop~
+
+#+begin_src sh :async :exports both :results output
+nix develop && menu
+#+end_src
+
+- With direnv
+
+#+begin_src sh :async :exports both :results output
+direnv allow
+#+end_src
+
+
+* Docs
+
+- address:  http://localhost:1313/LambdaHunt/posts
+- run *hugo server*
+
+#+begin_src sh :async :exports both :results output
+nix develop .#doc --command mkdoc server
+#+end_src
+
+- *sync* your docs
+#+begin_src sh :async :exports both :results output
+nix develop .#doc --command mkdoc
+#+end_src

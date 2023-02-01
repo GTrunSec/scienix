@@ -6,7 +6,8 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
     cells-lab.inputs.nixpkgs.follows = "nixpkgs";
 
-    std.url = "github:divnix/std";
+    # std.url = "github:divnix/std";
+    std.url = "github:gtrunsec/std/writeScript";
     std.inputs.nixpkgs.follows = "cells-lab/nixpkgs";
     std.inputs.n2c.follows = "n2c";
 
@@ -21,20 +22,20 @@
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # jupyterWith.url = "github:tweag/jupyterWith";
-    jupyterWith.url = "github:gtrunsec/jupyterWith/dev";
+    jupyterWith.url = "github:tweag/jupyterWith?ref=refs/pull/419/head";
+    # jupyterWith.url = "github:gtrunsec/jupyterWith/maintainer";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
-    # jupyterWith.url = "/home/gtrun/ghq/github.com/GTrunSec/jupyterWith";
+    # jupyterWith.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
     matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
 
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
-    dataflow2nix.inputs.cells-lab.follows = "cells-lab";
+    dataflow2nix.inputs.tullia.follows = "tullia";
 
     tullia.url = "github:input-output-hk/tullia";
-    # tullia.url = "/home/gtrun/ghq/github.com/input-output-hk/tullia";
+    # tullia.url = "/home/guangtao/ghq/github.com/input-output-hk/tullia";
     tullia.inputs.nixpkgs.follows = "nixpkgs";
     tullia.inputs.nix2container.follows = "n2c";
     tullia.inputs.nix-nomad.follows = "nix-nomad";
@@ -45,6 +46,7 @@
 
   outputs = {
     std,
+    self,
     tullia,
     ...
   } @ inputs:
@@ -72,8 +74,11 @@
           (nixago "nixago")
 
           (tullia.tasks "pipelines")
-
           (functions "actions")
+
+          (data "composeJobs")
+          (containers "oci-images")
+          (runnables "operators")
 
           # nushell scripts
           (installables "nu")
@@ -87,6 +92,12 @@
         ["julia" "packages"]
         ["python" "packages"]
       ];
+    } {
+      process-compose =
+        inputs.cells-lab.lib.mkProcessCompose ["composeJobs" "oci-images"]
+        self {
+          log_location = "$HOME/.cache/process-compose.log";
+        };
     } (tullia.fromStd {
       tasks = std.harvest inputs.self [["julia" "pipelines"]];
       actions = std.harvest inputs.self [["julia" "actions"]];
@@ -98,4 +109,12 @@
         };
       };
     };
+  nixConfig = {
+    extra-substituters = [
+      "https://gtrunsec.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "gtrunsec.cachix.org-1:hqyEeSuO8HAm6xuChKrTJpLPpHUKtdjh4o/MRmcMQIo="
+    ];
+  };
 }

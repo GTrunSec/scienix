@@ -4,6 +4,14 @@
 # NOTE: Without Nix, you are responsible for having all task dependencies
 # available locally!
 
+# Uploads the build to cachix
+cachix-push:
+    nix build .\#x86_64-linux.kernels.packages.jupyterEnvironment --json | jq -r '.[].outputs | to_entries[].value' | cachix push gtrunsec
+
 # Formats all changed source files
 fmt:
     treefmt $(git diff --name-only --cached)
+
+# generating configFiles with devshell
+generator:
+    nix develop .\#generator -c echo generating configFiles

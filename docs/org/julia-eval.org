@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       b1c97a0f-f48e-4050-a5e2-59914337e813
+:header-args:ein-julia: :session http://127.0.0.1:8888/julia.ipynb
+:END:
+#+title: Julia Eval
+#+EMAIL: gtrunsec@hardenedlinux.org
+#+HUGO_AUTO_SET_LASTMOD: t
+#+hugo_custom_front_matter: :jupyter julia
+
+
+#+begin_src jupyter-julia :exports both :results ouput
+using Dates
+format = DateFormat("yyyymmdd")
+#+end_src
+
+
+ #+begin_src jupyter-julia :exports both :results ouput
+ Date("19870913", format)
+ #+end_src
+
+ #+RESULTS: f290df64-2617-4368-941f-f953b7080217
+ : 1987-09-13

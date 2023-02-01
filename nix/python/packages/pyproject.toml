@@ -6,13 +6,16 @@ authors = []
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
-ipykernel = "^6.15.0"
 matplotlib = "^3.6.2"
-ipywidgets = "^8.0.2"
+polars = "^0.15.14"
 
 [tool.poetry.dev-dependencies]
 # build systems for dependencies
 hatchling = "^1.3.1"
+
+[tool.poetry.group.jupyterWith.dependencies]
+ipykernel = "^6.19.4"
+ipywidgets = "^8.0.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

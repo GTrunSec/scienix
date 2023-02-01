@@ -4,80 +4,97 @@
 }: let
   l = nixpkgs.lib // builtins;
   inherit (inputs) nixpkgs std;
-in {
-  default = std.lib.dev.mkShell {
-    name = "Data Science Threat Intelligence";
+  inherit (inputs.cells.common.lib) __inputs__;
+in
+  l.mapAttrs (_: std.lib.dev.mkShell) {
+    default = {
+      name = "Decentralized Data Science";
 
-    imports = [
-      inputs.std.std.devshellProfiles.default
-      inputs.cells.julia.devshellProfiles.default
-      inputs.cells.kernels.devshellProfiles.default
-      inputs.cells.vast.devshellProfiles.default
-      inputs.julia2nix.julia2nix.devshellProfiles.dev
+      imports = [
+        inputs.std.std.devshellProfiles.default
+        inputs.cells.julia.devshellProfiles.default
+        inputs.cells.kernels.devshellProfiles.default
+        inputs.cells.vast.devshellProfiles.default
+        inputs.julia2nix.julia2nix.devshellProfiles.dev
 
-      inputs.dataflow2nix.tullia.devshellProfiles.default
-    ];
+        inputs.dataflow2nix.tullia.devshellProfiles.default
 
-    commands = [
-      {
-        package = inputs.latest.legacyPackages.${nixpkgs.system}.poetry;
-      }
-      {
-        package = nixpkgs.nushell;
-      }
-      {
-        package = inputs.cells.python.packages.mkPoetryEnv;
-      }
-    ];
+        inputs.cells-lab.automation.devshellProfiles.docs
 
-    # env = let
-    #   pythonPath = with inputs.cells.python.lib.nixpkgs; inputs.cells.python.lib.nixpkgs.python3.pkgs.makePythonPath [
-    #     python3.pkgs.fastai
-    #     python3.pkgs.torch
-    #   ];
-    #   in [
-    #   {
-    #     name = "PYTHONPATH";
-    #     value = "${pythonPath}";
-    #   }
-    # ];
+        inputs.cells.ml.devshellProfiles.default
+      ];
 
-    nixago = [
-      cell.nixago.treefmt
-      cell.nixago.just
-      cell.nixago.mdbook
-    ];
-  };
+      commands = [
+        {
+          package = inputs.latest.legacyPackages.${nixpkgs.system}.poetry;
+        }
+        {
+          package = nixpkgs.nushell;
+        }
+        {
+          command = ''
+            ${inputs.cells.kernels.packages.jupyterEnvironment}/bin/jupyter "$@"
+          '';
+          name = "jupyter";
+        }
+        {
+          package = inputs.cells.python.packages.mkPoetryEnv;
+        }
+        {
+          package = inputs.cells.quarto.entrypoints.default;
+        }
+      ];
 
-  generator = std.lib.dev.mkShell {
-    nixago = [] ++ l.attrValues inputs.cells.vast.nixago;
-  };
+      nixago = [
+        cell.nixago.treefmt
+        cell.nixago.just
+      ];
 
-  doc = std.lib.dev.mkShell {
-    nixago = [
-      cell.nixago.mdbook
-    ];
-  };
+      packages = with nixpkgs; [
+        sd
+      ];
+      env = [];
+    };
 
-  tullia = std.lib.dev.mkShell {
-    imports = [
-      inputs.dataflow2nix.tullia.devshellProfiles.default
-    ];
-    commands = [
-      {
-        package = inputs.nixpkgs.faketty;
-      }
-      {
-        package = inputs.nixpkgs.podman;
-      }
-      {
-        package = inputs.nixpkgs.nsjail;
-      }
-    ];
-  };
-  opencti = std.lib.dev.mkShell {
-    commands = [
-      {package = inputs.cells.python.packages.mkPoetryOpenCTI;}
-    ];
-  };
-}
+    generator = {
+      imports = [inputs.cells.example.devshellProfiles.default];
+      nixago = [] ++ l.attrValues inputs.cells.vast.nixago;
+      devshell.startup.cpSchemas = l.stringsWithDeps.noDepEntry ''
+        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/julia/packages/*.toml --exclude 'julia2nix.toml' modules/playground/
+        rsync --chmod 0777 -avzh $PRJ_ROOT/nix/python/packages/*.{toml,lock} modules/playground/
+      '';
+    };
+
+    doc = {
+      name = "Documentation";
+      commands = [
+        {
+          package = inputs.cells.quarto.entrypoints.mkQuarto;
+          help = "Build the documentation with quarto";
+        }
+      ];
+      imports = [
+        inputs.cells-lab.automation.devshellProfiles.docs
+      ];
+      packages = [inputs.cells.kernels.packages.jupyterEnvironment];
+    };
+
+    tullia = {
+      imports = [
+        inputs.dataflow2nix.tullia.devshellProfiles.default
+      ];
+      commands = [
+        {
+          package = inputs.nixpkgs.podman;
+        }
+        {
+          package = inputs.nixpkgs.nsjail;
+        }
+      ];
+    };
+    opencti = {
+      commands = [
+        {package = inputs.cells.python.packages.mkPoetryOpenCTI;}
+      ];
+    };
+  }

@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       16d684ed-0136-4e5f-a1c0-67dadad1a11a
+:header-args:jupyter-python: :session python :async yes :kernel python :exports both
+:END:
+#+title: Python
+
+
+* Packages
+
+** Pytorch :nixpkgs:
+
+#+BEGIN_SRC jupyter-python
+import torch
+print(torch.__version__)
+#+end_src
+
+#+RESULTS:
+: 1.13.1
+** [[https://github.com/ibis-project/ibis][ibis]]
+
+** tensorflow :nixpkgs:
+#+BEGIN_SRC jupyter-python
+import tensorflow as tf
+print(tf.__version__)
+#+end_src
+
+#+RESULTS:
+: 2023-01-09 11:34:03.507478: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+: To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+: 2.10.1
+
+** polars :poetry:
+
+#+BEGIN_SRC jupyter-python
+import polars as pl
+df = pl.DataFrame({"A": [1, 2, 3, 4, 5]})
+df
+#+end_src
+
+#+RESULTS:
+#+begin_example
+shape: (5, 1)
+┌─────┐
+│ A   │
+│ --- │
+│ i64 │
+╞═════╡
+│ 1   │
+│ 2   │
+│ 3   │
+│ 4   │
+│ 5   │
+└─────┘
+#+end_example

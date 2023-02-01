@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       d0d06178-0b97-4363-93e1-ab2a443c0cfe
+:header-args:julia: :session julia :async t :exports both
+:END:
+#+title: Julia Graph
+#+HUGO_AUTO_SET_LASTMOD: t
+#+hugo_custom_front_matter: :jupyter julia
+
+#+begin_src julia
+using Graphs: smallgraph
+g = smallgraph(:karate)
+#+end_src
+
+#+RESULTS:
+: {34, 78} undirected simple Int64 graph
+
+#+begin_src julia :results file graphics :file gplot.png :output-dir ./attach
+#| label: fig-parametric
+#| fig-cap: "Parametric Plots"
+
+using Compose, Cairo, GraphPlot
+using Graphs: smallgraph
+
+g = smallgraph(:karate)
+draw(PNG("./attach/gplot.png", 16cm, 16cm), gplot(g))
+gplot(g)
+#+end_src
+
+#+RESULTS:
+[[file:./attach/gplot.png]]
+
+#+begin_src julia :results file graphics :file plot.png :output-dir ./attach
+#| echo: true
+
+
+using Plots
+scatter(rand(100), rand(100))
+savefig("./attach/plot.png")
+plot(rand(100), rand(100))
+#+end_src
+
+#+RESULTS:
+[[file:./attach/plot.png]]
+
+* Unicode
+
+#+begin_src julia
+#| output: true
+#| echo: true
+#| code-fold: true
+
+using UnicodePlots
+lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title="Example", name="Line", xlabel="x", ylabel="y")
+#+end_src
+

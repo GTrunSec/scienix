@@ -6,7 +6,7 @@
   inherit (inputs) nixpkgs std;
 in {
   default = std.lib.dev.mkShell {
-    name = "Data Science Threat Intelligence";
+    name = "Decentralized Data Science";
 
     imports = [
       cell.devshellProfiles.toolchain

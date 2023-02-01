@@ -11,17 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3.1.0
         with:
+          submodules: true
           fetch-depth: 0
-      - uses: cachix/install-nix-action@v18
+
+      - uses: nixbuild/nix-quick-install-action@v21
         with:
-          install_url: https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.10.0pre20220728_86fcd4f/install
-          extra_nix_config: |
+          nix_conf: |
             experimental-features = nix-command flakes
-            system-features = nixos-test benchmark big-parallel kvm recursive-nix
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
       - uses: cachix/cachix-action@v11
         with:
-          name: zeek
+          name: gtrunsec
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
       # - name: Run nsjail Job
       #   run: |
@@ -43,10 +45,14 @@ jobs:
       #   run: nix -Lv run .\#x86_64-linux.julia.entrypoints.jnumpy-podman
 
       - name: Build Doc
-        run: nix develop .#doc --command mdbook build
+        run: nix develop .#doc --show-trace --refresh --command -- mkdoc
+
+      - name: Build quarto
+        run: |
+          nix develop .#doc --show-trace --refresh  --command mkQuarto
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
-          folder: ./docs/book
+          folder: ./docs/publish/public

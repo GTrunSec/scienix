@@ -39,6 +39,8 @@ in {
     cmd "shell" "nix flake lock --update-input std"
     // {
       preset.nix.enable = true;
+      # mkdir -p /local/home for isolation
+      env.HOME = "/home";
     };
 
   jnumpy = {

@@ -1,0 +1,112 @@
+:PROPERTIES:
+:ID:       8009637a-a5f0-4ada-84d2-552d135294d7
+:header-args:ein-bash: :session http://127.0.0.1:8888/bash.ipynb
+:END:
+#+title: Nushell
+
+* DataFrame Commands
+:PROPERTIES:
+:ID:       6f922d94-8ecc-4748-afdd-09aaa30e7763
+:END:
+
+** vast export
+
+#+begin_src sh :async :exports both :results output
+nu -c 'vast export -n 1 json | from json'
+#+end_src
+
+
+
+#+NAME: 40aae1d0-7835-4317-843d-b773740deb18
+#+begin_src ein-bash :exports both :results output
+nu -c 'vast export -n 1 json | from json'
+#+end_src
+
+#+RESULTS: 40aae1d0-7835-4317-843d-b773740deb18
+#+begin_example
+[21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp
+[21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us
+[21:19:48.076] json-writer received first result with a latency of 3.7ms
+[21:19:48.076] json-writer-6 reached limit of 1 events
+╭────────────────────────────┬────────────────────────────╮
+│ ts                         │ 2022-09-08T05:16:18.864804 │
+│ id.orig_h                  │ 192.168.99.129             │
+│ id.orig_p                  │ 49835                      │
+│ mailfrom                   │                            │
+│ rcptto                     │                            │
+│ date                       │                            │
+│ from                       │                            │
+│ to                         │                            │
+│ cc                         │                            │
+│ reply_to                   │                            │
+│ msg_id                     │                            │
+│ in_reply_to                │                            │
+│ subject                    │                            │
+│ x_originating_ip           │                            │
+│ first_received             │                            │
+│ second_received            │                            │
+│ last_reply                 │ OK Dovecot ready.          │
+│ user_agent                 │                            │
+│ path                       │ [list 2 items]             │
+│ tls                        │ false                      │
+│ process_pop3_headers       │ true                       │
+│ entity_count               │ 0                          │
+│ location_orig.country_code │                            │
+│ location_orig.region       │                            │
+│ location_orig.city         │                            │
+│ location_orig.latitude     │                            │
+│ location_orig.longitude    │                            │
+│ location_resp.country_code │                            │
+│ location_resp.region       │                            │
+│ location_resp.city         │                            │
+│ location_resp.latitude     │                            │
+│ location_resp.longitude    │                            │
+╰────────────────────────────┴────────────────────────────╯
+│ id.resp_h                  │ 192.168.2.254              │
+│ id.resp_p                  │ 110                        │
+│ uid                        │ CdveCb2nALNTFcT2U5         │
+│ start_time                 │ 2022-09-08T05:16:18.757662 │
+│ end_time                   │                            │
+│ duration                   │ 107.14ms                   │
+│ service                    │ [list 0 items]             │
+│ trans_depth                │ 1                          │
+│ helo                       │                            │
+#+end_example
+
+
+#+NAME: 46cc59d8-2f26-4eab-9790-f412af9e6de9
+#+begin_src ein-bash :exports both :results output
+nu -c 'from'
+#+end_src
+
+
+* Plugin Check
+#+RESULTS: 46cc59d8-2f26-4eab-9790-f412af9e6de9
+#+begin_example
+Usage:
+  > from
+
+Subcommands:
+  from csv - Parse text as .csv and create table.
+  from eml - Parse text as .eml and create record.
+  from ics - Parse text as .ics and create table.
+  from ini - Parse text as .ini and create record
+  from json - Convert from json to structured data
+  from nuon - Convert from nuon to structured data
+  from ods - Parse OpenDocument Spreadsheet(.ods) data and create table.
+  from parquet - Convert from .parquet binary into table
+  from ssv - Parse text as space-separated values and create a table. The default minimum number of spaces counted as a separator is 2.
+  from toml - Parse text as .toml and create record.
+  from tsv - Parse text as .tsv and create table.
+  from url - Parse url-encoded string as a record.
+  from vcf - Parse text as .vcf and create table.
+  from xlsx - Parse binary Excel(.xlsx) data and create table.
+  from xml - Parse text as .xml and create record.
+  from yaml - Parse text as .yaml/.yml and create table.
+  from yml - Parse text as .yaml/.yml and create table.
+
+Flags:
+  -h, --help - Display the help message for this command
+
+
+#+end_example

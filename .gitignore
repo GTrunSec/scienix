@@ -13,3 +13,5 @@ treefmt.toml
 # nixago-auto-created: mdbook-build-folder
 docs/book/**
 index_files
+docs/publish
+docs/*.qmd

@@ -1,0 +1,331 @@
+:PROPERTIES:
+:ID:       f6113a2d-0778-403c-abfc-e95645a1183a
+:header-args:jupyter-bash: :session bash :async yes :kernel bash :exports both :dir ../../
+:header-args:bash: :session bash :async yes :exports both :dir ../../
+:header-args:json: exports both
+:END:
+#+title: Attack Models
+#+AUTHOR: GuangTao Zhang
+
+* Queries
+
+#+begin_src bash :results output :wrap SRC json
+cat $(2>/dev/null nix build .#x86_64-linux.models.lib.mitre-attack-queries --print-out-paths --no-link)
+#+end_src
+
+#+RESULTS:
+#+begin_SRC json
+{
+  "T0000": {
+    "Azure Sentinel": {
+      "name": "Suspicious Filename Used",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path == \"a.exe\"or process_path == \"b.exe\"or process_path == \"c.exe\"or process_path == \"d.exe\"or process_path == \"e.exe\"or process_path == \"f.exe\"or process_path == \"g.exe\"or process_path == \"h.exe\"or process_path == \"i.exe\"or process_path == \"j.exe\"or process_path == \"k.exe\"or process_path == \"l.exe\"or process_path == \"m.exe\"or process_path == \"n.exe\"or process_path == \"o.exe\"or process_path == \"p.exe\"or process_path == \"q.exe\"or process_path == \"r.exe\"or process_path == \"s.exe\"or process_path == \"t.exe\"or process_path == \"u.exe\"or process_path == \"v.exe\"or process_path == \"w.exe\"or process_path == \"x.exe\"or process_path == \"y.exe\"or process_path == \"z.exe\"or process_path == \"1.exe\"or process_path == \"2.exe\"or process_path == \"3.exe\"or process_path == \"4.exe\"or process_path == \"5.exe\"or process_path == \"6.exe\"or process_path == \"7.exe\"or process_path == \"8.exe\"or process_path == \"9.exe\"or process_path == \"0.exe\"or process_path == \"10.exe\")"
+    }
+  },
+  "T1003": {
+    "Azure Sentinel": {
+      "name": "Credential Dumping Registry Save",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and process_path contains \"reg.exe\"and (process_command_line contains \"*save*HKLM\\\\sam*\"or process_command_line contains \"*save*HKLM\\\\system*\")"
+    },
+    "Suricata (NSM)": {
+      "name": "ET Open Rule",
+      "product": "Suricata (NSM)",
+      "query": "ET EXPLOIT GsecDump executed"
+    }
+  },
+  "T1007": {
+    "Azure Sentinel": {
+      "name": "System Service Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"net.exe\"or process_path contains \"tasklist.exe\"or process_path contains \"sc.exe\"or process_path contains \"wmic.exe\")and (file_directory contains \"net.exe\\\" start\"or file_directory contains \"tasklist.exe\\\" /SVC\"and file_directory contains \"sc.exe\\\" query\"or file_directory contains \"wmic.exe\\\" service where\")"
+    }
+  },
+  "T1012": {
+    "Azure Sentinel": {
+      "name": "Query Registry Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and process_path contains \"reg.exe\" and process_command_line contains \"reg query\""
+    }
+  },
+  "T1016": {
+    "Azure Sentinel": {
+      "name": "System Network Configuration Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_command_line contains \"net.exe\"and file_directory contains \"config\")or (process_command_line contains \"ipconfig.exe\"or process_command_line contains \"netsh.exe\"or process_command_line contains \"arp.exe\"or process_command_line contains \"nbtstat.exe\")"
+    }
+  },
+  "T1018": {
+    "Azure Sentinel": {
+      "name": "Remote System Discovery Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where (process_path contains \"net.exe\"or process_path contains \"ping.exe\")and (process_command_line contains \"view\"or process_command_line contains \"ping\")"
+    }
+  },
+  "T1027": {
+    "Azure Sentinel": {
+      "name": "Obfuscated Files Or Information",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"certutil.exe\" and process_command_line contains \"encode\")or process_command_line contains \"ToBase64String\""
+    }
+  },
+  "T1033": {
+    "Azure Sentinel": {
+      "name": "System Owner User Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"whoami.exe\"or process_command_line contains \"whoami\"or file_directory contains \"useraccount get /ALL\"or process_path contains \"qwinsta.exe\"or process_path contains \"quser.exe\"or process_path contains \"systeminfo.exe\")"
+    }
+  },
+  "T1036": {
+    "Azure Sentinel": {
+      "name": "Masquerading Location",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 11 and (process_path contains \"SysWOW64\"or process_path contains \"System32\"or process_path contains \"AppData\"or process_path contains \"Temp\")and (file_name contains \".exe\"or file_name contains \".dll\"or file_name contains \".bat\"or file_name contains \".com\"or file_name contains \".ps1\"or file_name contains \".py\"or file_name contains \".js\"or file_name contains \".vbs\"or file_name contains \".hta\")"
+    }
+  },
+  "T1037": {
+    "Azure Sentinel": {
+      "name": "Logon Scripts",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and process_command_line contains \"*REG*ADD*HKCU\\\\Environment*UserInitMprLogonScript*\""
+    }
+  },
+  "T1040": {
+    "Azure Sentinel": {
+      "name": "Network Sniffing",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"tshark.exe\"or process_path contains \"windump.exe\"or process_path contains \"logman.exe\"or process_path contains \"tcpdump.exe\"or process_path contains \"wprui.exe\"or process_path contains \"wpr.exe\")"
+    },
+    "Splunk": {
+      "name": null,
+      "product": "Splunk",
+      "query": "index=linux sourcetype=syslog left promiscuous mode | table host,message"
+    }
+  },
+  "T1046": {
+    "Suricata (NSM)": {
+      "name": "ET Open Rule",
+      "product": "Suricata (NSM)",
+      "query": "GPL SCAN *"
+    }
+  },
+  "T1047": {
+    "Azure Sentinel": {
+      "name": "Windows Management Instrumentation Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_parent_command_line contains \"wmiprvse.exe\"or process_path contains \"wmic.exe\"or process_command_line contains \"wmic\")"
+    }
+  },
+  "T1049": {
+    "Azure Sentinel": {
+      "name": "System Network Connections Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"net.exe\"or process_path contains \"netstat.exe\")and (process_command_line contains \"*net* use*\"or process_command_line contains \"*net* sessions*\"or process_command_line contains \"*net* file*\"or process_command_line contains \"*netstat*\")or process_command_line contains \"*Get-NetTCPConnection*\""
+    }
+  },
+  "T1053": {
+    "Splunk": {
+      "name": null,
+      "product": "Splunk",
+      "query": "4. index=linux sourcetype=bash_history at"
+    }
+  },
+  "T1055": {
+    "Azure Sentinel": {
+      "name": "Process Injection Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and process_command_line contains \"*Invoke-DllInjection*\"or process_command_line contains \"C:\\\\windows\\\\sysnative\\\\\""
+    },
+    "Splunk": {
+      "name": null,
+      "product": "Splunk",
+      "query": "```"
+    }
+  },
+  "T1057": {
+    "Azure Sentinel": {
+      "name": "Process Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and process_path contains \"tasklist.exe\"or process_command_line contains \"Get-Process\""
+    }
+  },
+  "T1059": {
+    "Azure Sentinel": {
+      "name": "Command Line Interface",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and process_path contains \"cmd.exe\""
+    }
+  },
+  "T1069": {
+    "Azure Sentinel": {
+      "name": "Permission Groups Discovery Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and process_path contains \"net.exe\"and (process_command_line contains \"*net* user*\"or process_command_line contains \"*net* group*\"or process_command_line contains \"*net* localgroup*\"or process_command_line contains \"*get-localgroup*\"or process_command_line contains \"*get-ADPrinicipalGroupMembership*\")"
+    }
+  },
+  "T1070": {
+    "Azure Sentinel": {
+      "name": "Indicator Removal On Host",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where process_path contains \"wevtutil\""
+    },
+    "Splunk": {
+      "name": null,
+      "product": "Splunk",
+      "query": "```"
+    }
+  },
+  "T1074": {
+    "Azure Sentinel": {
+      "name": "Datal Staged Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_command_line contains \"DownloadString\"and process_command_line contains \"Net.WebClient\")or (process_command_line contains \"New-Object\"and process_command_line contains \"IEX\")"
+    }
+  },
+  "T1082": {
+    "Azure Sentinel": {
+      "name": "System Information Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains\"sysinfo.exe\"or process_path contains \"reg.exe\")and process_command_line contains \"reg*query HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Disk\\\\Enum\""
+    }
+  },
+  "T1087": {
+    "Azure Sentinel": {
+      "name": "Account Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"net.exe\"or process_path contains \"powershell.exe\")and (process_command_line contains \"*net* user*\"or process_command_line contains \"*net* group*\"or process_command_line contains \"*net* localgroup*\"or process_command_line contains \"cmdkey*\\\\/list*\"or process_command_line contains \"*get-localuser*\"or process_command_line contains \"*get-localgroupmembers*\"or process_command_line contains \"*get-aduser*\"or process_command_line contains \"query*user*\")"
+    },
+    "Splunk": {
+      "name": null,
+      "product": "Splunk",
+      "query": "index=linux sourcetype=bash_history group OR id | table host,user_name,bash_command"
+    }
+  },
+  "T1105": {
+    "Suricata (NSM)": {
+      "name": "ET Open Rule",
+      "product": "Suricata (NSM)",
+      "query": "ET ATTACK\\_RESPONSE Possible Lateral Movement - File Creation Request in Remote System32 Directory"
+    }
+  },
+  "T1112": {
+    "Azure Sentinel": {
+      "name": "Modify Registry",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where process_path contains \"reg.exe\"and file_directory contains \"reg.exe\\\" query\""
+    }
+  },
+  "T1115": {
+    "Azure Sentinel": {
+      "name": "Clipboard Data",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"clip.exe\"or process_command_line contains \"*Get-Clipboard*\")"
+    }
+  },
+  "T1123": {
+    "Azure Sentinel": {
+      "name": "Audio Capture",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_path contains \"SoundRecorder.exe\"or process_command_line contains \"*Get-AudioDevice*\"or process_command_line contains \"*WindowsAudioDevice-Powershell-Cmdlet*\")"
+    }
+  },
+  "T1124": {
+    "Azure Sentinel": {
+      "name": "System Time Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_path contains \"*\\\\net.exe\"and process_command_line contains \"*net* time*\")or process_path contains \"w32tm.exe\"or process_command_line contains \"*Get-Date*\""
+    }
+  },
+  "T1127": {
+    "Azure Sentinel": {
+      "name": "Trusted Developer Utilities",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_path contains \"MSBuild.exe\"or process_path contains \"msxsl.exe\")"
+    }
+  },
+  "T1135": {
+    "Azure Sentinel": {
+      "name": "Network Share Discovery Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1 and (process_path contains \"net.exe\"and (process_command_line contains \"net view\"or process_command_line contains \"net share\"))or process_command_line contains \"get-smbshare -Name\""
+    }
+  },
+  "T1136": {
+    "Azure Sentinel": {
+      "name": "Create Account",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_command_line contains \"New-LocalUser\"or process_command_line contains \"net user add\")"
+    },
+    "Splunk": {
+      "name": null,
+      "product": "Splunk",
+      "query": "Root Account Creation: index=linux  source=\"/var/log/secure\" eventtype=useradd UID=0 OR GID=0"
+    }
+  },
+  "T1140": {
+    "Azure Sentinel": {
+      "name": "Deobfuscate Decode Files Or Information",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_path contains \"certutil.exe\"and process_command_line contains \"decode\")"
+    }
+  },
+  "T1187": {
+    "Azure Sentinel": {
+      "name": "Forced Authentication",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 11and (file_name contains \".lnk\"or file_name contains \".scf\")"
+    }
+  },
+  "T1197": {
+    "Azure Sentinel": {
+      "name": "BITS Jobs Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_path contains \"bitsamin.exe\"or process_command_line contains \"Start-BitsTransfer\")"
+    }
+  },
+  "T1201": {
+    "Azure Sentinel": {
+      "name": "Password Policy Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 11and (process_command_line contains \"net accounts\"or process_command_line contains \"net accounts \\\\/domain\")"
+    }
+  },
+  "T1202": {
+    "Azure Sentinel": {
+      "name": "Indirect Command Execution",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_parent_command_line contains \"pcalua.exe\"or process_path contains \"pcalua.exe\"or process_path contains \"bash.exe\"or process_path contains \"forfiles.exe\")"
+    }
+  },
+  "T1216": {
+    "Azure Sentinel": {
+      "name": "Signed Script Proxy Execution",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where process_path contains \"cscript\"or process_path contains \"wscript\"or process_path contains \"certutil\"or process_path contains \"jjs\"and file_directory !contains \" /nologo \\\"MonitorKnowledgeDiscovery.vbs\\\"\""
+    }
+  },
+  "T1217": {
+    "Azure Sentinel": {
+      "name": "Browser Bookmark Discovery",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_command_line contains \"*firefox*places.sqlite*\")"
+    }
+  },
+  "T1218": {
+    "Azure Sentinel": {
+      "name": "Signed Binary Proxy Execution Process",
+      "product": "Azure Sentinel",
+      "query": "Sysmon| where EventID == 1and (process_command_line contains \"mavinject*\\\\/injectrunning\"or process_command_line contains \"mavinject32*\\\\/injectrunning*\"or process_command_line contains \"*certutil*script\\\\:http\\\\[\\\\:\\\\]\\\\/\\\\/*\"or process_command_line contains \"*certutil*script\\\\:https\\\\[\\\\:\\\\]\\\\/\\\\/*\"or process_command_line contains \"*msiexec*http\\\\[\\\\:\\\\]\\\\/\\\\/*\"or process_command_line contains \"*msiexec*https\\\\[\\\\:\\\\]\\\\/\\\\/*\")"
+    }
+  },
+  "T1222": {
+    "Splunk": {
+      "name": null,
+      "product": "Splunk",
+      "query": "```"
+    }
+  }
+}
+#+end_SRC
+* Thesis

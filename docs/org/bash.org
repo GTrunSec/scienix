@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       15cfcd57-7aa2-4695-bd19-1a584124ca28
+:header-args:jupyter-bash: :session bash :async yes :kernel bash :exports both
+:END:
+#+title: Bash
+
+
+* NuShell
+
+#+begin_src jupyter-bash
+pwd
+#+end_src
+
+#+RESULTS:
+: /home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org

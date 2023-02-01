@@ -5,8 +5,9 @@
 } @ args: let
   inherit (args.inputs) cells;
 in
-  kernels.python (cells.python.lib.poetryPackages
+  kernels.python ((cells.python.lib.poetryAttrs {
+      jupyterWith = true;
+    })
     // {
-      name = "python-with-threat-intelligence";
-      displayName = "python with threat intelligence";
+      displayName = name;
     })
