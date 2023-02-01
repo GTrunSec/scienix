@@ -53,6 +53,7 @@ in
       packages = with nixpkgs; [
         sd
       ];
+      env = [];
     };
 
     generator = {
