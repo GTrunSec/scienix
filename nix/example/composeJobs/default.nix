@@ -22,10 +22,12 @@ in {
         };
       };
     in
-      inputs.std.lib.ops.writeShellApplication {
+      writeShellApplication {
         name = "hello-deploy";
         runtimeInputs = [nixpkgs.docker-compose];
         text = ''
+          # Bash does not automatically forward signals to subprocesses
+          # don't forget to use exec
           exec ${l.getExe nixpkgs.docker-compose} -f ${dockerCompose} up
         '';
       })
