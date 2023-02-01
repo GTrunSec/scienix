@@ -33,4 +33,15 @@ in {
         cp -rfp --no-preserve=mode,ownership public/posts/index.html ./public/
       '';
     };
+
+  autoCommit = writeShellApplication {
+    name = "autoCommit";
+    text = ''
+      cd "$PRJ_ROOT"/modules/infra
+      treefmt .
+      git add .
+      git commit --no-edit
+      git push origin HEAD:DeSci --no-verify
+    '';
+  };
 }

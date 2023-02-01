@@ -2,7 +2,6 @@
   inputs,
   cell,
 }: let
-  inherit (cell) lib cargoMakeJobs;
   inherit (inputs) nixpkgs matrix-attack-data;
   inherit (inputs.cells.common.lib) __inputs__;
   inherit (inputs.cells-lab.writers.lib) writeShellApplication;

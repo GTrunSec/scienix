@@ -2,7 +2,6 @@
   inputs,
   cell,
 }: let
-  inherit (cell) lib cargoMakeJobs;
   inherit (inputs.cells-lab.workflows.lib) mkCargoMake;
 in {
   flow = mkCargoMake {

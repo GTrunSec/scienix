@@ -22,8 +22,8 @@
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    jupyterWith.url = "github:tweag/jupyterWith?ref=refs/pull/419/head";
     # jupyterWith.url = "github:gtrunsec/jupyterWith/maintainer";
+    jupyterWith.url = "github:tweag/jupyterWith?ref=refs/pull/419/head";
     jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
     # jupyterWith.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
 
@@ -62,8 +62,6 @@
           (runnables "entrypoints")
 
           (functions "lib")
-
-          (data "cargoMakeJobs")
 
           (installables "packages" {ci.build = true;})
 

@@ -3223,11 +3223,11 @@
         "std": "std_6"
       },
       "locked": {
-        "lastModified": 1674825284,
-        "narHash": "sha256-FkmYDoG4WDI/MfLmXgzHYYSToJyGUuoU7SIDJOq0lgA=",
+        "lastModified": 1675182051,
+        "narHash": "sha256-E3OQyAhGdac11Pqgn8uyP5295cqI39QlcXxydHu5KfI=",
         "owner": "input-output-hk",
         "repo": "tullia",
-        "rev": "4d11ca5001a4e7f85522eb036a8d511d4020507e",
+        "rev": "f69e8a294f8aa5a947fa61de9235f3a5b7515570",
         "type": "github"
       },
       "original": {

@@ -27,10 +27,4 @@ in
       format = "yaml";
       hook.mode = "copy";
     };
-    vast-cargo-make = {
-      configData = cell.cargoMakeJobs.vast;
-      output = "conf/vast/cargo-make.toml";
-      format = "toml";
-      hook.mode = "copy";
-    };
   }
