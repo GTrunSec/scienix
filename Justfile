@@ -11,3 +11,7 @@ cachix-push:
 # Formats all changed source files
 fmt:
     treefmt $(git diff --name-only --cached)
+
+# generating configFiles with devshell
+generator:
+    nix develop .\#generator -c echo generating configFiles

@@ -8,7 +8,7 @@
 in {
   hello =
     (let
-      dockerCompose = writeConfig "dockerCompose.yaml" {
+      dockerCompose = {
         services = {
           web = {
             image = "ghcr.io/gtrunsec/desci/hello";
@@ -28,8 +28,11 @@ in {
         text = ''
           # Bash does not automatically forward signals to subprocesses
           # don't forget to use exec
-          exec ${l.getExe nixpkgs.docker-compose} -f ${dockerCompose} up
+          exec docker-compose -f ${cell.nixago.hello.configFile} up
         '';
+        passthru = {
+          dockerCompose = dockerCompose;
+        };
       })
     // {
       process-compose = {

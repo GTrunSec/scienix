@@ -124,11 +124,11 @@
         "xnlib": "xnlib"
       },
       "locked": {
-        "lastModified": 1675209799,
-        "narHash": "sha256-BtaGro50tkwhoMS/dzl0cAwk/0kFruXL4oQ5SqFM2D0=",
+        "lastModified": 1675225382,
+        "narHash": "sha256-AldQrqMmz90DrdxYTotkXI7UoGFcu5nlrK/b8ibxDxA=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "1f1d9515f83dff1f326884e80149fdc08451487b",
+        "rev": "f8e438dea8d00cd98f0c30d61f184ed40a529b6e",
         "type": "github"
       },
       "original": {
@@ -284,11 +284,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1674824818,
-        "narHash": "sha256-Hkt1a9SBMo/PDV612DiFlDEyo+zbFQjy2SIhW8S8YlY=",
+        "lastModified": 1674952483,
+        "narHash": "sha256-eTdtq/aF2k3eHaMO0Oofgn5IGE4GI5Oi3ySqGjBfhis=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "d506323915d541af25dbfa8666b6a0704cbd8ad7",
+        "rev": "1077321949516e3aace510e8535944ad710da609",
         "type": "github"
       },
       "original": {
