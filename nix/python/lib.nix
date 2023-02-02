@@ -1,11 +1,18 @@
 {
   inputs,
   cell,
-} @ args: {
+} @ args: let
+  inherit (inputs.cells.common.lib) __inputs__;
+in {
   poetryAttrs = import ./packages/poetryAttrs.nix args;
 
-  nixpkgs = inputs.cells.common.lib.nixpkgs.appendOverlays [
-    inputs.cells.common.lib.__inputs__.nixpkgs-hardenedlinux.python.overlays.default
-    inputs.cells.common.lib.__inputs__.nixpkgs-hardenedlinux.common.lib.__inputs__.rust-overlay.overlays.default
-  ];
+  nixpkgs = import inputs.nixpkgs.path {
+    config.allowUnfree = true;
+    inherit (inputs.nixpkgs) system;
+    overlays = [
+      __inputs__.poetry2nix.overlay
+      __inputs__.nixpkgs-hardenedlinux.python.overlays.default
+      __inputs__.nixpkgs-hardenedlinux.pkgs.overlays.default
+    ];
+  };
 }

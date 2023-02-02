@@ -34,9 +34,10 @@ in {
       '';
     };
 
-  autoCommit = writeShellApplication {
+  auto-commit = writeShellApplication {
     name = "autoCommit";
     text = ''
+      nix develop "$PRJ_ROOT"#generator -c 'echo generating files'
       cd "$PRJ_ROOT"/modules/infra
       treefmt .
       git add .
