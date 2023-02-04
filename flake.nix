@@ -19,13 +19,14 @@
     std-utils.inputs.std.follows = "std";
   };
   inputs = {
+    haskell-language-server.url = "github:haskell/haskell-language-server";
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # jupyterWith.url = "github:gtrunsec/jupyterWith/maintainer";
-    jupyterWith.url = "github:tweag/jupyterWith?ref=refs/pull/419/head";
-    jupyterWith.inputs.nixpkgs.follows = "nixpkgs";
-    # jupyterWith.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
+    jupyenv.url = "github:gtrunsec/jupyterWith/dev";
+    # jupyenv.url = "github:tweag/jupyenv";
+    jupyenv.inputs.nixpkgs.follows = "nixpkgs";
+    # jupyenv.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
 
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
     matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";

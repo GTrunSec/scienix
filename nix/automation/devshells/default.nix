@@ -4,7 +4,6 @@
 }: let
   l = nixpkgs.lib // builtins;
   inherit (inputs) nixpkgs std;
-  inherit (inputs.cells.common.lib) __inputs__;
 in
   l.mapAttrs (_: std.lib.dev.mkShell) {
     default = {
@@ -32,12 +31,6 @@ in
           package = nixpkgs.nushell;
         }
         {
-          command = ''
-            ${inputs.cells.kernels.packages.jupyterEnvironment}/bin/jupyter "$@"
-          '';
-          name = "jupyter";
-        }
-        {
           package = inputs.cells.python.packages.mkPoetryEnv;
         }
         {
@@ -53,7 +46,6 @@ in
       packages = with nixpkgs; [
         sd
       ];
-      env = [];
     };
 
     generator = {

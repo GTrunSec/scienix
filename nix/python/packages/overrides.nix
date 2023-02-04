@@ -1,4 +1,4 @@
-nixpkgs: final: prev: let
+final: prev: let
   addNativeBuildInputs = drvName: inputs: {
     "${drvName}" = prev.${drvName}.overridePythonAttrs (old: {
       nativeBuildInputs = (old.nativeBuildInputs or []) ++ inputs;
@@ -6,9 +6,9 @@ nixpkgs: final: prev: let
   };
 in
   {
-    inherit (nixpkgs.python3Packages) tensorflow pytorch;
+    inherit (prev.pkgs.python3Packages) tensorflow pytorch;
 
-    psutil = nixpkgs.python3Packages.psutil;
+    psutil = prev.pkgs.python3Packages.psutil;
 
     pandas = prev.pandas.overridePythonAttrs (attrs: {
       format = "setuptools";

@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: {
-  jupyterWith ? false,
+  jupyenv ? false,
   groups ? [],
 }: let
   inherit (cell.lib) nixpkgs;
@@ -13,20 +13,21 @@ in
     extraPackages = ps:
       with ps; [
         pandas
-        # seaborn
+        seaborn
         pytorch
         # tensorflow
         matplotlib
         numpy
         # nixpkgs.python3Packages.fastai
       ];
-    overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix nixpkgs);
+    overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);
     inherit groups;
     preferWheels = true;
   }
-  // (l.optionalAttrs jupyterWith {
+  // (l.optionalAttrs jupyenv {
     ignoreCollisions = true;
-    pkgs = nixpkgs;
-    python = nixpkgs.python3;
-    groups = ["jupyterWith"];
+    inherit nixpkgs;
+    python = "python3";
+    overrides = ./overrides.nix;
+    groups = ["jupyenv"];
   })

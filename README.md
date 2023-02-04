@@ -11,7 +11,7 @@ nix develop
 ## Launch the JupyterLab with Nix
 
 ```bash
-nix develop --command jupyterlab <IP> <PORT>
+nix develop --command jupyenv <IP> <PORT>
 ```
 
 ## Launch the Julia Pluto Notebook with Nix
