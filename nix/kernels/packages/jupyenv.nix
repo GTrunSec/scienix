@@ -54,7 +54,7 @@ in {
       };
     kernel.julia.data-science = {
       enable = true;
-      julia = pkgs.lib.julia-wrapped {};
+      julia = inputs.cells.julia.packages.julia-wrapped;
     };
     kernel.haskell.data-science = {
       enable = true;
