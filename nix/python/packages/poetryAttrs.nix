@@ -14,7 +14,7 @@ in
       with ps; [
         pandas
         seaborn
-        pytorch
+        (ps.pytorch.override { cudaSupport = true; })
         # tensorflow
         matplotlib
         numpy
