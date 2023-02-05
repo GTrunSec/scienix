@@ -6,7 +6,7 @@
   inherit (inputs.cells.common.lib) __inputs__;
 in {
   julia-wrapped = nixpkgs.lib.julia-wrapped {
-    package = nixpkgs.julia_18-bin;
+    package = nixpkgs.julia;
     meta.mainProgram = "julia";
     enable = {
       GR = true;

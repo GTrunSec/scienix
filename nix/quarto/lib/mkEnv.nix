@@ -38,7 +38,7 @@ in
         {
           QUARTO_R = "${rEnv}/bin/R";
           QUARTO_PYTHON = "${pythonEnv}/bin/python";
-          # QUARTO_PYTHON = "${inputs.cells.kernels.packages.jupyterEnvironment}/bin/python";
+          # QUARTO_PYTHON = "${inputs.cells.kernels.packages.jupyenv}/bin/python";
         }
         // runtimeEnv;
       inherit text;

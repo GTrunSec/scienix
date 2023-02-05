@@ -4,13 +4,15 @@
 }: let
   inherit (inputs) nixpkgs;
   inherit (inputs.cells-lab.writers.lib) writeShellApplication;
-  inherit (cell.packages) jupyterEnvironment;
+  inherit (cell.packages) jupyenv;
+
+  l = inputs.nixpkgs.lib // builtins;
 in {
   linkKernels = let
-    cpKernel = n: ''
-       rsync --chmod +rw -avzh ${jupyterEnvironment.passthru.kernels."${n}-jupyter-kernel"}/kernels/${n} \
-      "$HOME"/.local/share/jupyter/kernels
-    '';
+    syncKernels = l.concatMapStringsSep "\n" (p: ''
+       rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name}/* \
+      "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.language}
+    '') (l.attrValues jupyenv.passthru.kernels);
   in
     writeShellApplication {
       name = "link-kernels";
@@ -19,9 +21,9 @@ in {
          if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
            mkdir -p "$HOME"/.local/share/jupyter/kernels
          fi
-         ${cpKernel "julia"}
-         ${cpKernel "python"}
-         ${cpKernel "bash"}
+
+         ${syncKernels}
+
         if [ -d "$HOME"/.local/share/jupyter/kernels/julia-1.8 ]; then
              rm -rf "$HOME"/.local/share/jupyter/kernels/julia-1.8
              cp -r "$HOME"/.local/share/jupyter/kernels/julia "$HOME"/.local/share/jupyter/kernels/julia-1.8

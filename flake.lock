@@ -1731,11 +1731,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1675548026,
-        "narHash": "sha256-wb6SqG8+UgI6XR/cj/ti1bo4BPYIxY6qo8ZjkU5KPp0=",
+        "lastModified": 1675554270,
+        "narHash": "sha256-lgfD3a7LTHTN/qJ44nX6zNFGMP63JttwPVrPTYbNNAg=",
         "owner": "gtrunsec",
         "repo": "jupyterWith",
-        "rev": "9ba09a78f7dd61cffb273eb54edfe188b15c0146",
+        "rev": "bc01e2762139981008c03d8c5b1aa89bea40a9e0",
         "type": "github"
       },
       "original": {
