@@ -47,7 +47,7 @@ in {
     };
 
     kernel.python.data-science =
-      (inputs.cells.python.lib.poetryEnv {
+      (inputs.cells.python.lib.poetryArgs {
         jupyenv = true;
       })
       // {

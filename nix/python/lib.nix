@@ -4,7 +4,7 @@
 } @ args: let
   inherit (inputs.cells.common.lib) __inputs__;
 in {
-  poetryEnv = import ./packages/poetryEnv.nix args;
+  poetryArgs = import ./packages/poetryArgs.nix args;
 
   nixpkgs = import inputs.nixpkgs.path {
     config.allowUnfree = true;

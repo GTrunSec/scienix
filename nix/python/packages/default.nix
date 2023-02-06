@@ -8,7 +8,7 @@ in {
 
   mkPoetryEnv =
     (
-      cell.lib.nixpkgs.poetry2nix.mkPoetryEnv (cell.lib.poetryEnv {})
+      cell.lib.nixpkgs.poetry2nix.mkPoetryEnv (cell.lib.poetryArgs {})
     )
     .override (old: {ignoreCollisions = true;});
 
