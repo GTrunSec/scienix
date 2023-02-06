@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (inputs.cells-lab.writers.lib) writeShellApplication;
-  inherit (inputs) self nixpkgs std;
+  inherit (inputs) self std nixpkgs;
 
   org =
     nixpkgs.runCommand "patchOrg" {
@@ -34,15 +34,5 @@ in {
       '';
     };
 
-  auto-commit = writeShellApplication {
-    name = "autoCommit";
-    text = ''
-      nix develop "$PRJ_ROOT"#generator -c 'echo generating files'
-      cd "$PRJ_ROOT"/modules/infra
-      treefmt .
-      git add .
-      git commit --no-edit
-      git push origin HEAD:DeSci --no-verify
-    '';
-  };
+  auto-commit-infra = cell.lib.mkAutoCommit "infra" "origin HEAD:DeSci";
 }

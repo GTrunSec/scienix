@@ -8,6 +8,7 @@
 
   __inputs__ = callFlake ./lib/lock {
     nixpkgs.locked = inputs.nixpkgs.sourceInfo;
+    nixpkgs-hardenedlinux.inputs.nixpkgs = "nixpkgs";
   };
 in {
   inherit __inputs__ l;

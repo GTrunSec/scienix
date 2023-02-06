@@ -57,6 +57,7 @@ in {
           if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
               mkdir -p "$HOME"/.local/share/jupyter/kernels
           fi
+          # $(git rev-parse --show-toplevel)
           ${syncKernels}
           quarto "$@"
         '';

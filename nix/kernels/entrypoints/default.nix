@@ -32,4 +32,5 @@ in {
         fi
       '';
     };
+  auto-commit-playground = inputs.cells.automation.lib.mkAutoCommit "playground" "origin HEAD:main";
 }
