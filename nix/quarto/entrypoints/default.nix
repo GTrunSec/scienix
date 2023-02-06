@@ -7,7 +7,7 @@
 
   l = inputs.nixpkgs.lib // builtins;
 in {
-  default = cell.lib.mkEnv {
+  default = cell.lib.mkQuarto {
     python = ps:
       with ps; [
         # add your custom Python packages here
@@ -50,7 +50,7 @@ in {
       sd '```julia\n\#\|' '```{julia}\n#|' "$dir""''${file%.md}".qmd
       sd '```ojs\n//\|' '```{ojs}\n//|' "$dir""''${file%.md}".qmd
 
-      ${l.getExe cell.entrypoints.default} render "$dir""''${file%.md}".qmd --to html
+      ${l.getExe inputs.cells.kernels.packages.jupyenvEval.config.quatroEnv} render "$dir""''${file%.md}".qmd --to html --no-execute-daemon
     '';
   };
   mkQuarto = writeShellApplication {
@@ -58,8 +58,6 @@ in {
     runtimeInputs = [inputs.cells.julia.packages.julia-wrapped];
     text = ''
       julia -e 'println("initializing")'
-
-      ${l.getExe inputs.cells.kernels.entrypoints.linkKernels}
 
       ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/julia-graph.md
       # ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/observablehq.md

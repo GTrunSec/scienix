@@ -4,15 +4,16 @@
     latest.url = "github:NixOS/nixpkgs";
 
     cells-lab.url = "github:GTrunSec/cells-lab";
+    # cells-lab.url = "/home/guangtao/ghq/github.com/GTrunSec/cells-lab";
     cells-lab.inputs.nixpkgs.follows = "nixpkgs";
+    cells-lab.inputs.std.follows = "std";
 
-    # std.url = "github:divnix/std";
-    std.url = "github:gtrunsec/std/writeScript";
+    std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "cells-lab/nixpkgs";
     std.inputs.n2c.follows = "n2c";
 
     n2c.url = "github:nlewo/nix2container";
-    n2c.inputs.nixpkgs.follows = "cells-lab/std/nixpkgs";
+    n2c.inputs.nixpkgs.follows = "nixpkgs";
 
     std-utils.url = "github:jmgilman/nix-utils";
     std-utils.inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +43,7 @@
     tullia.inputs.nix-nomad.follows = "nix-nomad";
     nix-nomad.url = "github:tristanpemble/nix-nomad";
 
-    users.follows = "cells-lab/std/blank";
+    users.follows = "std/blank";
   };
 
   outputs = {

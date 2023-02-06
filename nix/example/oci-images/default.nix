@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.std.lib.ops) mkStandardOCI;
+  inherit (inputs.cells-lab.ops.lib) mkStandardOCI;
   inherit (inputs) nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
 in {

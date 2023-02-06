@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.std.lib.ops) mkOperable;
+  inherit (inputs.cells-lab.ops.lib) mkOperable;
   inherit (inputs) nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
 in {

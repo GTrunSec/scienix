@@ -2,11 +2,11 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
+  inherit (inputs.cells-lab.writers.lib) writeConfig writeShellApplication;
   inherit (inputs) nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
 in {
-  hello =
+  vast =
     (let
       dockerCompose = {
         services = {
@@ -26,10 +26,7 @@ in {
         name = "hello-deploy";
         runtimeInputs = [nixpkgs.docker-compose];
         text = ''
-          # Bash does not automatically forward signals to subprocesses
-          # don't forget to use exec
-          exec ${l.getExe cell.operators.uwsgi}
-          # exec docker-compose -f ${cell.nixago.hello.configFile} up
+          exec docker-compose -f ${cell.nixago.vast.configFile} up
         '';
         passthru = {
           dockerCompose = dockerCompose;

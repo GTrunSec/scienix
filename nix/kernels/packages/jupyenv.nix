@@ -45,8 +45,9 @@ in {
       runtimePackages = [];
       jupyterlabEnvArgs.extraPackages = ps: ([] ++ ps.python-lsp-server.passthru.optional-dependencies.all);
     };
+
     kernel.python.data-science =
-      (inputs.cells.python.lib.poetryAttrs {
+      (inputs.cells.python.lib.poetryEnv {
         jupyenv = true;
       })
       // {
@@ -61,6 +62,10 @@ in {
     };
     kernel.bash.data-science = {
       enable = true;
+    };
+    publishers.quarto = {
+      enable = true;
+      python = "data-science";
     };
   };
 }

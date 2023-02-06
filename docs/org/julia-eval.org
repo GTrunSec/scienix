@@ -5,7 +5,7 @@
 #+title: Julia Eval
 #+EMAIL: gtrunsec@hardenedlinux.org
 #+HUGO_AUTO_SET_LASTMOD: t
-#+hugo_custom_front_matter: :jupyter julia
+#+hugo_custom_front_matter: :jupyter julia-data-science
 
 
 #+begin_src jupyter-julia :exports both :results ouput

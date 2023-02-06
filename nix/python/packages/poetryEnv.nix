@@ -4,6 +4,7 @@
 }: {
   jupyenv ? false,
   groups ? [],
+  cudaSupport ? false,
 }: let
   inherit (cell.lib) nixpkgs;
   l = nixpkgs.lib // builtins;
@@ -14,7 +15,7 @@ in
       with ps; [
         pandas
         seaborn
-        (ps.pytorch.override { cudaSupport = true; })
+        (ps.pytorch.override {inherit cudaSupport;})
         # tensorflow
         matplotlib
         numpy

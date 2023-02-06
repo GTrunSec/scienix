@@ -36,7 +36,7 @@ in
         ++ runtimeInputs;
       runtimeEnv =
         {
-          QUARTO_R = "${rEnv}/bin/R";
+          # QUARTO_R = "${rEnv}/bin/R";
           QUARTO_PYTHON = "${pythonEnv}/bin/python";
           # QUARTO_PYTHON = "${inputs.cells.kernels.packages.jupyenv}/bin/python";
         }
