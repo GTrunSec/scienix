@@ -34,12 +34,6 @@ in {
               defaultText = "pkgs.quarto";
               description = "Quarto package to use.";
             };
-            python = lib.mkOption {
-              type = types.str;
-              default = "${builtins.head (builtins.attrNames config.kernel.python)}";
-              description = "Python Kernel name";
-              apply = getEnv "python";
-            };
           };
         };
       };

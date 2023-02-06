@@ -65,7 +65,6 @@ in {
     };
     publishers.quarto = {
       enable = true;
-      python = "data-science";
     };
   };
 }
