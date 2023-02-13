@@ -17,22 +17,20 @@
         --replace "#+begin_src jupyter-" "#+begin_src "
         done
     '';
+  org-roam-book = inputs.cells-lab.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override {
+    inherit org;
+  };
 in {
-  mkdoc = let
-    org-roam-book = inputs.cells-lab.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override {
-      inherit org;
-    };
-  in
-    writeShellApplication {
-      name = "mkdoc";
-      runtimeInputs = [nixpkgs.hugo];
-      text = ''
-        rsync --chmod +rw -avzh ${org-roam-book}/* docs/publish
-        cd docs/publish && cp ../config.toml .
-        hugo "$@"
-        cp -rfp --no-preserve=mode,ownership public/posts/index.html ./public/
-      '';
-    };
+  mkdoc = writeShellApplication {
+    name = "mkdoc";
+    runtimeInputs = [nixpkgs.hugo];
+    text = ''
+      rsync --chmod +rw -avzh ${org-roam-book}/* docs/publish
+      cd docs/publish && cp ../config.toml .
+      hugo "$@"
+      cp -rfp --no-preserve=mode,ownership public/posts/index.html ./public/
+    '';
+  };
 
   auto-commit-infra = cell.lib.mkAutoCommit "infra" "origin HEAD:DeSci";
 }

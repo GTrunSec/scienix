@@ -25,7 +25,6 @@
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
     julia2nix.inputs.std.follows = "std";
 
-
     # jupyenv.url = "github:tweag/jupyenv";
     jupyenv.url = "github:gtrunsec/jupyterWith/dev";
     jupyenv.inputs.nixpkgs.follows = "nixpkgs";

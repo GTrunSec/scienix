@@ -8,24 +8,6 @@
   l = inputs.nixpkgs.lib // builtins;
 in {
   default = cell.lib.mkQuarto {
-    python = ps:
-      with ps; [
-        # add your custom Python packages here
-        pandas
-        matplotlib
-      ];
-    r = rs:
-      with rs; [
-        # add your custom R packages here
-        # ggplot2
-        # dplyr
-        # ggplot2
-        # lubridate
-        # readr
-        # ggrepel
-        # tidyr
-      ];
-
     runtimeInputs = with nixpkgs; [];
     text = ''
       # write your custom bash script here
