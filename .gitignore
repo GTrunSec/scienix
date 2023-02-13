@@ -14,4 +14,5 @@ treefmt.toml
 docs/book/**
 index_files
 docs/publish
-docs/*.qmd
+docs/quarto/*.qmd
+!docs/quarto/index.qmd

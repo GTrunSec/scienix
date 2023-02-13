@@ -8,7 +8,7 @@
   module = {
     imports = [
       (import ./jupyenv.nix {inherit inputs cell;})
-      (import ./modules/quatro.nix {inherit inputs cell;})
+      (import ./modules/quarto.nix {inherit inputs cell;})
     ];
   };
 in {

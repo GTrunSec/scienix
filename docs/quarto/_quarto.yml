@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: ./pubish-quatro
+  output-dir: ./pubish-quarto
 
 book:
   title: "DeSci"
@@ -10,9 +10,11 @@ book:
   chapters:
     - index.qmd
 
-    - part: bash.qmd
-      chapters:
-        - haskell.qmd
+    - part: julia-graph.qmd
+      #
+chapters:
+      #
+  - haskell.qmd
 
 
 format:

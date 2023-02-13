@@ -40,7 +40,7 @@ in {
     ];
     text = ''
       # write your custom bash script here
-      dir="$PRJ_ROOT/docs/"
+      dir="$PRJ_ROOT/docs/quarto/"
 
       path=("$@")
       # shellcheck disable=SC2128
@@ -50,7 +50,7 @@ in {
       sd '```julia\n\#\|' '```{julia}\n#|' "$dir""''${file%.md}".qmd
       sd '```ojs\n//\|' '```{ojs}\n//|' "$dir""''${file%.md}".qmd
 
-      ${l.getExe inputs.cells.kernels.packages.jupyenvEval.config.quatroEnv} render "$dir""''${file%.md}".qmd --to html --no-execute-daemon
+      ${l.getExe inputs.cells.kernels.packages.jupyenvEval.config.quartoEnv} render "$dir""''${file%.md}".qmd --to html --no-execute-daemon
     '';
   };
   mkQuarto = writeShellApplication {

@@ -12,7 +12,7 @@
   cfg = config.publishers;
 in {
   options = {
-    quatroEnv = lib.mkOption {
+    quartoEnv = lib.mkOption {
       type = types.package;
       internal = true;
     };
@@ -46,7 +46,7 @@ in {
   };
   config = lib.mkMerge [
     (lib.mkIf cfg.quarto.enable {
-      quatroEnv = inputs.cells.quarto.lib.mkQuarto {
+      quartoEnv = inputs.cells.quarto.lib.mkQuarto {
         kernels = config.build.passthru.kernels;
         inherit (config.publishers.quarto) runtimeEnv package;
         text = let
