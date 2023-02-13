@@ -23,7 +23,6 @@
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
-    julia2nix.inputs.std.follows = "std";
 
     # jupyenv.url = "github:tweag/jupyenv";
     jupyenv.url = "github:gtrunsec/jupyterWith/dev";
