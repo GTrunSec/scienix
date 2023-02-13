@@ -112,11 +112,11 @@
         "xnlib": "xnlib"
       },
       "locked": {
-        "lastModified": 1676268445,
-        "narHash": "sha256-FjVVzu9pGQmpuyZwJlPgEGLePfDL94gR+M1PNM1gNKM=",
+        "lastModified": 1676270349,
+        "narHash": "sha256-04LwSHMIvNAkHGlxNi+kkgrQUB9soFvGU7J0aiCIVcg=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "ab176d3030d2d742d48b9045f07564f5aeda936f",
+        "rev": "b46877a511f200b20e2e38bd5b582bdb07526a15",
         "type": "github"
       },
       "original": {
