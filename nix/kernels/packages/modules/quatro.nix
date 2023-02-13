@@ -34,6 +34,11 @@ in {
               defaultText = "pkgs.quarto";
               description = "Quarto package to use.";
             };
+            runtimeEnv = lib.mkOption {
+              type = types.attrs;
+              default = {};
+              description = "Environment variables to set when running quarto.";
+            };
           };
         };
       };
@@ -42,6 +47,8 @@ in {
   config = lib.mkMerge [
     (lib.mkIf cfg.quarto.enable {
       quatroEnv = inputs.cells.quarto.lib.mkQuarto {
+        kernels = config.build.passthru.kernels;
+        inherit (config.publishers.quarto) runtimeEnv package;
         text = let
           syncKernels = lib.concatMapStringsSep "\n" (p: ''
             rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name} \
@@ -52,6 +59,8 @@ in {
               mkdir -p "$HOME"/.local/share/jupyter/kernels
           fi
           # $(git rev-parse --show-toplevel)
+          # jupyter kernelspec list
+          # jupyter --paths
           ${syncKernels}
           quarto "$@"
         '';

@@ -2,27 +2,28 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) std;
+  inherit (inputs) std std-data-collection;
 in {
-  treefmt = std.presets.nixago.treefmt {
-    configData.formatter.nix = {
+  treefmt = std-data-collection.data.configs.treefmt {
+    data.formatter.nix = {
       excludes = [
         "generated.nix"
         "./modules/*"
       ];
     };
-    configData.formatter.prettier = {
+    data.formatter.prettier = {
       excludes = [
         "conf/*"
         "data/*"
+        "docs/*"
         "julia2nix.toml"
         "Manifest.toml"
         "Project.toml"
       ];
     };
   };
-  just = std.std.nixago.just {
-    configData = {
+  just = std.lib.cfg.just {
+    data = {
       tasks = import ./just.nix;
     };
   };

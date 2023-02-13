@@ -12,14 +12,29 @@ in
     text ? "",
     runtimeInputs ? [],
     runtimeEnv ? {},
+    kernels ? {},
+    package ? nixpkgs.quarto,
   }: let
-    pythonEnv = nixpkgs.python3.withPackages (ps:
-      with ps;
-        [
-          jupyter
-          ipython
-        ]
-        ++ (python ps));
+    pythonEnv = let
+      env = nixpkgs.python3.withPackages (ps:
+        with ps;
+          [
+            jupyter
+            ipython
+          ]
+          ++ (python ps));
+    in
+      nixpkgs.runCommand "python-env" {
+        buildInputs = [nixpkgs.makeWrapper];
+      } ''
+        mkdir -p $out/bin
+        for i in ${env}/bin/*; do
+        filename=$(basename $i)
+        ln -s ${env}/bin/$filename $out/bin/$filename
+        wrapProgram $out/bin/$filename \
+          --set JUPYTER_PATH ${l.concatStringsSep ":" (l.attrValues kernels)}
+        done
+      '';
 
     rEnv = nixpkgs.rWrapper.override {
       packages = with nixpkgs.rPackages;
@@ -31,14 +46,13 @@ in
       name = "quarto";
       runtimeInputs =
         [
-          nixpkgs.quarto
+          package
         ]
         ++ runtimeInputs;
       runtimeEnv =
         {
           # QUARTO_R = "${rEnv}/bin/R";
           QUARTO_PYTHON = "${pythonEnv}/bin/python";
-          # QUARTO_PYTHON = "${inputs.cells.kernels.packages.jupyenv}/bin/python";
         }
         // runtimeEnv;
       inherit text;

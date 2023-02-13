@@ -4,7 +4,6 @@
 :END:
 #+title: Python
 
-
 * Packages
 
 ** Pytorch :nixpkgs:
@@ -16,12 +15,13 @@ print(torch.__version__)
 
 #+RESULTS:
 : 1.13.1
+
 ** [[https://github.com/ibis-project/ibis][ibis]]
 
 ** tensorflow :nixpkgs:
 #+BEGIN_SRC jupyter-python
-import tensorflow as tf
-print(tf.__version__)
+  # import tensorflow as tf
+  # print(tf.__version__)
 #+end_src
 
 #+RESULTS:
@@ -31,24 +31,23 @@ print(tf.__version__)
 
 ** polars :poetry:
 
-#+BEGIN_SRC jupyter-python
+#+BEGIN_SRC jupyter-python :results output
 import polars as pl
 df = pl.DataFrame({"A": [1, 2, 3, 4, 5]})
-df
 #+end_src
 
 #+RESULTS:
 #+begin_example
-shape: (5, 1)
-┌─────┐
-│ A   │
-│ --- │
-│ i64 │
-╞═════╡
-│ 1   │
-│ 2   │
-│ 3   │
-│ 4   │
-│ 5   │
-└─────┘
+  shape: (5, 1)
+  ┌─────┐
+  │ A   │
+  │ --- │
+  │ i64 │
+  ╞═════╡
+  │ 1   │
+  │ 2   │
+  │ 3   │
+  │ 4   │
+  │ 5   │
+  └─────┘
 #+end_example

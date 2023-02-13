@@ -8,8 +8,7 @@
 * NuShell
 
 #+begin_src jupyter-bash
-pwd
+echo
 #+end_src
 
 #+RESULTS:
-: /home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org

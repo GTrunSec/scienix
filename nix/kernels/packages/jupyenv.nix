@@ -8,7 +8,6 @@
   ...
 }: let
   nixpkgs = inputs.nixpkgs.appendOverlays [
-    inputs.haskell-language-server.overlays.default
     inputs.julia2nix.overlays.default
   ];
 in {
@@ -19,15 +18,15 @@ in {
         features = ["lsp" "jupytext"];
         languageServers = {
           python = ps: ps.python-lsp-server;
-          haskell = nixpkgs.haskell.packages.ghc925.ghcWithPackages (ghcPkgs:
-            with ghcPkgs; [
-              inputs.haskell-language-server.packages.haskell-language-server-925
-              hlint
-              cabal-install
-              alex
-              happy
-              # stack
-            ]);
+          # haskell = nixpkgs.haskell.packages.ghc925.ghcWithPackages (ghcPkgs:
+          #   with ghcPkgs; [
+          #     haskell-language-server
+          #     hlint
+          #     cabal-install
+          #     alex
+          #     happy
+          #     # stack
+          #   ]);
         };
       };
       notebookConfig = {
@@ -58,6 +57,9 @@ in {
       julia = inputs.cells.julia.packages.julia-wrapped;
     };
     kernel.haskell.data-science = {
+      enable = true;
+    };
+    kernel.nix.data-science = {
       enable = true;
     };
     kernel.bash.data-science = {

@@ -11,6 +11,7 @@
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "cells-lab/nixpkgs";
     std.inputs.n2c.follows = "n2c";
+    std-data-collection.follows = "cells-lab/std-data-collection";
 
     n2c.url = "github:nlewo/nix2container";
     n2c.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +21,6 @@
     std-utils.inputs.std.follows = "std";
   };
   inputs = {
-    haskell-language-server.url = "github:haskell/haskell-language-server";
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 

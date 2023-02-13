@@ -1,0 +1,9 @@
+{
+  inputs,
+  cell,
+}: {
+  default = {
+    packages = [
+    ];
+  };
+}

@@ -1,10 +1,28 @@
 project:
-  type: hugo
-  output-dir: ../docs/publish/public
+  type: book
+  output-dir: ./pubish-quatro
+
+book:
+  title: "DeSci"
+  language: "en"
+  author: "Guangtao Zhang"
+  reader-mode: true
+  chapters:
+    - index.qmd
+
+    - part: bash.qmd
+      chapters:
+        - haskell.qmd
+
 
 format:
-  hugo-md:
+  html:
+    theme: cosmo
     code-fold: true
+  pdf:
+    documentclass: ctexbook
+    pdf-engine: tectonic
+
 
 execute:
   warning: false
