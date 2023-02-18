@@ -6,20 +6,11 @@
     <description>Recent content on Decentralized Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Feb 2023 09:27:29 +0000</lastBuildDate><atom:link href="https://exquisite-meringue-7af06d.netlify.app/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Julia Graph</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</link>
-      <pubDate>Mon, 13 Feb 2023 09:27:29 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</guid>
-      <description>using Graphs: smallgraph g = smallgraph(:karate) {34, 78} undirected simple Int64 graph #| label: fig-parametric #| fig-cap: &amp;#34;Parametric Plots&amp;#34; using Compose, Cairo, GraphPlot using Graphs: smallgraph g = smallgraph(:karate) draw(PNG(&amp;#34;./attach/gplot.png&amp;#34;, 16cm, 16cm), gplot(g)) gplot(g) #| echo: true using Plots scatter(rand(100), rand(100)) savefig(&amp;#34;./attach/plot.png&amp;#34;) plot(rand(100), rand(100)) Unicode #| output: true #| echo: true #| code-fold: true using UnicodePlots lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title=&amp;#34;Example&amp;#34;, name=&amp;#34;Line&amp;#34;, xlabel=&amp;#34;x&amp;#34;, ylabel=&amp;#34;y&amp;#34;) </description>
-    </item>
-    
+    <lastBuildDate>Sat, 18 Feb 2023 07:26:52 +0000</lastBuildDate><atom:link href="https://exquisite-meringue-7af06d.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Julia Eval</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</link>
-      <pubDate>Mon, 13 Feb 2023 09:27:27 +0000</pubDate>
+      <pubDate>Sat, 18 Feb 2023 07:26:52 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</guid>
       <description>using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13 </description>
@@ -44,24 +35,6 @@
     </item>
     
     <item>
-      <title>Jupyter Kernels</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/jupyter-kernels/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/jupyter-kernels/</guid>
-      <description>linkKernels nix run .\#x86_64-linux.kernels.entrypoints.linkKernels </description>
-    </item>
-    
-    <item>
-      <title>Nushell</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</guid>
-      <description>DataFrame Commands vast export nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; [21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp [21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us [21:19:48.076] json-writer received first result with a latency of 3.7ms [21:19:48.076] json-writer-6 reached limit of 1 events ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.</description>
-    </item>
-    
-    <item>
       <title>observablehq</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/observablehq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -77,24 +50,6 @@
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/phishing/</guid>
       <description>C4 Diagram &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;Python[Container]Training DataSet[Container]Phishing.url.data[parser data] merge the phishing.url.datafrom zeekPhishing.url.result[match indicates] get phishing-url-result.jsonby python scriptdone.phishing.result[vast export json&#39;done.phishing.url.result.result== 0&#39;] get the result by themachine-learning modeltrue/false.phishing.result[vast export jsontrue/false.phishing.url.result.result== 0&#39;] After analyzing done.result,pick the result to true/falsetypeTraining model[get model] Through machine learningalgorithms, we can generaterelevant phishing indicatesmodels throughtrue.phishing.result datasetNew Phishing model[extended result.dataSet] identify suspicious,anomalous or misjudgmentdataMachine Learning[Traning Phishing Model] phishing-url-resutl.json -&amp;gt;probe，true/false.phishing-url-result.json-&amp;gt; new phishing-modelVast[Query URL] Query EngineGo Spider Application[extracting relevant info] phishing-features.json -&amp;gt;indicates.</description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/python/</guid>
-      <description>Packages Pytorch nixpkgs import torch print(torch.__version__) 1.13.1 ibis tensorflow nixpkgs # import tensorflow as tf # print(tf.__version__) 2023-01-09 11:34:03.507478: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations: SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags. 2.10.1 polars poetry import polars as pl df = pl.</description>
-    </item>
-    
-    <item>
-      <title>Tullia</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/tullia/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/tullia/</guid>
-      <description>runtimes unwrapped tullia run julia-cli --runtime unwrapped --log-level debug [90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&amp;#34;DagFlake&amp;#34;:&amp;#34;.#tullia.x86_64-linux.dag&amp;#34;,&amp;#34;Mode&amp;#34;:&amp;#34;cli&amp;#34;,&amp;#34;Runtime&amp;#34;:&amp;#34;unwrapped&amp;#34;,&amp;#34;Task&amp;#34;:&amp;#34;julia-cli&amp;#34;,&amp;#34;TaskFlake&amp;#34;:&amp;#34;.#tullia.x86_64-linux.task&amp;#34;} path &amp;#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&amp;#39; does not contain a &amp;#39;flake.nix&amp;#39;, searching up warning: Git tree &amp;#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci&amp;#39; is dirty [90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&amp;#34;open /dev/tty: no such device or address&amp;#34;[0m Podman tullia run julia-cli --runtime podman --log-level debug [90m11:02PM[0m [33mDBG[0m parsed args [36mconfig=[0m{&amp;ldquo;DagFlake&amp;rdquo;:&amp;quot;.#tullia.x86_64-linux.dag&amp;quot;,&amp;ldquo;Mode&amp;rdquo;:&amp;ldquo;cli&amp;rdquo;,&amp;ldquo;Runtime&amp;rdquo;:&amp;ldquo;podman&amp;rdquo;,&amp;ldquo;Task&amp;rdquo;:&amp;ldquo;julia-cli&amp;rdquo;,&amp;ldquo;TaskFlake&amp;rdquo;:&amp;quot;.#tullia.x86_64-linux.task&amp;quot;} path &amp;lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org&amp;rsquo; does not contain a &amp;lsquo;flake.nix&amp;rsquo;, searching up warning: Git tree &amp;lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci&amp;rsquo; is dirty [90m11:02PM[0m [1m[31mFTL[0m[0m starting CLI [36merror=[0m[31m&amp;quot;open /dev/tty: no such device or address&amp;quot;[0m</description>
     </item>
     
     <item>
