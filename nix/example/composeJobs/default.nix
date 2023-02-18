@@ -28,8 +28,8 @@ in {
         text = ''
           # Bash does not automatically forward signals to subprocesses
           # don't forget to use exec
-          exec ${l.getExe cell.operators.uwsgi}
-          # exec docker-compose -f ${cell.nixago.hello.configFile} up
+          # exec ${l.getExe cell.operators.uwsgi}
+          exec docker-compose -f ${cell.nixago.hello.configFile} up
         '';
         passthru = {
           dockerCompose = dockerCompose;

@@ -41,8 +41,9 @@ in {
     text = ''
       julia -e 'println("initializing")'
 
-      ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/julia-graph.md
+      # ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/julia-graph.md
       # ${l.getExe cell.entrypoints.orgToQuarto} "$PRJ_ROOT"/docs/publish/content/posts/observablehq.md
+      ${l.getExe cell.entrypoints.orgToQuarto} "$@"
     '';
   };
 }

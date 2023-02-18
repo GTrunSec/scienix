@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab.ops.lib) mkOperable;
+  inherit (inputs.std.lib.ops) mkOperable;
   inherit (inputs) nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
 in {
@@ -18,6 +18,7 @@ in {
         PYTHON = nixpkgs.python3.withPackages (p: [p.flask]);
       };
       runtimeScript = ''
+        set +m # disable mirror mode
         ${l.getExe package} --plugin=python3 --http :9090 -H "$PYTHON" --callable app \
         --wsgi-file ./hello.py
       '';

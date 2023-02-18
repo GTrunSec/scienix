@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: ./pubish-quarto
+  output-dir: ./publish
 
 book:
   title: "DeSci"

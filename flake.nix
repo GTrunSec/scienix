@@ -6,9 +6,8 @@
     cells-lab.url = "github:GTrunSec/cells-lab";
     # cells-lab.url = "/home/guangtao/ghq/github.com/GTrunSec/cells-lab";
     cells-lab.inputs.nixpkgs.follows = "nixpkgs";
-    cells-lab.inputs.std.follows = "std";
 
-    std.url = "github:divnix/std";
+    std.follows = "cells-lab/std";
     std.inputs.nixpkgs.follows = "cells-lab/nixpkgs";
     std.inputs.n2c.follows = "n2c";
     std-data-collection.follows = "cells-lab/std-data-collection";
@@ -42,8 +41,6 @@
     tullia.inputs.nix2container.follows = "n2c";
     tullia.inputs.nix-nomad.follows = "nix-nomad";
     nix-nomad.url = "github:tristanpemble/nix-nomad";
-
-    users.follows = "std/blank";
   };
 
   outputs = {

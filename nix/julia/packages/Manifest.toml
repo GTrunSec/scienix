@@ -2,7 +2,7 @@
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
-project_hash = "822152bc1a50e5311fcdbee93affa686bb8f34b3"
+project_hash = "241ca1f54c6336e31bd23e57f7688ecd7cb5b579"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -493,6 +493,12 @@ deps = ["CSTParser", "CommonMark", "DataStructures", "Glob", "Pkg", "SnoopPrecom
 git-tree-sha1 = "94ce68aee6dbc066e39d5d2ca0b6b1ccd38d7e04"
 uuid = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
 version = "1.0.20"
+
+[[deps.Kroki]]
+deps = ["Base64", "CodecZlib", "DocStringExtensions", "HTTP", "JSON", "Markdown", "Reexport"]
+git-tree-sha1 = "a3235f9ff60923658084df500cdbc0442ced3274"
+uuid = "b3565e16-c1f2-4fe9-b4ab-221c88942068"
+version = "0.2.0"
 
 [[deps.LAME_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
