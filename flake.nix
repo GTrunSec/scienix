@@ -27,7 +27,6 @@
     jupyenv.url = "github:gtrunsec/jupyterWith/dev";
     jupyenv.inputs.nixpkgs.follows = "nixpkgs";
     # jupyenv.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
-
     matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
     matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
 

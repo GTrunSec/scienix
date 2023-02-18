@@ -34,6 +34,7 @@ in
           package = inputs.cells.python.packages.mkPoetryEnv;
         }
         {
+
           package = inputs.cells.quarto.entrypoints.default;
         }
       ];
