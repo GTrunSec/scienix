@@ -3,13 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/</loc>
-    <lastmod>2023-02-18T07:26:52+00:00</lastmod>
+    <lastmod>2023-02-19T08:25:16+00:00</lastmod>
   </url><url>
-    <loc>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</loc>
-    <lastmod>2023-02-18T07:26:52+00:00</lastmod>
+    <loc>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</loc>
+    <lastmod>2023-02-19T08:25:16+00:00</lastmod>
   </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/posts/</loc>
-    <lastmod>2023-02-18T07:26:52+00:00</lastmod>
+    <lastmod>2023-02-19T08:25:16+00:00</lastmod>
+  </url><url>
+    <loc>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</loc>
+    <lastmod>2023-02-19T08:25:13+00:00</lastmod>
   </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/posts/attack-models/</loc>
   </url><url>
@@ -17,13 +20,21 @@
   </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/categories/</loc>
   </url><url>
+    <loc>https://exquisite-meringue-7af06d.netlify.app/posts/jupyter-kernels/</loc>
+  </url><url>
+    <loc>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</loc>
+  </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/posts/observablehq/</loc>
   </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/posts/phishing/</loc>
   </url><url>
+    <loc>https://exquisite-meringue-7af06d.netlify.app/posts/python/</loc>
+  </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/search/</loc>
   </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/tags/</loc>
+  </url><url>
+    <loc>https://exquisite-meringue-7af06d.netlify.app/posts/tullia/</loc>
   </url><url>
     <loc>https://exquisite-meringue-7af06d.netlify.app/posts/usage/</loc>
   </url>

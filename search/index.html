@@ -48,12 +48,12 @@ window.store = {
     
     
     
-    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-eval\/": {
+    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-graph\/": {
         
-        "title": "Julia Eval",
+        "title": "Julia Graph",
         "tags": [],
-        "content": "using Dates format = DateFormat(\u0026#34;yyyymmdd\u0026#34;) Date(\u0026#34;19870913\u0026#34;, format) 1987-09-13 ", 
-        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-eval\/"
+        "content": "using Graphs: smallgraph g = smallgraph(:karate) {34, 78} undirected simple Int64 graph #| label: fig-parametric #| fig-cap: \u0026#34;Parametric Plots\u0026#34; using Compose, Cairo, GraphPlot using Graphs: smallgraph g = smallgraph(:karate) draw(PNG(\u0026#34;./attach/gplot.png\u0026#34;, 16cm, 16cm), gplot(g)) gplot(g) #| echo: true using Plots scatter(rand(100), rand(100)) savefig(\u0026#34;./attach/plot.png\u0026#34;) plot(rand(100), rand(100)) Unicode #| output: true #| echo: true #| code-fold: true using UnicodePlots lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title=\u0026#34;Example\u0026#34;, name=\u0026#34;Line\u0026#34;, xlabel=\u0026#34;x\u0026#34;, ylabel=\u0026#34;y\u0026#34;) ", 
+        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-graph\/"
     },
     
     
@@ -64,6 +64,16 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/"
+    },
+    
+    
+    
+    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-eval\/": {
+        
+        "title": "Julia Eval",
+        "tags": [],
+        "content": "using Dates format = DateFormat(\u0026#34;yyyymmdd\u0026#34;) Date(\u0026#34;19870913\u0026#34;, format) 1987-09-13 ", 
+        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/julia-eval\/"
     },
     
     
@@ -98,6 +108,26 @@ window.store = {
     
     
     
+    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/jupyter-kernels\/": {
+        
+        "title": "Jupyter Kernels",
+        "tags": [],
+        "content": "linkKernels nix run .\\#x86_64-linux.kernels.entrypoints.linkKernels ", 
+        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/jupyter-kernels\/"
+    },
+    
+    
+    
+    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/nushell\/": {
+        
+        "title": "Nushell",
+        "tags": [],
+        "content": "DataFrame Commands vast export nu -c \u0026#39;vast export -n 1 json | from json\u0026#39; nu -c \u0026#39;vast export -n 1 json | from json\u0026#39; [21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp [21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us [21:19:48.076] json-writer received first result with a latency of 3.7ms [21:19:48.076] json-writer-6 reached limit of 1 events ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.864804 │ │ id.orig_h │ 192.168.99.129 │ │ id.orig_p │ 49835 │ │ mailfrom │ │ │ rcptto │ │ │ date │ │ │ from │ │ │ to │ │ │ cc │ │ │ reply_to │ │ │ msg_id │ │ │ in_reply_to │ │ │ subject │ │ │ x_originating_ip │ │ │ first_received │ │ │ second_received │ │ │ last_reply │ OK Dovecot ready. │ │ user_agent │ │ │ path │ [list 2 items] │ │ tls │ false │ │ process_pop3_headers │ true │ │ entity_count │ 0 │ │ location_orig.country_code │ │ │ location_orig.region │ │ │ location_orig.city │ │ │ location_orig.latitude │ │ │ location_orig.longitude │ │ │ location_resp.country_code │ │ │ location_resp.region │ │ │ location_resp.city │ │ │ location_resp.latitude │ │ │ location_resp.longitude │ │ ╰────────────────────────────┴────────────────────────────╯ │ id.resp_h │ 192.168.2.254 │ │ id.resp_p │ 110 │ │ uid │ CdveCb2nALNTFcT2U5 │ │ start_time │ 2022-09-08T05:16:18.757662 │ │ end_time │ │ │ duration │ 107.14ms │ │ service │ [list 0 items] │ │ trans_depth │ 1 │ │ helo │ │ nu -c \u0026#39;from\u0026#39; Plugin Check Usage: \u0026gt; from Subcommands: from csv - Parse text as .csv and create table. from eml - Parse text as .eml and create record. from ics - Parse text as .ics and create table. from ini - Parse text as .ini and create record from json - Convert from json to structured data from nuon - Convert from nuon to structured data from ods - Parse OpenDocument Spreadsheet(.ods) data and create table. from parquet - Convert from .parquet binary into table from ssv - Parse text as space-separated values and create a table. The default minimum number of spaces counted as a separator is 2. from toml - Parse text as .toml and create record. from tsv - Parse text as .tsv and create table. from url - Parse url-encoded string as a record. from vcf - Parse text as .vcf and create table. from xlsx - Parse binary Excel(.xlsx) data and create table. from xml - Parse text as .xml and create record. from yaml - Parse text as .yaml/.yml and create table. from yml - Parse text as .yaml/.yml and create table. Flags: -h, --help - Display the help message for this command ", 
+        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/nushell\/"
+    },
+    
+    
+    
     "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/observablehq\/": {
         
         "title": "observablehq",
@@ -118,6 +148,16 @@ window.store = {
     
     
     
+    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/python\/": {
+        
+        "title": "Python",
+        "tags": [],
+        "content": "Packages Pytorch nixpkgs import torch print(torch.__version__) 1.13.1 ibis tensorflow nixpkgs # import tensorflow as tf # print(tf.__version__) 2023-01-09 11:34:03.507478: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations: SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags. 2.10.1 polars poetry import polars as pl df = pl.DataFrame({\u0026#34;A\u0026#34;: [1, 2, 3, 4, 5]}) shape: (5, 1) ┌─────┐ │ A │ │ --- │ │ i64 │ ╞═════╡ │ 1 │ │ 2 │ │ 3 │ │ 4 │ │ 5 │ └─────┘ ", 
+        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/python\/"
+    },
+    
+    
+    
     "https:\/\/exquisite-meringue-7af06d.netlify.app\/search\/": {
         
         "title": "Search",
@@ -134,6 +174,16 @@ window.store = {
         "tags": [],
         "content": "", 
         "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/tags\/"
+    },
+    
+    
+    
+    "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/tullia\/": {
+        
+        "title": "Tullia",
+        "tags": [],
+        "content": "runtimes unwrapped tullia run julia-cli --runtime unwrapped --log-level debug \u001b[90m11:02PM\u001b[0m \u001b[33mDBG\u001b[0m parsed args \u001b[36mconfig=\u001b[0m{\u0026#34;DagFlake\u0026#34;:\u0026#34;.#tullia.x86_64-linux.dag\u0026#34;,\u0026#34;Mode\u0026#34;:\u0026#34;cli\u0026#34;,\u0026#34;Runtime\u0026#34;:\u0026#34;unwrapped\u0026#34;,\u0026#34;Task\u0026#34;:\u0026#34;julia-cli\u0026#34;,\u0026#34;TaskFlake\u0026#34;:\u0026#34;.#tullia.x86_64-linux.task\u0026#34;} path \u0026#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org\u0026#39; does not contain a \u0026#39;flake.nix\u0026#39;, searching up warning: Git tree \u0026#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci\u0026#39; is dirty \u001b[90m11:02PM\u001b[0m \u001b[1m\u001b[31mFTL\u001b[0m\u001b[0m starting CLI \u001b[36merror=\u001b[0m\u001b[31m\u0026#34;open /dev/tty: no such device or address\u0026#34;\u001b[0m Podman tullia run julia-cli --runtime podman --log-level debug \u001b[90m11:02PM\u001b[0m \u001b[33mDBG\u001b[0m parsed args \u001b[36mconfig=\u001b[0m{\u0026ldquo;DagFlake\u0026rdquo;:\u0026quot;.#tullia.x86_64-linux.dag\u0026quot;,\u0026ldquo;Mode\u0026rdquo;:\u0026ldquo;cli\u0026rdquo;,\u0026ldquo;Runtime\u0026rdquo;:\u0026ldquo;podman\u0026rdquo;,\u0026ldquo;Task\u0026rdquo;:\u0026ldquo;julia-cli\u0026rdquo;,\u0026ldquo;TaskFlake\u0026rdquo;:\u0026quot;.#tullia.x86_64-linux.task\u0026quot;} path \u0026lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org\u0026rsquo; does not contain a \u0026lsquo;flake.nix\u0026rsquo;, searching up warning: Git tree \u0026lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci\u0026rsquo; is dirty \u001b[90m11:02PM\u001b[0m \u001b[1m\u001b[31mFTL\u001b[0m\u001b[0m starting CLI \u001b[36merror=\u001b[0m\u001b[31m\u0026quot;open /dev/tty: no such device or address\u0026quot;\u001b[0m\nnsjail sudo chown $USER:users /sys/fs/cgroup/user.slice/user-1000.slice/cgroup.procs faketty tullia run julia-cli --runtime nsjail --log-level warn path \u0026lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org\u0026rsquo; does not contain a \u0026lsquo;flake.nix\u0026rsquo;, searching up warning: Git tree \u0026lsquo;/home/gtrun/ghq/github.com/GTrunSec/DeSci\u0026rsquo; is dirty \u001b[?25l[+] build julia-cli 0.0s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.1s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.2s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.3s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.4s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.5s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.6s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.7s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.8s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 0.9s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.0s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.1s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.2s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.3s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.4s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.5s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.6s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.7s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.8s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 1.9s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.0s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.1s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.2s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.3s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.4s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.5s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.6s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.7s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.8s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 2.9s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 3.0s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 3.1s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 3.2s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] build julia-cli 3.3s \u001b[80D\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 3.3s \u001b[80D\u001b[2K\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 3.4s + cli df x \u001b[80D\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 3.5s + cli df x Activating project at `/nix/store/3cd027nlmai39pjay8b2hl8ximk1896z-cli` \u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 3.6s \u001b[1B\u001b[1B\u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 3.7s \u001b[1B\u001b[1B\u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 3.8s \u001b[1B\u001b[1B\u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 3.9s \u001b[1B\u001b[1B\u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 4.0s \u001b[1B\u001b[1B\u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 4.1s \u001b[1B\u001b[1B\u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 4.2s \u001b[1B\u001b[1B\u001b[80D\u001b[1A\u001b[1A\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 4.3s \u001b[1B\u001b[1B\u001b[80D\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[80D\u001b[2K[+] run julia-cli 4.3s + cli df x Activating project at `/nix/store/3cd027nlmai39pjay8b2hl8ximk1896z-cli` 3×1 DataFrame Row │ x │ Int64 ─────┼─────── 1 │ 1 2 │ 2 3 │ 3 \u001b[80D\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[80D\u001b[2K[✔] done julia-cli 4.301026348s \u001b[80D\u001b[2K\u001b[?1002l\u001b[?1003l\u001b[?25h Dag Jobs tullia run ci --runtime nsjail --log-level debug \u001b[90m11:05PM\u001b[0m \u001b[33mDBG\u001b[0m parsed args \u001b[36mconfig=\u001b[0m{\u0026#34;DagFlake\u0026#34;:\u0026#34;.#tullia.x86_64-linux.dag\u0026#34;,\u0026#34;Mode\u0026#34;:\u0026#34;cli\u0026#34;,\u0026#34;Runtime\u0026#34;:\u0026#34;nsjail\u0026#34;,\u0026#34;Task\u0026#34;:\u0026#34;ci\u0026#34;,\u0026#34;TaskFlake\u0026#34;:\u0026#34;.#tullia.x86_64-linux.task\u0026#34;} path \u0026#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci/docs/org\u0026#39; does not contain a \u0026#39;flake.nix\u0026#39;, searching up warning: Git tree \u0026#39;/home/gtrun/ghq/github.com/GTrunSec/DeSci\u0026#39; is dirty \u001b[90m11:05PM\u001b[0m \u001b[1m\u001b[31mFTL\u001b[0m\u001b[0m starting CLI \u001b[36merror=\u001b[0m\u001b[31m\u0026#34;open /dev/tty: no such device or address\u0026#34;\u001b[0m ", 
+        "url": "https:\/\/exquisite-meringue-7af06d.netlify.app\/posts\/tullia\/"
     },
     
     
