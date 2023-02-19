@@ -277,11 +277,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1676598692,
-        "narHash": "sha256-KGIOrBoLT6P0IprjqRGsjxgRsra2S9Ii7eCUb+8mtyo=",
+        "lastModified": 1676802063,
+        "narHash": "sha256-Q56vkhHis0BJFarbOz7wzn3JgvVLJdzQt3zT8GvBXcw=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "e34c3d5d71c7601ab78decacc45eb9efb85b1164",
+        "rev": "6192f2ff77ab56db92a9c3699effb56ba2214acb",
         "type": "github"
       },
       "original": {
