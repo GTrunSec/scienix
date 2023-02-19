@@ -52,7 +52,7 @@ in {
         text = let
           syncKernels = lib.concatMapStringsSep "\n" (p: ''
             cp -rf ${p}/kernels/${p.kernelInstance.name} \
-            "$HOME"/.local/share/jupyter/kernels
+            "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
           '') (lib.attrValues config.build.passthru.kernels);
         in ''
           if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
@@ -61,8 +61,8 @@ in {
           # $(git rev-parse --show-toplevel)
           # jupyter kernelspec list
           # jupyter --paths
-          chmod -R 777 "$HOME"/.local/share/jupyter/kernels/*
           ${syncKernels}
+          chmod -R 777 "$HOME"/.local/share/jupyter/kernels/*
           quarto "$@"
         '';
       };
