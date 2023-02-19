@@ -34,7 +34,7 @@ in {
           --replace "#+begin_src jupyter-" "#+begin_src "
           done
       '';
-    org-roam-book =  inputs.cells-lab.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override {
+    org-roam-book = inputs.cells-lab.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override {
       org = patchedOrg;
     };
   in
@@ -42,10 +42,10 @@ in {
       name = "mkdoc";
       runtimeInputs = [nixpkgs.hugo];
       text = ''
-      rsync --chmod +rw -avzh ${org-roam-book}/* docs/publish
-      cd docs/publish && cp ../config.toml .
-      hugo "$@"
-      cp -rfp --no-preserve=mode,ownership public/posts/index.html ./public/
-    '';
+        rsync --chmod +rw -avzh ${org-roam-book}/* docs/publish
+        cd docs/publish && cp ../config.toml .
+        hugo "$@"
+        cp -rfp --no-preserve=mode,ownership public/posts/index.html ./public/
+      '';
     };
 }

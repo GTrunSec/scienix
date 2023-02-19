@@ -51,7 +51,7 @@ in {
         inherit (config.publishers.quarto) runtimeEnv package;
         text = let
           syncKernels = lib.concatMapStringsSep "\n" (p: ''
-            rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name} \
+            cp -rf ${p}/kernels/${p.kernelInstance.name} \
             "$HOME"/.local/share/jupyter/kernels
           '') (lib.attrValues config.build.passthru.kernels);
         in ''
@@ -61,6 +61,7 @@ in {
           # $(git rev-parse --show-toplevel)
           # jupyter kernelspec list
           # jupyter --paths
+          chmod -R 777 "$HOME"/.local/share/jupyter/kernels/*
           ${syncKernels}
           quarto "$@"
         '';

@@ -4,8 +4,6 @@
 #+title: Jupyter Kernels
 
 
-
-
 * linkKernels
 #+begin_src sh :async :exports both :results output
 nix run .\#x86_64-linux.kernels.entrypoints.linkKernels

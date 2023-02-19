@@ -64,6 +64,12 @@ in {
       enable = true;
     };
     kernel.bash.data-science = {
+      runtimePackages = [
+        (nixpkgs.python3.buildEnv.override
+          {
+            extraLibs = [inputs.dataflow2nix.prefect.packages.prefect];
+          })
+      ];
       enable = true;
     };
     publishers.quarto = {

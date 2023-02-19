@@ -1925,11 +1925,11 @@
         "vast-upstream": "vast-upstream"
       },
       "locked": {
-        "lastModified": 1676704607,
-        "narHash": "sha256-072qYjyXo1fpo5+8wImh+pWKaStxOQ6M2qTsq8aPNgk=",
+        "lastModified": 1676758379,
+        "narHash": "sha256-p2Srypt4SYBh8C8xrRj4zFbtEwcdn9y7DgytygkaT3k=",
         "owner": "gtrunsec",
         "repo": "vast2nix",
-        "rev": "0e1456dd29602f9d22e204a3959506dc78e430ce",
+        "rev": "1ae81d70626b5a94b7a58421ddd6c0091304b9f8",
         "type": "github"
       },
       "original": {
