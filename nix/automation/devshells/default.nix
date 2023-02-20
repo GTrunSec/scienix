@@ -21,12 +21,10 @@ in
         inputs.cells-lab.automation.devshellProfiles.docs
 
         inputs.cells.ml.devshellProfiles.default
+        inputs.cells.python.devshellProfiles.default
       ];
 
       commands = [
-        {
-          package = inputs.latest.legacyPackages.${nixpkgs.system}.poetry;
-        }
         {
           package = nixpkgs.nushell;
         }
