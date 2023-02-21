@@ -71,6 +71,9 @@
           (tullia.tasks "pipelines")
           (functions "actions")
 
+          # modules
+          (data "jupyenvModules")
+
           (data "composeJobs")
           (containers "oci-images")
           (runnables "operators")

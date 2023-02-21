@@ -3,7 +3,6 @@
   cell,
 }: let
   inherit (inputs) nixpkgs;
-
 in {
   default = {
     commands = [
