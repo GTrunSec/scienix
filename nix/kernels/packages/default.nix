@@ -13,4 +13,5 @@
 in {
   inherit mkJupyterlabEval;
   jupyenv = mkJupyterlabNew module;
+  jupyenvEval = mkJupyterlabEval module;
 }

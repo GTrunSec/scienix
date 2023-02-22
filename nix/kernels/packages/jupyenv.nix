@@ -18,15 +18,6 @@ in {
         features = ["lsp" "jupytext"];
         languageServers = {
           python = ps: ps.python-lsp-server;
-          haskell = nixpkgs.haskellPackages.ghcWithPackages (ghcPkgs:
-            with ghcPkgs; [
-              haskell-language-server
-              hlint
-              cabal-install
-              alex
-              happy
-              # stack
-            ]);
         };
       };
       notebookConfig = {
@@ -34,25 +25,14 @@ in {
         ServerApp.notebook_dir = "./modules/playground";
         ServerApp.contents_manager_class = "jupytext.TextFileContentsManager";
         ContentsManager.notebook_extensions = "ipynb,Rmd,jl,md,py,hs";
-        LanguageServerManager.language_servers.haskell-language-server = {
-          serverSettings =
-            lib.importJSON ./hls.json;
-          "haskell.plugin.ghcide-completions.globalOn" = true;
-          "haskell.plugin.ghcide-completions.config.autoExtendOn" = true;
-          "haskell.plugin.ghcide-completions.config.snippetsOn" = true;
-          "haskell.formattingProvider" = "ormolu";
-        };
-        runtimePackages = [];
       };
       jupyterlabEnvArgs.extraPackages = ps: ([] ++ ps.python-lsp-server.passthru.optional-dependencies.all);
     };
-    kernel.python.data-science =
-      (inputs.cells.python.lib.poetryArgs {
-        jupyenv = true;
-      })
-      // {
-        enable = true;
-      };
+
+    kernel.python.data-science = {
+      enable = true;
+      poetryEnv = inputs.cells.python.lib.mkPoetryEnv' { group = ["jupyenv"]; };
+    };
     kernel.julia.data-science = {
       enable = true;
       julia = inputs.cells.julia.packages.julia-wrapped;
@@ -60,16 +40,8 @@ in {
     kernel.haskell.data-science = {
       enable = true;
     };
-    kernel.nix.data-science = {
-      enable = true;
-    };
     kernel.bash.data-science = {
-      runtimePackages = [
-        (nixpkgs.python3.buildEnv.override
-          {
-            extraLibs = [inputs.dataflow2nix.prefect.packages.prefect];
-          })
-      ];
+      runtimePackages = [];
       enable = true;
     };
     publishers.quarto = {
