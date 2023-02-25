@@ -31,7 +31,7 @@ in {
 
     kernel.python.data-science = {
       enable = true;
-      poetryEnv = inputs.cells.python.lib.mkPoetryEnv' { group = ["jupyenv"]; };
+      poetryEnv = inputs.cells.python.lib.mkPoetryEnv {group = ["jupyenv"];};
     };
     kernel.julia.data-science = {
       enable = true;

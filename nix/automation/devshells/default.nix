@@ -29,7 +29,7 @@ in
           package = nixpkgs.nushell;
         }
         {
-          package = inputs.cells.python.packages.mkPoetryEnv;
+          package = inputs.cells.python.packages.poetryEnv;
         }
         {
           package = inputs.cells.quarto.entrypoints.default;

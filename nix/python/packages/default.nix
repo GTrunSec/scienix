@@ -6,11 +6,9 @@
 in {
   inherit (cell.lib.nixpkgs.python3Packages) polars;
 
-  poetryEnv= (cell.lib.nixpkgs.poetry2nix.mkPoetryEnv ((cell.config.poetryEnvArgs cell.lib.nixpkgs) // {
-    groups = [];
-  })).override (old: {ignoreCollisions = true;});
+  poetryEnv = cell.lib.mkPoetryEnv {};
 
-  mkPoetryOpenCTI = cell.lib.nixpkgs.poetry2nix.mkPoetryEnv {
+  mkPoetryOpenCTI = cell.lib.mkPoetryEnv {
     projectDir = ./opencti;
     overrides = cell.lib.nixpkgs.poetry2nix.overrides.withDefaults (import ./opencti/overrides.nix);
   };
