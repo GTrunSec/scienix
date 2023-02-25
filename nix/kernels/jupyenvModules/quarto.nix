@@ -51,7 +51,9 @@ in {
         inherit (config.publishers.quarto) runtimeEnv package;
         text = let
           syncKernels = lib.concatMapStringsSep "\n" (p: ''
-            rm -r "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
+          if [ -d "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name} ]; then
+             rm -r "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
+          fi
             cp -rf ${p}/kernels/${p.kernelInstance.name} \
             "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
           '') (lib.attrValues config.build.passthru.kernels);
