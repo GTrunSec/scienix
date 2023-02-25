@@ -25,6 +25,7 @@ in {
         cp "$file" "$dir"/"''${file_name%.md}".qmd
         sd './attach' "$PRJ_ROOT/docs/publish/static/ox-hugo" "$dir""''${file_name%.md}".qmd
         sd '```julia\n\#\|' '```{julia}\n#|' "$dir""''${file_name%.md}".qmd
+        sd '```python\n\#\|' '```{python}\n#|' "$dir""''${file_name%.md}".qmd
         sd '```bash\n\#\|' '```{bash}\n#|' "$dir""''${file_name%.md}".qmd
         sd '```ojs\n//\|' '```{ojs}\n//|' "$dir""''${file_name%.md}".qmd
       done
