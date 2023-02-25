@@ -51,11 +51,8 @@ in {
         inherit (config.publishers.quarto) runtimeEnv package;
         text = let
           syncKernels = lib.concatMapStringsSep "\n" (p: ''
-          if [ -d "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name} ]; then
-             rm -r "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
-          fi
-            cp -rf ${p}/kernels/${p.kernelInstance.name} \
-            "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
+            rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name} \
+            "$HOME"/.local/share/jupyter/kernels
           '') (lib.attrValues config.build.passthru.kernels);
         in ''
           if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
@@ -65,7 +62,6 @@ in {
           # jupyter kernelspec list
           # jupyter --paths
           ${syncKernels}
-          chmod -R 777 "$HOME"/.local/share/jupyter/kernels/*
           quarto "$@"
         '';
       };

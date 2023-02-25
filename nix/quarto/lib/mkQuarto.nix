@@ -44,6 +44,7 @@ in
       runtimeInputs =
         [
           package
+          nixpkgs.rsync
         ]
         ++ runtimeInputs;
       runtimeEnv =
