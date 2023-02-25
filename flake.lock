@@ -98,6 +98,21 @@
         "type": "github"
       }
     },
+    "blank_6": {
+      "locked": {
+        "lastModified": 1625557891,
+        "narHash": "sha256-O8/MWsPBGhhyPoPLHZAuoZiiHo9q6FLlEeIDEXuj6T4=",
+        "owner": "divnix",
+        "repo": "blank",
+        "rev": "5a5d2684073d9f563072ed07c871d577a6c614a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "blank",
+        "type": "github"
+      }
+    },
     "cells-lab": {
       "inputs": {
         "nixos": "nixos",
@@ -110,11 +125,11 @@
         "xnlib": "xnlib"
       },
       "locked": {
-        "lastModified": 1676852466,
-        "narHash": "sha256-8gMZh0DR+S9ru+vw7y5HudadNATq+kPHxhKogxPLlf4=",
+        "lastModified": 1677307466,
+        "narHash": "sha256-LULv7135EZndHC9UqeOh3fXe7jJlYgqa1s7TRdlviQc=",
         "owner": "GTrunSec",
         "repo": "cells-lab",
-        "rev": "b0e649aa16a4c931f50b42280589a360ecd055f8",
+        "rev": "bfdaf893d5ce412761abfbbb756b1d51e4a45246",
         "type": "github"
       },
       "original": {
@@ -1927,11 +1942,11 @@
     },
     "nixlib": {
       "locked": {
-        "lastModified": 1676163193,
-        "narHash": "sha256-6cTwPLtRHsRrIlKnEg3gQ9L+MYdx87eHdRqlTUi4H8Y=",
+        "lastModified": 1676767889,
+        "narHash": "sha256-VjGXT6nZv8KrmrIUkAJr8MjDLJ/mRgWZqCC9mq5J6Gg=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "d3e61f845dbbb77f10900603993c6f00bdfa9fd4",
+        "rev": "710d8816159a542ed0b1dcaf47748e2813af53f5",
         "type": "github"
       },
       "original": {
@@ -1942,11 +1957,11 @@
     },
     "nixlib_2": {
       "locked": {
-        "lastModified": 1673743903,
-        "narHash": "sha256-sloY6KYyVOozJ1CkbgJPpZ99TKIjIvM+04V48C04sMQ=",
+        "lastModified": 1653180592,
+        "narHash": "sha256-sVGwmxTj7CY1D4ioy7E+iJE+1/yHqQlxjnTpar3ap/E=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "7555e2dfcbac1533f047021f1744ac8871150f9f",
+        "rev": "42c5f5785b70cd64b4afd830dc31d0b08461abd5",
         "type": "github"
       },
       "original": {
@@ -1971,6 +1986,21 @@
       }
     },
     "nixlib_4": {
+      "locked": {
+        "lastModified": 1673743903,
+        "narHash": "sha256-sloY6KYyVOozJ1CkbgJPpZ99TKIjIvM+04V48C04sMQ=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "7555e2dfcbac1533f047021f1744ac8871150f9f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "nixlib_5": {
       "locked": {
         "lastModified": 1672534360,
         "narHash": "sha256-4r25ZnSyGM3wSuXhAMzROTIvIEqPwAx/L9hjbXDJB2c=",
@@ -2754,6 +2784,34 @@
         "type": "github"
       }
     },
+    "pop": {
+      "inputs": {
+        "flake-compat": [
+          "cells-lab",
+          "xnlib",
+          "blank"
+        ],
+        "nixlib": "nixlib_2",
+        "nixpkgs": [
+          "cells-lab",
+          "xnlib",
+          "blank"
+        ]
+      },
+      "locked": {
+        "lastModified": 1655410953,
+        "narHash": "sha256-Er0zdhu7QwpWvVKfauqZqTnxDz6THTWOTVWLoz+Opmw=",
+        "owner": "divnix",
+        "repo": "POP",
+        "rev": "8babe4c9126298d05ebb5ab04727d741b51c022e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "POP",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-utils": [
@@ -3029,7 +3087,7 @@
           "std",
           "blank"
         ],
-        "blank": "blank_2",
+        "blank": "blank_3",
         "devshell": "devshell_2",
         "dmerge": "dmerge_2",
         "flake-utils": "flake-utils_6",
@@ -3078,7 +3136,7 @@
           "std",
           "blank"
         ],
-        "blank": "blank_3",
+        "blank": "blank_4",
         "devshell": "devshell_3",
         "dmerge": "dmerge_3",
         "flake-utils": "flake-utils_9",
@@ -3127,7 +3185,7 @@
           "std",
           "blank"
         ],
-        "blank": "blank_4",
+        "blank": "blank_5",
         "devshell": "devshell_4",
         "dmerge": "dmerge_4",
         "flake-utils": "flake-utils_14",
@@ -3175,7 +3233,7 @@
           "std",
           "blank"
         ],
-        "blank": "blank_5",
+        "blank": "blank_6",
         "devshell": "devshell_5",
         "dmerge": "dmerge_5",
         "flake-utils": "flake-utils_17",
@@ -3254,19 +3312,25 @@
     },
     "xnlib": {
       "inputs": {
+        "blank": "blank_2",
         "nix-std": "nix-std",
         "nixlib": "nixlib",
+        "pop": "pop",
         "std": [
           "cells-lab",
           "std"
+        ],
+        "std-data-collection": [
+          "cells-lab",
+          "std-data-collection"
         ]
       },
       "locked": {
-        "lastModified": 1676679630,
-        "narHash": "sha256-LIpBpunTlKRIs0mV2u2baNJMMph4fh1vG8T95lw/TQ0=",
+        "lastModified": 1677307296,
+        "narHash": "sha256-31KFV/ikbXWL+tVuWXryhxDDtoumIqpSCKmq0Dq6634=",
         "owner": "gtrunsec",
         "repo": "xnlib",
-        "rev": "bd20acd464f55ed34ff45ee8c8ae16721571337b",
+        "rev": "2a5945dfa066ee12f612a01eff3f8ab19653f2f1",
         "type": "github"
       },
       "original": {
@@ -3278,7 +3342,7 @@
     "xnlib_2": {
       "inputs": {
         "nix-std": "nix-std_2",
-        "nixlib": "nixlib_2",
+        "nixlib": "nixlib_3",
         "std": [
           "dataflow2nix",
           "cells-lab",
@@ -3302,7 +3366,7 @@
     "xnlib_3": {
       "inputs": {
         "nix-std": "nix-std_3",
-        "nixlib": "nixlib_3",
+        "nixlib": "nixlib_4",
         "std": [
           "julia2nix",
           "cells-lab",
@@ -3327,7 +3391,7 @@
       "inputs": {
         "digga": "digga",
         "nix-std": "nix-std_4",
-        "nixlib": "nixlib_4",
+        "nixlib": "nixlib_5",
         "nixpkgs": [
           "matrix-attack-data",
           "cells-lab",
