@@ -54,6 +54,10 @@ in {
             rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name} \
             "$HOME"/.local/share/jupyter/kernels
           '') (lib.attrValues config.build.passthru.kernels);
+
+          cleanupKernels = lib.concatMapStringsSep "\n" (p: ''
+            rm -rf "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
+          '') (lib.attrValues config.build.passthru.kernels);
         in ''
           if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
               mkdir -p "$HOME"/.local/share/jupyter/kernels
@@ -63,6 +67,7 @@ in {
           # jupyter --paths
           ${syncKernels}
           quarto "$@"
+          ${cleanupKernels}
         '';
       };
     })
