@@ -26,7 +26,10 @@ in {
         ServerApp.contents_manager_class = "jupytext.TextFileContentsManager";
         ContentsManager.notebook_extensions = "ipynb,Rmd,jl,md,py,hs";
       };
-      jupyterlabEnvArgs.extraPackages = ps: ([] ++ ps.python-lsp-server.passthru.optional-dependencies.all);
+      jupyterlabEnvArgs = {
+        extraPackages = ps: ([] ++ ps.python-lsp-server.passthru.optional-dependencies.all);
+        preferWheels = true;
+      };
     };
 
     kernel.python.data-science = {
