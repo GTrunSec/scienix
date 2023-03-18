@@ -2,14 +2,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    cells-lab.url = "github:GTrunSec/cells-lab";
+    std-ext.url = "github:GTrunSec/std-ext";
     # cells-lab.url = "/home/guangtao/ghq/github.com/GTrunSec/cells-lab";
-    cells-lab.inputs.nixpkgs.follows = "nixpkgs";
+    std-ext.inputs.nixpkgs.follows = "nixpkgs";
 
-    std.follows = "cells-lab/std";
-    std.inputs.nixpkgs.follows = "cells-lab/nixpkgs";
+    std.follows = "std-ext/std";
+    std.inputs.nixpkgs.follows = "std-ext/nixpkgs";
     std.inputs.n2c.follows = "n2c";
-    std-data-collection.follows = "cells-lab/std-data-collection";
+    std-data-collection.follows = "std-ext/std-data-collection";
 
     n2c.url = "github:nlewo/nix2container";
     n2c.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +18,7 @@
     std-utils.inputs.nixpkgs.follows = "nixpkgs";
     std-utils.inputs.std.follows = "std";
   };
+
   inputs = {
     julia2nix.url = "github:JuliaCN/Julia2Nix.jl";
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +36,7 @@
 
     tullia.url = "github:input-output-hk/tullia";
     # tullia.url = "/home/guangtao/ghq/github.com/input-output-hk/tullia";
+    tullia.inputs.std.follows = "std";
     tullia.inputs.nixpkgs.follows = "nixpkgs";
     tullia.inputs.nix2container.follows = "n2c";
     tullia.inputs.nix-nomad.follows = "nix-nomad";
@@ -92,7 +94,7 @@
       ];
     } {
       process-compose =
-        inputs.cells-lab.lib.mkProcessCompose ["composeJobs" "oci-images"]
+        inputs.std-ext.lib.mkProcessCompose ["composeJobs" "oci-images"]
         self {
           log_location = "$HOME/.cache/process-compose.log";
         };

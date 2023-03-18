@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab.writers.lib) writeClicheApplication;
+  inherit (inputs.std-ext.writers.lib) writeClicheApplication;
   inherit (inputs.dataflow2nix.prefect.lib) mkPrefectJob;
   inherit (inputs.cells.python.lib) nixpkgs;
 in {

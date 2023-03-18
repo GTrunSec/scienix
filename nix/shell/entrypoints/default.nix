@@ -4,7 +4,7 @@
 }: let
   l = inputs.nixpkgs.lib // builtins;
   inherit (cell) packages;
-  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
+  inherit (inputs.std-ext.writers.lib) writeShellApplication;
 in {
   inherit (inputs.cells.utils.entrypoints) polars;
   inherit (inputs.cells.julia.entrypoints) cli;

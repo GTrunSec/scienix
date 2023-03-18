@@ -11,14 +11,14 @@ in
 
       imports = [
         inputs.std.std.devshellProfiles.default
+        inputs.std-ext.automation.devshellProfiles.docs
+
         inputs.cells.julia.devshellProfiles.default
         inputs.cells.kernels.devshellProfiles.default
         inputs.cells.vast.devshellProfiles.default
         inputs.julia2nix.julia2nix.devshellProfiles.dev
 
         inputs.dataflow2nix.tullia.devshellProfiles.default
-
-        inputs.cells-lab.automation.devshellProfiles.docs
 
         inputs.cells.ml.devshellProfiles.default
         inputs.cells.python.devshellProfiles.default
@@ -27,9 +27,6 @@ in
       commands = [
         {
           package = nixpkgs.nushell;
-        }
-        {
-          package = inputs.cells.python.packages.poetryEnv;
         }
         {
           package = inputs.cells.quarto.entrypoints.default;
@@ -43,6 +40,7 @@ in
 
       packages = with nixpkgs; [
         sd
+        inputs.cells.python.packages.poetryEnv
       ];
     };
 
@@ -64,7 +62,7 @@ in
         }
       ];
       imports = [
-        inputs.cells-lab.automation.devshellProfiles.docs
+        inputs.std-ext.automation.devshellProfiles.docs
       ];
       packages = [inputs.cells.kernels.packages.jupyenv];
     };

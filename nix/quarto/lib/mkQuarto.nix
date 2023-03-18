@@ -3,7 +3,7 @@
   cell,
 }: let
   nixpkgs = inputs.nixpkgs.appendOverlays [cell.overlays.default];
-  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
+  inherit (inputs.std-ext.writers.lib) writeShellApplication;
   l = inputs.nixpkgs.lib // builtins;
 in
   {

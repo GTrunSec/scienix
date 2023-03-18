@@ -6,7 +6,9 @@
 in {
   inherit (cell.lib.nixpkgs.python3Packages) polars;
 
-  poetryEnv = cell.lib.mkPoetryEnv {};
+  poetryEnv = cell.lib.mkPoetryEnv {
+    groups = ["jupyenv"];
+  };
 
   mkPoetryOpenCTI = cell.lib.mkPoetryEnv {
     projectDir = ./opencti;

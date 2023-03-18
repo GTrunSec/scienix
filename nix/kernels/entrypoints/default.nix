@@ -3,7 +3,7 @@
   cell,
 }: let
   inherit (inputs) nixpkgs;
-  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
+  inherit (inputs.std-ext.writers.lib) writeShellApplication;
   inherit (cell.packages) jupyenv;
 
   l = inputs.nixpkgs.lib // builtins;

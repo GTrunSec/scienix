@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab.writers.lib) writeShellApplication writeComoniconApplication;
+  inherit (inputs.std-ext.writers.lib) writeShellApplication writeComoniconApplication;
   inherit (inputs) self nixpkgs std;
 in {
   podman = writeShellApplication {
@@ -25,7 +25,7 @@ in {
     mkJulia = inputs.julia2nix.julia2nix.lib.buildEnv {
       name = "mkJulia";
       src = ./cli;
-      package = inputs.cells-lab.comonicon.packages.julia-wrapped;
+      package = inputs.std-ext.comonicon.packages.julia-wrapped;
     };
   in
     writeComoniconApplication {

@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) nixpkgs matrix-attack-data;
   inherit (inputs.cells.common.lib) __inputs__;
-  inherit (inputs.cells-lab.writers.lib) writeShellApplication;
+  inherit (inputs.std-ext.writers.lib) writeShellApplication;
 in {
   zeek-smtp-dot = writeShellApplication {
     name = "zeek-smtp-dot";

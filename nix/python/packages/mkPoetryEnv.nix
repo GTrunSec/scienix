@@ -22,6 +22,7 @@ in
             matplotlib
             numpy
             # nixpkgs.python3Packages.fastai
+            python-lsp-server
           ]
           ++ python-lsp-server.passthru.optional-dependencies.all;
       overrides = nixpkgs.poetry2nix.overrides.withDefaults (import ./overrides.nix);
