@@ -34,7 +34,7 @@ in {
           --replace "#+begin_src jupyter-" "#+begin_src "
           done
       '';
-    org-roam-book = inputs.cells-lab.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override {
+    org-roam-book = inputs.std-ext.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override {
       org = patchedOrg;
     };
   in

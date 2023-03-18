@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.cells-lab.workflows.lib) mkCargoMake;
+  inherit (inputs.std-ext.workflows.lib) mkCargoMake;
 in {
   flow = mkCargoMake {
     source = cell.nixago.vast-cargo-make.configFile;
