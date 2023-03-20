@@ -31,7 +31,6 @@ in {
         preferWheels = true;
       };
     };
-
     kernel.python.data-science = {
       enable = true;
       poetryEnv = inputs.cells.python.lib.mkPoetryEnv {group = ["jupyenv"];};

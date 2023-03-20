@@ -13,7 +13,7 @@
       }
       {
         command = ''
-          ${inputs.cells.kernels.packages.jupyenv}/bin/jupyter "$@"
+          2>/dev/null ${inputs.cells.kernels.packages.jupyenv}/bin/jupyter "$@"
         '';
         name = "jupyter";
       }
