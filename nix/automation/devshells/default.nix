@@ -44,6 +44,13 @@ in
       ];
     };
 
+    std = {
+      name = "Standard Shell";
+      imports = [
+        inputs.std.std.devshellProfiles.default
+      ];
+    };
+
     generator = {
       imports = [inputs.cells.example.devshellProfiles.default];
       nixago = [] ++ l.attrValues inputs.cells.vast.nixago;

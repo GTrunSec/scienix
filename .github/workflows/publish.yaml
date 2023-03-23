@@ -4,7 +4,7 @@ on:
     branches: [main]
   pull_request:
 jobs:
-  nix-build:
+  publish-images:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.4.0
@@ -19,7 +19,7 @@ jobs:
 
       - uses: cachix/cachix-action@v11
         with:
-          name: zeek
+          name: gtrunsec
 
       - uses: docker/login-action@v2
         with:
@@ -27,20 +27,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Quatro Image
-        run: |
-          nix -Lv run .\#x86_64-linux.quarto.containers.dev.copyToDockerDaemon
-
-      - name: Build/Push the Quarto Docker image
-        run: |
-          # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/DeSci.quarto:latest -c echo hello
-          docker push ghcr.io/gtrunsec/desci.quarto:latest
-
-      - name: Build Data Image
-        run: |
-          nix -Lv run .\#x86_64-linux.shell.containers.dev.copyToDockerDaemon
-
-      - name: Build/Push the Quarto Docker image
+      - name: Build/Push Quatro Image
         run: |
           # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/quarto-dev:latest -c echo hello
-          docker push ghcr.io/gtrunsec/desci.devshell:latest
+          nix -Lv develop .\#devShells.std --command std //quarto/containers/dev:publish
+
+      - name: Build/Push DataShell Image
+        run: |
+          nix -Lv develop .\#devShells.std --command std //shell/containers/dev:publish

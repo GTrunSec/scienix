@@ -1,0 +1,22 @@
+{
+    "quarto": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "quarto",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "quarto-dev",
+            "repo": "quarto-cli",
+            "rev": "v1.3.276",
+            "sha256": "sha256-ROF/kJ1D8FQJxzoBZQCDZ7IJzBbfAvFnjwd+m4ZEhXw=",
+            "type": "github"
+        },
+        "version": "v1.3.276"
+    }
+}

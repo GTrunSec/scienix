@@ -1,0 +1,4 @@
+[quarto]
+src.github_tag = "quarto-dev/quarto-cli"
+src.include_regex = "v1.3.*"
+fetch.github = "quarto-dev/quarto-cli"

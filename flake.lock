@@ -1352,11 +1352,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1675368962,
-        "narHash": "sha256-ovWr3gq8eGoauOycjjpNTd4J0EwTIMBa/VEmtH1GDKI=",
+        "lastModified": 1677791117,
+        "narHash": "sha256-zL4Fc5133KMqX7zCzcPODaBPEblUfgQt2UccNBm34Pc=",
         "owner": "nlewo",
         "repo": "nix2container",
-        "rev": "49707e4b5243f741a151e95d0375665552bec025",
+        "rev": "85670cab354f7df69dd4af097c27cf9bc5826cb2",
         "type": "github"
       },
       "original": {
@@ -2863,11 +2863,11 @@
         "std-data-collection": "std-data-collection_3"
       },
       "locked": {
-        "lastModified": 1679291545,
-        "narHash": "sha256-8GJCAMQx90IbQvPTI8IxrsZVJyFstyvi+I3KUX11qJw=",
+        "lastModified": 1679521587,
+        "narHash": "sha256-7uyT4S43CcVstEHORVjt86jG2ANTZSQF2eGLYcxCoF4=",
         "owner": "GTrunSec",
         "repo": "std-ext",
-        "rev": "981923ddb9c6bb52acb5e54f35375bb7117ad91e",
+        "rev": "c907e8a645cd02fe5da85b4fbd33fd6fcac49bdd",
         "type": "github"
       },
       "original": {
