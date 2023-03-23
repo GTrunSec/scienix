@@ -30,8 +30,8 @@ jobs:
       - name: Build/Push Quatro Image
         run: |
           # docker run -it -v "$(pwd):/work" --entrypoint /bin/bash ghcr.io/gtrunsec/quarto-dev:latest -c echo hello
-          nix -Lv develop .\#devShells.std --command std //quarto/containers/dev:publish
+          nix -Lv develop .\#devShells.x86_64-linux.std --command std //quarto/containers/dev:publish
 
       - name: Build/Push DataShell Image
         run: |
-          nix -Lv develop .\#devShells.std --command std //shell/containers/dev:publish
+          nix -Lv develop .\#devShells.x86_64-linux.std --command std //shell/containers/dev:publish
