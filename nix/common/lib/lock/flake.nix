@@ -15,6 +15,9 @@
 
     nixpkgs-hardenedlinux.url = "github:hardenedlinux/nixpkgs-hardenedlinux";
     nixpkgs-hardenedlinux.inputs.nixpkgs.follows = "nixpkgs";
+
+    matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
+    matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {self, ...}: {};

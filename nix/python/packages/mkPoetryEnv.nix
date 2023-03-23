@@ -17,7 +17,7 @@ in
           [
             pandas
             seaborn
-            (ps.pytorch.override {inherit cudaSupport;})
+            # (ps.pytorch.override {inherit cudaSupport;})
             # tensorflow
             matplotlib
             numpy

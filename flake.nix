@@ -4,9 +4,10 @@
 
     std-ext.url = "github:GTrunSec/std-ext";
     # cells-lab.url = "/home/guangtao/ghq/github.com/GTrunSec/cells-lab";
+    std-ext.inputs.std.follows = "std";
     std-ext.inputs.nixpkgs.follows = "nixpkgs";
 
-    std.follows = "std-ext/std";
+    std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "std-ext/nixpkgs";
     std.inputs.n2c.follows = "n2c";
     std-data-collection.follows = "std-ext/std-data-collection";
@@ -24,29 +25,25 @@
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # jupyenv.url = "github:tweag/jupyenv";
+    # jupyenv.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
     jupyenv.url = "github:gtrunsec/jupyterWith/dev";
     jupyenv.inputs.nixpkgs.follows = "nixpkgs";
-    # jupyenv.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
-    matrix-attack-data.url = "github:GTrunSec/matrix-attack-data";
-    matrix-attack-data.inputs.nixpkgs.follows = "nixpkgs";
 
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
-    dataflow2nix.inputs.tullia.follows = "tullia";
 
-    tullia.url = "github:input-output-hk/tullia";
-    # tullia.url = "/home/guangtao/ghq/github.com/input-output-hk/tullia";
-    tullia.inputs.std.follows = "std";
-    tullia.inputs.nixpkgs.follows = "nixpkgs";
-    tullia.inputs.nix2container.follows = "n2c";
-    tullia.inputs.nix-nomad.follows = "nix-nomad";
-    nix-nomad.url = "github:tristanpemble/nix-nomad";
+    # tullia.url = "github:input-output-hk/tullia";
+    # # tullia.url = "/home/guangtao/ghq/github.com/input-output-hk/tullia";
+    # tullia.inputs.std.follows = "std";
+    # tullia.inputs.nixpkgs.follows = "nixpkgs";
+    # tullia.inputs.nix2container.follows = "n2c";
+    # tullia.inputs.nix-nomad.follows = "nix-nomad";
+    # nix-nomad.url = "github:tristanpemble/nix-nomad";
   };
 
   outputs = {
     std,
     self,
-    tullia,
     ...
   } @ inputs:
     std.growOn {
@@ -70,7 +67,8 @@
 
           (nixago "nixago")
 
-          (tullia.tasks "pipelines")
+          # (tullia.tasks "pipelines")
+          (functions "pipelines")
           (functions "actions")
 
           # modules
@@ -98,10 +96,11 @@
         self {
           log_location = "$HOME/.cache/process-compose.log";
         };
-    } (tullia.fromStd {
-      tasks = std.harvest inputs.self [["julia" "pipelines"]];
-      actions = std.harvest inputs.self [["julia" "actions"]];
-    }) {
+    } # (tullia.fromStd {
+    #   tasks = std.harvest inputs.self [["julia" "pipelines"]];
+    #   actions = std.harvest inputs.self [["julia" "actions"]];
+    # })
+    {
       templates = {
         tenzir = {
           description = "Tenzir's nix template for new projects";

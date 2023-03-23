@@ -6,7 +6,7 @@ final: prev: let
   };
 in
   {
-    inherit (prev.pkgs.python3Packages) tensorflow pytorch;
+    # inherit (prev.pkgs.python3Packages) tensorflow pytorch;
 
     psutil = prev.pkgs.python3Packages.psutil;
 
