@@ -1,6 +1,3 @@
-[submodule "playground/data-hacking.jl"]
-	path = playground/data-hacking.jl
-	url = https://github.com/GTrunSec/data-hacking.jl.git
 [submodule "modules/grafonnix-guard"]
 	path = modules/grafonnix-guard
 	url = git@github.com:GTrunSec/grafonnix-guard.git

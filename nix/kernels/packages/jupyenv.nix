@@ -30,7 +30,9 @@ in {
     };
     kernel.python.data-science = {
       enable = true;
-      poetryEnv = inputs.cells.python.lib.mkPoetryEnv {};
+      poetryEnv = inputs.cells.python.lib.mkPoetryEnv {
+        groups = ["jupyenv"];
+      };
       # ignoreCollisions = true;
     };
     kernel.julia.data-science = {

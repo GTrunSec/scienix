@@ -8,13 +8,13 @@
 in {
   default = {
     commands = [
-      {
-        package = __inputs__.vast2nix.packages.${nixpkgs.system}.vast-bin;
-        help = __inputs__.vast2nix.packages.${nixpkgs.system}.vast-latest.meta.description;
-      }
-      {
-        package = vast2nix.vast.packages.vast-integration;
-      }
+      # {
+      #   package = __inputs__.vast2nix.packages.${nixpkgs.system}.vast-bin;
+      #   help = __inputs__.vast2nix.packages.${nixpkgs.system}.vast-latest.meta.description;
+      # }
+      # {
+      #   package = vast2nix.vast.packages.vast-integration;
+      # }
     ];
   };
 }

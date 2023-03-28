@@ -3,38 +3,56 @@
 {
   nu-plugin-from-parquet = {
     pname = "nu-plugin-from-parquet";
-    version = "eb32b24527ec171f07385511271e937f314ee1f5";
+    version = "671fb194cd934b90f923388456c135f891d35eba";
     src = fetchFromGitHub ({
       owner = "fdncred";
       repo = "nu_plugin_from_parquet";
-      rev = "eb32b24527ec171f07385511271e937f314ee1f5";
+      rev = "671fb194cd934b90f923388456c135f891d35eba";
       fetchSubmodules = false;
-      sha256 = "sha256-L6s8ye2lpxHTLVOmddg4Q4/zQ1x1wwtnL1CvaBpW244=";
+      sha256 = "sha256-f2aDrWE8seGJuNQ3+xykpzJmekgIF/HtX9iQxHdEeqs=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./nu-plugin-from-parquet-eb32b24527ec171f07385511271e937f314ee1f5/Cargo.lock;
+      lockFile = ./nu-plugin-from-parquet-671fb194cd934b90f923388456c135f891d35eba/Cargo.lock;
       outputHashes = {
         
       };
     };
-    date = "2022-11-30";
+    date = "2023-03-09";
   };
   nu-plugin-regex = {
     pname = "nu-plugin-regex";
-    version = "ae215fae3690e187703384ce3d99d27d257a5baf";
+    version = "8ca882d7bdd73bd2e451863597901e1509195a92";
     src = fetchFromGitHub ({
       owner = "fdncred";
       repo = "nu_plugin_regex";
-      rev = "ae215fae3690e187703384ce3d99d27d257a5baf";
+      rev = "8ca882d7bdd73bd2e451863597901e1509195a92";
       fetchSubmodules = false;
-      sha256 = "sha256-4IrsdHeIA2ZO2bqyu0r+acFTG2nuZUFVRjNplPGkYKc=";
+      sha256 = "sha256-czJkHcy7791hzQHlr4AA7I5KW54QO0d1HWDND4YcDTI=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./nu-plugin-regex-ae215fae3690e187703384ce3d99d27d257a5baf/Cargo.lock;
+      lockFile = ./nu-plugin-regex-8ca882d7bdd73bd2e451863597901e1509195a92/Cargo.lock;
       outputHashes = {
         
       };
     };
-    date = "2022-12-15";
+    date = "2023-02-22";
+  };
+  nushell = {
+    pname = "nushell";
+    version = "393717dbb42943d1238188e07d80610f9a7b69c3";
+    src = fetchFromGitHub ({
+      owner = "nushell";
+      repo = "nushell";
+      rev = "393717dbb42943d1238188e07d80610f9a7b69c3";
+      fetchSubmodules = false;
+      sha256 = "sha256-vl8oUd1Mime7On7xzKewnSTxXhpg3YVyCa+FcyQr2Zo=";
+    });
+    cargoLock."Cargo.lock" = {
+      lockFile = ./nushell-393717dbb42943d1238188e07d80610f9a7b69c3/Cargo.lock;
+      outputHashes = {
+        "reedline-0.17.0" = "sha256-kLg+1FvOlQlZWVoYsVQk0tXMyEdFCRFCguYsEPNgr+4=";
+      };
+    };
+    date = "2023-03-29";
   };
 }

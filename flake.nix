@@ -3,7 +3,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     std-ext.url = "github:GTrunSec/std-ext";
-    # cells-lab.url = "/home/guangtao/ghq/github.com/GTrunSec/cells-lab";
     std-ext.inputs.std.follows = "std";
     std-ext.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -31,14 +30,6 @@
 
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
     dataflow2nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    # tullia.url = "github:input-output-hk/tullia";
-    # # tullia.url = "/home/guangtao/ghq/github.com/input-output-hk/tullia";
-    # tullia.inputs.std.follows = "std";
-    # tullia.inputs.nixpkgs.follows = "nixpkgs";
-    # tullia.inputs.nix2container.follows = "n2c";
-    # tullia.inputs.nix-nomad.follows = "nix-nomad";
-    # nix-nomad.url = "github:tristanpemble/nix-nomad";
   };
 
   outputs = {
@@ -97,6 +88,7 @@
           log_location = "$HOME/.cache/process-compose.log";
         };
     } # (tullia.fromStd {
+    
     #   tasks = std.harvest inputs.self [["julia" "pipelines"]];
     #   actions = std.harvest inputs.self [["julia" "actions"]];
     # })

@@ -2,11 +2,11 @@
   "nu-plugin-from-parquet": {
     "cargoLocks": {
       "Cargo.lock": [
-        "./nu-plugin-from-parquet-eb32b24527ec171f07385511271e937f314ee1f5/Cargo.lock",
+        "./nu-plugin-from-parquet-671fb194cd934b90f923388456c135f891d35eba/Cargo.lock",
         {}
       ]
     },
-    "date": "2022-11-30",
+    "date": "2023-03-09",
     "extract": null,
     "name": "nu-plugin-from-parquet",
     "passthru": null,
@@ -18,20 +18,20 @@
       "name": null,
       "owner": "fdncred",
       "repo": "nu_plugin_from_parquet",
-      "rev": "eb32b24527ec171f07385511271e937f314ee1f5",
-      "sha256": "sha256-L6s8ye2lpxHTLVOmddg4Q4/zQ1x1wwtnL1CvaBpW244=",
+      "rev": "671fb194cd934b90f923388456c135f891d35eba",
+      "sha256": "sha256-f2aDrWE8seGJuNQ3+xykpzJmekgIF/HtX9iQxHdEeqs=",
       "type": "github"
     },
-    "version": "eb32b24527ec171f07385511271e937f314ee1f5"
+    "version": "671fb194cd934b90f923388456c135f891d35eba"
   },
   "nu-plugin-regex": {
     "cargoLocks": {
       "Cargo.lock": [
-        "./nu-plugin-regex-ae215fae3690e187703384ce3d99d27d257a5baf/Cargo.lock",
+        "./nu-plugin-regex-8ca882d7bdd73bd2e451863597901e1509195a92/Cargo.lock",
         {}
       ]
     },
-    "date": "2022-12-15",
+    "date": "2023-02-22",
     "extract": null,
     "name": "nu-plugin-regex",
     "passthru": null,
@@ -43,10 +43,37 @@
       "name": null,
       "owner": "fdncred",
       "repo": "nu_plugin_regex",
-      "rev": "ae215fae3690e187703384ce3d99d27d257a5baf",
-      "sha256": "sha256-4IrsdHeIA2ZO2bqyu0r+acFTG2nuZUFVRjNplPGkYKc=",
+      "rev": "8ca882d7bdd73bd2e451863597901e1509195a92",
+      "sha256": "sha256-czJkHcy7791hzQHlr4AA7I5KW54QO0d1HWDND4YcDTI=",
       "type": "github"
     },
-    "version": "ae215fae3690e187703384ce3d99d27d257a5baf"
+    "version": "8ca882d7bdd73bd2e451863597901e1509195a92"
+  },
+  "nushell": {
+    "cargoLocks": {
+      "Cargo.lock": [
+        "./nushell-393717dbb42943d1238188e07d80610f9a7b69c3/Cargo.lock",
+        {
+          "reedline-0.17.0": "sha256-kLg+1FvOlQlZWVoYsVQk0tXMyEdFCRFCguYsEPNgr+4="
+        }
+      ]
+    },
+    "date": "2023-03-29",
+    "extract": null,
+    "name": "nushell",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "nushell",
+      "repo": "nushell",
+      "rev": "393717dbb42943d1238188e07d80610f9a7b69c3",
+      "sha256": "sha256-vl8oUd1Mime7On7xzKewnSTxXhpg3YVyCa+FcyQr2Zo=",
+      "type": "github"
+    },
+    "version": "393717dbb42943d1238188e07d80610f9a7b69c3"
   }
 }

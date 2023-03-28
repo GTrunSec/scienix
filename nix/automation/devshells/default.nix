@@ -18,15 +18,13 @@ in
         inputs.cells.vast.devshellProfiles.default
         inputs.julia2nix.julia2nix.devshellProfiles.dev
 
-        inputs.dataflow2nix.tullia.devshellProfiles.default
-
         inputs.cells.ml.devshellProfiles.default
         inputs.cells.python.devshellProfiles.default
       ];
 
       commands = [
         {
-          package = nixpkgs.nushell;
+          package = inputs.cells.shell.packages.nushell;
         }
         {
           package = inputs.cells.quarto.entrypoints.default;

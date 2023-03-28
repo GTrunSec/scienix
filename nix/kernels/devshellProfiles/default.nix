@@ -16,6 +16,7 @@
           2>/dev/null ${inputs.cells.kernels.packages.jupyenv}/bin/jupyter "$@"
         '';
         name = "jupyter";
+        help = "The executable jupyter of Jupyenv";
       }
     ];
   };
