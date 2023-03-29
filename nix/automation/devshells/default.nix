@@ -24,7 +24,7 @@ in
 
       commands = [
         {
-          package = inputs.cells.shell.packages.nushell;
+          package = cell.packages.nushell;
         }
         {
           package = inputs.cells.quarto.entrypoints.default;

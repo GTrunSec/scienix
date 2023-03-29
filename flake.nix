@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs";
 
     std-ext.url = "github:GTrunSec/std-ext";
     std-ext.inputs.std.follows = "std";
@@ -13,10 +14,6 @@
 
     n2c.url = "github:nlewo/nix2container";
     n2c.inputs.nixpkgs.follows = "nixpkgs";
-
-    std-utils.url = "github:jmgilman/nix-utils";
-    std-utils.inputs.nixpkgs.follows = "nixpkgs";
-    std-utils.inputs.std.follows = "std";
   };
 
   inputs = {

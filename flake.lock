@@ -1250,11 +1250,11 @@
     },
     "nixos_3": {
       "locked": {
-        "lastModified": 1679139072,
-        "narHash": "sha256-Gtw2Yj8DfETie3u7iHv1y5Wt+plGRmp6nTQ0EEfaPho=",
+        "lastModified": 1679966490,
+        "narHash": "sha256-k0jV+y1jawE6w4ZvKgXDNg4+O9NNtcaWwzw8gufv0b4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "08ef7dc8334521605a5c8b7086cc248e74ee338b",
+        "rev": "5b7cd5c39befee629be284970415b6eb3b0ff000",
         "type": "github"
       },
       "original": {
@@ -1276,6 +1276,21 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1680054891,
+        "narHash": "sha256-l1QygRg9HjN/KEECVgB4k/F8iUieXdLju3LtycC08v0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4a6f9a7bd647d21ff2629cd94ae8e24a3743b8e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1986,13 +2001,13 @@
         "jupyenv": "jupyenv",
         "n2c": "n2c_3",
         "nixpkgs": "nixpkgs_6",
+        "nixpkgs-master": "nixpkgs-master",
         "std": "std_3",
         "std-data-collection": [
           "std-ext",
           "std-data-collection"
         ],
-        "std-ext": "std-ext_3",
-        "std-utils": "std-utils"
+        "std-ext": "std-ext_3"
       }
     },
     "rust-overlay": {
@@ -2207,39 +2222,16 @@
         "std-data-collection": "std-data-collection_3"
       },
       "locked": {
-        "lastModified": 1680044020,
-        "narHash": "sha256-f32J7rqg2Qv9YKYltq666ryETlLqDwGNt2dnj/Mdnso=",
+        "lastModified": 1680059551,
+        "narHash": "sha256-zVtAP3V/7EMQEJWR3xV6TQ/uSHq9TqHnWL+BjLmFYzU=",
         "owner": "GTrunSec",
         "repo": "std-ext",
-        "rev": "316d2547d6569d225601804f13dc32005581d702",
+        "rev": "1c1f4840cd4f8cf0f1d8c275394c8a155e3cbd4a",
         "type": "github"
       },
       "original": {
         "owner": "GTrunSec",
         "repo": "std-ext",
-        "type": "github"
-      }
-    },
-    "std-utils": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "std": [
-          "std"
-        ]
-      },
-      "locked": {
-        "lastModified": 1668458715,
-        "narHash": "sha256-N9+TH64NveOsn7sU+lQVbuao3woTv/l6sA409IIj4Ow=",
-        "owner": "jmgilman",
-        "repo": "nix-utils",
-        "rev": "d83211db8345b71368a0f99c4997bfcc049a8ae1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jmgilman",
-        "repo": "nix-utils",
         "type": "github"
       }
     },
