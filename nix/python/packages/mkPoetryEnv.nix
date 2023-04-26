@@ -12,6 +12,7 @@
 in
   (nixpkgs.poetry2nix.mkPoetryEnv {
       projectDir = ./.;
+      # python = nixpkgs.python39;
       extraPackages = ps:
         with ps;
           [
