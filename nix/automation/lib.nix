@@ -1,14 +1,16 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs) nixpkgs;
   inherit (inputs.std-ext.writers.lib) writeShellApplication;
-in {
-  mkAutoCommit = path: branch:
+in
+{
+  mkAutoCommit =
+    path: branch:
     writeShellApplication {
       name = "mkAutoCommit";
-      runtimeInputs = [inputs.cells.common.lib.__inputs__.nixpkgs-hardenedlinux.packages.gptcommit];
+      runtimeInputs = [
+        inputs.cells.common.lib.__inputs__.nixpkgs-hardenedlinux.packages.gptcommit
+      ];
       text = ''
         gptcommit install
         cd "$PRJ_ROOT"/modules/${path}
@@ -20,27 +22,31 @@ in {
       '';
     };
 
-  orgToHugo = src: let
-    patchedOrg =
-      nixpkgs.runCommand "patchOrg" {
-        org = src;
-        buildInputs = [nixpkgs.ripgrep];
-        preferLocalBuild = true;
-      } ''
+  orgToHugo =
+    src:
+    let
+      patchedOrg =
+        nixpkgs.runCommand "patchOrg"
+          {
+            org = src;
+            buildInputs = [ nixpkgs.ripgrep ];
+            preferLocalBuild = true;
+          }
+          ''
 
-        cp -rf --no-preserve=mode,ownership $org $out
-        for file in $(rg -l -- "begin_src jupyter-" $out); do
-          substituteInPlace $file \
-          --replace "#+begin_src jupyter-" "#+begin_src "
-          done
-      '';
-    org-roam-book = inputs.std-ext.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override {
-      org = patchedOrg;
-    };
-  in
+            cp -rf --no-preserve=mode,ownership $org $out
+            for file in $(rg -l -- "begin_src jupyter-" $out); do
+              substituteInPlace $file \
+              --replace "#+begin_src jupyter-" "#+begin_src "
+              done
+          '';
+      org-roam-book =
+        inputs.std-ext.inputs.org-roam-book-template.packages.${nixpkgs.system}.default.override
+          { org = patchedOrg; };
+    in
     writeShellApplication {
       name = "mkdoc";
-      runtimeInputs = [nixpkgs.hugo];
+      runtimeInputs = [ nixpkgs.hugo ];
       text = ''
         rsync --chmod +rw -avzh ${org-roam-book}/* docs/publish
         cd docs/publish && cp ../config.toml .

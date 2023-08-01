@@ -1,14 +1,11 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs) nixpkgs;
-in {
+in
+{
   default = {
     commands = [
-      {
-        package = nixpkgs.poetry;
-      }
+      { package = nixpkgs.poetry; }
       {
         name = "poetryWrapper";
         command = ''

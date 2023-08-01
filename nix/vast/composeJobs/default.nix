@@ -1,37 +1,38 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs.std-ext.writers.lib) writeConfig writeShellApplication;
   inherit (inputs) nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
-in {
+in
+{
   vast =
-    (let
-      dockerCompose = {
-        services = {
-          web = {
-            image = "ghcr.io/gtrunsec/desci/hello";
-            ports = ["9090:9090"];
-            volumes = [".:/work"];
-            environment = {
-              FLASK_DEBUG = "true";
+    (
+      let
+        dockerCompose = {
+          services = {
+            web = {
+              image = "ghcr.io/gtrunsec/desci/hello";
+              ports = [ "9090:9090" ];
+              volumes = [ ".:/work" ];
+              environment = {
+                FLASK_DEBUG = "true";
+              };
+              stop_signal = "SIGINT";
             };
-            stop_signal = "SIGINT";
           };
         };
-      };
-    in
+      in
       writeShellApplication {
         name = "hello-deploy";
-        runtimeInputs = [nixpkgs.docker-compose];
+        runtimeInputs = [ nixpkgs.docker-compose ];
         text = ''
           exec docker-compose -f ${cell.nixago.vast.configFile} up
         '';
         passthru = {
           dockerCompose = dockerCompose;
         };
-      })
+      }
+    )
     // {
       process-compose = {
         depends_on = {

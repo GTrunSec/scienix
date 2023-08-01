@@ -1,10 +1,9 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs.cells.common.lib) __inputs__;
-in {
-  mkPoetryEnv = import ./packages/mkPoetryEnv.nix {inherit inputs cell;};
+in
+{
+  mkPoetryEnv = import ./packages/mkPoetryEnv.nix { inherit inputs cell; };
 
   nixpkgs = import inputs.nixpkgs.path {
     config.allowUnfree = true;

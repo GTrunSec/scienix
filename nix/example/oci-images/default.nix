@@ -1,11 +1,10 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs.std.lib.ops) mkStandardOCI;
   inherit (inputs) nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
-in {
+in
+{
   hello =
     (mkStandardOCI {
       name = "ghcr.io/gtrunsec/desci/hello";
@@ -18,14 +17,14 @@ in {
         config = {
           WorkingDir = "/work";
           ExposedPorts = {
-            "9090/tcp" = {};
+            "9090/tcp" = { };
           };
         };
       };
     })
     // {
       process-compose = {
-        extraAttrPath = ["copyToPodman"];
+        extraAttrPath = [ "copyToPodman" ];
       };
     };
 }

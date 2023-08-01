@@ -1,9 +1,8 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs) std;
-in {
+in
+{
   dev = std.lib.ops.mkDevOCI {
     name = "ghcr.io/gtrunsec/desci.quarto";
     tag = "latest";

@@ -1,6 +1,1 @@
-{
-  inputs,
-  cell,
-}: {
-  knowledges = ./knowledge.nix;
-}
+{ inputs, cell }: { knowledges = ./knowledge.nix; }

@@ -1,22 +1,25 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs) nixpkgs;
   inherit (inputs.std-ext.writers.lib) writeShellApplication;
   inherit (cell.packages) jupyenv;
 
   l = inputs.nixpkgs.lib // builtins;
-in {
-  linkKernels = let
-    syncKernels = l.concatMapStringsSep "\n" (p: ''
-       rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name}/* \
-      "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.language}
-    '') (l.attrValues jupyenv.passthru.kernels);
-  in
+in
+{
+  linkKernels =
+    let
+      syncKernels =
+        l.concatMapStringsSep "\n"
+          (p: ''
+             rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name}/* \
+            "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.language}
+          '')
+          (l.attrValues jupyenv.passthru.kernels);
+    in
     writeShellApplication {
       name = "link-kernels";
-      runtimeInputs = [nixpkgs.rsync];
+      runtimeInputs = [ nixpkgs.rsync ];
       text = ''
          if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
            mkdir -p "$HOME"/.local/share/jupyter/kernels
@@ -32,5 +35,7 @@ in {
         fi
       '';
     };
-  auto-commit-playground = inputs.cells.automation.lib.mkAutoCommit "playground" "origin HEAD:main";
+  auto-commit-playground =
+    inputs.cells.automation.lib.mkAutoCommit "playground"
+      "origin HEAD:main";
 }

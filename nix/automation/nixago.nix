@@ -1,10 +1,9 @@
+{ inputs, cell }:
+let
+  inherit (inputs) std-ext;
+in
 {
-  inputs,
-  cell,
-}: let
-  inherit (inputs) std std-data-collection;
-in {
-  treefmt = std-data-collection.data.configs.treefmt {
+  treefmt = std-ext.preset.nixago.configs.treefmt {
     data.formatter.nix = {
       excludes = [
         "generated.nix"

@@ -1,10 +1,9 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (cell.lib) nixpkgs;
   inherit (inputs.cells.common.lib) __inputs__;
-in {
+in
+{
   julia-wrapped = nixpkgs.lib.julia-wrapped {
     package = nixpkgs.julia;
     meta.mainProgram = "julia";
@@ -12,9 +11,14 @@ in {
       GR = true;
       # python = inputs.cells.automation.packages.poetryPython;
     };
-    makeWrapperArgs = ["--add-flags" "-L''${./startup.jl}"];
+    makeWrapperArgs = [
+      "--add-flags"
+      "-L''${./startup.jl}"
+    ];
   };
-  jnumpy = cell.lib.nixpkgs.python3Packages.callPackage ./jnumpy {inherit __inputs__;};
+  jnumpy = cell.lib.nixpkgs.python3Packages.callPackage ./jnumpy {
+    inherit __inputs__;
+  };
 
   juliaEnv = nixpkgs.lib.buildEnv {
     src = ./.;

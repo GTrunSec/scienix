@@ -1,16 +1,21 @@
+{ inputs, cell }:
 {
-  inputs,
-  cell,
-}: {
   config,
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   types = lib.types;
-  getEnv = k: x: builtins.head config.build.passthru.kernels."${config.kernel.${k}.${x}.name}-jupyter-kernel".kernelInstance.argv;
+  getEnv =
+    k: x:
+    builtins.head
+      config.build.passthru.kernels."${
+        config.kernel.${k}.${x}.name
+      }-jupyter-kernel".kernelInstance.argv;
   cfg = config.publishers;
-in {
+in
+{
   options = {
     quartoEnv = lib.mkOption {
       type = types.package;
@@ -18,7 +23,7 @@ in {
     };
     publishers = {
       quarto = lib.mkOption {
-        default = {};
+        default = { };
         description = "Quarto publisher configuration";
         example = ''
           rust = "<name>"
@@ -27,7 +32,9 @@ in {
         '';
         type = types.submodule {
           options = {
-            enable = lib.mkEnableOption (lib.mkDoc "whether to enable the quarto publisher");
+            enable = lib.mkEnableOption (
+              lib.mkDoc "whether to enable the quarto publisher"
+            );
             package = lib.mkOption {
               type = types.package;
               default = pkgs.quarto;
@@ -36,7 +43,7 @@ in {
             };
             runtimeEnv = lib.mkOption {
               type = types.attrs;
-              default = {};
+              default = { };
               description = "Environment variables to set when running quarto.";
             };
           };
@@ -49,26 +56,34 @@ in {
       quartoEnv = inputs.cells.quarto.lib.mkQuarto {
         kernels = config.build.passthru.kernels;
         inherit (config.publishers.quarto) runtimeEnv package;
-        text = let
-          syncKernels = lib.concatMapStringsSep "\n" (p: ''
-            rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name} \
-            "$HOME"/.local/share/jupyter/kernels
-          '') (lib.attrValues config.build.passthru.kernels);
+        text =
+          let
+            syncKernels =
+              lib.concatMapStringsSep "\n"
+                (p: ''
+                  rsync --chmod +rw -avzh ${p}/kernels/${p.kernelInstance.name} \
+                  "$HOME"/.local/share/jupyter/kernels
+                '')
+                (lib.attrValues config.build.passthru.kernels);
 
-          cleanupKernels = lib.concatMapStringsSep "\n" (p: ''
-            rm -rf "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
-          '') (lib.attrValues config.build.passthru.kernels);
-        in ''
-          if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
-              mkdir -p "$HOME"/.local/share/jupyter/kernels
-          fi
-          # $(git rev-parse --show-toplevel)
-          # jupyter kernelspec list
-          # jupyter --paths
-          ${syncKernels}
-          quarto "$@"
-          ${cleanupKernels}
-        '';
+            cleanupKernels =
+              lib.concatMapStringsSep "\n"
+                (p: ''
+                  rm -rf "$HOME"/.local/share/jupyter/kernels/${p.kernelInstance.name}
+                '')
+                (lib.attrValues config.build.passthru.kernels);
+          in
+          ''
+            if [ ! -d "$HOME"/.local/share/jupyter/kernels ]; then
+                mkdir -p "$HOME"/.local/share/jupyter/kernels
+            fi
+            # $(git rev-parse --show-toplevel)
+            # jupyter kernelspec list
+            # jupyter --paths
+            ${syncKernels}
+            quarto "$@"
+            ${cleanupKernels}
+          '';
       };
     })
   ];

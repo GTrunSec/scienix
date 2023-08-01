@@ -1,20 +1,18 @@
-{
-  inputs,
-  cell,
-} @ args: let
+{ inputs, cell }@args:
+let
   inherit (inputs) nixpkgs;
   inherit (inputs.std-ext.writers.lib) writeShellApplication;
 
   l = inputs.nixpkgs.lib // builtins;
-in {
+in
+{
   mkQuarto = import ./mkQuarto.nix args;
 
-  orgToQuarto = jupyerEval:
+  orgToQuarto =
+    jupyerEval:
     writeShellApplication {
       name = "orgToQuarto";
-      runtimeInputs = with nixpkgs; [
-        sd
-      ];
+      runtimeInputs = with nixpkgs; [ sd ];
       text = ''
         # write your custom bash script here
         dir="$PRJ_ROOT/docs/quarto/"
@@ -30,7 +28,9 @@ in {
           sd '```bash\n\#\|' '```{bash}\n#|' "$dir""''${file_name%.md}".qmd
           sd '```ojs\n//\|' '```{ojs}\n//|' "$dir""''${file_name%.md}".qmd
         done
-        ${l.getExe jupyerEval.config.quartoEnv} render "$dir" --to html --no-execute-daemon
+        ${
+          l.getExe jupyerEval.config.quartoEnv
+        } render "$dir" --to html --no-execute-daemon
       '';
     };
 }

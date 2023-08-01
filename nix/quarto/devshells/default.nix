@@ -1,22 +1,20 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs) std nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
 in
-  l.mapAttrs (_: std.lib.dev.mkShell) {
-    default = {...}: let
-      pythonEnv =
-        nixpkgs.python3.buildEnv.override
-        {
-          extraLibs = with nixpkgs.python3Packages; [
-            nbconvert
-            ipykernel
-            bash_kernel
-            jupyter
-          ];
-        };
+l.mapAttrs (_: std.lib.dev.mkShell) {
+  default =
+    { ... }:
+    let
+      pythonEnv = nixpkgs.python3.buildEnv.override {
+        extraLibs = with nixpkgs.python3Packages; [
+          nbconvert
+          ipykernel
+          bash_kernel
+          jupyter
+        ];
+      };
       rEnv = nixpkgs.rWrapper.override {
         packages = with nixpkgs.rPackages; [
           dplyr
@@ -28,14 +26,11 @@ in
           tidyr
         ];
       };
-    in {
+    in
+    {
       name = "quarto-devshell";
 
-      commands = [
-        {
-          package = (nixpkgs.extend cell.overlays.default).quarto;
-        }
-      ];
+      commands = [ { package = (nixpkgs.extend cell.overlays.default).quarto; } ];
 
       packages = [
         rEnv
@@ -54,4 +49,4 @@ in
         }
       ];
     };
-  }
+}

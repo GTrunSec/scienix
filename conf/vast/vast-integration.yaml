@@ -4,6 +4,6 @@ tests:
       command: -N import zeek
       input: data/zeek/conn.log.gz
     tags:
-    - node
-    - import-export
-    - zeek
+      - node
+      - import-export
+      - zeek

@@ -1,21 +1,21 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs.std.lib.ops) mkOperable;
   inherit (inputs) nixpkgs;
   l = inputs.nixpkgs.lib // builtins;
-in {
-  uwsgi = let
-    uwsgi = nixpkgs.uwsgi.override {
-      python3 = nixpkgs.python3;
-      plugins = ["python3"];
-    };
-  in
+in
+{
+  uwsgi =
+    let
+      uwsgi = nixpkgs.uwsgi.override {
+        python3 = nixpkgs.python3;
+        plugins = [ "python3" ];
+      };
+    in
     mkOperable rec {
       package = uwsgi;
       runtimeEnv = {
-        PYTHON = nixpkgs.python3.withPackages (p: [p.flask]);
+        PYTHON = nixpkgs.python3.withPackages (p: [ p.flask ]);
       };
       runtimeScript = ''
         set +m # disable mirror mode

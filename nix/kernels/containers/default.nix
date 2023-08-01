@@ -1,9 +1,8 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell }:
+let
   inherit (inputs) std;
-in {
+in
+{
   dev = std.lib.ops.mkDevOCI {
     name = "docker.io/jupyter-dev";
     tag = "latest";

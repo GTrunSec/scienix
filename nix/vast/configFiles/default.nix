@@ -1,7 +1,5 @@
-{
-  inputs,
-  cell,
-} @ args: let
+{ inputs, cell }@args:
+let
   inherit (inputs) nixpkgs vast2nix;
-in {
-}
+in
+{ }

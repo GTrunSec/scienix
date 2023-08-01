@@ -1,7 +1,4 @@
-{
-  inputs,
-  cell,
-}:
+{ inputs, cell }:
 builtins.mapAttrs (_: inputs.std.lib.dev.mkNixago) {
   hello = {
     data = cell.composeJobs.hello.passthru.dockerCompose;

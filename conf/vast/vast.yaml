@@ -17,20 +17,20 @@ caf:
     relaxed-sleep-duration: 10ms
     relaxed-steal-interval: 1
 schema-dirs:
-- /nix/store/bjyhyg4j49sl1ycckw50axs5ad20d3gy-google-phishing-api.schema
-- /nix/store/4vck5x5vx9pqb583b6yk5v3n97c070vw-google-search-api.schema
-- /nix/store/w2m5r4f8y209dmg3n68f4lg8fadxfl78-zeek-conn.schema
-- /nix/store/5p4yrnhjfw44ravq113xlyig5frf2zgs-zeek-imap.schema
-- /nix/store/1djz2ijydnj4sd4hbpqa2qszd5lp5zw4-zeek-pop3.schema
-- /nix/store/b6j9wafcjwhma3rz9vmc79qg1g2j5nis-zeek-smtp.schema
+  - /nix/store/bjyhyg4j49sl1ycckw50axs5ad20d3gy-google-phishing-api.schema
+  - /nix/store/4vck5x5vx9pqb583b6yk5v3n97c070vw-google-search-api.schema
+  - /nix/store/w2m5r4f8y209dmg3n68f4lg8fadxfl78-zeek-conn.schema
+  - /nix/store/5p4yrnhjfw44ravq113xlyig5frf2zgs-zeek-imap.schema
+  - /nix/store/1djz2ijydnj4sd4hbpqa2qszd5lp5zw4-zeek-pop3.schema
+  - /nix/store/b6j9wafcjwhma3rz9vmc79qg1g2j5nis-zeek-smtp.schema
 vast:
   aging-frequency: 24h
-  aging-query: ''
+  aging-query: ""
   catalog-dir: ./vast.db/index
   client-log-file: ./vast.db/client.log
   connection-timeout: 10s
   console: automatic
-  console-format: '%^[%T.%e] %v%$'
+  console-format: "%^[%T.%e] %v%$"
   console-sink: stderr
   console-verbosity: info
   count:
@@ -42,11 +42,11 @@ vast:
   enable-metrics: false
   endpoint: 127.0.0.1:42000
   explore:
-    after: ''
-    before: ''
-    by: ''
+    after: ""
+    before: ""
+    by: ""
     format: json
-    max-events: ''
+    max-events: ""
     max-events-context: 100
     max-events-query: 100
   export:
@@ -60,21 +60,21 @@ vast:
     max-events: <infinity>
     pcap:
       flush-interval: 10000
-    read: '-'
+    read: "-"
     timeout: <infinite>
     uds: false
     unified: false
-    write: '-'
-  file-format: '[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v'
+    write: "-"
+  file-format: "[%Y-%m-%dT%T.%e%z] [%n] [%l] [%s=%#] %v"
   file-verbosity: info
   import:
     batch-size: 65536
     batch-timeout: 10s
     blocking: false
     csv:
-      separator: ','
-    listen: ''
-    max-events: ''
+      separator: ","
+    listen: ""
+    max-events: ""
     pcap:
       disable-community-id: false
       flow-expiry: 10
@@ -82,7 +82,7 @@ vast:
       max-flows: 1048576
       pseudo-realtime-factor: 0
       snaplen: 65535
-    read: '-'
+    read: "-"
     read-timeout: 20ms
     test:
       seed: 0
@@ -93,7 +93,7 @@ vast:
     default-fp-rate: 0.01
   infer:
     buffer: 8192
-    read: '-'
+    read: "-"
   log-file: ./vast.db/server.log
   log-queue-size: 1000000
   log-rotation-threshold: 10MiB
@@ -104,12 +104,12 @@ vast:
   max-taste-partitions: 5
   metrics:
     file-sink:
-    - enable: false
-      path: ./vast.db/vast-metrics.log
-      real-time: false
+      - enable: false
+        path: ./vast.db/vast-metrics.log
+        real-time: false
     self-sink:
-    - enable: true
-      slice-size: 128
+      - enable: true
+        slice-size: 128
   node: false
   node-id: node
   pivot:
@@ -129,7 +129,7 @@ vast:
     detailed: false
   store-backend: segment-store
   uds-sink:
-  - enable: false
-    path: ./vast.db/vast-metrics.sock
-    real-time: false
-    type: datagram
+    - enable: false
+      path: ./vast.db/vast-metrics.sock
+      real-time: false
+      type: datagram

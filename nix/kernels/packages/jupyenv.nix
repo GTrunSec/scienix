@@ -1,16 +1,14 @@
+{ inputs, cell }:
 {
-  inputs,
-  cell,
-}: {
   pkgs,
   config,
   lib,
   ...
-}: let
-  nixpkgs = inputs.nixpkgs.appendOverlays [
-    inputs.julia2nix.overlays.default
-  ];
-in {
+}:
+let
+  nixpkgs = inputs.nixpkgs.appendOverlays [ inputs.julia2nix.overlays.default ];
+in
+{
   config = {
     inherit nixpkgs;
     jupyterlab = {
@@ -21,29 +19,19 @@ in {
         ContentsManager.notebook_extensions = "ipynb,Rmd,jl,md,py,hs";
       };
       jupyterlabEnvArgs = {
-        extraPackages = ps: ([
-            ps.python-lsp-server
-            ps.jupytext
-          ]
-          ++ ps.python-lsp-server.passthru.optional-dependencies.all);
+        extraPackages = ps: [ ps.jupytext ];
       };
     };
     kernel.python.data-science = {
       enable = true;
-      poetryEnv = inputs.cells.python.lib.mkPoetryEnv {
-        groups = ["jupyenv"];
-      };
-      # ignoreCollisions = true;
+      env = inputs.cells.python.lib.mkPoetryEnv { groups = [ "jupyenv" ]; };
     };
     kernel.julia.data-science = {
       enable = true;
       julia = inputs.cells.julia.packages.julia-wrapped;
     };
-    kernel.haskell.data-science = {
-      enable = true;
-    };
     kernel.bash.data-science = {
-      runtimePackages = [];
+      runtimePackages = [ pkgs.d2 ];
       enable = true;
     };
     publishers.quarto = {
