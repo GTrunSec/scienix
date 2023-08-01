@@ -5,35 +5,7 @@
     <link>https://exquisite-meringue-7af06d.netlify.app/posts/</link>
     <description>Recent content in Posts on Decentralized Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 19 Feb 2023 08:25:16 +0000</lastBuildDate><atom:link href="https://exquisite-meringue-7af06d.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Julia Graph</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</link>
-      <pubDate>Sun, 19 Feb 2023 08:25:16 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-graph/</guid>
-      <description>using Graphs: smallgraph g = smallgraph(:karate) {34, 78} undirected simple Int64 graph #| label: fig-parametric #| fig-cap: &amp;#34;Parametric Plots&amp;#34; using Compose, Cairo, GraphPlot using Graphs: smallgraph g = smallgraph(:karate) draw(PNG(&amp;#34;./attach/gplot.png&amp;#34;, 16cm, 16cm), gplot(g)) gplot(g) #| echo: true using Plots scatter(rand(100), rand(100)) savefig(&amp;#34;./attach/plot.png&amp;#34;) plot(rand(100), rand(100)) Unicode #| output: true #| echo: true #| code-fold: true using UnicodePlots lineplot([-1, 2, 3, 7], [-1, 2, 9, 4], title=&amp;#34;Example&amp;#34;, name=&amp;#34;Line&amp;#34;, xlabel=&amp;#34;x&amp;#34;, ylabel=&amp;#34;y&amp;#34;) </description>
-    </item>
-    
-    <item>
-      <title>Julia Eval</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</link>
-      <pubDate>Sun, 19 Feb 2023 08:25:13 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/julia-eval/</guid>
-      <description>using Dates format = DateFormat(&amp;#34;yyyymmdd&amp;#34;) Date(&amp;#34;19870913&amp;#34;, format) 1987-09-13 </description>
-    </item>
-    
-    <item>
-      <title>Attack Models</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/attack-models/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/attack-models/</guid>
-      <description>Queries cat $(2&amp;gt;/dev/null nix build .#x86_64-linux.models.lib.mitre-attack-queries --print-out-paths --no-link) { &amp;#34;T0000&amp;#34;: { &amp;#34;Azure Sentinel&amp;#34;: { &amp;#34;name&amp;#34;: &amp;#34;Suspicious Filename Used&amp;#34;, &amp;#34;product&amp;#34;: &amp;#34;Azure Sentinel&amp;#34;, &amp;#34;query&amp;#34;: &amp;#34;Sysmon| where EventID == 1 and (process_path == \&amp;#34;a.exe\&amp;#34;or process_path == \&amp;#34;b.exe\&amp;#34;or process_path == \&amp;#34;c.exe\&amp;#34;or process_path == \&amp;#34;d.exe\&amp;#34;or process_path == \&amp;#34;e.exe\&amp;#34;or process_path == \&amp;#34;f.exe\&amp;#34;or process_path == \&amp;#34;g.exe\&amp;#34;or process_path == \&amp;#34;h.exe\&amp;#34;or process_path == \&amp;#34;i.exe\&amp;#34;or process_path == \&amp;#34;j.exe\&amp;#34;or process_path == \&amp;#34;k.exe\&amp;#34;or process_path == \&amp;#34;l.exe\&amp;#34;or process_path == \&amp;#34;m.exe\&amp;#34;or process_path == \&amp;#34;n.exe\&amp;#34;or process_path == \&amp;#34;o.</description>
-    </item>
-    
+    <language>en-us</language><atom:link href="https://exquisite-meringue-7af06d.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/bash/</link>
@@ -53,39 +25,12 @@
     </item>
     
     <item>
-      <title>Nushell</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/nushell/</guid>
-      <description>DataFrame Commands vast export nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; nu -c &amp;#39;vast export -n 1 json | from json&amp;#39; [21:19:48.072] client connects to VAST node at 127.0.0.1:42000/tcp [21:19:48.076] exporter processed 13 candidates at a rate of 18984 candidates/sec and shipped 1 results in 684.8us [21:19:48.076] json-writer received first result with a latency of 3.7ms [21:19:48.076] json-writer-6 reached limit of 1 events ╭────────────────────────────┬────────────────────────────╮ │ ts │ 2022-09-08T05:16:18.</description>
-    </item>
-    
-    <item>
-      <title>observablehq</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/observablehq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/observablehq/</guid>
-      <description>//| echo: true Plot.rectY(filtered, Plot.binX( {y: &amp;#34;count&amp;#34;}, {x: &amp;#34;body_mass&amp;#34;, fill: &amp;#34;species&amp;#34;, thresholds: 20} )) .plot({ facet: { data: filtered, x: &amp;#34;sex&amp;#34;, y: &amp;#34;species&amp;#34;, marginRight: 80 }, marks: [ Plot.frame(), ] } ) </description>
-    </item>
-    
-    <item>
       <title>Phishing</title>
       <link>https://exquisite-meringue-7af06d.netlify.app/posts/phishing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://exquisite-meringue-7af06d.netlify.app/posts/phishing/</guid>
-      <description>C4 Diagram &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;Python[Container]Training DataSet[Container]Phishing.url.data[parser data] merge the phishing.url.datafrom zeekPhishing.url.result[match indicates] get phishing-url-result.jsonby python scriptdone.phishing.result[vast export json&#39;done.phishing.url.result.result== 0&#39;] get the result by themachine-learning modeltrue/false.phishing.result[vast export jsontrue/false.phishing.url.result.result== 0&#39;] After analyzing done.result,pick the result to true/falsetypeTraining model[get model] Through machine learningalgorithms, we can generaterelevant phishing indicatesmodels throughtrue.phishing.result datasetNew Phishing model[extended result.dataSet] identify suspicious,anomalous or misjudgmentdataMachine Learning[Traning Phishing Model] phishing-url-resutl.json -&amp;gt;probe，true/false.phishing-url-result.json-&amp;gt; new phishing-modelVast[Query URL] Query EngineGo Spider Application[extracting relevant info] phishing-features.json -&amp;gt;indicates.</description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://exquisite-meringue-7af06d.netlify.app/posts/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://exquisite-meringue-7af06d.netlify.app/posts/python/</guid>
-      <description>Packages Pytorch nixpkgs import torch print(torch.__version__) 1.13.1 ibis tensorflow nixpkgs # import tensorflow as tf # print(tf.__version__) 2023-01-09 11:34:03.507478: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations: SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags. 2.10.1 polars poetry import polars as pl df = pl.</description>
+      <description>C4 Diagram &lt;?xml version=&#34;1.0&#34; encoding=&#34;us-ascii&#34; standalone=&#34;no&#34;?&gt;Python[Container]Training DataSet[Container]Phishing.url.data[parser&amp;#160;data]&amp;#160;&amp;#160;merge&amp;#160;the&amp;#160;phishing.url.datafrom&amp;#160;zeekPhishing.url.result[match&amp;#160;indicates]&amp;#160;&amp;#160;get&amp;#160;phishing-url-result.jsonby&amp;#160;python&amp;#160;scriptdone.phishing.result[vast&amp;#160;export&amp;#160;json&#39;done.phishing.url.result.result==&amp;#160;0&#39;]&amp;#160;&amp;#160;get&amp;#160;the&amp;#160;result&amp;#160;by&amp;#160;themachine-learning&amp;#160;modeltrue/false.phishing.result[vast&amp;#160;export&amp;#160;jsontrue/false.phishing.url.result.result==&amp;#160;0&#39;]&amp;#160;&amp;#160;After&amp;#160;analyzing&amp;#160;done.result,pick&amp;#160;the&amp;#160;result&amp;#160;to&amp;#160;true/falsetypeTraining&amp;#160;model[get&amp;#160;model]&amp;#160;&amp;#160;Through&amp;#160;machine&amp;#160;learningalgorithms,&amp;#160;we&amp;#160;can&amp;#160;generaterelevant&amp;#160;phishing&amp;#160;indicatesmodels&amp;#160;throughtrue.phishing.result&amp;#160;datasetNew&amp;#160;Phishing&amp;#160;model[extended&amp;#160;result.dataSet]&amp;#160;&amp;#160;identify&amp;#160;suspicious,anomalous&amp;#160;or&amp;#160;misjudgmentdataMachine&amp;#160;Learning[Traning&amp;#160;Phishing&amp;#160;Model]&amp;#160;&amp;#160;phishing-url-resutl.json&amp;#160;-&amp;gt;probe&amp;#65292;true/false.phishing-url-result.json-&amp;gt;&amp;#160;new&amp;#160;phishing-modelVast[Query&amp;#160;URL]&amp;#160;&amp;#160;Query&amp;#160;EngineGo&amp;#160;Spider&amp;#160;Application[extracting&amp;#160;relevant&amp;#160;info]&amp;#160;&amp;#160;phishing-features.json&amp;#160;-&amp;gt;indicates.field1:&amp;#160;generate&amp;#160;model[pick&amp;#160;algorithm]2:&amp;#160;vast&amp;#160;import&amp;#160;-tphishing.url.datajson[importphishing.url.data]3:&amp;#160;Phishing&amp;#160;rules&amp;#160;-&amp;gt;[0&amp;#160;1&amp;#160;-1]4:&amp;#160;result&amp;#160;-&amp;gt;&amp;#160;np.array5:&amp;#160;Schdule&amp;#160;a&amp;#160;newtraining&amp;#160;job6:&amp;#160;Phishing&amp;#160;Forensicsby&amp;#160;the&amp;#160;engineers7:&amp;#160;message&amp;#160;model[optimize&amp;#160;algorithm]8:&amp;#160;vast&amp;#160;import&amp;#160;-tphishing.url.result[Feed&amp;#160;training&amp;#160;DataSet]9:&amp;#160;vast&amp;#160;export&amp;#160;-n&amp;#160;1arrow&#39;true.phishing.url.result[Get&amp;#160;training&amp;#160;dataSet]10:&amp;#160;vast&amp;#160;exportphishing.url.result[spider/zeek]Legend&amp;#160;personsystemcontainercomponentexternal personexternal systemexternal containerexternal component </description>
     </item>
     
     <item>
