@@ -1544,15 +1544,16 @@
       "locked": {
         "lastModified": 1685857427,
         "narHash": "sha256-zzFvxlU9VohQLyLkKDBq0RcV+EA0mto/rpeXshife7w=",
-        "ref": "refs/heads/dev",
+        "owner": "gtrunsec",
+        "repo": "jupyterWith",
         "rev": "94d29f9826a5180fd17134efaf4e33251a6ac424",
-        "revCount": 576,
-        "type": "git",
-        "url": "file:///home/guangtao/ghq/github.com/tweag/jupyterWith"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/guangtao/ghq/github.com/tweag/jupyterWith"
+        "owner": "gtrunsec",
+        "ref": "dev",
+        "repo": "jupyterWith",
+        "type": "github"
       }
     },
     "mirage-opam-overlays": {

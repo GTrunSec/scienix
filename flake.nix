@@ -24,8 +24,8 @@
     julia2nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # jupyenv.url = "github:tweag/jupyenv";
-    jupyenv.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
-    # jupyenv.url = "github:gtrunsec/jupyterWith/dev";
+    # jupyenv.url = "/home/guangtao/ghq/github.com/tweag/jupyterWith";
+    jupyenv.url = "github:gtrunsec/jupyterWith/dev";
     jupyenv.inputs.nixpkgs.follows = "nixpkgs";
 
     dataflow2nix.url = "github:GTrunSec/dataflow2nix";
