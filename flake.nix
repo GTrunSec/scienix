@@ -93,7 +93,8 @@
       #   tasks = std.harvest inputs.self [["julia" "pipelines"]];
       #   actions = std.harvest inputs.self [["julia" "actions"]];
       # })
-      {};
+      {
+      };
   nixConfig = {
     extra-substituters = [ "https://gtrunsec.cachix.org" ];
     extra-trusted-public-keys = [

@@ -10,7 +10,7 @@ in
     inherit (inputs.nixpkgs) system;
     overlays = [
       __inputs__.poetry2nix.overlay
-      __inputs__.nixpkgs-hardenedlinux.python.overlays.default
+      __inputs__.nixpkgs-hardenedlinux.pkgs.overlays.python
       __inputs__.nixpkgs-hardenedlinux.pkgs.overlays.default
     ];
   };
