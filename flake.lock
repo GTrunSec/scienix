@@ -7,8 +7,7 @@
         "nixpkgs": [
           "dataflow2nix",
           "std-ext",
-          "flops",
-          "blank"
+          "flops"
         ]
       },
       "locked": {
@@ -122,21 +121,6 @@
       }
     },
     "blank_3": {
-      "locked": {
-        "lastModified": 1625557891,
-        "narHash": "sha256-O8/MWsPBGhhyPoPLHZAuoZiiHo9q6FLlEeIDEXuj6T4=",
-        "owner": "divnix",
-        "repo": "blank",
-        "rev": "5a5d2684073d9f563072ed07c871d577a6c614a8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "divnix",
-        "repo": "blank",
-        "type": "github"
-      }
-    },
-    "blank_4": {
       "locked": {
         "lastModified": 1625557891,
         "narHash": "sha256-O8/MWsPBGhhyPoPLHZAuoZiiHo9q6FLlEeIDEXuj6T4=",
@@ -296,11 +280,11 @@
         "std-ext": "std-ext"
       },
       "locked": {
-        "lastModified": 1690598246,
-        "narHash": "sha256-efVOLyNVE+jlhY3Tmq/Xqq/hyLbnfeNLR8fj1nbTc9Q=",
+        "lastModified": 1691318892,
+        "narHash": "sha256-T82NK5f6tTHujB1C1XTChGjHT5zxV128kfS/0dO5Qso=",
         "owner": "GTrunSec",
         "repo": "dataflow2nix",
-        "rev": "8776a8e46db8ff0f00e2ef00d3901f7350927c13",
+        "rev": "1d0bbb8847a7e4890d82cea7f182e564ba7a32e6",
         "type": "github"
       },
       "original": {
@@ -1111,25 +1095,23 @@
     "flops": {
       "inputs": {
         "POP": "POP",
-        "blank": "blank_2",
         "call-flake": "call-flake_2",
         "dmerge": "dmerge_2",
         "haumea": "haumea_2",
         "namaka": [
           "dataflow2nix",
           "std-ext",
-          "flops",
-          "blank"
+          "flops"
         ],
         "nixlib": "nixlib_3",
         "yants": "yants_3"
       },
       "locked": {
-        "lastModified": 1690061433,
-        "narHash": "sha256-FEIHjdwZWSn0dNXYoK5vKMdbAaRIpfNjmfPWgft1pMI=",
+        "lastModified": 1690756542,
+        "narHash": "sha256-eccIaIvZURGVK9RfENKfK5pXH9OD3D3L2O3cEJzyCFI=",
         "owner": "gtrunsec",
         "repo": "flops",
-        "rev": "7f4029a9b436bd1fedbf16057364aa6d113e1155",
+        "rev": "c734ae844ea28bd951bcb78c1d8a62c764db0946",
         "type": "github"
       },
       "original": {
@@ -3342,11 +3324,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1690491898,
-        "narHash": "sha256-3stQeBcszRmJl6OZwlie2Bo7PSYVqCZJFRlIbDiwzRQ=",
+        "lastModified": 1690922408,
+        "narHash": "sha256-TPf6NOcJ0RCeLc1troi8/1jPjnGmIhhh8wx65p/Yj6w=",
         "owner": "GTrunSec",
         "repo": "std-ext",
-        "rev": "d7002a4a9d7ea0219bcd10ea0809de7dd973118f",
+        "rev": "7910c5a9010d68c92eb47a6bd8d7442af235c9e5",
         "type": "github"
       },
       "original": {
@@ -3413,7 +3395,7 @@
           "std",
           "blank"
         ],
-        "blank": "blank_3",
+        "blank": "blank_2",
         "devshell": "devshell_2",
         "dmerge": "dmerge_4",
         "flake-utils": "flake-utils_10",
@@ -3462,7 +3444,7 @@
           "std",
           "blank"
         ],
-        "blank": "blank_4",
+        "blank": "blank_3",
         "devshell": [
           "std-ext",
           "devshell"
