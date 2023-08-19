@@ -1,12 +1,13 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-master.url = "github:NixOS/nixpkgs";
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
 
     std-ext.url = "github:GTrunSec/std-ext";
     std-ext.inputs.std.follows = "std";
     std-ext.inputs.nixpkgs.follows = "nixpkgs";
-
     flops.follows = "std-ext/flops";
 
     std.url = "github:divnix/std";
@@ -33,12 +34,29 @@
   };
 
   outputs =
-    { std, self, ... }@inputs:
-    std.growOn
-      {
-        inherit inputs;
-        cellsFrom = ./nix;
-        cellBlocks =
+    { std, self, flake-parts, ... }@inputs:
+    let
+      systems = [
+        "x86_64-linux"
+        "x86_64-darwin"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
+      __inputs__ =
+        removeAttrs (inputs.std-ext.inputs.flops.inputs.call-flake ./nix/lock).inputs
+          [ "nixpkgs" ];
+    in
+    flake-parts.lib.mkFlake { inputs = inputs // __inputs__; } {
+      inherit systems;
+      flake = {
+        devShells = inputs.std.harvest inputs.self [ [
+          "dev"
+          "devshells"
+        ] ];
+      };
+      imports = [ inputs.std.flakeModule ];
+        std.grow.cellsFrom = ./nix/cells;
+        std.grow.cellBlocks =
           with std.blockTypes;
           [
             (functions "devshellProfiles")
@@ -46,6 +64,8 @@
             (devshells "devshells")
 
             (runnables "entrypoints")
+            (runnables "scripts")
+            (runnables "tasks")
 
             (functions "lib")
 
@@ -73,28 +93,23 @@
           ]
           ++ [ (containers "containers" { ci.publish = true; }) ]
         ;
-      }
-      {
-        devShells = inputs.std.harvest inputs.self [
-          "automation"
-          "devshells"
-        ];
-        packages = inputs.std.harvest inputs.self [
-          [
-            "julia"
-            "packages"
-          ]
-          [
-            "python"
-            "packages"
-          ]
-        ];
-      } # (tullia.fromStd {
-      #   tasks = std.harvest inputs.self [["julia" "pipelines"]];
-      #   actions = std.harvest inputs.self [["julia" "actions"]];
-      # })
-      {
       };
+      # {
+      #   devShells = inputs.std.harvest inputs.self [
+      #     "dev"
+      #     "devshells"
+      #   ];
+      #   packages = inputs.std.harvest inputs.self [
+      #     [
+      #       "julia"
+      #       "packages"
+      #     ]
+      #     [
+      #       "python"
+      #       "packages"
+      #     ]
+      #   ];
+      # };
   nixConfig = {
     extra-substituters = [ "https://gtrunsec.cachix.org" ];
     extra-trusted-public-keys = [
