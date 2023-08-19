@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/6ccc4a59c3f1b56d039d93da52696633e641bc71";
+    nixpkgs.url = "github:NixOS/nixpkgs/57695599bdc4f7bfe5d28cfa23f14b3d8bdf8a5f";
 
     jnumpy.url = "github:Suzhou-Tongyuan/jnumpy";
     jnumpy.flake = false;
