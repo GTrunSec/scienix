@@ -34,7 +34,12 @@
   };
 
   outputs =
-    { std, self, flake-parts, ... }@inputs:
+    {
+      std,
+      self,
+      flake-parts,
+      ...
+    }@inputs:
     let
       systems = [
         "x86_64-linux"
@@ -55,61 +60,61 @@
         ] ];
       };
       imports = [ inputs.std.flakeModule ];
-        std.grow.cellsFrom = ./nix/cells;
-        std.grow.cellBlocks =
-          with std.blockTypes;
-          [
-            (functions "devshellProfiles")
+      std.grow.cellsFrom = ./nix/cells;
+      std.grow.cellBlocks =
+        with std.blockTypes;
+        [
+          (functions "devshellProfiles")
 
-            (devshells "devshells")
+          (devshells "devshells")
 
-            (runnables "entrypoints")
-            (runnables "scripts")
-            (runnables "tasks")
+          (runnables "entrypoints")
+          (runnables "scripts")
+          (runnables "tasks")
 
-            (functions "lib")
+          (functions "lib")
 
-            (installables "packages" { ci.build = true; })
+          (installables "packages" { ci.build = true; })
 
-            (functions "overlays")
+          (functions "overlays")
 
-            (data "config")
+          (data "config")
 
-            (nixago "nixago")
+          (nixago "nixago")
 
-            # (tullia.tasks "pipelines")
-            (functions "pipelines")
-            (functions "actions")
+          # (tullia.tasks "pipelines")
+          (functions "pipelines")
+          (functions "actions")
 
-            # modules
-            (data "jupyenvModules")
+          # modules
+          (data "jupyenvModules")
 
-            (data "composeJobs")
-            (containers "oci-images")
-            (runnables "operators")
+          (data "composeJobs")
+          (containers "oci-images")
+          (runnables "operators")
 
-            # nushell scripts
-            (installables "nu")
-          ]
-          ++ [ (containers "containers" { ci.publish = true; }) ]
-        ;
-      };
-      # {
-      #   devShells = inputs.std.harvest inputs.self [
-      #     "dev"
-      #     "devshells"
-      #   ];
-      #   packages = inputs.std.harvest inputs.self [
-      #     [
-      #       "julia"
-      #       "packages"
-      #     ]
-      #     [
-      #       "python"
-      #       "packages"
-      #     ]
-      #   ];
-      # };
+          # nushell scripts
+          (installables "nu")
+        ]
+        ++ [ (containers "containers" { ci.publish = true; }) ]
+      ;
+    };
+  # {
+  #   devShells = inputs.std.harvest inputs.self [
+  #     "dev"
+  #     "devshells"
+  #   ];
+  #   packages = inputs.std.harvest inputs.self [
+  #     [
+  #       "julia"
+  #       "packages"
+  #     ]
+  #     [
+  #       "python"
+  #       "packages"
+  #     ]
+  #   ];
+  # };
   nixConfig = {
     extra-substituters = [ "https://gtrunsec.cachix.org" ];
     extra-trusted-public-keys = [

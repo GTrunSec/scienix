@@ -8,9 +8,7 @@ in
     path: branch:
     writeShellApplication {
       name = "mkAutoCommit";
-      runtimeInputs = [
-        inputs.nixpkgs-hardenedlinux.packages.gptcommit
-      ];
+      runtimeInputs = [ inputs.nixpkgs-hardenedlinux.packages.gptcommit ];
       text = ''
         gptcommit install
         cd "$PRJ_ROOT"/modules/${path}
