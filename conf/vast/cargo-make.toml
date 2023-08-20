@@ -1,4 +1,0 @@
-[tasks.smtp-url]
-args = ["-s", "./conf/vast/vast-integration.yaml", "-t", "SMTP log url"]
-command = "vast-integration"
-description = "Check smtp log with vast"
